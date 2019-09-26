@@ -1,0 +1,16 @@
+.paragraf_pertama {
+    color: red;
+}
+
+.judul {
+    font-size: 10px;
+}
+
+.penting {
+    color: red;
+    font-size: large;
+}
+
+aside {
+    display: block;
+}
