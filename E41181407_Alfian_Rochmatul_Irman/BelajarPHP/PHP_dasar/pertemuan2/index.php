@@ -1,0 +1,66 @@
+<?php
+// pertemuan 2 php dasar
+// standar output
+// di sintaks php
+
+// dengan echo
+// atau print
+
+// var_dump untuk melihat isi variabel
+
+
+echo "Nama saya irman";
+print "saya romad";
+
+print_r("saya matul");
+
+var_dump("SASAKAKAKAK");
+
+echo 12312312;
+
+echo true;
+
+echo false;
+
+echo "jum'at";
+
+// penulisan sintaks php didalam html
+// penulisan html didalam php
+
+// variabel dan tipe data
+// variabel dengan tanda "$" contoh
+// operator aritmatika +,-,*,/,%
+//operator penggabung string (concatenation,concat)
+// " . "
+
+echo 1 + 1;
+$a = 1000;
+$b = 129129;
+$bb = $a * $b;
+echo $bb;
+$nama = "Irman";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>selamat datang <?= "IRMAAAN"; ?></h1>
+    <h1>halo selamat datang <?= $nama; ?></h1>
+    <p><?= "INI ADALAH paragraf" ?></p>
+
+    <?php
+    echo "<h1>HALO SELAMAT DTG IRMAN</h1>";
+    ?>
+    <?= "HALO SAYA ADALAH $nama"; ?>
+    <?= 'halo saya adalah $nama'; ?>
+</body>
+
+</html>
