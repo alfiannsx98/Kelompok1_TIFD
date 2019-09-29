@@ -104,7 +104,7 @@ div#slider figure {
     float:right;
     width:20%;
     padding:15px;
-    margin-top:25px;
+    margin-top:30px;
     text-align:center;
 }
 
@@ -113,6 +113,7 @@ div#slider figure {
     width:60%;
     padding:0 20px;
     margin-top: 30px;
+   
     
   }
 
@@ -120,7 +121,7 @@ div#slider figure {
     float:left;
     width:20%;
     text-align:center;
-    margin-top: 25px;
+    margin-top: 24px;
 }
 
 .aside a {
@@ -139,4 +140,36 @@ div#slider figure {
   margin-top: 7px;
 }
 
+.post {
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.images{
+    width: 20%;
+    height: 100%;
+    padding-right: 3px;
+    float: left;
+    background-color: aqua;
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    float: left;
+    background-color: #e9e9e9;
+    padding-left: 10px;
+    
+}
+
+.content h1{
+    margin: 0;
+    padding-top: 10px;
+}
+
+.content p{
+    margin: 0;
+}
 
