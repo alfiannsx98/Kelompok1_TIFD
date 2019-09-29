@@ -32,6 +32,27 @@ echo "jum'at";
 // operator aritmatika +,-,*,/,%
 //operator penggabung string (concatenation,concat)
 // " . "
+// operator assignment =,=+,-=,*=,/=,%=,.=
+// operator perbandingan <,>,<=,>=,==
+// identitas === , !==
+// logika &&,||,!
+
+
+var_dump(1 !== "1");
+
+
+$x = 1;
+$x -= 5;
+
+echo $x;
+
+
+$nama = "irman";
+$nama .= " ";
+$nama .= "matol";
+
+echo $nama;
+
 
 echo 1 + 1;
 $a = 1000;
@@ -39,6 +60,10 @@ $b = 129129;
 $bb = $a * $b;
 echo $bb;
 $nama = "Irman";
+$nama_depan = "irman";
+$nama_belakang = "matol";
+
+echo $nama_depan . " " . $nama_belakang;
 ?>
 
 <!DOCTYPE html>
