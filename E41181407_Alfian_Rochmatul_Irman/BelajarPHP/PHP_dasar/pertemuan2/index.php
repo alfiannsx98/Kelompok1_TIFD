@@ -86,6 +86,8 @@ echo $nama_depan . " " . $nama_belakang;
     ?>
     <?= "HALO SAYA ADALAH $nama"; ?>
     <?= 'halo saya adalah $nama'; ?>
+    <?= "<h1>$nama</h1>" ?>
+    <?= $nama ?>
 </body>
 
 </html>
