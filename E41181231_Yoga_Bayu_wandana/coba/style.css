@@ -1,21 +1,24 @@
 html, body {
     margin: 0;
     padding: 0;
-
+    background-color: rgb(255, 255, 255);
 }
 
-.header{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: aquamarine;
-    text-align: center;
-    margin-top: 4px;
-    padding: 0;
-    overflow: hidden;
+* {
+        box-sizing: border-box;
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .judul, .menu, .cari, .aside, .main, .right {
+      width:100%;
+    }
 }
 
 .navigasi {
     background-color: rgb(27, 155, 116);
     margin: 0;  
+    overflow: auto;
 }
 
 .navigasi ul li {
@@ -24,7 +27,7 @@ html, body {
 }
 
 .navigasi ul {
-    text-align: center; 
+   text-align: center;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -39,4 +42,101 @@ html, body {
     text-align: center; 
     margin-top: 5px;
 }
+.menu {
+    width: 80%;
+    float: left;
+   
+}
+
+.judul{
+    width: 10%;
+    float: left;
+    color: white;
+    
+}
+
+.judul p {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+@keyframes slidy {
+    25% { left: -0%; }
+    45% { left: -0%; }
+    50% { left: -100%; }
+    70% { left: -100%; }
+    75% { left: -200%; }
+    95% { left: -200%; }
+    100% { left: -200%; }
+    }
+
+div#slider { 
+        overflow: hidden;
+        padding-top: 5px;
+}
+div#slider figure img { 
+        width: 20%; 
+        float: left; 
+}
+div#slider figure { 
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 20s slidy infinite; 
+}
+
+.pertanian {
+    text-align: center;
+}
+
+.cari{
+    float: left;
+    width: 10%;
+    margin-top: 20px;
+
+}
+.right {
+    background-color:#e9e9e9;
+    float:right;
+    width:20%;
+    padding:15px;
+    margin-top:25px;
+    text-align:center;
+}
+
+.main {
+    float:left;
+    width:60%;
+    padding:0 20px;
+    margin-top: 30px;
+    
+  }
+
+.aside {
+    float:left;
+    width:20%;
+    text-align:center;
+    margin-top: 25px;
+}
+
+.aside a {
+  background-color:#e9e9e9;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+
+.footer {
+  background-color:#e9e9e9;
+  text-align: center;
+  padding: 10px;
+  margin-top: 7px;
+}
+
 
