@@ -108,7 +108,7 @@ div#slider figure {
 
 }
 .right {
-    background-color:rgb(56, 204, 160);;
+    background-color:rgb(56, 204, 160);
     float:right;
     width:20%;
     padding:15px;
@@ -140,7 +140,7 @@ div#slider figure {
 }
 
 .aside a {
-  background-color:#ffffff;
+  background-color:rgb(56, 204, 160);
   padding:8px;
   margin-top:7px;
   display:block;
