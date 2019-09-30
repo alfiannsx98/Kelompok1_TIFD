@@ -1,6 +1,11 @@
 <?php
 // cek apakah tidak ada di $_GET
-if (!isset($_GET["nama"])) {
+if (
+    !isset($_GET["nama"]) ||
+    !isset($_GET["nim"]) ||
+    !isset($_GET["prodi"]) ||
+    !isset($_GET["gambar"])
+) {
     // redirect (memindahkan) user dari suatu halaman ke halaman yg lain
     header("location: latihan2.php");
     exit;
