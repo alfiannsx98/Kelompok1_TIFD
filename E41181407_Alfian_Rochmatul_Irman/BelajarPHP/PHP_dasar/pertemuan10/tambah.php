@@ -2,23 +2,27 @@
 <!-- konek ke dbms -->
 
 <?php
+require 'functions.php';
 $koneksi = mysqli_connect("localhost", "root", "", "phpdasar");
-if (isset($_POST["submit"])) { }
-// ambil data dari tiap elemen dalam form
-// nim diambil dari $_POST didalam form
-$nim = $_POST["nim"];
-$nama = $_POST["nama"];
-$email = $_POST["email"];
-$prodi = $_POST["prodi"];
-$gambar = $_POST["gambar"];
+if (isset($_POST["submit"])) {
+    // ambil data dari tiap elemen dalam form
+    // nim diambil dari $_POST didalam form
+    // melakukan query insert data
 
-// melakukan query insert data
-
-$query = "INSERT 
-INTO mahasiswa
-VALUES ('','$nama','$nim','$email','$prodi','$gambar')";
-
-mysqli_query($koneksi, $query);
+    if (tambah($_POST) > 0) {
+        echo "
+        <script>
+            alert('data berhasil ditambahkan!');
+            document.location.href = 'index.php';
+        </script>
+    ";
+    } else {
+        echo "<script>
+        alert('data gagal ditambahkan!');
+        document.location.href = 'index.php';
+    </script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,27 +42,27 @@ mysqli_query($koneksi, $query);
         <ul>
             <li>
                 <label for="nim">Nim anda : </label>
-                <input type="text" id="nim" name="nim">
+                <input type="text" id="nim" name="nim" required>
             </li>
             <br>
             <li>
                 <label for="nama">nama anda : </label>
-                <input type="text" id="nama" name="nama">
+                <input type="text" id="nama" name="nama" required>
             </li>
             <br>
             <li>
                 <label for="email">email anda : </label>
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" name="email" required>
             </li>
             <br>
             <li>
                 <label for="prodi">prodi anda : </label>
-                <input type="text" id="prodi" name="prodi">
+                <input type="text" id="prodi" name="prodi" required>
             </li>
             <br>
             <li>
                 <label for="gambar">gambar anda : </label>
-                <input type="text" id="gambar" name="gambar">
+                <input type="text" id="gambar" name="gambar" required>
             </li>
             <br>
             <button type="submit" name="submit">Simpan Data</button>
