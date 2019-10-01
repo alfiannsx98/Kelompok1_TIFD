@@ -1,14 +1,14 @@
 <?php
 // koneksi ke database
 // urutan 1. Nama Host, 2.Username MySQL, 3.Password, 4.Database
-require 'functions.php';
-$mahasiswa = query("SELECT * FROM mahasiswa");
+$koneksi = mysqli_connect("localhost", "root", "", "phpdasar");
+
 // query data / ambil datanya
 // parameter ada 2, pertama string variabel koneksi biar bisa dipanggil ber x x , lalu masukkan sintaks querynya
 // sintaks sql ditulis dgn huruf besar, nama tabel dll huruf kecil
 // ketika melakukan query, mysql query akan mengembalikan 2 hal, jika berhasil akan dilakukan
 // seperti crud gituu.
-
+$result = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
 // ambil data (fetch) mahasiswa dari object (result)
 // ada 4 cara, 1.mysqli_fetch_row(), 2.mysqli_fetch_assoc(), 3.mysqli_fetch_array(), 4.mysqli_fetch_object()
 // 1.mysqli_fetch_row() -> mengembalikan array numerik, array yang mengembalikan angka, jika mau menampilkan data tertentu tingaal menggunakan index ke (x)
@@ -54,21 +54,21 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
             <th>Prodi</th>
         </tr>
         <?php $i = 1; ?>
-        <?php foreach ($mahasiswa as $row) : ?>
+        <?php while ($hasil = mysqli_fetch_assoc($result)) : ?>
             <tr>
                 <td><?= $i; ?></td>
                 <td>
                     <a href="#">Ubah</a> ||
                     <a href="#">Hapus</a>
                 </td>
-                <td><img src="<?= "../pertemuan6/img/" . $row["gambar"]; ?>" width="50" alt=""></td>
-                <td><?= $row["nim"]; ?></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["email"]; ?></td>
-                <td><?= $row["prodi"]; ?></td>
+                <td><img src="<?= "../pertemuan6/img/" . $hasil["gambar"]; ?>" width="50" alt=""></td>
+                <td><?= $hasil["nim"]; ?></td>
+                <td><?= $hasil["nama"]; ?></td>
+                <td><?= $hasil["email"]; ?></td>
+                <td><?= $hasil["prodi"]; ?></td>
             </tr>
             <?php $i++; ?>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
     </table>
 </body>
 
