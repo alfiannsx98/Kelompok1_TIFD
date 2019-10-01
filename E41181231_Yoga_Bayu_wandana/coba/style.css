@@ -19,17 +19,23 @@ html, body {
     background-color: rgb(27, 155, 116);
     margin: 0;  
     overflow: auto;
+    border-bottom: 9px solid rgb(47, 240, 208);
+
 }
 
 .navigasi ul li {
     display: inline-block;
-    padding: 20px;   
+    padding: 20px;  
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold; 
 }
 
 .navigasi a:hover {
-    color: rgb(50, 255, 193);
+    background-color: rgb(50, 255, 193);
     text-decoration: underline;
     font-size: 18px;
+    padding: 20px;
+    color: black;
 }
 
 .navigasi ul {
@@ -45,11 +51,7 @@ html, body {
     padding: 10px;
 }
 
-.image {
-    text-align: center; 
-    margin-top: 5px;
-    background-size: cover;
-}
+
 .menu {
     width: 80%;
     float: left;
@@ -66,8 +68,10 @@ html, body {
 .judul p {
     margin: 0;
     margin-top: 10px;
+    margin-left: 10px;
     font-size: 30px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif
 }
 @keyframes slidy {
     25% { left: -0%; }
@@ -81,7 +85,7 @@ html, body {
 
 div#slider { 
         overflow: hidden;
-        padding-top: 5px;
+        padding-top: 0;
 }
 div#slider figure img { 
         width: 20%; 
@@ -101,11 +105,11 @@ div#slider figure {
     text-align: center;
 }
 
-.cari{
+.login a{
     float: left;
-    width: 10%;
-    margin-top: 20px;
-
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold
 }
 .right {
     background-color:rgb(56, 204, 160);
@@ -140,7 +144,7 @@ div#slider figure {
 }
 
 .aside a {
-  background-color:rgb(56, 204, 160);
+  background-color:white;
   padding:8px;
   margin-top:7px;
   display:block;
@@ -151,8 +155,9 @@ div#slider figure {
 .footer {
   background-color:rgb(27, 155, 116);
   text-align: center;
-  padding: 10px;
+  padding: 4px;
   margin-top: 7px;
+  border-top: 9px solid rgb(47, 240, 208);
 }
 
 .footer p {
@@ -162,7 +167,6 @@ div#slider figure {
 .post {
     width: 100%;
     height: 150px;
-    border: 1px solid black;
     margin-bottom: 15px;
 }
 
@@ -171,7 +175,7 @@ div#slider figure {
     height: 100%;
     padding-right: 3px;
     float: left;
-    background-color: aqua;
+
 }
 
 .content {
@@ -186,9 +190,11 @@ div#slider figure {
 .content h1{
     margin: 0;
     padding-top: 10px;
+    text-decoration: underline;
 }
 
 .content p{
-    margin: 0;
+    margin-top: 1;
+    color: darkgrey;
 }
 
