@@ -121,12 +121,12 @@ div#slider figure {
 }
 .main {
     width:900px;
-    height: 350px;
+    height: 400px;
     padding: 10px;
     margin-top: 10px;
     margin: auto;  
     background-color: white;
-    box-shadow: 0 10px 15px 0 rgb(36, 34, 34);
+    box-shadow: 0 4px 8px 0 rgb(36, 34, 34);
   }
 
 
@@ -145,11 +145,13 @@ div#slider figure {
 
 .post h3{
     font-family: Arial, Helvetica, sans-serif; 
+    border-bottom: 3px solid rgb(27, 155, 116);
+    padding-bottom: 3px;
 }
 
 .image{
     width: 215px;
-    height: 260px;
+    height: 310px;
     float: left;
     margin-left: 3px;
     box-shadow: 0 2px 4px 0 rgb(49, 47, 47);
@@ -158,20 +160,54 @@ div#slider figure {
 
 .image p a{
     text-align: center;
-    margin-top: 0px;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin-left: 30px;
+    font-size: 15px;
+    margin-left: 40px;
     font-weight: bold;
-    color: darkgrey;
+    color: rgb(255, 255, 255);
     margin-bottom: 4px;
+    background-color: rgb(27, 155, 116);
+    padding: 10px;
 }
 
 .image p a:hover{
     color: black;
 }
 
+.image img:hover {
+    width: 102%;
+    height: 82%;
+}
+
+.barang{
+    width: 1100px;
+    height: 1000px;
+    background-color: white;
+    border: 3px solid red;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.barang h2{
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    border-bottom: 3px solid rgb(27, 155, 116);
+    padding-bottom: 3px;
+}
+
+.images{
+    width: 160px;
+    height: 250px;
+    float: left;
+    margin-left: 3px;
+    box-shadow: 0 2px 4px 0 rgb(49, 47, 47);
+    margin-top: 30px;
+
+}
 
 
 
