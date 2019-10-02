@@ -19,7 +19,7 @@ nav {
 section {
     background-color: red;
     background-size:
-        weidth: 800px;
+        width: 800px;
     height: 500px;
     float: left;
 }
@@ -27,7 +27,7 @@ section {
 aside {
     background-color: rebeccapurple;
     height: 500px;
-    weidth: 300px;
+    width: 300px;
     float: right;
 }
 
