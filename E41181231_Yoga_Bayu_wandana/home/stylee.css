@@ -79,7 +79,7 @@ html, body {
     margin-left: 10px;
     font-size: 30px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 @keyframes slidy {
     25% { left: -0%; }
@@ -122,7 +122,7 @@ div#slider figure {
 }
 .main {
     width:1300px;
-    height: 300px;
+    height: 200px;
     padding: 10px;
     margin-top: 20px;
     margin: auto;  
@@ -153,20 +153,19 @@ div#slider figure {
     width: 60px;
     height: 60px;
     float: left;
-    margin-left: 25px;
+    margin-left: 73px;
     border-radius: 20px;
     padding: 4px;
     border: 1px solid rgb(11, 87, 64);
 }
 
 
-.image p a{
+.image p {
     text-align: center;
-    text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(7, 7, 7);
     margin-bottom: 0px;
 }
 
@@ -230,4 +229,15 @@ div#slider figure {
     width: 160px;
     text-align: center;
     color: darkgrey;
+}
+
+.tulisan p{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.image:hover{
+    width: 63px;
+    height: 63px;
 }
