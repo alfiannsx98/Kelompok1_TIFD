@@ -1,0 +1,39 @@
+h1 {
+    background-color: aqua;
+}
+
+header {
+    background-color: black;
+    height: 50px;
+    width: 1350px;
+    float: right;
+}
+
+nav {
+    background-color: blue;
+    height: 50px;
+    width: 1350px;
+    float: right;
+}
+
+section {
+    background-color: red;
+    background-size:
+        weidth: 800px;
+    height: 500px;
+    float: left;
+}
+
+aside {
+    background-color: rebeccapurple;
+    height: 500px;
+    weidth: 300px;
+    float: right;
+}
+
+.cb {
+    background-color: yellow;
+    float: bottom;
+    height: 5000px;
+    weidth: 5000px;
+}
