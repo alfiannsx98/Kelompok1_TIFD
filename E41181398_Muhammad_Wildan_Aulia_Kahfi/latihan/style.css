@@ -1,0 +1,21 @@
+h1 {
+    color:green;
+    background-color: coral;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: bisque;
+}
+
+section{
+    background-color: darkkhaki;
+}
+
+.gelap{
+    color: lawngreen;
+}
+
+#cerah{
+    color: chartreuse;
+}
