@@ -1,0 +1,107 @@
+<?php
+
+$koneksi = mysqli_connect("localhost", "root", "", "phpdasar");
+function query($query)
+{
+    global $koneksi;
+    $result = mysqli_query($koneksi, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+function tambah($data)
+{
+    global $koneksi;
+    $nim = htmlspecialchars($data["nim"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $email = htmlspecialchars($data["email"]);
+    $prodi = htmlspecialchars($data["prodi"]);
+
+    // upload gambar (menjalankan fungsi upload gambar), $gambar jika berhasil akan diisi dgn fungsi upload gambar
+    // akan dikirimkan nama gambar dan dikirim gambar ke suatu direktori
+    $gambar = upload();
+    if (!$gambar) {
+        return false;
+    }
+
+    $query = "INSERT INTO mahasiswa VALUES ('','$nama','$nim','$email','$prodi','$gambar')";
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+function upload()
+{
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    // cek apakah tidak ada gambar yang diupload
+    if ($error === 4) {
+        echo "<script>
+            alert('pilih gambar terlebih dahulu!);
+        </script>";
+        return false;
+    }
+
+    // cek apakah gambar sudah diupload atau belum, dicek dengan cara ekstensi file nya
+    // explode adalah fungsi untuk memecah sebuah string menjadi array,dipecah dgn delimiter
+    // mengubah semua ekstensi menjadi huruf kecil menggunakan strtolower
+    // ngecek suatu ekstensi didalam array
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar =  explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+            alert('yang anda upload bukanlah gambar!');
+        </script>";
+    }
+
+    // cek jika ukuran terlalu besar, dibatasi ukurannya
+    if ($ukuranFile > 2000000) {
+        echo "<script>
+            alert('Ukuran yang anda upload terlalu besar!');
+        </script>";
+    }
+
+    move_uploaded_file($tmpName, 'img/' . $namaFile);
+
+    return $namaFile;
+}
+function hapus($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE id=$id");
+
+    return mysqli_affected_rows($koneksi);
+}
+function ubah($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $nim = htmlspecialchars($data["nim"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $email = htmlspecialchars($data["email"]);
+    $prodi = htmlspecialchars($data["prodi"]);
+    $gambar = htmlspecialchars($data["gambar"]);
+
+    $query = "UPDATE mahasiswa SET
+                nim = '$nim',
+                nama = '$nama',
+                email = '$email',
+                prodi = '$prodi',
+                gambar = '$gambar'
+            WHERE id = $id
+    ";
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+function cari($keyword)
+{
+    $query = "SELECT * FROM mahasiswa WHERE nama LIKE '%$keyword%' OR nim LIKE '%$keyword%' OR email LIKE '%$keyword%' OR prodi LIKE '%$keyword%'";
+    return query($query);
+}
