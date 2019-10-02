@@ -38,7 +38,7 @@ if (isset($_POST["submit"])) {
 <body>
     <h1>Tambah data mahasiswa</h1>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <li>
                 <label for="nim">Nim anda : </label>
