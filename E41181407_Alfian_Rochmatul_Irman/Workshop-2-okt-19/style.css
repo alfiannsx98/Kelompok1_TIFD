@@ -35,5 +35,28 @@ aside {
     background-color: yellow;
     float: bottom;
     height: 5000px;
-    weidth: 5000px;
+    width: 5000px;
+}
+
+* {
+    color: blue;
+    background: silver;
+}
+
+*[aduh="aa"] {
+    color: red;
+}
+
+.iniadalahkelas {
+    background-color: yellow;
+    color: blanchedalmond;
+}
+
+#cobapakEkiD {
+    background-color: red;
+    padding: 200px;
+}
+
+p.h2 {
+    color: red;
 }
