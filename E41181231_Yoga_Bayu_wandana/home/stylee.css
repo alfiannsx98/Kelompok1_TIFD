@@ -94,6 +94,7 @@ html, body {
 div#slider { 
         overflow: hidden;
         padding-top: 0;
+        margin-bottom: 9px;
 }
 div#slider figure img { 
         width: 20%; 
@@ -120,13 +121,12 @@ div#slider figure {
     font-weight: bold
 }
 .main {
-    width:900px;
-    height: 400px;
+    width:1300px;
+    height: 300px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin: auto;  
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgb(36, 34, 34);
   }
 
 
@@ -150,34 +150,28 @@ div#slider figure {
 }
 
 .image{
-    width: 215px;
-    height: 310px;
+    width: 60px;
+    height: 60px;
     float: left;
-    margin-left: 3px;
-    box-shadow: 0 2px 4px 0 rgb(49, 47, 47);
-
+    margin-left: 25px;
+    border-radius: 20px;
+    padding: 4px;
+    border: 1px solid rgb(11, 87, 64);
 }
+
 
 .image p a{
     text-align: center;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    margin-left: 40px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    margin-bottom: 4px;
-    background-color: rgb(27, 155, 116);
-    padding: 10px;
+    margin-bottom: 0px;
 }
 
 .image p a:hover{
     color: black;
-}
-
-.image img:hover {
-    width: 102%;
-    height: 82%;
 }
 
 .barang{
@@ -188,6 +182,7 @@ div#slider figure {
     margin-top: 30px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgb(36, 34, 34);
+    border-radius: 20px;
 }
 
 .barang h2{
