@@ -1,0 +1,16 @@
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: magenta;
+    font-style: inherit;
+    font-variant: small-caps;
+    background-color: aqua;
+}
+body{
+    background-image: url(dark-grey-terrazzo.png);
+}
+p{
+    color:mediumorchid;
+}
+aside{
+    color:mediumorchid;
+}
