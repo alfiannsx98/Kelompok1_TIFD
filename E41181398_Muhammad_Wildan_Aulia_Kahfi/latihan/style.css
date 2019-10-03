@@ -17,5 +17,10 @@ section{
 }
 
 #cerah{
-    color: chartreuse;
+    color:black;
 }
+
+input[type="text"]{
+    background-color: blue;
+}
+
