@@ -1,0 +1,31 @@
+*{
+    color: deeppink;
+}
+
+h1{
+    color: midnightblue;
+}
+
+h1 p{
+    color: chartreuse;
+}
+
+.heading{
+    color: cornflowerblue;
+}
+
+.paragraf{
+    color: gold;
+}
+
+.heading .paragraf{
+    color: darkgreen;
+}
+
+.heading .unique{
+    color: blueviolet;
+}
+
+.unique{
+    color: aquamarine;
+}
