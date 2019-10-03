@@ -7,8 +7,47 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+    
+    
+    <style>
+
+        a:link{
+            color:yellow;
+        }
+
+        a:hover{
+            color:aqua;
+        }
+        
+        a:visited{
+            color: brown;
+        }
+
+        a:active{
+            color: burlywood;
+        }
+
+        h1{
+            background: chartreuse;
+        }
+        input[type="text"]{
+        background-color: blue;
+        
+        }
+        label{
+            color: red;
+        }
+    </style>
+    
+    
 </head>
-<body>
+<body background="masjid.jpg">
+
+    <form>
+        <label for="username" >username : </label>
+        <input type="text" id="username" placeholder="au ah gelap" >
+        
+    </form>
         <header>     
             <h1>Judul Website</h1>     
             <img src="logo.png" />   
@@ -35,7 +74,13 @@
                     <h2>Cascading Style Sheet</h2>       
                 </header>         
                 <p class="gelap">Dalam bahasa bakunya, seperti di kutip dari wikipedia, CSS adalah “kumpulan kode yang digunakan untuk mendefenisikan desain dari bahasa markup” , dimana bahasa markup ini salah satunya adalah HTML.</p>     
-            </article>   
+            </article> 
+            
+            <div>
+                <p id="aku">
+                    Hello Zeyeng!
+                </p>
+            </div>
         </section> 
         <aside>     
             <h1>Artikel Terbaru</h1>     
