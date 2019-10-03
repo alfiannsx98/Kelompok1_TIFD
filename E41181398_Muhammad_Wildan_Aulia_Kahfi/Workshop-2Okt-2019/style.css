@@ -3,29 +3,33 @@
 }
 
 h1{
-    color: midnightblue;
+    color: yellow;
 }
 
 h1 p{
-    color: chartreuse;
+    color: rgb(17, 0, 255);
 }
 
 .heading{
-    color: cornflowerblue;
+    color: chartreuse;
 }
+
 
 .paragraf{
-    color: gold;
+    color:darkblue;
 }
+
 
 .heading .paragraf{
-    color: darkgreen;
+    color:darkgreen;
 }
 
-.heading .unique{
-    color: blueviolet;
-}
+/*
+.heading.unique{
+    color:darkred;
+}*/
+
 
 .unique{
-    color: aquamarine;
+    color:  darkcyan;
 }
