@@ -1,12 +1,29 @@
 <?php
+require 'functions.php';
 session_start();
+
+// cek cookie untuk mengecek login nya.
+
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+
+    // ambil username berdasarkan id nya
+    $result = mysqli_query($koneksi, "SELECT username FROM user WHERE id=$id");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if ($key === hash('sha256', $row['username'])) {
+        $_SESSION['login'] = true;
+    }
+}
 
 if (isset($_SESSION["login"])) {
     header("Location: index.php");
     exit;
 }
 
-require 'functions.php';
+
 if (isset($_POST["login"])) {
 
     $username = $_POST["username"];
@@ -23,6 +40,15 @@ if (isset($_POST["login"])) {
         if (password_verify($password, $row["password"])) {
             // jika cocok maka lanjut ke halaman index
             $_SESSION["login"] = true;
+
+            // cek jika berhasil masuk, diceklist dengan remmeber me -> cookie
+            if (isset($_POST['remember'])) {
+                // buat cookie
+
+                setcookie('id', $row['id'], time() + 60);
+                setcookie('key', hash('sha256', $row['username']), time() + 60);
+                // cara bacanya adalah, set cookie bernama key, dengan kode sha256 yang didapat dr row username
+            }
             // ngecek session untuk login nya
 
             header("location: index.php");
