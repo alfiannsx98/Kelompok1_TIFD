@@ -95,6 +95,9 @@ div#slider {
         overflow: hidden;
         padding-top: 0;
         margin-bottom: 9px;
+        width: 1250px;
+        height: 590px;
+        margin: auto;
 }
 div#slider figure img { 
         width: 20%; 
@@ -121,10 +124,10 @@ div#slider figure {
     font-weight: bold
 }
 .main {
-    width:1300px;
+    width:1250px;
     height: 200px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top:  10px;
     margin: auto;  
     background-color: white;
   }
@@ -153,7 +156,7 @@ div#slider figure {
     width: 60px;
     height: 60px;
     float: left;
-    margin-left: 73px;
+    margin-left: 68px;
     border-radius: 20px;
     padding: 4px;
     border: 1px solid rgb(11, 87, 64);
