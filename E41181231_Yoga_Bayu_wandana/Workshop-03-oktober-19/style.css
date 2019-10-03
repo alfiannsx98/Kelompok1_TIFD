@@ -1,0 +1,27 @@
+/* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+*/
+input[type=text]{
+    background-color: darkgrey;
+    color: white;
+}
+
+p{
+    color: green;
+}
+
+div p {
+    color: blueviolet;
+}
+
+#aku {
+    color: red;
+}
+
+div.p{
+    color: yellowgreen;
+}
+
+
