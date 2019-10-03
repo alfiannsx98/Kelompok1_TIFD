@@ -1,0 +1,46 @@
+h2 {
+    border: solid red;
+    margin: 4 4 4 4;
+}
+
+a:link {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: green;
+}
+
+h1 {
+    background: yellow;
+}
+
+input[type=text] {
+    background-color: gray;
+    color: white;
+}
+
+p {
+    color: green;
+}
+
+div p {
+    color: yellow;
+}
+
+#aku {
+    color: red;
+}
+
+div.p {
+
+    color: blue;
+}
