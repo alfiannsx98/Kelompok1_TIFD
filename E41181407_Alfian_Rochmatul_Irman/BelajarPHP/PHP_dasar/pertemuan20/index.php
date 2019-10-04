@@ -126,7 +126,8 @@ if (isset($_POST["cari"])) {
             <?php endforeach; ?>
         </table>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script1.js"></script>
 </body>
 
 </html>
