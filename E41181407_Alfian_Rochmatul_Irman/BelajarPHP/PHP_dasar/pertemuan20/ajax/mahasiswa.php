@@ -1,5 +1,6 @@
 <?php
 require '../functions.php';
+sleep(1);
 
 $keyword = $_GET["keyword"];
 
