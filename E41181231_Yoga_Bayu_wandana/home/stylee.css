@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: rgb(236, 236, 236);
+    background-color: #f1f1f1;
 }
 
 * {
@@ -10,7 +10,7 @@ html, body {
 
 @media only screen and (max-width:620px) {
     /* For mobile phones: */
-    .judul, .menu, .cari, .aside, .main, .right {
+    .judul, .menu, .navigasi, div#slider, .main, .login, .footer, .images, .image, .post {
       width:100%;
     }
 }
@@ -39,16 +39,14 @@ html, body {
 }
 
 .navigasi a:hover {
-    background-color: rgb(50, 255, 193);
-    text-decoration: underline;
-    font-size: 18px;
-    padding: 20px;
-    color: black;
+    color: rgb(1, 255, 213);
+    border-bottom: 3px solid orange;
 }
 
 .navigasi ul {
    text-align: center;
-    margin: 0;
+   margin: 0;
+    margin-left:370px;
     padding: 0;
     overflow: hidden;
 }
@@ -113,15 +111,29 @@ div#slider figure {
       animation: 20s slidy infinite; 
 }
 
-.pertanian {
+.login{
+    border: 2px solid red;
+    width: 100px;
+    float: right;
+    padding: 0;
+    margin: 0;
     text-align: center;
+    margin-right: 20px;
 }
+
+.daftar {
+    margin:0; 
+    padding: 0;
+    border: 2px solid green;
+}
+
 
 .login a{
     float: left;
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold
+    font-weight: bold;
+    margin:0; 
 }
 .main {
     width:1250px;
@@ -129,7 +141,6 @@ div#slider figure {
     padding: 10px;
     margin: auto;  
     background-color: white;
-    box-shadow: 0 1px 2px 0 rgb(36, 34, 34);
   }
 
 
@@ -152,6 +163,7 @@ div#slider figure {
     padding-bottom: 3px;
 }
 
+
 .image{
     width: 60px;
     height: 60px;
@@ -163,25 +175,13 @@ div#slider figure {
 }
 
 
-.image p {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(7, 7, 7);
-    margin-bottom: 0px;
-}
-
-
 .barang{
-    width: 1100px;
+    width: 1250px;
     height: 1000px;
     background-color: white;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 10px;
-    box-shadow: 0 4px 8px 0 rgb(36, 34, 34);
-    border-radius: 20px;
 }
 
 .barang h2{
@@ -193,48 +193,52 @@ div#slider figure {
     padding-bottom: 3px;
 }
 
+.box{
+    width: 120px;
+    text-align: left;
+    margin-top: 20px;
+    height: 205px;
+    float: left;
+    margin-right: 10px;
+}
+.box:hover{
+    border: 2px solid rgb(27, 155, 116);
+    box-shadow: 0 2px 2px 0 rgb(36, 34, 34);
+}
+
 .images{
-    width: 160px;
-    height: 250px;
-    margin-left: 3px;
-    box-shadow: 0 2px 4px 0 rgb(49, 47, 47);
-    margin-top: 30px;
-    float: left;
-    margin-right: 5px;
+    width: 100%;
+    
     
 }
 
-.keranjang {
-   margin: 0;
-    padding: 0px;
-    text-align: center;
-}
-
-.keranjang .img1{
-    float: left;
-    margin-left: 5px;
-}
-
-.keranjang .img2{
-    float: right;
-    margin-right: 5px;
-}
-
-.keranjang a img:hover{
-    width: 70px;
-    
-}
-.tulis {
+.deskripsi{
     margin: 0;
-    width: 160px;
+    width: 100%;
+}
+
+.deskripsi p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+}
+
+.deskripsi span p{
+    color:rgb(27, 155, 116);
+}
+
+.tulisan{
+    width: 100%;
     text-align: center;
-    color: darkgrey;
+    margin-bottom: 10px;
 }
 
 .tulisan p{
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(7, 7, 7);
 }
 
 .image:hover{

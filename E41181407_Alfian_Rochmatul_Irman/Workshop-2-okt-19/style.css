@@ -16,10 +16,9 @@ nav {
     float: right;
 }
 
-section {a
+section {
     background-color: red;
-    background-size:
-        width: 800px;
+    width: 800px;
     height: 500px;
     float: left;
 }
