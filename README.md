@@ -5,6 +5,10 @@ STUDI KASUS "PERTANIAN"
 
 MEMBUAT TOKO ONLINE BERBASIS PERTANIAN!
 
+<!-- source untuk cart/keranjang
+https://www.tutorialswb.com/2018/10/membuat-shopping-cart-simple.html
+ -->
+
 
 TETAP SEMANGAT!
 
