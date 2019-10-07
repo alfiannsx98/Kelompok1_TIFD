@@ -263,11 +263,14 @@ div#slider figure {
     margin: auto;
     background-color: green;
     width: 50;
+    
 }
+
 
 div.form{
     display: block;
-    text-align: center;   
+    text-align: center;  
+    margin-top: 50px; 
 }
 
 form{
