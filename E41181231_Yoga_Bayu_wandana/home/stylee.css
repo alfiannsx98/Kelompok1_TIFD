@@ -250,6 +250,49 @@ div#slider figure {
     width: 1250px;
     margin: auto;
 }
+
 .kotakdaftar img{
-    color: green;
+    margin: auto;
+    background-color: green;
+    width: 50;
+}
+
+div.form{
+    display: block;
+    text-align: center;   
+}
+
+form{
+    width: 30%;
+    border: 1px solid maroon;
+    background-color: green;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding : 10px;
+    color: white;
+    border-radius: 20px;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 4px 10px 10px 0;
+}
+
+.button{
+    width: 100%;
+    text-align: right;
+}
+
+h2{
+    text-align: center;
+}
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+article{
+    padding: 50px 0 50px 0;
+    background-image: url(d.jpg);
 }
