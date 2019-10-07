@@ -242,3 +242,10 @@ div#slider figure {
     height: 63px;
     box-shadow: 0 1px 3px 0 rgb(36, 34, 34);
 }
+.imgdaftar img{
+    width: 1250px;
+    margin: auto;
+}
+.kotakdaftar img{
+    color: green;
+}
