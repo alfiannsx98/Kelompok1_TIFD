@@ -179,12 +179,15 @@ div#slider figure {
 
 .box{
     width: 120px;
-
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
-    height: 195px;
+    height: 205px;
     float: left;
     margin-right: 10px;
+}
+.box:hover{
+    border: 2px solid rgb(27, 155, 116);
+    box-shadow: 0 2px 2px 0 rgb(36, 34, 34);
 }
 
 .images{
@@ -194,17 +197,20 @@ div#slider figure {
 }
 
 .deskripsi{
-
+    margin: 0;
     width: 100%;
 }
 
 .deskripsi p{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 15px;
-    color: darkgrey;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
 }
 
+.deskripsi span p{
+    color:rgb(27, 155, 116);
+}
 
 .tulisan{
     width: 100%;
