@@ -26,7 +26,7 @@ html, body {
     position: fixed;
     background-color: rgb(27, 155, 116);
     margin: 0;  
-    overflow: auto;
+    overflow: hidden;
     border-bottom: 9px solid rgb(47, 240, 208);
 
 }
@@ -40,7 +40,6 @@ html, body {
 
 .navigasi a:hover {
     color: rgb(1, 255, 213);
-    border-bottom: 3px solid orange;
 }
 
 .navigasi ul {
@@ -104,7 +103,7 @@ div#slider figure img {
 div#slider figure { 
       position: relative;
       width: 500%;
-      margin: 0;
+      margin: 0;   
       left: 0;
       text-align: left;
       font-size: 0;
@@ -112,7 +111,6 @@ div#slider figure {
 }
 
 .login{
-    border: 2px solid red;
     width: 100px;
     float: right;
     padding: 0;
@@ -121,10 +119,20 @@ div#slider figure {
     margin-right: 20px;
 }
 
+
 .daftar {
     margin:0; 
     padding: 0;
-    border: 2px solid green;
+    text-align: center;
+    float: right;
+}
+
+.daftar a {
+    float: left;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin:0; 
 }
 
 
