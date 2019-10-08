@@ -1,0 +1,292 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(236, 236, 236);
+}
+
+* {
+        box-sizing: border-box;
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .judul, .menu, .cari, .aside, .main, .right {
+      width:100%;
+    }
+}
+
+.navigasi {
+    display: fixed;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 1;
+    width: 100%;
+    height: 70px;
+    margin:0;
+    background-color: rgb(27, 155, 116);
+    overflow: auto;
+    border-bottom: 9px solid rgb(47, 240, 208);
+
+}
+
+.navigasi ul li {
+    display: inline-block;
+    padding: 20px;  
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold; 
+}
+
+.navigasi a:hover {
+    background-color: rgb(50, 255, 193);
+    text-decoration: underline;
+    font-size: 18px;
+    padding: 20px;
+    color: black;
+}
+
+.navigasi ul {
+   text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navigasi a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    
+}
+
+
+.menu {
+    width: 70%;
+    float: left;
+   
+}
+
+.judul{
+    width: 15%;
+    float: left;
+    color: white;
+    
+}
+
+.judul p {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes slidy {
+    25% { left: -0%; }
+    45% { left: -0%; }
+    50% { left: -100%; }
+    70% { left: -100%; }
+    75% { left: -200%; }
+    95% { left: -200%; }
+    100% { left: -200%; }
+    }
+
+div#slider { 
+        overflow: hidden;
+        padding-top: 0;
+        margin-bottom:4px;
+        width: 1250px;
+        height: 540px;
+        margin: auto;
+}
+div#slider figure img { 
+        width: 20%; 
+        float: left; 
+}
+div#slider figure { 
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 20s slidy infinite; 
+}
+
+.pertanian {
+    text-align: center;
+}
+
+.login a{
+    float: left;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold
+}
+.main {
+    width:1250px;
+    height: 200px;
+    padding: 10px;
+    margin: auto;  
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgb(36, 34, 34);
+  }
+
+
+
+.footer {
+  background-color:rgb(27, 155, 116);
+  text-align: center;
+  padding: 4px;
+  border-top: 9px solid rgb(47, 240, 208);
+}
+
+.footer p {
+    color: white;
+}
+
+.post h3{
+    font-family: Arial, Helvetica, sans-serif; 
+    border-bottom: 3px solid rgb(27, 155, 116);
+    padding-bottom: 3px;
+}
+
+.image{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 68px;
+    border-radius: 20px;
+    padding: 4px;
+    border: 1px solid rgb(11, 87, 64);
+}
+
+
+.image p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(7, 7, 7);
+    margin-bottom: 0px;
+}
+
+
+.barang{
+    width: 1100px;
+    height: 1000px;
+    background-color: white;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgb(36, 34, 34);
+    border-radius: 20px;
+}
+
+.barang h2{
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    border-bottom: 3px solid rgb(27, 155, 116);
+    padding-bottom: 3px;
+}
+
+.images{
+    width: 160px;
+    height: 250px;
+    margin-left: 3px;
+    box-shadow: 0 2px 4px 0 rgb(49, 47, 47);
+    margin-top: 30px;
+    float: left;
+    margin-right: 5px;
+    
+}
+
+.keranjang {
+   margin: 0;
+    padding: 0px;
+    text-align: center;
+}
+
+.keranjang .img1{
+    float: left;
+    margin-left: 5px;
+}
+
+.keranjang .img2{
+    float: right;
+    margin-right: 5px;
+}
+
+.keranjang a img:hover{
+    width: 70px;
+    
+}
+.tulis {
+    margin: 0;
+    width: 160px;
+    text-align: center;
+    color: darkgrey;
+}
+
+.tulisan p{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.image:hover{
+    width: 63px;
+    height: 63px;
+    box-shadow: 0 1px 3px 0 rgb(36, 34, 34);
+}
+
+.kotakdaftar img{
+    margin: auto;
+    background-color: green;
+    width: 50;
+    
+
+}
+
+div.form{
+    display: block;
+    text-align: center;
+
+    
+}
+form{
+    width: 30%;
+    border: 1px solid maroon;
+    background-color: green;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding : 10px;
+    color: white;
+    border-radius: 20px;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 4px 10px 10px 0;
+}
+
+.button{
+    width: 100%;
+    text-align: right;
+}
+
+h2{
+    text-align: center;
+}
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+article{
+    padding: 50px 0 50px 0;
+    background-image: url(d.jpg);
+}
