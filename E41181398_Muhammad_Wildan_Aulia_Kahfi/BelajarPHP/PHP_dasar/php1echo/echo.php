@@ -7,7 +7,7 @@
     <title>PHP</title>
 </head>
 <body>
-     Hello Zeyeng!
+     Hello Gays!
      
      <?php echo "Belajar PHP";
      
