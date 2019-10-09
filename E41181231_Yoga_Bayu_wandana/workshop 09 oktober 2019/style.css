@@ -1,0 +1,37 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color: rgb(179, 17, 17);
+    overflow: hidden;
+}
+
+#logo {
+    float: left;
+}
+#container {
+    float: left;
+}
+h1, h2 {
+    color: white;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+nav a{
+    color: white;
+}
+
+nav ul {
+    list-style:none;
+
+}
+
+nav li{
+    display: inline-block;
+    float: right;
+}
