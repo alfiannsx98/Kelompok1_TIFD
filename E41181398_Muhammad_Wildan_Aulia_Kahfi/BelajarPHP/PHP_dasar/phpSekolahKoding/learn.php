@@ -22,7 +22,7 @@
      echo "Hai ". $wil ."";
      echo " $_29";
      echo "<br>";
-     echo "Ceue";
+     echo "gays";
      echo "<br>";
 
      //tipe data string
