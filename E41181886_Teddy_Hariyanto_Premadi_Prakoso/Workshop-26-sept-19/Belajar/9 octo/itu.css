@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+body{
+    font-family:  'Slabo 27px', serif ;
+}
+header{
+    background-color: maroon;
+    overflow: hidden;
+    clear: both;
+}
+a{
+    /* text decoration adalah menghilangkan underline*/
+    text-decoration: none;
+}
+#logo{
+    float: left;
+    margin-left: 20px; 
+}
+#container{
+    float: left;
+
+}
+
+header h1, header h2{
+    color: white;
+}
+nav a{
+    color: white;
+    font-size: 18px;
+}
+nav ul{
+    list-style: none;
+    /* float adalah mengambang (gak jelas anjir)
+        berpasangan dengan clear untuk menetlalisir efek float
+    */
+}
+nav li{
+    /* display untuk ...
+        inline untuk meluruskan secara horizontal elmen sebelumnya
+        inline-block sejajar tapi dalam bentuk box
+    */
+    display: inline-block;
+    padding: 20px;
+}   
+nav{
+    margin-right: 20px;
+    float: right;
+}
