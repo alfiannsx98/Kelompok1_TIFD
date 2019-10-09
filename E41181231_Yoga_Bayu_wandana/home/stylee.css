@@ -152,6 +152,10 @@ div#slider figure {
     background-color: white;
   }
 
+  /* #container{
+      border: 2px solid blue;
+  } */
+
 
 
 .footer {
@@ -166,10 +170,17 @@ div#slider figure {
     color: white;
 }
 
+#container ul {
+    list-style: none;
+}
 .post h3{
     font-family: Arial, Helvetica, sans-serif; 
     border-bottom: 3px solid rgb(27, 155, 116);
     padding-bottom: 3px;
+}
+.post{
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -177,10 +188,14 @@ div#slider figure {
     width: 60px;
     height: 60px;
     float: left;
-    margin-left: 68px;
+    margin-left: 60px;
     border-radius: 20px;
     padding: 4px;
     border: 1px solid rgb(11, 87, 64);
+}
+
+.image p{
+    text-align: center;
 }
 
 
@@ -235,19 +250,6 @@ div#slider figure {
 
 .deskripsi span p{
     color:rgb(27, 155, 116);
-}
-
-.tulisan{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.tulisan p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(7, 7, 7);
 }
 
 .image:hover{
