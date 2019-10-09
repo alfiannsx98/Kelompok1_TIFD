@@ -4,24 +4,28 @@ body{
 }
 header{
     background-color: maroon;
+    overflow: hidden;
+    clear: both;
 }
 a{
     /* text decoration adalah menghilangkan underline*/
     text-decoration: none;
 }
 #logo{
-    float: clear; 
+    float: left;
+    margin-left: 20px; 
 }
 #container{
     float: left;
 
 }
 
-h1, h2{
+header h1, header h2{
     color: white;
 }
 nav a{
     color: white;
+    font-size: 18px;
 }
 nav ul{
     list-style: none;
@@ -35,4 +39,9 @@ nav li{
         inline-block sejajar tapi dalam bentuk box
     */
     display: inline-block;
+    padding: 20px;
 }   
+nav{
+    margin-right: 20px;
+    float: right;
+}
