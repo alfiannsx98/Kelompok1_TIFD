@@ -89,25 +89,25 @@ html, body {
     }
 
 div#slider { 
-        overflow: hidden;
-        padding-top: 0;
-        margin-bottom:4px;
-        width: 1250px;
-        height: 540px;
-        margin: auto;
+    overflow: hidden;
+    padding-top: 0;
+    margin-bottom:4px;
+    width: 1250px;
+    height: 540px;
+    margin: auto;
 }
 div#slider figure img { 
-        width: 20%; 
-        float: left; 
+    width: 20%; 
+    float: left; 
 }
 div#slider figure { 
-      position: relative;
-      width: 500%;
-      margin: 0;   
-      left: 0;
-      text-align: left;
-      font-size: 0;
-      animation: 20s slidy infinite; 
+    position: relative;
+    width: 500%;
+    margin: 0;   
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 20s slidy infinite; 
 }
 
 .login{
@@ -202,7 +202,7 @@ div#slider figure {
 }
 
 .box{
-    width: 120px;
+    width: 240px;
     text-align: left;
     margin-top: 20px;
     height: 205px;
@@ -306,4 +306,11 @@ h2{
 article{
     padding: 50px 0 50px 0;
     background-image: url(d.jpg);
+}
+
+.about .container-tentang .tentang>h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    
 }
