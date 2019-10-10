@@ -1,6 +1,6 @@
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,9 +8,9 @@ body {
     font-weight: bold;
 }
 
-nav li {
-    display: inline-block;
-    /* float: left; */
+header {
+    background-color: rgb(179, 17, 17);
+    overflow: hidden;
 }
 
 #logo {
@@ -18,41 +18,36 @@ nav li {
 }
 
 nav ul {
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-    margin-right: 20px;
-    padding: 20px;
-    list-style: none;
+    list-style:none;
     float: right;
-    /* border: 1px solid white; */
+    padding: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
-header {
-    overflow: hidden;
-    background-color: #D1230C;
+nav li{
+    display: inline-block;
 }
 
-header a {
+header a{
     text-decoration: none;
-    color: #fff;
+    color: white;
     padding: 20px;
 }
 
 .container {
-    text-align: center;
     padding: 20px;
-    /* border: 2px solid #D12323; */
+    text-align: center;
     overflow: hidden;
 }
 
-.container ul p {
+.container ul p{
     margin: 20px;
     padding: 20px;
-    /* border: 2px solid blue; */
     font-size: 12px;
 }
 
-.container img {
+.container img{
     width: 300px;
     position: relative;
 }
@@ -61,9 +56,6 @@ header a {
     width: 300px;
     padding: 20px;
     margin: 20px;
-    /* border: 1px solid #D1230C; */
-    /* float: left;
-    text-align: center; */
     display: inline-block;
     overflow: hidden;
 }
@@ -77,9 +69,11 @@ footer {
 }
 
 .social li {
-    display: inline-block;
+    display:inline-block;
 }
 
-.social img {
+.social img{
     width: 50px;
 }
+
+
