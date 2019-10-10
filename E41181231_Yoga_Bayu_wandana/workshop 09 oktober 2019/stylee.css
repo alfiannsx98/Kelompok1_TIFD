@@ -9,8 +9,9 @@ body {
 }
 
 header {
-    background-color: rgb(179, 17, 17);
+    background-color: rgb(223, 18, 18);
     overflow: hidden;
+    border-bottom: 6px solid rgb(141, 14, 14);
 }
 
 #logo {
