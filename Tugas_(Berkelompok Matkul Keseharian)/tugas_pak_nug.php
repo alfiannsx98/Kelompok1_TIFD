@@ -1,6 +1,8 @@
 <?php
 $bilanganU = $_POST["inputN"];
 
+// "$" penamaan variabel , $_POST = function di php untuk post data
+
 for ($i = 0; $i < $bilanganU; $i++) {
     $n = 100 + $i * 10;
     $blnKe = $i + 7;
