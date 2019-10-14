@@ -77,8 +77,17 @@ footer {
     width: 50px;
 }
 
-h3 About, p About{
+img {
+   float: left; 
+   
+}
+About h3, About p{
     display: inline-block;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
     
 }
-
