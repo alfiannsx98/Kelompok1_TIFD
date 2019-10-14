@@ -90,7 +90,8 @@ if (isset($_POST["cari"])) {
 
 <body>
     <h1>Daftar Mahasiswa</h1>
-    <a href="logout.php" class="logout">Logout</a>
+    <a href="logout.php" class="logout">Logout</a> |
+    <a href="cetak.php" target="_blank">Cetak</a>
     <br><br>
     <form action="" method="post" class="form-cari">
         <input type="text" name="keyword" id="keyword" autofocus placeholder="Masukkan Data.." autocomplete="off">
