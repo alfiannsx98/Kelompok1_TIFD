@@ -47,6 +47,7 @@ header a{
     padding: 20px;
     text-align: center;
     overflow: hidden;
+    color:grey;
 }
 
 #container ul p{
@@ -70,6 +71,7 @@ header a{
 
 footer {
     text-align: center;
+    color:grey;
 }
 
 .social {

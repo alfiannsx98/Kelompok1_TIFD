@@ -68,18 +68,19 @@ header a{
     overflow: hidden;
 }
 
-#contact>section>ul>li{
+/*.contact>section>ul>li{
     padding: 20px 0 0 0;
     display: inline-block;
-}
-#contact section{
+}*/
+/*.contact section{
     width: 80%;
     margin: 0 auto;
     height: auto;
     color:grey;
-}
+    border: 3px solid red;
+}*/
 
-#contact>section>ul>li>img{
+/*.contact>section>ul>li>img{
     float: left;
     margin: 1rem;
     max-width: 2rem;
@@ -87,6 +88,52 @@ header a{
     padding: 2px;
     border-right: 3rem;
     
+}*/
+
+.container-contact {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color:grey;
+}
+
+#contact {
+    list-style: none;
+}
+
+.content{
+    margin: 90px 30px;  
+    width: 600px; 
+    margin-left: 90px ;
+}
+
+.contact{
+    margin: 90px 30px; 
+    width: 600px; 
+    border-left:2px solid darkgray;
+}
+
+h2, img,h3 {
+    margin-left: 15px;
+}
+
+img{
+    float: left;
+
+}
+
+
+h3{
+    font-size: 14px;
+}
+
+.icon ul li{
+    list-style: none;
+}
+
+.contact img{
+    width: 20px;
+    padding-top: 10px;
 }
 
 
@@ -117,6 +164,7 @@ footer {
     width: 80%;
     margin: 0 auto;
     height: auto;
+    color:grey;
 }
 
 #About>section>ul>li>img{
