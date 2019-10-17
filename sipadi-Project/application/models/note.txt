@@ -1,0 +1,1 @@
+di models ini adalah tempat untuk menyimpan model yang nantinya dapat digunakan didalam php.
