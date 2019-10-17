@@ -45,7 +45,8 @@ class Game extends Produk
 {
     public function getInfoGame()
     {
-        $str = "Game : {$this->getInfoProduk()} - {$this->waktuMain} ~ Jam.";
+        $str = "Game : " . parent::getInfoProduk() . " - {$this->waktuMain} ~ Jam.";
+        // :: adalah method statik didalam PHP
         return $str;
     }
 }
