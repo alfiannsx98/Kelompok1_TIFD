@@ -16,6 +16,10 @@ html, body {
     }
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .navigasi {
     display: fixed;
     align-items: center;
@@ -29,7 +33,9 @@ html, body {
     margin: 0;  
     overflow: hidden;
     border-bottom: 9px solid rgb(47, 240, 208);
-
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .navigasi ul li {
@@ -96,7 +102,10 @@ div#slider {
         width: 1250px;
         height: 540px;
         margin: auto;
+        margin-top: 75px;
+    
 }
+
 div#slider figure img { 
         width: 20%; 
         float: left; 
@@ -164,12 +173,52 @@ div#slider figure {
   padding: 4px;
   margin-top: 7px;
   border-top: 9px solid rgb(47, 240, 208);
+  height: 500px;
 }
-
-.footer p {
+.footer-bawah p {
+    margin-top: 5px;
     color: white;
 }
+.row{
+    height: 330px;
+    display: flex;
+}
 
+
+.kotak-footer{
+    width: 270px;
+    text-align: left;
+    color: white;
+    margin: 25px;
+}
+.kotak-footer h4 {
+    margin-left: 40px;
+}
+
+.kotak-footer ul li{
+    list-style: none;
+    
+    
+}
+
+.kotak-footer a{
+    text-decoration: none;
+    color: rgb(224, 224, 224);   
+}
+.kotak-footer p{
+    color: rgb(224, 224, 224);
+}
+
+.image-footer img{
+    width: 20px;
+    margin-left: 10px;
+}
+.icon-footer{
+    margin-top: 80px;
+}
+.icon-footer img {
+    width: 50px;
+}
 #container ul {
     list-style: none;
 }
@@ -192,6 +241,7 @@ div#slider figure {
     border-radius: 20px;
     padding: 4px;
     border: 1px solid rgb(11, 87, 64);
+    text-align: center;
 }
 
 .image p{
@@ -226,8 +276,7 @@ div#slider figure {
     margin-right: 10px;
 }
 .box:hover{
-    border: 2px solid rgb(27, 155, 116);
-    box-shadow: 0 2px 2px 0 rgb(36, 34, 34);
+    width: 125px;
 }
 
 .images{
