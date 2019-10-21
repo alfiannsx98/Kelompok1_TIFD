@@ -90,7 +90,7 @@ if (isset($_POST["login"])) {
                                         <a class="small" href="#">Lupa Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="#">Belum punya akun? Daftar sini!</a>
+                                        <a class="small" href="register.php">Belum punya akun? Daftar sini!</a>
                                     </div>
                                 </div>
                             </div>
