@@ -1,6 +1,6 @@
 <?php
 
-$koneksi = mysqli_connect("localhost", "root", "", "dbsipadifinal");
+$koneksi = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 
 function query($query)
 {
@@ -11,4 +11,12 @@ function query($query)
         $rows[] = $row;
     }
     return $rows;
+}
+function tambah($data)
+{
+    global $koneksi;
+    $nik = htmlspecialchars($data["nik"]);
+    $email_admin = htmlspecialchars($data["email_admin"]);
+    $gambar_admin = htmlspecialchars($data["gambar_admin"]);
+    $
 }
