@@ -1061,7 +1061,7 @@ section
 .product_name
 {
 	margin-top: 27px;
-	background-color: rgb(3, 127, 228);
+	background-color: rgb(3, 199, 189);
 	width: 50%;
 	margin: auto;
 	padding: 10px;
@@ -1080,9 +1080,9 @@ section
 	color: #1e1e27;
 	line-height: 20px;
 }
-.product_name:hover a
-{
-	color: #b5aec4;
+
+.product_name:hover{
+	background: #0095da;
 }
 .discount .product_info .product_price
 {
