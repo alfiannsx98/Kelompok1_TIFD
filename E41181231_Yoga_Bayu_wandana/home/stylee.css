@@ -29,11 +29,11 @@ html{
         z-index: 5;
         width: 100%;
         height: 70px;
-        position: sticky;
-        background-color: rgb(27, 155, 116);
+        position: fixed;
+        background:rgba(20, 146, 115, 0.6);
         margin: 0;  
         overflow: hidden;
-        border-bottom: 9px solid rgb(47, 240, 208);
+        border-bottom: 2px solid rgb(47, 240, 208);
         top: 0;
         left: 0;
         right: 0;
@@ -95,11 +95,11 @@ html{
         flex-wrap: wrap;
         z-index: 5;
         width: 100%;
-        position: sticky;
+        position: fixed;
         background-color: rgb(27, 155, 116);
         margin: 0;  
         overflow: hidden;
-        border-bottom: 9px solid rgb(47, 240, 208);
+        border-bottom: 2px solid rgb(47, 240, 208);
         top: 0;
         left: 0;
         right: 0;
@@ -161,11 +161,11 @@ html{
         flex-wrap: wrap;
         z-index: 5;
         width: 100%;
-        position: sticky;
+        position: fixed;
         background-color: rgb(27, 155, 116);
         margin: 0;  
         overflow: hidden;
-        border-bottom: 9px solid rgb(47, 240, 208);
+        border-bottom: 2px solid rgb(47, 240, 208);
         top: 0;
         left: 0;
         right: 0;
@@ -232,10 +232,10 @@ div#slider {
         overflow: hidden;
         padding-top: 0;
         margin-bottom:4px;
-        width: 1250px;
+        width: 100%;
         height: 540px;
         margin: auto;
-        margin-top: 1px;
+        margin-top: 0px;
     
 }
 
@@ -255,12 +255,16 @@ div#slider figure {
 
 /*responsive main*/
 @media (min-width:916px){
+    #post{
+        padding: 65px 0px 0px;
+    }
     .main {
-        width:1250px;
+        width:100%;
         height: 200px;
         padding: 10px;
         margin: auto;  
         background-color: white;
+        overflow: hidden;
       }
 
       .post h3{
@@ -277,7 +281,7 @@ div#slider figure {
         width: 60px;
         height: 60px;
         float: left;
-        margin-left: 60px;
+        margin-left: 70px;
         border-radius: 20px;
         padding: 4px;
         border: 1px solid rgb(11, 87, 64);
