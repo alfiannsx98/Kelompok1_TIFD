@@ -841,7 +841,7 @@ section
 	margin-bottom: 29px;
 	color: white;
 }
-.main_slider_content h1
+.main_slider_content h2
 {
 	font-weight: 400;
 	line-height: 1;
@@ -968,7 +968,7 @@ section
 .grid_sorting_button
 {
 	height: 40px;
-	min-width: 102px;
+	min-width: 20px;
 	padding-left: 25px;
 	padding-right: 25px;
 	cursor: pointer;
