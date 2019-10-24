@@ -1,5 +1,14 @@
 <?php
 require '../../controllers/login/functions-login.php';
+
+if (isset($_POST["register"])) {
+    if (register($_POST) > 0) {
+        echo "<script>alert('user baru berhasil ditambahkan');</script>";
+    } else {
+        echo mysqli_error($koneksi);
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,18 +42,29 @@ require '../../controllers/login/functions-login.php';
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Masukkan NIK">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukkan nama anda">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan alamat email anda">
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="gambar_admin" name="gambar_admin" placeholder="Masukkan Gambar Admin">
+                                    <div class="input-group col-sm-12 mb-3 mb-sm-0">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="gambar_admin">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin" aria-describedby="gambar_admin">
+                                            <label class="custom-file-label" for="gambar_admin">Pilih Gambar</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -52,9 +72,19 @@ require '../../controllers/login/functions-login.php';
                                         <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukkan password anda">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user" id="password_admin1" name="password_admin1" placeholder="masukkan password anda yang kedua">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" disabled>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-user btn-block" name="register" type="submit">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
                             </form>
                             <div class="text-center">
