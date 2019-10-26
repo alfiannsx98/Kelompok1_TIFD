@@ -42,7 +42,7 @@ if (isset($_POST["register"])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
                             </div>
-                            <form class="user" method="post">
+                            <form class="user" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Masukkan NIK">
@@ -63,7 +63,7 @@ if (isset($_POST["register"])) {
                                         </div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin" aria-describedby="gambar_admin">
-                                            <label class="custom-file-label" for="gambar_admin">Pilih Gambar</label>
+                                            <label class="custom-file-label">Pilih Gambar</label>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,12 @@ if (isset($_POST["register"])) {
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" disabled>
+                                        <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" value="<?php echo time(); ?>" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="level" name="level" value="2" readonly>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block" name="register" type="submit">
@@ -91,7 +96,7 @@ if (isset($_POST["register"])) {
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="index.php">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

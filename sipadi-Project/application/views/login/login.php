@@ -1,17 +1,16 @@
 <?php
 require '../../../application/controllers/login/functions-login.php';
-session_start();
 
-if (isset($_COOKIE['ID_ADMIN']) && isset($_COOKIE['key'])) {
-    $id = $_COOKIE['ID_ADMIN'];
+if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
+    $nik = $_COOKIE['nik'];
     $key = $_COOKIE['key'];
 
-    // Ambil username berdasarkan id nya
-    $result = mysqli_query($koneksi, "SELECT EMAIL_ADMIN FROM admin WHERE ID_ADMIN=$id");
+    // Ambil username berdasarkan nik nya
+    $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE nik=$nik");
     $row = mysqli_fetch_assoc($result);
 
     // cek cookie dan username
-    if ($key === hash('sha256', $row['EMAIL_ADMIN'])) {
+    if ($key === hash('sha256', $row['email_admin'])) {
         $_SESSION['login'] = true;
     }
 }
@@ -22,14 +21,14 @@ if (isset($_SESSION["login"])) {
 }
 
 if (isset($_POST["login"])) {
-    $email = $_POST["EMAIL_ADMIN"];
-    $password = $_POST["PASSWORD_ADMIN"];
+    $email = $_POST["email_admin"];
+    $password = $_POST["password_admin"];
 
-    $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE EMAIL_ADMIN = '$email'");
+    $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row["PASSWORD_ADMIN"])) {
+        if (password_verify($password, $row["password_admin"])) {
             $_SESSION["login"] = true;
             header("location: index.php");
             exit;
@@ -76,10 +75,10 @@ if (isset($_POST["login"])) {
                                     </div>
                                     <form action="" method="post" class="user">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="EMAIL_ADMIN" name="EMAIL_ADMIN" placeholder="Masukkan Email Anda" value="">
+                                            <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="PASSWORD_ADMIN" name="PASSWORD_ADMIN" placeholder="masukkan Password" value="">
+                                            <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
                                         </div>
                                         <hr>
                                         <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>

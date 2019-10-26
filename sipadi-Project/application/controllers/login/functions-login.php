@@ -21,7 +21,7 @@ function register($data)
     $email_admin = htmlspecialchars($data["email_admin"]);
     $password_admin = mysqli_real_escape_string($koneksi, $data["password_admin"]);
     $password_admin1 = mysqli_real_escape_string($koneksi, $data["password_admin1"]);
-    $admin_created = htmlspecialchars($data["admin_created"]);
+    $admin_created = htmlspecialchars($data['admin_created']);
     $level = htmlspecialchars($data["level"]);
 
     $gambar_admin = upload();
