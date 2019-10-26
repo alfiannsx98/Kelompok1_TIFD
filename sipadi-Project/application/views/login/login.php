@@ -1,5 +1,6 @@
 <?php
 require '../../../application/controllers/login/functions-login.php';
+session_start();
 
 if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
     $nik = $_COOKIE['nik'];
@@ -16,7 +17,7 @@ if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
 }
 
 if (isset($_SESSION["login"])) {
-    header("Location: index.php");
+    header("Location: ../operator");
     exit;
 }
 
@@ -30,7 +31,13 @@ if (isset($_POST["login"])) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password_admin"])) {
             $_SESSION["login"] = true;
-            header("location: index.php");
+
+            if (isset($_POST['remember'])) {
+                setcookie('nik', $row['nik'], time() + 60);
+                setcookie('key', hash('sha256', $row['email_admin']), time() + 60);
+            }
+
+            header("location: ../operator");
             exit;
         }
     }
