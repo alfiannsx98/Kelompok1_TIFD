@@ -89,6 +89,29 @@ header a{
     border-right: 3rem;
     
 }*/
+/*.countainer-about{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color:grey; 
+}
+#about{
+    list-style: none;
+}
+.focus{
+    margin: 90px 30px;  
+    width: 1000px; 
+    margin-left: 90px ;
+    border-left:grey;
+}
+.about{
+    margin: 30px 10px; 
+    width: 300px; 
+    
+}*/
+.container-contact img{
+    width:100px;
+}
 
 .container-contact {
     margin: 0;
@@ -141,7 +164,7 @@ footer {
     text-align: center;
     bottom: 0%;
     width: 100%;
-    padding: 40px 0 25px 0;
+    padding: 4px 0 10px 0;
     position: absolute;
 }
 
@@ -157,38 +180,38 @@ footer {
     width: 50px;
 }
 
-#About>section>ul>li{
-    padding: 20px 0 0 0;
-}
-#About section{
-    width: 80%;
-    margin: 0 auto;
-    height: auto;
-    color:grey;
+.container-about{
+    overflow: hidden;
+    display: flex;
+    padding: 90px 40px;
 }
 
-#About>section>ul>li>img{
-    float: left;
-    margin: 2rem;
-    max-width: 12rem;
-    height: auto;
-    padding: 0 30px 0 0;
-    border-right: 3rem;
+.about  {
+    margin-left: 130px;
+    
+
 }
 
-.About ul{
+.about ul li {
     list-style: none;
 }
-.About li{
-    margin: 0rem 6rem;
-}
-section li h3, p{
-    margin: 1rem 0 0;
-}
-header::after{
-    content: "";
-    clear: both;
-    display: block;
+
+.deskripsi{
+    width: 700px;
+    border-left: 2px solid darkgray;
+    margin-left: 40px;
+    color: darkgray;
+    padding-top: 20px;
 }
 
+h2,h3{
+    margin-left: 30px;
+}
 
+h3{
+    margin-top: 10px;
+}
+
+img{
+    width: 140px;
+}

@@ -57,16 +57,23 @@ header a{
 }
 
 #container img{
-    width: 300px;
+    width: 100px;
     position: relative;
+    
 }
 
 #container ul li {
     width: 300px;
-    padding: 20px;
-    margin: 20px;
+    padding: 2px;
+    margin: 2px;
     display: inline-block;
     overflow: hidden;
+}
+#container section h1{
+    font-size:230%;
+}
+#container ul li p{
+    font-size: 85%;
 }
 
 footer {
