@@ -45,7 +45,8 @@ header a{
 .container ul p{
     margin: 20px;
     padding: 20px;
-    font-size: 12px;
+    font-size: 14px;
+    color: darkgrey;
 }
 
 .container img{
@@ -76,5 +77,6 @@ footer {
 .social img{
     width: 50px;
 }
+
 
 

@@ -3,16 +3,18 @@
     padding: 0;
 }
 
+
 body {
-    font-family: sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 
 header {
     background-color: rgb(223, 18, 18);
     overflow: hidden;
-    border-bottom: 6px solid rgb(141, 14, 14);
+    border-bottom: 5px solid rgb(141, 14, 14);
 }
+
 
 #logo {
     float: left;
@@ -21,13 +23,19 @@ header {
 nav ul {
     list-style: none;
     float: right;
-    padding: 20px;
-    margin-right: 20px;
+    padding: 15px;
+    margin-right: 10px;
     margin-top: 20px;
+    font-size: 20px;
 }
 
 nav li {
     display: inline-block;
+}
+
+header h1,
+h4 {
+    margin-left: 30px;
 }
 
 header a {
@@ -36,24 +44,24 @@ header a {
     padding: 20px;
 }
 
-.container {
+#container {
     padding: 20px;
     text-align: center;
     overflow: hidden;
 }
 
-.container ul p {
+#container ul p {
     margin: 20px;
     padding: 20px;
     font-size: 12px;
 }
 
-.container img {
+#container img {
     width: 300px;
     position: relative;
 }
 
-.container ul li {
+#container ul li {
     width: 300px;
     padding: 20px;
     margin: 20px;
@@ -61,18 +69,111 @@ header a {
     overflow: hidden;
 }
 
-footer {
-    text-align: center;
+.container-contact {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: grey;
 }
 
-.page {
+#contact {
+    list-style: none;
+}
+
+.content {
+    margin: 90px 30px;
+    width: 1000px;
+    margin-left: 90px;
+}
+
+.contact {
+    margin: 90px 30px;
+    width: 600px;
+    border-left: 2px solid darkgray;
+}
+
+h2,
+img,
+h3 {
+    margin-left: 15px;
+}
+
+img {
+    float: left;
+
+}
+
+
+h3 {
+    font-size: 14px;
+}
+
+.icon ul li {
+    list-style: none;
+}
+
+.contact img {
+    width: 20px;
+    padding-top: 10px;
+}
+
+
+footer {
+    text-align: center;
+    bottom: 0%;
+    width: 100%;
+    padding: 40px 0 25px 0;
+    position: absolute;
+}
+
+.social {
     padding: 20px;
 }
 
-.page li {
+.social li {
     display: inline-block;
 }
 
-.page img {
+.social img {
     width: 50px;
+}
+
+#About>section>ul>li {
+    padding: 20px 0 0 0;
+}
+
+#About section {
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    color: grey;
+}
+
+#About>section>ul>li>img {
+    float: left;
+    margin: 2rem;
+    max-width: 12rem;
+    height: auto;
+    padding: 0 30px 0 0;
+    border-right: 3rem;
+}
+
+.About ul {
+    list-style: none;
+}
+
+.About li {
+    margin: 0rem 6rem;
+}
+
+section li h3,
+p {
+    margin: 1rem 0 0;
+    transition: 0.6s ease;
+}
+
+header::after {
+    content: "";
+    clear: both;
+    display: block;
 }
