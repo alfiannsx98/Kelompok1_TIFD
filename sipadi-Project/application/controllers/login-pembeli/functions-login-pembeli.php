@@ -11,7 +11,7 @@ function query($query)
     }
     return $rows;
 }
-function registeR($data)
+function register($data)
 {
     global $koneksi;
 
@@ -58,6 +58,53 @@ function upload_gmbr_pembeli()
     $tmpName = $_FILES['gambar_pembeli']['tmp_name'];
 
     if ($error === 4) {
-        echo "Error";
+        echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
+        return false;
     }
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>alert('Bukan gambar yang telah anda upload');</script>";
+    }
+    if ($ukuranFile > 200000) {
+        echo "<script>alert('Ukuran gambar yang anda upload terlalu besar!');</script>";
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, '../../views/login-pembeli/' . $namaFileBaru);
+
+    return $namaFileBaru;
+}
+function upload_gmbr_nik()
+{
+    $namaFile = $_FILES['gambar_nik_pembeli']['name'];
+    $ukuranFile = $_FILES['gambar_nik_pembeli']['size'];
+    $error = $_FILES['gambar_nik_pembeli']['error'];
+    $tmpName = $_FILES['gambar_nik_pembeli']['tmp_name'];
+
+    if ($error === 4) {
+        echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
+        return false;
+    }
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>alert('Bukan gambar yang telah anda upload');</script>";
+    }
+    if ($ukuranFile > 2000000) {
+        echo "<script>alert('Ukuran gambar yang anda upload terlalu besar');</script>";
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, '../../views/login-pembeli/' . $namaFileBaru);
+
+    return $namaFileBaru;
 }
