@@ -50,7 +50,7 @@ if (isset($_POST["register"])) {
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan nama anda">
+                                        <input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan nama anda" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

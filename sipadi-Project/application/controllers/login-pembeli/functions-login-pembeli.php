@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "dbsipadifinal1");
+$koneksi = mysqli_connect("localhost", "root", '', "dbsipadifinal1");
 
 function query($query)
 {
