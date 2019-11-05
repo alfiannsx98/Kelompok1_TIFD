@@ -1,5 +1,5 @@
 <?php
-require '../../controllers/login/functions-login.php';
+require '../../controllers/login-pembeli/functions-login-pembeli.php';
 
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
@@ -45,46 +45,64 @@ if (isset($_POST["register"])) {
                             <form class="user" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Masukkan NIK">
+                                        <input type="text" class="form-control form-control-user" id="nama_pembeli" name="nama_pembeli" placeholder="Masukkan nama Pembeli">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukkan nama anda">
+                                        <input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan email anda" required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan alamat email anda">
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user" id="password_pembeli" name="password_pembeli" placeholder="Masukkan password anda">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user" id="password_pembeli1" name="password_pembeli1" placeholder="Masukkan password anda yang kedua">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="number" class="form-control form-control-user" id="nomor_hp" name="nomor_hp" placeholder="Masukkan Nomor Hp Anda">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="input-group col-sm-12 mb-3 mb-sm-0">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="gambar_admin">Upload</span>
+                                            <span class="input-group-text" id="gambar_pembeli">Upload</span>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin" aria-describedby="gambar_admin">
-                                            <label class="custom-file-label">Pilih Gambar</label>
+                                            <input type="file" class="custom-file-input" id="gambar_pembeli" name="gambar_pembeli" aria-describedby="gambar_pembeli">
+                                            <label class="custom-file-label">Pilih Gambar Profil Anda</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukkan password anda">
+                                        <input type="text" class="form-control form-control-user" id="nik_pembeli" name="nik_pembeli" placeholder="Masukkan NIK anda">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col-sm-12 mb-3 mb-sm-0">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="gambar_nik_pembeli">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="gambar_nik_pembeli" name="gambar_nik_pembeli" aria-describedby="gambar_nik_pembeli">
+                                            <label class="custom-file-label">Pilih Gambar NIK anda</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="password_admin1" name="password_admin1" placeholder="masukkan password anda yang kedua">
+                                        <input type="text" class="form-control form-control-user" id="user_created" name="user_created" value="<?php echo time(); ?>" hidden readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" value="<?php echo time(); ?>" hidden readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="level" name="level" value="2" hidden readonly>
+                                        <input type="text" class="form-control form-control-user" id="is_active" name="is_active" value="0" hidden readonly>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block" name="register" type="submit">
