@@ -1,0 +1,28 @@
+.container{
+    width: 30%;
+    margin-top: 9%;
+    padding: 40px;
+    font-family: sans-serif;
+	background: #005c99;
+}
+
+h4{
+	color: white;
+	font-weight: bold; 	
+}
+label{
+	color: white;
+	font-weight: bold;
+}
+
+button{
+    width: 49%;
+}
+
+.text-center span {
+    color: white;
+}
+.text-center a{
+    color: orange;
+    text-decoration: underline;
+}
