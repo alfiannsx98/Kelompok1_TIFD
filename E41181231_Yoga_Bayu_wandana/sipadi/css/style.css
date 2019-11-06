@@ -1,0 +1,479 @@
+@font-face {
+  font-family: 'montserratsemibold';
+  src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'montserratbold';
+  src: url('../fonts/montserrat-bold-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'montserratlight';
+  src: url('../fonts/montserrat-light-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'montserratmedium';
+  src: url('../fonts/montserrat-medium-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ============= CSS RESET INI GUUYSSS ============== */
+
+* {
+  margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1;
+  font-family: 'montserratmedium', Verdana, sans-serif;
+  background: #fff;
+}
+
+ol, ul {
+list-style: none;
+}
+
+blockquote, q {
+quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* ================= BATAS CSS RESET ================ */
+
+#info{
+  box-sizing: border-box;
+  padding: 7px;
+  text-align: right;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  position: relative;
+}
+
+#info img{
+  width: 20px;
+}
+
+#info p{
+
+}
+
+header{
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(37, 37, 37, 0);
+  padding: 0px 15px;
+  overflow: hidden;
+  clear: both;
+  text-transform: uppercase;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  background-color: rgba(37, 37, 37, 1);
+  width: 100%;
+  padding: 0px 15px;
+  box-shadow: 0 5px 10px black;
+  z-index: 9;
+}
+
+@media (min-width: 1098px) {
+
+}
+
+  header h1{
+      color: white;
+      font-size: 24px;
+      margin-top: 17px;
+      color: #F69322;
+  }
+
+  header h2{
+      font-size: 20px;
+      letter-spacing: 4px;
+      color: white;
+      font-weight: normal;
+      color: #25A8E0;
+  }
+
+  #logo{
+      float: left;
+      margin-left: 25px;
+      font-family: 'montserratbold', Verdana, sans-serif;
+  }
+
+  nav a{
+      color: white;
+      font-size: 14px;
+  }
+
+  nav ul{
+      list-style: none;
+      display: inline-block;
+  }
+
+  nav li{
+      display: inline-block;
+      padding: 20px 10px 20px 10px;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      font-family: 'montserratlight', Verdana, sans-serif;
+  }
+
+  nav li:hover{
+      display: inline-block;
+      padding: 20px 20px 20px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  nav{
+      margin-right: 20px;
+      float: right;
+  }
+
+  .akunmasuk{
+      margin-left: 20px;
+  }
+
+  .akunmasuk li{
+      font-family: 'montserratsemibold', Verdana, sans-serif;
+  }
+
+  /* ================ CARA KERJA ============== */
+
+  #carakerja{
+      text-align: center;
+      padding: 50px 0 50px 0;
+      background-color: #25A8E0;
+      box-sizing: border-box;
+  }
+
+  #carakerja div{
+      width: 31%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 6px;
+      display: inline-block;
+  }
+
+  #carakerja h2{
+      font-size: 40px;
+      margin: 0px auto 25px;
+      color: white;
+      font-family: 'montserratbold', Verdana, sans-serif;
+  }
+
+  #carakerja img{
+      width: 150px;
+      float: left;
+      padding-left: 20px;
+      margin-right: 10px;
+  }
+
+  #carakerja p{
+      text-align: left;
+      font-size: 22px;
+      line-height: 25px;
+      padding: 25px 0 0 0;
+      color: white;
+  }
+
+
+@media (min-width: 842px) and (max-width: 1098px) { 
+
+}
+
+
+
+@media only screen and (min-width: 480px) and (max-width: 842px) {
+
+}
+
+/* ============ PRODUK ============= */
+
+#produk{
+  padding: 60px 0px 70px 0px;
+  box-sizing: border-box;
+}
+
+#produk h2{
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 40px;
+  padding-bottom: 20px;
+  color: #25A8E0;
+}
+
+.produk-card{
+  width: 85%;
+  margin: 20px auto;
+}
+
+/* Float four columns side by side */
+.column {
+  padding: 0px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 20px -5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.4s;
+  -moz-transition: 0.4s;
+}
+
+.card:hover{
+  box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+.produk-card img{
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+/* ============ PORTOFOLIO =========== */
+
+#portofolio{
+  height: 400px;
+  padding-top: 40px;
+  background-color: white;
+  text-align: center;
+}
+
+#portofolio h2{
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 40px;
+  padding-bottom: 20px;
+  color: #F69322;
+}
+
+.card-portofolio{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border: 5px solid #F69322;
+  border-radius: 20px;
+  width: 31%;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 10px;
+}
+
+.card-portofolio img{
+  height: 230px;
+}
+
+.overlay-card {
+  position: absolute; 
+  bottom: 0; 
+  left: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-portofolio:hover .overlay-card {
+  opacity: 1;
+}
+
+/* ========= TESTI ========= */
+
+#testimoni{
+  height: 300px;
+  padding-top: 40px;
+  background-color: white;
+}
+
+#testimoni h2{
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 40px;
+  padding-bottom: 20px;
+  color: #F69322;
+}
+
+/* =========== DAFTAR ===========*/
+
+#daftar{
+  height: 400px;
+  padding: 40px 30px 40px 30px;
+  background-color: #25A8E0;
+  overflow: hidden;
+}
+
+.daftar-kiri{
+  padding: 16px;
+  float: left;
+  width: 50%;
+  color: #fff;
+}
+
+.daftar-kiri h2{
+  font-family: 'montserratlight', Verdana, sans-serif;
+  font-size: 40px;
+  line-height: 45px;
+  color: white;
+  padding-bottom: 30px;
+  margin: 50px 0px 10px;
+  text-align: right;
+}
+
+.daftar-kiri span{
+  font-family: 'montserratbold', Verdana, sans-serif;
+}
+
+.tombol-daftar{
+  position: relative;
+  float: right;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.tombol-daftar:hover .tombol-animasi{
+  opacity: 1;
+  clip-path: circle(150% at 50px 0px);
+}
+
+.tombol-animasi{
+  position: absolute;
+  top: 0px;
+  background-color: #036792;
+  opacity: 0;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  clip-path: circle(0% at 100% 100%);
+  transition: 0.5s;
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 25px;
+}
+
+.tombol-daftar h4{
+  margin-top: 17px;
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 25px;
+  color: #25A8E0;
+}
+
+.tombol-animasi h4{
+  color: white;
+}
+
+.daftar-kanan{
+  float: right;
+  width: 45%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.daftar-kanan img{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+/* ========= MAPS ========= */
+
+#maps{
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+#maps h2{
+  text-align: center;
+  font-family: 'montserratbold', Verdana, sans-serif;
+  font-size: 40px;
+  padding-bottom: 20px;
+  color: #25A8E0;
+}
+
+#maps iframe{
+  width: 100%;
+  height: 450px;
+}
+
+/* ========= FOOTER ========= */
+
+#contactus{
+  height: 200px;
+  background-color: rgb(26, 26, 26);
+}
+
+.copyright{
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(37, 37, 37);
+}
+
+.copyright p{
+  color: white;
+}
+
+.copyright span{
+  font-family: 'montserratsemibold', Verdana, sans-serif;
+}
