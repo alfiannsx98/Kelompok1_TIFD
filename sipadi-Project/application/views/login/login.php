@@ -18,7 +18,7 @@ if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
 }
 
 if (isset($_SESSION["login"])) {
-    header("Location: ../operator");
+    header("Location: ../admin/");
     exit;
 }
 
@@ -38,7 +38,7 @@ if (isset($_POST["login"])) {
                 setcookie('key', hash('sha256', $row['email_admin']), time() + 60);
             }
 
-            header("location: ../operator");
+            header("location: ../admin/");
             exit;
         }
     }
