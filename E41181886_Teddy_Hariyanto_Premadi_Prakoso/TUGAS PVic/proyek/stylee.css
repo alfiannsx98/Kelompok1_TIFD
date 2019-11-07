@@ -156,9 +156,15 @@ div#slider figure {
 .footer {
   background-color:rgb(27, 155, 116);
   text-align: center;
-  padding: 4px;
+  /*
+  padding: 40px 0 25px 0;
+  */
   margin-top: 7px;
   border-top: 9px solid rgb(47, 240, 208);
+  width: 100%;
+  bottom: 0%;
+  position: absolute;
+
 }
 
 .footer p {
@@ -217,7 +223,7 @@ div#slider figure {
 .images{
     width: 100%;
     
-    
+
 }
 
 .deskripsi{
@@ -281,9 +287,11 @@ form{
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    /*
     padding : 10px;
     color: white;
     border-radius: 20px;
+    */
 }
 
 input[type=text], input[type=password]{
@@ -296,6 +304,12 @@ input[type=text], input[type=password]{
     text-align: right;
 }
 
+.infobg{
+    background-image: url(d.jpg);
+    background-size: cover;
+    height: 600px;
+}
+
 h2{
     text-align: center;
 }
@@ -305,5 +319,8 @@ h2{
 
 article{
     padding: 50px 0 50px 0;
-    background-image: url(d.jpg);
+}
+.panduan{
+    color: rgb(1, 255, 213) ;
+    margin-top:150px ;
 }
