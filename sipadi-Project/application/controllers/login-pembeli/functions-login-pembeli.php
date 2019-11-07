@@ -14,7 +14,6 @@ function query($query)
 function register($data)
 {
     global $koneksi;
-    $id = ($data[""]);
     $nama_pembeli = htmlspecialchars($data["nama_pembeli"]);
     $email_pembeli = htmlspecialchars($data["email_pembeli"]);
     $password_pembeli = mysqli_real_escape_string($koneksi, $data["password_pembeli"]);
@@ -45,8 +44,7 @@ function register($data)
 
     $password = password_hash($password_pembeli, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO pembeli VALUES('$id','$nama_pembeli','$email_pembeli','$password','$nomor_hp','$nik_pembeli','$user_created','$is_active')";
-    var_dump($query);
+    $query = "INSERT INTO pembeli VALUES('','$nama_pembeli','$email_pembeli','$password','$nomor_hp','$nik_pembeli','$user_created','$is_active','$gambar_pembeli','$gambar_nik')";
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
