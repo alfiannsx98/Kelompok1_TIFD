@@ -30,21 +30,23 @@ if (isset($_POST["register"])) {
 
 <body class="bg-gradient-primary">
 
-    <div class="container">
+    <div class="container col-md-8">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="row justify-content-center">
+            
+                    
                     <div class="col-lg-7">
                         <div class="p-5">
+                            
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
                             </div>
                             <form class="user" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
-                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <div class="col-sm-12 mb-3       mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="nama_pembeli" name="nama_pembeli" placeholder="Masukkan nama Pembeli">
                                     </div>
                                 </div>
@@ -111,10 +113,10 @@ if (isset($_POST["register"])) {
                                 <hr>
                             </form>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot-password.html">Lupa Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.php">Already have an account? Login!</a>
+                                <a class="small" href="login.php">Sudah Punya Akun? Silahkan Login!</a>
                             </div>
                         </div>
                     </div>
