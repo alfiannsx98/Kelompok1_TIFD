@@ -74,7 +74,7 @@ function upload_gmbr_pembeli()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/login-pembeli/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../../views/login-pembeli/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
@@ -103,7 +103,7 @@ function upload_gmbr_nik()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/login-pembeli/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../../views/login-pembeli/gambarnik/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
