@@ -182,8 +182,41 @@ if (!isset($_SESSION["login"])) {
             <div class="row">
                 <!-- Content Row -->
                 <!-- Disini tempat membuat Edit Profil nya! -->
-                <div class="row">
+                </div>
+                     <div class="col-lg-10">
+                            <form action="" method="post" class="user">
+                                 <div class="form-group">
+                                
+                                    <label for="username"> Nama : </label>
+                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Nama Anda" value="">
+                                 </div>
+                                <div class="form-group">
+                                    
+                                    <label for="username"> Tempat, Tanggal Lahir : </label>
+                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Tempat, Tanggal Lahir Anda" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="username"> Alamat : </label>
+                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Alamat Anda" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="username"> No Telepon : </label>
+                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan No HP Anda" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="username"> Email : </label>
+                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Email Anda" value="">
+                                </div>
+                                <hr>
+                                <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Edit Profil 
+                            </form>
+                            <br>
+                            <div class="text-center">
+       
 
+                            
+                <div class="row">
+                
                 </div>
                 <!-- Batas edit profil -->
                 <!-- Content Row -->
