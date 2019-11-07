@@ -34,7 +34,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Insektisida</a></li>
+						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>ZPT</a></li>
 					</ul>
 				</div>
 
@@ -46,10 +46,10 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
-							<li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Insektisida</a></li>
+							<li><a href="#">Insektisida</a></li>
 							<li><a href="#">Fungisida</a></li>	
 							<li><a href="#">Bakterisida</a></li>
-							<li><a href="#">ZPT</a></li>
+							<li class="active"><span><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>ZPT</a></li>
 							<li><a href="#">Pupuk</a></li>
 							<li><a href="#">Herbisida</a></li>
 							<li><a href="#">Benih</a></li>
@@ -102,21 +102,22 @@
 
 								<div class="product-grid">
 
-									<!-- Product insek -->
+									<!-- Product ZPT -->
 
-									<div class="product-item insektisida">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="images/productinsektisida1.png" alt="">
-											</div>
-										<div class="favorite favorite_left"></div>	
-											<div class="product_info">
-												<h6 class="product_name1"><a href="single.html">Columbus 600EC (500ml)</a></h6>
-												<div class="product_price">Rp.60.000,00</div>
-											</div>
-									</div>
-									<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-									</div>
+									<div class="product-item fungisida">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product2.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name1"><a href="single.html">Fungisida Murtox (100ml)</a></h6>
+									<div class="product_price">Rp.70.000,00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						</div>
+
 
 
 								</div>
