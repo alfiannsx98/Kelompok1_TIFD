@@ -1,5 +1,5 @@
 <?php
-require_once 'admin_header.php';
+require_once 'header.php';
 require '../../../application/controllers/login/functions-login.php';
 session_start();
 
@@ -49,7 +49,7 @@ if (!isset($_SESSION["login"])) {
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Barang</h1>
             </div>
 
             <!-- Content Row -->
@@ -76,4 +76,4 @@ if (!isset($_SESSION["login"])) {
         </div>
         <!-- End of Main Content -->
     </div>
-    <?php require_once 'admin_footer.php'; ?>
+    <?php require_once 'footer.php'; ?>

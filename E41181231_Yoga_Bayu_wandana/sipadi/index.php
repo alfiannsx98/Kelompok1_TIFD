@@ -42,7 +42,9 @@
 										<i class="fa fa-angle-down"></i>
 									</a>
 									<ul class="account_selection">
-										<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+									<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
+										<li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i>Login</a></li>
+										<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
 										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 									</ul>
 								</li>
@@ -482,9 +484,18 @@
 				<div class="col-lg-6 text-right deal_ofthe_week_col">
 					<div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
 						<div class="section_title">
-							<h2>Deal Of The Week</h2>
+							<h2>Pertanian</h2>
+							<ul>
+								<li>
+								  <p>Pertanian adalah kegiatan pemanfaatan sumber daya hayati yang 
+									dilakukan manusia untuk menghasilkan bahan 
+									pangan, bahan baku industri, atau sumber energi, 
+									serta untuk mengelola lingkungan hidupnya</p>
+								</li>
+							</ul>
 						</div>
 						
+							
 						<div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
 					</div>
 				</div>
@@ -497,34 +508,23 @@
 	<div class="benefit">
 		<div class="container">
 			<div class="row benefit_row">
-				<div class="col-lg-3 benefit_col">
+				<div class="col-lg-4 benefit_col">
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>free shipping</h6>
-							<p>Suffered Alteration in Some Form</p>
+							<h6>BIAYA KIRIM</h6>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
+				<div class="col-lg-4 benefit_col">
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>cach on delivery</h6>
-							<p>The Internet Tend To Repeat</p>
+							<h6>BARANG DITERIMA</h6>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>45 days return</h6>
-							<p>Making it Look Like Readable</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 benefit_col">
+				<div class="col-lg-4 benefit_col">
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 						<div class="benefit_content">
@@ -641,6 +641,38 @@
 			</div>
 		</div>
 	</footer>
+</div>
+
+<!-- MODAL DIALOG LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4>Login</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password1" placeholder="Your password...">
+            </div>
+            <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+          </form>
+          
+          <div class="text-center text-muted delimiter">or use a social network</div>
+          <div class="d-flex justify-content-center social-buttons">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
