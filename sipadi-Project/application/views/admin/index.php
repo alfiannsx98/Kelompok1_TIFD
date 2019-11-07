@@ -1,12 +1,14 @@
 <?php
+require_once 'admin_header.php';
 session_start();
 
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
+$nik = $_COOKIE["id"];
+var_dump($nik);
 require '../../../application/controllers/login/functions-login.php';
-require_once 'admin_header.php';
 ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">

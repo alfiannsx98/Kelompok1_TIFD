@@ -58,8 +58,6 @@ if (isset($_POST["login"])) {
                                 <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                 <?php if (isset($error)) : ?>
                                     <p class="alert-danger">Username/Password Salah</p>
-                                <?php else : ?>
-                                    <p class="alert-success">Login Sukses</p>
                                 <?php endif; ?>
                             </div>
                             <form action="" method="post" class="user">
@@ -76,9 +74,6 @@ if (isset($_POST["login"])) {
                             <br>
                             <div class="text-center">
                                 <a class="small" href="#">Lupa Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="register.php">Belum punya akun? Daftar sini!</a>
                             </div>
                         </div>
                     </div>
