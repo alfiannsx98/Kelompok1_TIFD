@@ -30,7 +30,7 @@ if (!isset($_SESSION["login"])) {
     <li class="nav-item">
         <a class="nav-link" href="admin.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span> </span>
+            <span>Dashboard</span>
         </a>
     </li>
     <li class="nav-item">
