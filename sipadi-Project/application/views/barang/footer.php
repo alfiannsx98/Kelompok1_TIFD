@@ -18,6 +18,7 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
+
 <!-- Bootstrap core JavaScript-->
 <script src="../../../assets/vendor/jquery/jquery.min.js"></script>
 <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -35,6 +36,16 @@
 <script src="../../../assets/js/demo/chart-area-demo.js"></script>
 <script src="../../../assets/js/demo/chart-pie-demo.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>
 </body>
 
 </html>
