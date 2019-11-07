@@ -1,14 +1,13 @@
 <?php
-require_once 'profile/header.php';
-require '../../../application/controllers/login/functions-login.php';
 session_start();
 
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
+require '../../../application/controllers/login/functions-login.php';
+require_once 'admin_header.php';
 ?>
-
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -21,29 +20,13 @@ if (!isset($_SESSION["login"])) {
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
-    <div class="sidebar-heading">
-        Admin
-    </div>
+    <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.php">
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Data Karyawan</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-store"></i>
-            <span>Data Toko</span>
-        </a>
+            <span>Dashboard</span></a>
     </li>
 
     <!-- Divider -->
@@ -51,19 +34,39 @@ if (!isset($_SESSION["login"])) {
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Barang
+        Interface
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="fas fa-fw fa-box"></i>
-            <span>Data Barang</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
         </a>
-        <a class="nav-link collapsed" href="#">
-            <i class="fas fa-fw fa-stream"></i>
-            <span>Data Kategori</span>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="buttons.html">Buttons</a>
+                <a class="collapse-item" href="cards.html">Cards</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Utilities</span>
         </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Utilities:</h6>
+                <a class="collapse-item" href="utilities-color.html">Colors</a>
+                <a class="collapse-item" href="utilities-border.html">Borders</a>
+                <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                <a class="collapse-item" href="utilities-other.html">Other</a>
+            </div>
+        </div>
     </li>
 
     <!-- Divider -->
@@ -71,20 +74,41 @@ if (!isset($_SESSION["login"])) {
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Transaksi
+        Addons
     </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Login Screens:</h6>
+                <a class="collapse-item" href="login.html">Login</a>
+                <a class="collapse-item" href="register.html">Register</a>
+                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Other Pages:</h6>
+                <a class="collapse-item" href="404.html">404 Page</a>
+                <a class="collapse-item" href="blank.html">Blank Page</a>
+            </div>
+        </div>
+    </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-shopping-cart"></i>
-            <span>Transaksi</span></a>
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a>
     </li>
+
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-shipping-fast"></i>
-            <span>Kurir</span></a>
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a>
     </li>
 
     <!-- Divider -->
@@ -280,50 +304,17 @@ if (!isset($_SESSION["login"])) {
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Profile Admin</h1>
+                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             </div>
 
             <!-- Content Row -->
             <div class="row">
                 <!-- Content Row -->
-                <!-- Disini tempat membuat Edit Profil nya! -->
-                </div>
-                     <div class="col-lg-10">
-                            <form action="" method="post" class="user">
-                                 <div class="form-group">
-                                
-                                    <label for="username"> Nama : </label>
-                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Nama Anda" value="">
-                                 </div>
-                                <div class="form-group">
-                                    
-                                    <label for="username"> Tempat, Tanggal Lahir : </label>
-                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Tempat, Tanggal Lahir Anda" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="username"> Alamat : </label>
-                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Alamat Anda" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="username"> No Telepon : </label>
-                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan No HP Anda" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="username"> Email : </label>
-                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Email Anda" value="">
-                                </div>
-                                <hr>
-                                <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Edit Profil 
-                            </form>
-                            <br>
-                            <div class="text-center">
-       
 
-                            
                 <div class="row">
-                
+
                 </div>
-                <!-- Batas edit profil -->
+
                 <!-- Content Row -->
                 <div class="row">
 
