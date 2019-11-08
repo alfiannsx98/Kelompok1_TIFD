@@ -153,7 +153,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Insektisida</a></h6>
+									<h6 class="product_name"><a href="categoriesinsek.php">Insektisida</a></h6>
 									<div class="product_price">20pcs</div>
 								</div>
 							</div>
@@ -170,7 +170,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Fungisida</a></h6>
+									<h6 class="product_name"><a href="categoriesfungi.php">Fungisida</a></h6>
 									<div class="product_price">30pcs</div>
 								</div>
 							</div>
@@ -187,7 +187,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Bakterisida</a></h6>
+									<h6 class="product_name"><a href="categoriesbak.php">Bakterisida</a></h6>
 									<div class="product_price">10pcs</div>
 								</div>
 							</div>
@@ -667,7 +667,7 @@
             <button type="button" class="btn btn-info btn-block btn-round">Login</button>
           </form>
           
-          <div class="text-center text-muted delimiter">or use a social network</div>
+          <div class="text-center text-muted delimiter"><a href="#" class="text-info">Forget Password</a></div>
           <div class="d-flex justify-content-center social-buttons">
         </div>
       </div>
