@@ -107,7 +107,7 @@ if (isset($_POST["register"])) {
                                         <input type="text" class="form-control form-control-user" id="is_active" name="is_active" value="0" hidden readonly>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-user btn-block" name="register" type="submit">
+                                <button class="btn btn-success btn-user btn-block" name="register" type="submit">
                                     Register Account
                                 </button>
                                 <hr>
