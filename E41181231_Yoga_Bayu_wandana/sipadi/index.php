@@ -204,7 +204,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">ZPT</a></h6>
+									<h6 class="product_name"><a href="categorieszpt.php">ZPT</a></h6>
 									<div class="product_price">10pcs</div>
 								</div>
 							</div>
@@ -221,7 +221,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pupuk</a></h6>
+									<h6 class="product_name"><a href="categoriespuk.php">Pupuk</a></h6>
 									<div class="product_price">15pcs</div>
 								</div>
 							</div>
@@ -238,7 +238,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Herbisida</a></h6>
+									<h6 class="product_name"><a href="categoriesher.php">Herbisida</a></h6>
 									<div class="product_price">50pcs</div>
 								</div>
 							</div>
@@ -255,7 +255,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Benih</a></h6>
+									<h6 class="product_name"><a href="categoriesbenih.php">Benih</a></h6>
 									<div class="product_price">5pcs</div>
 								</div>
 							</div>
@@ -272,7 +272,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Perekat</a></h6>
+									<h6 class="product_name"><a href="categoriesperekat.php">Perekat</a></h6>
 									<div class="product_price">40pcs</div>
 								</div>
 							</div>
@@ -289,7 +289,7 @@
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Biostimulan</a></h6>
+									<h6 class="product_name"><a href="categoriesbios.php">Biostimulan</a></h6>
 									<div class="product_price">10pcs</div>
 								</div>
 							</div>

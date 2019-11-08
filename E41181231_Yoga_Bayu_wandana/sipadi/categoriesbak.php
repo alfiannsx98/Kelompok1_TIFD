@@ -46,15 +46,15 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
-                            <li><a href="#">Insektisida</a></li>
-                            <li><a href="#">Fungisida</a></li>
+                            <li><a href="categoriesinsek.php">Insektisida</a></li>
+                            <li><a href="categoriesfungi.php">Fungisida</a></li>
                             <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Bakterisida</a></li>
-							<li><a href="#">ZPT</a></li>
-							<li><a href="#">Pupuk</a></li>
-							<li><a href="#">Herbisida</a></li>
-							<li><a href="#">Benih</a></li>
-							<li><a href="#">Perekat</a></li>
-							<li><a href="#">Biostimulan</a></li>
+							<li><a href="categorieszpt.php">ZPT</a></li>
+							<li><a href="categoriespuk.php">Pupuk</a></li>
+							<li><a href="categoriesher.php">Herbisida</a></li>
+							<li><a href="categoriesbenih.php">Benih</a></li>
+							<li><a href="categoriesperekat.php">Perekat</a></li>
+							<li><a href="categoriesbios.php">Biostimulan</a></li>
 						</ul>
 					</div>
 

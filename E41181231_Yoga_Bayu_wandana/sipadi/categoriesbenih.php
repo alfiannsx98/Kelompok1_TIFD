@@ -33,7 +33,7 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Benih</a></li>
 					</ul>
 				</div>
@@ -46,15 +46,15 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
-							<li><a href="#">Insektisida</a></li>
-							<li><a href="#">Fungisida</a></li>	
-							<li><a href="#">Bakterisida</a></li>
-							<li><a href="#">ZPT</a></li>
-							<li><a href="#">Pupuk</a></li>
-							<li><a href="#">Herbisida</a></li>
+							<li><a href="categoriesinsek.php">Insektisida</a></li>
+							<li><a href="categoriesfungi.php">Fungisida</a></li>	
+							<li><a href="categoriesbak.php">Bakterisida</a></li>
+							<li><a href="categorieszpt">ZPT</a></li>
+							<li><a href="categoriespuk.php">Pupuk</a></li>
+							<li><a href="categoriesher.php">Herbisida</a></li>
 							<li class="active"><span><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Benih</a></li>
-							<li><a href="#">Perekat</a></li>
-							<li><a href="#">Biostimulan</a></li>
+							<li><a href="categoriesperekat.php">Perekat</a></li>
+							<li><a href="categoriesbios.php">Biostimulan</a></li>
 						</ul>
 					</div>
 
