@@ -10,8 +10,8 @@ $code = $_GET["code"];
 
 $queryEmail = mysqli_query($koneksi, "SELECT email FROM token_admin WHERE kode='$code'");
 if (mysqli_num_rows($queryEmail) === 0) {
-    echo "Maaf Kode yang anda minta tidak ditemukan";
-    echo "<a href='login.php'>Kembali</a>";
+    echo "<div class='alert alert-danger' role='alert'>Maaf Kode yang anda minta tidak ditemukan. <a href='login.php' class='btn btn-success'>Kembali</a></div>";
+    exit;
 }
 if (isset($_POST["simpan"])) {
     $password_admin = mysqli_real_escape_string($koneksi, $_POST["password_admin"]);
@@ -19,17 +19,21 @@ if (isset($_POST["simpan"])) {
     $row = mysqli_fetch_array($queryEmail);
     $email = $row["email"];
     if ($password_admin !== $password_admin1) {
-        echo "<script>alert('Konfirmasi password tidak sesuai!');</script>";
-        return false;
-    }
-    $password = password_hash($password_admin, PASSWORD_DEFAULT);
-    $query = mysqli_query($koneksi, "UPDATE admin SET password_admin='$password' WHERE email_admin='$email'");
-
-    if ($query) {
-        $query = mysqli_query($koneksi, "DELETE FROM token_admin WHERE code='$code'");
-        exit("password terupdate");
+        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            <strong>Maaf Password yang anda masukkan tidak sama!</strong>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+        </div>";
     } else {
-        exit("ada sesuatu yang salah!");
+        $password = password_hash($password_admin, PASSWORD_DEFAULT);
+        $query = mysqli_query($koneksi, "UPDATE admin SET password_admin='$password' WHERE email_admin='$email'");
+        if ($query) {
+            $query = mysqli_query($koneksi, "DELETE FROM token_admin WHERE kode='$code'");
+            echo "<a href='login.php' class='btn btn-success'>Kembali</a>";
+        } else {
+            echo "ada sesuatu yang salah!";
+        }
     }
 
     // mysqli_query($koneksi, $query);
@@ -47,12 +51,12 @@ if (isset($_POST["simpan"])) {
                             <form action="" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukkan password anda">
+                                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukkan password anda" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="password_admin1" name="password_admin1" placeholder="masukkan password anda yang kedua">
+                                        <input type="password" class="form-control form-control-user" id="password_admin1" name="password_admin1" placeholder="masukkan password anda yang kedua" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
