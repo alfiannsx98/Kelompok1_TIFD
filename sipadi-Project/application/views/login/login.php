@@ -32,6 +32,7 @@ if (isset($_POST["login"])) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password_admin"])) {
             $_SESSION["login"] = true;
+            $_SESSION = $_POST;
 
             if (isset($_POST['remember'])) {
                 setcookie('nik', $row['nik'], time() + 60);
@@ -75,6 +76,7 @@ if (isset($_POST["login"])) {
                             <br>
                             <div class="text-center">
                                 <a class="small" href="reset-password.php">Lupa Password?</a>
+                                <a class="small" href="register.php">Daftar sini?</a>
                             </div>
                         </div>
                     </div>

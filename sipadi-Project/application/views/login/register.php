@@ -1,6 +1,6 @@
 <?php
 require '../../controllers/login/functions-login.php';
-
+session_start();
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
         echo "<script>alert('user baru berhasil ditambahkan');</script>";

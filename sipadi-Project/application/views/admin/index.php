@@ -2,6 +2,7 @@
 require_once 'admin_header.php';
 require '../../../application/controllers/login/functions-login.php';
 session_start();
+$_POST = $_SESSION;
 
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
@@ -9,6 +10,9 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
+// $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
+$email = $_POST['email_admin'];
+$gmbr = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = $email");
 ?>
 <?php require_once 'sidebar.php'; ?>
 
