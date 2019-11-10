@@ -68,7 +68,7 @@ function upload()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('bukan gambar yang telah anda upload');</script>";
     }
-    if ($ukuranFile > 2000000) {
+    if ($ukuranFile > 20000000) {
         echo "<script>alert('Ukuran gambar yang anda upload terlalu besar!');</script>";
     }
 

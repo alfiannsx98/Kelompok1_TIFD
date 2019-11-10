@@ -8,7 +8,7 @@ if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
     $key = $_COOKIE['key'];
 
     // Ambil username berdasarkan nik nya
-    $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE nik=$nik");
+    $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE nik='$nik'");
     $row = mysqli_fetch_assoc($result);
 
     // cek cookie dan username
@@ -68,16 +68,18 @@ if (isset($_POST["login"])) {
                                     <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
                                 </div>
                                 <hr>
-                                <input type="checkbox" name="remember" id="remember" class="">
-                                <label for="remember">Remember Me</label>
+                                <!-- <input type="checkbox" name="remember" id="remember" class="">
+                                <label for="remember">Remember Me</label> -->
                                 <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
                                 <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
                             </form>
                             <br>
                             <div class="text-center">
                                 <a class="small" href="reset-password.php">Lupa Password?</a>
-                                <a class="small" href="register.php">Daftar sini?</a>
                             </div>
+                            <!-- <div class="text-center">
+                                <a href="register.php" class="small">Register</a>
+                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,9 @@ if (!isset($_SESSION["login"])) {
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 $email = $_POST['email_admin'];
-$gmbr = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = $email");
+$sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
+$gmbr = mysqli_fetch_assoc($sql);
+
 ?>
 <?php require_once 'sidebar.php'; ?>
 

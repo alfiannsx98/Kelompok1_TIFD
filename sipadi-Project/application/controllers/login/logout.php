@@ -4,8 +4,8 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-setcookie('nik', '', time() - 3600);
-setcookie('key', '', time() - 3600);
+setcookie('nik', '', time() - 36000);
+setcookie('key', '', time() - 36000);
 
 header("Location: ../../../application/views/login/login.php");
 exit;

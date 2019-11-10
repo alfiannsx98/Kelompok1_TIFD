@@ -4,6 +4,7 @@ session_start();
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
         echo "<script>alert('user baru berhasil ditambahkan');</script>";
+        header("Location: login.php");
     } else {
         echo mysqli_error($koneksi);
     }
@@ -36,8 +37,7 @@ if (isset($_POST["register"])) {
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
+                    <div class="col-lg">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
