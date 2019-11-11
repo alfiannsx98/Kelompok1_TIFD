@@ -7,7 +7,7 @@ function ubah($data)
 
     $id = $data["nik"];
     $nama = htmlspecialchars($data["nama_admin"]);
-    $email = htmlspecialchars($data["email_admin"]);
+    $email = htmlspecialchars($data["email"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     if ($_FILES['gambar_admin']['error'] === 4) {

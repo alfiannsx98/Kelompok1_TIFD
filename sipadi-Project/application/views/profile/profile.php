@@ -78,7 +78,7 @@ require '../templates/sidebar.php';
                         <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" placeholder="" value="<?= date('d F Y', $gmbr['admin_created']); ?>" readonly>
                     </div>
                     <hr>
-                    <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Edit Profil</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Edit Profil</button>
                 </form>
                 <br>
                 <div class="text-center">
