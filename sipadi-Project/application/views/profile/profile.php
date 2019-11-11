@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../application/controllers/login/functions-login.php';
+require 'functions-profile.php';
 session_start();
 $_POST = $_SESSION;
 
@@ -12,9 +12,16 @@ if (!isset($_SESSION["login"])) {
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 $email = $_POST['email_admin'];
-$sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
+$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
+if (isset($_POST["update"])) {
+    if (ubah($_POST) > 0) {
+        echo "<script>alert('data berhasil diubah!');</script>";
+    } else {
+        echo "<script>alert('data gagal diubah!');</script>";
+    }
+}
 ?>
 
 <!-- Sidebar -->
@@ -46,31 +53,32 @@ require '../templates/sidebar.php';
                 <!-- Disini tempat membuat Edit Profil nya! -->
             </div>
             <div class="col-lg-10">
-                <form action="" method="post" class="user">
+                <form action="" method="post" class="user" enctype="multipart/form-data">
+                    <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Masukan Nama Anda" value="<?= $gmbr['nik']; ?>" hidden>
                     <div class="form-group">
-
                         <label for="username"> Nama : </label>
-                        <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Nama Anda" value="">
+                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukan Nama Anda" value="<?= $gmbr['nama_admin']; ?>" required>
                     </div>
                     <div class="form-group">
-
-                        <label for="username"> Tempat, Tanggal Lahir : </label>
-                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Tempat, Tanggal Lahir Anda" value="">
+                        <label for="username"> Email Admin : </label>
+                        <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="" value="<?= $gmbr['email_admin']; ?>" required>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label for="username"> Gambar Admin : </label>
+                        <img src="<?= "../login/gambar/" . $gmbr['gambar_admin']; ?>" class="img-thumbnail">
+                    </div>
+                    <div class="form-group col-sm">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin">
+                            <label for="gambar_admin" class="custom-file-label">Pilih File</label>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="username"> Alamat : </label>
-                        <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukan Alamat Anda" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="username"> No Telepon : </label>
-                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan No HP Anda" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="username"> Email : </label>
-                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="Masukan Email Anda" value="">
+                        <label for="username"> Tanggal Akun Dibuat : </label>
+                        <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" placeholder="" value="<?= date('d F Y', $gmbr['admin_created']); ?>" readonly>
                     </div>
                     <hr>
-                    <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Edit Profil
+                    <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Edit Profil</button>
                 </form>
                 <br>
                 <div class="text-center">
@@ -131,7 +139,7 @@ require '../templates/sidebar.php';
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../../application/controllers/login/logout.php">Logout</a>
+                <a class="btn btn-primary" href="../../../application/controllers/login/logout.php">Logout</a>
             </div>
         </div>
     </div>
