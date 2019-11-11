@@ -27,7 +27,6 @@
 		require 'includes/header.php' ;
 	?>
 
-
 	<div class="container single_product_container">
 		<div class="row">
 			<div class="col">

@@ -48,7 +48,7 @@ $gmbr = mysqli_fetch_assoc($sql);
     <!-- Main Content -->
     <div id="content">
 
-        <?php require_once 'topbar.php'; ?>
+        <?php require_once '../templates/topbar.php'; ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
