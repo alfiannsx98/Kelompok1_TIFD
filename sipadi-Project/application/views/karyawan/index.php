@@ -15,6 +15,8 @@ $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
+$dtKrywn = query("SELECT * FROM admin");
+
 ?>
 <?php require_once 'sidebar.php'; ?>
 
@@ -68,24 +70,16 @@ $gmbr = mysqli_fetch_assoc($sql);
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Zaenuri</td>
-                        <td>zaenuri.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Ali</td>
-                        <td>ali.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Slamet</td>
-                        <td>slamet.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
+                <?php $i = 1; ?>
+                    <?php foreach ($dtKrywn as $krywn) : ?>
+                        <tr>
+                            <td><?= $i; ?></td>
+                            <td><?= $krywn['nama_admin']; ?></td>
+                            <td><?= $krywn['gambar_admin']; ?></td>
+                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a></td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <!-- /.container-fluid -->
