@@ -350,11 +350,11 @@
 								</div>
 								<div class="favorite favorite_left"></div>	
 								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Columbus 600EC (500ml)</a></h6>
+									<h6 class="product_name1"><a href="single.php">Columbus 600EC (500ml)</a></h6>
 									<div class="product_price">Rp.60.000,00</div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+							<div class="red_button add_to_cart_button"><a href="single.php">Tambah Keranjang</a></div>
 						</div>
 
 						<!-- Product Fungisida -->

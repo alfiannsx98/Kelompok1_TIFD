@@ -261,7 +261,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="footer_nav_container">
-						<div class="cr">©2018 All Rights Reserverd. Template by <a href="#">Colorlib</a></div>
+						<div class="cr">@Copyright SIPADI</div>
 					</div>
 				</div>
 			</div>
