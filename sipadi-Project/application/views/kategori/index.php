@@ -15,6 +15,8 @@ $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
+$dtBrg = query("SELECT * FROM kategori");
+
 ?>
 <?php require_once 'sidebar.php'; ?>
 
@@ -68,54 +70,16 @@ $gmbr = mysqli_fetch_assoc($sql);
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Insektisida</td>
-                        <td>insektisida.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Fungisida</td>
-                        <td>fungisida.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Herbisida</td>
-                        <td>herbisida.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Pupuk</td>
-                        <td>pupuk.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Benih</td>
-                        <td>benih.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>ZPT</td>
-                        <td>zpt.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Biostimulan</td>
-                        <td>biostimulan.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Perekat</td>
-                        <td>perekat.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($dtBrg as $brg) : ?>
+                        <tr>
+                            <td><?= $i; ?></td>
+                            <td><?= $brg['nama_kategori']; ?></td>
+                            <td><?= $brg['gmbr']; ?></td>
+                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a></td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <!-- /.container-fluid -->
