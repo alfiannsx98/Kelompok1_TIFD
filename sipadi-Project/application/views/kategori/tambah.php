@@ -2,7 +2,7 @@
 require_once '../../controllers/kategori/functions-kategori.php';
 require_once 'header.php';
 session_start();
-$_POST = $_SESSION;
+
 
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
@@ -10,18 +10,18 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
-// $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
-$email = $_POST['email_admin'];
-$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
-$gmbr = mysqli_fetch_assoc($sql);
 
-if (isset($_POST["tambah"])) {
+if (isset($_POST["submit"])) {
     if (tambah($_POST) > 0) {
         echo "<script>alert('data berhasil ditambah!');</script>";
     } else {
         echo "<script>alert('data gagal ditambah!');</script>";
     }
 }
+$_POST = $_SESSION;
+$email = $_POST['email_admin'];
+$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
+$gmbr = mysqli_fetch_assoc($sql);
 ?>
 <?php
 require 'sidebar.php';
