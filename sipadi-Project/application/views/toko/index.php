@@ -55,14 +55,14 @@ $gmbr = mysqli_fetch_assoc($sql);
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Kategori</h1>
+                <h1 class="h3 mb-0 text-gray-800">TOKO</h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Kategori</th>
+                        <th>Nama Toko</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
@@ -70,8 +70,8 @@ $gmbr = mysqli_fetch_assoc($sql);
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh.jpg</td>
+                        <td>Sumberdadi</td>
+                        <td>sumberdadi.jpg</td>
                         <td>EDIT|HAPUS</td>
                     </tr>
                 </tbody>

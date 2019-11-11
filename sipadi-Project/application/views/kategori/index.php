@@ -70,8 +70,50 @@ $gmbr = mysqli_fetch_assoc($sql);
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh.jpg</td>
+                        <td>Insektisida</td>
+                        <td>insektisida.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Fungisida</td>
+                        <td>fungisida.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Herbisida</td>
+                        <td>herbisida.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Pupuk</td>
+                        <td>pupuk.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Benih</td>
+                        <td>benih.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ZPT</td>
+                        <td>zpt.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Biostimulan</td>
+                        <td>biostimulan.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Perekat</td>
+                        <td>perekat.jpg</td>
                         <td>EDIT|HAPUS</td>
                     </tr>
                 </tbody>

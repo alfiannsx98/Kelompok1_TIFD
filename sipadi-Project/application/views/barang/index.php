@@ -55,38 +55,46 @@ if (!isset($_SESSION["login"])) {
             <table id="example" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>No</th>
+                        <th>Nama Barang</th>
+                        <th>Harga Barang</th>
+                        <th>Gambar Barang</th>
+                        <th>Deskripsi</th>
+                        <th>Tanggal Upload</th>
+                        <th>Kadaluarsa</th>
+                        <th>Stok</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>1</td>
+                        <td>Columbus 600EC</td>
+                        <td>Rp.60.000</td>
+                        <td>columbus.jpg</td>
+                        <td>Columbus berfungsi untuk</td>
+                        <td>11-11-2019</td>
+                        <td>11-11-2020</td>
+                        <td>10</td>
                     </tr>
                     <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
+                        <td>2</td>
+                        <td>Murtox</td>
+                        <td>Rp.70.000</td>
+                        <td>murtox.jpg</td>
+                        <td>Murtox berfungsi untuk</td>
+                        <td>11-11-2019</td>
+                        <td>11-11-2020</td>
+                        <td>20</td>
                     </tr>
                     <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
+                        <td>3</td>
+                        <td>Pupuk Petroganik</td>
+                        <td>Rp.200.000</td>
+                        <td>petroganik.jpg</td>
+                        <td>Pupuk petroganik berfungsi untuk</td>
+                        <td>11-11-2019</td>
+                        <td>11-11-2020</td>
+                        <td>5</td>
                     </tr>
                     <tr>
                         <td>Cedric Kelly</td>
