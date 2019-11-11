@@ -57,7 +57,7 @@ $dtBrg = query("SELECT * FROM kategori");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Kategori</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Kategori <a class="btn btn-primary" href="tambah.php">Tambah Data</a> <a href="#" class="btn btn-warning">Cetak Data</a></h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="table table-striped table-bordered">
@@ -76,7 +76,7 @@ $dtBrg = query("SELECT * FROM kategori");
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_kategori']; ?></td>
                             <td><?= $brg['gmbr']; ?></td>
-                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a></td>
+                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a>|<a href="#">Cetak</a></td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
