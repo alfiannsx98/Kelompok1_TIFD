@@ -77,9 +77,9 @@ if (isset($_POST["login"])) {
                             <div class="text-center">
                                 <a class="small" href="reset-password.php">Lupa Password?</a>
                             </div>
-                            <!-- <div class="text-center">
+                            <div class="text-center">
                                 <a href="register.php" class="small">Register</a>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
