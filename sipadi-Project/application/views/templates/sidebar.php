@@ -44,7 +44,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link collapsed" href="../barang/index.php">
             <i class="fas fa-fw fa-box"></i>
             <span>Data Barang</span>

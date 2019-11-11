@@ -23,13 +23,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../karyawan/index.php">
+        <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Karyawan</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../toko/index.php">
+        <a class="nav-link" href="../toko/">
             <i class="fas fa-fw fa-store"></i>
             <span>Data Toko</span>
         </a>
@@ -44,14 +44,14 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
-        <a class="nav-link collapsed" href="../barang/index.php">
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="../barang/">
             <i class="fas fa-fw fa-box"></i>
             <span>Data Barang</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="../kategori/">
+    <li class="nav-item active">
+        <a class="nav-link collapsed" href="../Kategori/">
             <i class="fas fa-fw fa-stream"></i>
             <span>Data Kategori</span>
         </a>

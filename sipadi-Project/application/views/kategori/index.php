@@ -1,5 +1,5 @@
 <?php
-require_once 'admin_header.php';
+require_once 'header.php';
 require '../../../application/controllers/login/functions-login.php';
 session_start();
 $_POST = $_SESSION;
@@ -55,31 +55,30 @@ $gmbr = mysqli_fetch_assoc($sql);
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Kategori</h1>
             </div>
-
             <!-- Content Row -->
-            <div class="row">
-                <!-- Content Row -->
-
-                <div class="row">
-
-                </div>
-
-                <!-- Content Row -->
-                <div class="row">
-
-                    <!-- Content Column -->
-                    <div class="col-lg-6 mb-4">
-
-                    </div>
-
-                </div>
-
-            </div>
+            <table id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Kategori</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh.jpg</td>
+                        <td>EDIT|HAPUS</td>
+                    </tr>
+                </tbody>
+            </table>
             <!-- /.container-fluid -->
 
         </div>
         <!-- End of Main Content -->
     </div>
-    <?php require_once 'admin_footer.php'; ?>
+    <?php require_once 'footer.php'; ?>
