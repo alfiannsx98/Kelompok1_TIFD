@@ -75,7 +75,7 @@ $dtBrg = query("SELECT * FROM kategori");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_kategori']; ?></td>
-                            <td><?= $brg['gmbr']; ?></td>
+                            <td><img src="<?= 'gambar/' . $brg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
