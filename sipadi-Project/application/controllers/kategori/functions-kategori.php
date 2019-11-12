@@ -12,12 +12,12 @@ function query($query)
     }
     return $rows;
 }
-function tambah($data)
+function tambahKtg($data)
 {
     global $koneksi;
     $nama = htmlspecialchars($data["nama_kategori"]);
 
-    $gambar = upload();
+    $gambar = uploadKtg();
     if (!$gambar) {
         return false;
     }
@@ -27,7 +27,7 @@ function tambah($data)
 
     return mysqli_affected_rows($koneksi);
 }
-function upload()
+function uploadKtg()
 {
     $namaFile = $_FILES['gmbr']['name'];
     $ukuranFile = $_FILES['gmbr']['size'];
@@ -44,7 +44,7 @@ function upload()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Maaf yang telah anda uplaod bukan gambar');</script>";
     }
-    if ($ukuranFile > 20000000) {
+    if ($ukuranFile > 500000000) {
         echo "<script>alert('Maaf file yang anda upload terlalu besar!');</script>";
     }
 
@@ -52,7 +52,36 @@ function upload()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/kategori/gambar' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../../views/kategori/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
+function ubahKtg($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama_kategori"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    if ($_FILES['gmbr']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = uploadKtg();
+    }
+    $query = "UPDATE kategori SET
+                nama_kategori = '$nama',
+                gmbr = '$gambar'
+            WHERE id_kategori = $id 
+    ";
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+function hapusKtg($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM kategori WHERE id_kategori='$id'");
+
+    return mysqli_affected_rows($koneksi);
 }
