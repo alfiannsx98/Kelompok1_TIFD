@@ -1,8 +1,8 @@
 <?php
 require_once 'header.php';
-require 'functions-profile.php';
+require '../../controllers/profile/functions-profile.php';
 session_start();
-$_POST = $_SESSION;
+
 
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
@@ -11,9 +11,6 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
-$email = $_POST['email_admin'];
-$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
-$gmbr = mysqli_fetch_assoc($sql);
 
 if (isset($_POST["update"])) {
     if (ubah($_POST) > 0) {
@@ -22,6 +19,10 @@ if (isset($_POST["update"])) {
         echo "<script>alert('data gagal diubah!');</script>";
     }
 }
+$_POST = $_SESSION;
+$email = $_POST['email_admin'];
+$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
+$gmbr = mysqli_fetch_assoc($sql);
 ?>
 
 <!-- Sidebar -->
@@ -54,7 +55,8 @@ require '../templates/sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
-                    <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Masukan Nama Anda" value="<?= $gmbr['nik']; ?>" hidden>
+                    <input type="hidden" name="nik" value="<?= $gmbr['nik']; ?>">
+                    <input type="hidden" name="gambarLama" value="<?= $gmbr["gambar_admin"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama : </label>
                         <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukan Nama Anda" value="<?= $gmbr['nama_admin']; ?>" required>
@@ -65,7 +67,7 @@ require '../templates/sidebar.php';
                     </div>
                     <div class="form-group col-sm-2">
                         <label for="username"> Gambar Admin : </label>
-                        <img src="<?= "../login/gambar/" . $gmbr['gambar_admin']; ?>" name="gambarLama" class="img-thumbnail">
+                        <img src="<?= "../login/gambar/" . $gmbr['gambar_admin']; ?>" class="img-thumbnail">
                     </div>
                     <div class="form-group col-sm">
                         <div class="custom-file">
@@ -78,7 +80,7 @@ require '../templates/sidebar.php';
                         <input type="text" class="form-control form-control-user" id="admin_created" name="admin_created" placeholder="" value="<?= date('d F Y', $gmbr['admin_created']); ?>" readonly>
                     </div>
                     <hr>
-                    <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Edit Profil</button>
+                    <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Edit Profil</button>
                 </form>
                 <br>
                 <div class="text-center">

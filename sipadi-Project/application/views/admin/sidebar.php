@@ -49,7 +49,7 @@
             <i class="fas fa-fw fa-box"></i>
             <span>Data Barang</span>
         </a>
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="../kategori/">
             <i class="fas fa-fw fa-stream"></i>
             <span>Data Kategori</span>
         </a>

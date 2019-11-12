@@ -57,7 +57,7 @@ $dtBrg = query("SELECT * FROM kategori");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Kategori <a class="btn btn-primary" href="tambah.php">Tambah Data</a> <a href="#" class="btn btn-warning">Cetak Data</a></h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Kategori <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="table table-striped table-bordered">
@@ -76,7 +76,11 @@ $dtBrg = query("SELECT * FROM kategori");
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_kategori']; ?></td>
                             <td><?= $brg['gmbr']; ?></td>
-                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a>|<a href="#">Cetak</a></td>
+                            <td>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                            </td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>

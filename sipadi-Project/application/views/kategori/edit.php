@@ -11,18 +11,21 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
+$id = $_GET['id'];
+$kategori = query("SELECT * FROM kategori WHERE id_kategori = '$id'")[0];
+
+
 if (isset($_POST["submit"])) {
-    if (tambahKtg($_POST) > 0) {
+    if (ubahKtg($_POST) > 0) {
         echo "    
         <script>
-            alert('data berhasil ditambah!');
+            alert('data berhasil diedit!');
             document.location.href = 'index.php';
         </script>";
     } else {
-        echo "    
-        <script>
-            alert('data gagal ditambah!');
-            document.location.href = 'index.php';
+        echo "<script>
+        alert('data gagal diedit!');
+        document.Location.href = 'index.php';
         </script>";
     }
 }
@@ -49,7 +52,7 @@ require 'sidebar.php';
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Tambah Kategori</h1>
+                <h1 class="h3 mb-0 text-gray-800">Edit Kategori</h1>
             </div>
 
             <!-- Content Row -->
@@ -59,19 +62,25 @@ require 'sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= $kategori["id_kategori"]; ?>">
+                    <input type="hidden" name="gambarLama" value="<?= $kategori["gmbr"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama Kategori : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_kategori" name="nama_kategori" placeholder="Masukan Kategori Anda" required>
+                        <input type="text" class="form-control form-control-user" id="nama_kategori" name="nama_kategori" value="<?= $kategori["nama_kategori"]; ?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="gmbr"> Gambar Kategori : </label>
+                        <label for=""> Gambar Kategori Lama : </label>
+                        <img class="img-thumbnail" src="<?= "gambar/" . $kategori['gmbr']; ?>" width="300" height="300" alt="">
+                    </div>
+                    <div class="form-group">
+                        <label for="gmbr"> Gambar Kategori Baru : </label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
                             <label for="gmbr" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
                     <hr>
-                    <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
+                    <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>
                 </form>
                 <br>
                 <div class="text-center">
