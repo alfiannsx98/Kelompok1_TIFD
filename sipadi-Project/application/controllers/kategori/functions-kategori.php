@@ -16,15 +16,14 @@ function tambahKtg($data)
 {
     global $koneksi;
 
-    $rowDB = query("SELECT * FROM kategori");
-
+    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM kategori");
+    $field = mysqli_num_rows($rowDB1);
     $ktg = "KTG";
     $d = date('m', time());
-    $i = 1;
-    foreach ($rowDB as $ai) {
-        $ai =   $ktg . $d . "0" . $i++;
-        echo $ai;
-    }
+
+    $hasil = $ktg . $d . "0" . ($field + 1);
+
+
 
     $nama = htmlspecialchars($data["nama_kategori"]);
 
@@ -33,7 +32,7 @@ function tambahKtg($data)
         return false;
     }
 
-    $query = "INSERT INTO kategori VALUES ('','$nama','$gambar')";
+    $query = "INSERT INTO kategori VALUES ('$hasil','$nama','$gambar')";
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
@@ -83,7 +82,7 @@ function ubahKtg($data)
     $query = "UPDATE kategori SET
                 nama_kategori = '$nama',
                 gmbr = '$gambar'
-            WHERE id_kategori = $id 
+            WHERE id_kategori = '$id' 
     ";
     mysqli_query($koneksi, $query);
 
