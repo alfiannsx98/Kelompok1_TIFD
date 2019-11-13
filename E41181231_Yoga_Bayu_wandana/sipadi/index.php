@@ -668,7 +668,7 @@
             <button type="button" class="btn btn-info btn-block btn-round">Login</button>
           </form>
           
-          <div class="text-center text-muted delimiter"><a href="#" class="text-info">Forget Password</a></div>
+          <div class="text-center text-muted delimiter"><a href="lupassword.php" class="text-info">Forget Password</a></div>
           <div class="d-flex justify-content-center social-buttons">
         </div>
       </div>
