@@ -635,14 +635,44 @@
           <h4>Login</h4>
         </div>
         <div class="d-flex flex-column text-center">
-          <form>
+         
             <div class="form-group">
               <input type="email" class="form-control" id="email1"placeholder="Your email address...">
             </div>
             <div class="form-group">
               <input type="password" class="form-control" id="password1" placeholder="Your password...">
-            </div>
-            <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+			</div>
+			<div class="form-group">
+			<button type="button" class="btn btn-info col-md-4 btn-round">Login</button>
+			<button href="#" type="button" class="btn btn-success btn-info col-md-4 btn-round" data-toggle="modal" data-target="#forgetModal" aria-hidden="true">Lupa Password</button>
+			</div>
+          <div class="d-flex justify-content-center social-buttons">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--lupa passwoerd-->
+<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4>Lupa Password</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="namaemail"placeholder="Alamat Email">
+
+            <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
+			<a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
           </form>
           
           <div class="text-center text-muted delimiter"><a href="lupassword.php" class="text-info">Forget Password</a></div>
@@ -652,15 +682,7 @@
     </div>
   </div>
 </div>
-</div>
-
 <!--cart-->
-
-<!-- <div class="container">
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
-    View Cart
-  </button>  
-</div> -->
 
 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
