@@ -33,12 +33,12 @@ if (isset($_POST["register"])) {
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
+                <!-- Nested Row within Card Body -->        
                 <div class="row justify-content-center">
 
-
-                    <div class="col-lg-7">
-                        <div class="p-5">
+                    
+                    <div class="col-lg-12">
+                        <div class="p-5" "row justify-content-center" >
 
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
@@ -111,9 +111,7 @@ if (isset($_POST["register"])) {
                                 </button>
                                 <hr>
                             </form>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Lupa Password?</a>
-                            </div>
+
                             <div class="text-center">
                                 <a class="small" href="login.php">Sudah Punya Akun? Silahkan Login!</a>
                             </div>
