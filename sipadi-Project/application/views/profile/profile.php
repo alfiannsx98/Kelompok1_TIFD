@@ -66,7 +66,7 @@ require '../templates/sidebar.php';
                         <label for="username"> Email Admin : </label>
                         <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="" value="<?= $gmbr['email_admin']; ?>" readonly>
                     </div>
-                    <div class="form-group col-sm-2">
+                    <div class="form-group col-sm-3">
                         <label for="username"> Gambar Admin : </label>
                         <img src="<?= "../login/gambar/" . $gmbr['gambar_admin']; ?>" class="img-thumbnail">
                     </div>
@@ -75,6 +75,10 @@ require '../templates/sidebar.php';
                             <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin">
                             <label for="gambar_admin" class="custom-file-label">Pilih File</label>
                         </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="username"> Alamat : </label>
+                        <textarea></textarea>
                     </div>
                     <div class="form-group">
                         <label for="username"> Tanggal Akun Dibuat : </label>
