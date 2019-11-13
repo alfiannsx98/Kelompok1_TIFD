@@ -15,6 +15,11 @@ function query($query)
 function tambahKtg($data)
 {
     global $koneksi;
+
+    $ktg = "KTG";
+    $i = date('M', time());
+    var_dump($i);
+
     $nama = htmlspecialchars($data["nama_kategori"]);
 
     $gambar = uploadKtg();
