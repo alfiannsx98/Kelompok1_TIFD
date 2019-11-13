@@ -45,7 +45,15 @@ COLOR PALETTE
 /*********************************
 2. Body and some general stuff
 *********************************/
-
+html{
+	scroll-behavior: smooth;
+}
+#kategori{
+	padding-top: 40px;
+}
+#produk {
+	padding-top: 40px;
+}
 *
 {
 	margin: 0;

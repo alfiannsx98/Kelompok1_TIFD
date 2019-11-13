@@ -67,9 +67,9 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="#">Home</a></li>
-								<li><a href="#">Kategori</a></li>
-								<li><a href="#">Produk</a></li>
-								<li><a href="contact.html">About Us</a></li>
+								<li><a href="#kategori">Kategori</a></li>
+								<li><a href="#produk">Produk</a></li>
+								<li><a href="#about">About Us</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -131,8 +131,8 @@
 		</div>
 	</div>
 
-	<!-- Banner -->
-
+	<!-- Kategori -->
+<section id="kategori">
 	<div class="row">
 		<div class="col">
 				<div class="col text-center">
@@ -296,7 +296,7 @@
 						</div>
 					</div>
 				</div>
-
+</section>
 				<!-- Slider Navigation -->
 
 				<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
@@ -310,7 +310,7 @@
 	</div>
 
 	<!-- New Arrivals -->
-
+<section id="produk">
 	<div class="new_arrivals">
 		<div class="container">
 			<div class="row">
@@ -470,7 +470,7 @@
 			</div>
 		</div>
 	</div>
-
+</secction>
 	<!-- Deal of the week -->
 
 	<div class="deal_ofthe_week">
@@ -584,7 +584,7 @@
 	</div>
 
 	<!-- Newsletter -->
-
+<section id="about">
 	<div class="newsletter">
 		<div class="container">
 			<div class="row">
@@ -641,6 +641,7 @@
 			</div>
 		</div>
 	</footer>
+</section>
 </div>
 
 <!-- MODAL DIALOG LOGIN -->
