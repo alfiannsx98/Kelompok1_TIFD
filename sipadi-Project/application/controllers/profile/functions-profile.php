@@ -11,31 +11,31 @@ function query($query)
     }
     return $rows;
 }
-function ubah($data)
+function ubahPr($data)
 {
     global $koneksi;
 
-    $id = $data["nik"];
-    $nama = htmlspecialchars($data["nama_admin"]);
-    $email = htmlspecialchars($data["email"]);
+    $id_nik = $data["nik"];
+    $nama_admin = htmlspecialchars($data["nama_admin"]);
+    $email_admin = htmlspecialchars($data["email"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     if ($_FILES['gambar_admin']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        $gambar = upload();
+        $gambar = uploadPr();
     }
     $query = "UPDATE admin SET
-                nama_admin = '$nama',
-                email_admin = '$email',
+                nama_admin = '$nama_admin',
+                email_admin = '$email_admin',
                 gambar_admin = '$gambar'
-            WHERE id = $id;
+            WHERE nik = '$id_nik';
     ";
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
 }
-function upload()
+function uploadPr()
 {
     $namaFile = $_FILES['gambar_admin']['name'];
     $ukuranFile = $_FILES['gambar_admin']['size'];

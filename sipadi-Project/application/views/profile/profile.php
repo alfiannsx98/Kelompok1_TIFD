@@ -13,12 +13,13 @@ if (!isset($_SESSION["login"])) {
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 
 if (isset($_POST["update"])) {
-    if (ubah($_POST) > 0) {
+    if (ubahPr($_POST) > 0) {
         echo "<script>alert('data berhasil diubah!');</script>";
     } else {
         echo "<script>alert('data gagal diubah!');</script>";
     }
 }
+// $_GET['id'];
 $_POST = $_SESSION;
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
@@ -63,7 +64,7 @@ require '../templates/sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="username"> Email Admin : </label>
-                        <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="" value="<?= $gmbr['email_admin']; ?>" required>
+                        <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="" value="<?= $gmbr['email_admin']; ?>" readonly>
                     </div>
                     <div class="form-group col-sm-2">
                         <label for="username"> Gambar Admin : </label>
