@@ -16,9 +16,15 @@ function tambahKtg($data)
 {
     global $koneksi;
 
+    $rowDB = query("SELECT * FROM kategori");
+
     $ktg = "KTG";
-    $i = date('M', time());
-    var_dump($i);
+    $d = date('m', time());
+    $i = 1;
+    foreach ($rowDB as $ai) {
+        $ai =   $ktg . $d . "0" . $i++;
+        echo $ai;
+    }
 
     $nama = htmlspecialchars($data["nama_kategori"]);
 
