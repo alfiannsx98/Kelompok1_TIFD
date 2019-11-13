@@ -28,24 +28,27 @@
 		<div class="top_nav">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md">
 						<div class="top_nav_left">Sistem Informasi Pertanian Sumberdadi</div>
 					</div>
-					<div class="col-md-6 text-right">
+					<div class="col-md text-right">
 						<div class="top_nav_right">
 							<ul class="top_nav_menu">
 
 								<!-- Currency / Language / My Account -->
-								<li class="account">
+								<li class="account col-md-4">
 									<a href="#">
-										My Account
+										Nama User
 										<i class="fa fa-angle-down"></i>
 									</a>
 									<ul class="account_selection">
 									<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
-										<li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i>Login</a></li>
+										<li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i>Profile</a></li>
 										<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
-										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Ganti password</a></li>
+                                        <li><a href="#"><i class="fas fa-mail" aria-hidden="true"></i>Ganti Email</a></li>
+                                        <li><a href="#"><i class="fas fa-cart" aria-hidden="true"></i>Riwayat Transaksi</a></li>
+                                        <li><a href="#"><i class="fas fa-logout" aria-hidden="true"></i>Logout</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -74,9 +77,10 @@
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal" aria-hidden="true">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
+									<a href="#">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span id="checkout_items" class="checkout_items">0</span>
+									</a>
 								</li>
 							</ul>
 							<div class="hamburger_container">
@@ -89,7 +93,6 @@
 		</div>
 
 	</header>
-
 
 
 	<!-- Slider -->
@@ -645,70 +648,9 @@
             <button type="button" class="btn btn-info btn-block btn-round">Login</button>
           </form>
           
-          <div class="text-center text-muted delimiter"><a href="lupassword.php" class="text-info">Forget Password</a></div>
+          <div class="text-center text-muted delimiter"><a href="#" class="text-info">Forget Password</a></div>
           <div class="d-flex justify-content-center social-buttons">
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!--cart-->
-
-<!-- <div class="container">
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
-    View Cart
-  </button>  
-</div> -->
-
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header border-bottom-0">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Your Shopping Cart
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table table-image">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Product</th>
-              <th scope="col">Price</th>
-              <th scope="col">Qty</th>
-              <th scope="col">Total</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-              </td>
-              <td>Vans Sk8-Hi MTE Shoes</td>
-              <td>89$</td>
-              <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-              <td>178$</td>
-              <td>
-                <a href="#" class="btn btn-danger btn-sm">
-                  <i class="fa fa-times"></i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table> 
-        <div class="d-flex justify-content-end">
-          <h5>Total: <span class="price text-success">89$</span></h5>
-        </div>
-      </div>
-      <div class="modal-footer border-top-0 d-flex justify-content-between">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Checkout</button>
       </div>
     </div>
   </div>
