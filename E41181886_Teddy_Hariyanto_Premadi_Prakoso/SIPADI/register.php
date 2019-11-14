@@ -1,5 +1,5 @@
 <?php
-require '../../controllers/login-pembeli/functions-login-pembeli.php';
+require 'functions-login-pembeli.php';
 
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
@@ -21,15 +21,15 @@ if (isset($_POST["register"])) {
     <meta name="author" content="">
     <title>Register Page</title>
 
-    <link rel="stylesheet" href="../../../assets/vendor/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="../../../Kelompok1_TIFD/sipadi-Project/assets/vendor/fontawesome-free/css/all.min.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../../../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../Kelompok1_TIFD/sipadi-Project/assets/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
-<body class="" background=" ../../../../E41181407_Alfian_Rochmatul_Irman/Workshop-3-okt-19/tugaspak-Viktor/2.jpg">
-    <div class="container col-md-8">
+<body class="" background=" d.jpg">
+    <div class="container col-md-7">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
@@ -37,7 +37,7 @@ if (isset($_POST["register"])) {
                 <div class="row justify-content-center">
 
                     
-                    <div class="col-lg-12">
+                    <div class="col-lg">
                         <div class="p-5" "row justify-content-center" >
 
                             <div class="text-center">
