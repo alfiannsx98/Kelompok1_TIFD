@@ -78,7 +78,7 @@ require '../templates/sidebar.php';
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="username"> Alamat : </label>
-                        <textarea></textarea>
+                        <textarea name="alamat"><?= $gmbr['alamat']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="username"> Tanggal Akun Dibuat : </label>

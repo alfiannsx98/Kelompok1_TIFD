@@ -19,7 +19,7 @@ function ubahPr($data)
     $nama_admin = htmlspecialchars($data["nama_admin"]);
     $email_admin = htmlspecialchars($data["email"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
-
+    $alamat = htmlspecialchars($data["alamat"]);
     if ($_FILES['gambar_admin']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
@@ -28,7 +28,8 @@ function ubahPr($data)
     $query = "UPDATE admin SET
                 nama_admin = '$nama_admin',
                 email_admin = '$email_admin',
-                gambar_admin = '$gambar'
+                gambar_admin = '$gambar',
+                alamat = '$alamat'
             WHERE nik = '$id_nik';
     ";
     mysqli_query($koneksi, $query);

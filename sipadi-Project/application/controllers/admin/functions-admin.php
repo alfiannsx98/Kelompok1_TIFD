@@ -24,7 +24,7 @@ function tambahAdm($data)
 
     $id_admin = $hasil;
     $nama = htmlspecialchars($data["nama_admin"]);
-    $email = htmlspecialchars($data["email_admin"]);
+    $email = htmlspecialchars($data["email"]);
     $alamat = htmlspecialchars($data["alamat_admin"]);
     $password_admin = mysqli_real_escape_string($koneksi, $data["password_admin"]);
     $password_admin1 = mysqli_real_escape_string($koneksi, $data["password_admin1"]);
@@ -49,19 +49,19 @@ function tambahAdm($data)
     }
     $password = password_hash($password_admin, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin''$password_admin','$admin_created','$alamat','$level')";
-
+    $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin','$password','$admin_created','$alamat','$level')";
+    
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
 }
 
-function upload()
+function uploadAdm()
 {
-    $namaFile = $_FILES['gambar_admin']['name'];
-    $ukuranFile = $_FILES['gambar_admin']['size'];
-    $error = $_FILES['gambar_admin']['error'];
-    $tmpName = $_FILES['gambar_admin']['tmp_name'];
+    $namaFile = $_FILES['gmbr']['name'];
+    $ukuranFile = $_FILES['gmbr']['size'];
+    $error = $_FILES['gmbr']['error'];
+    $tmpName = $_FILES['gmbr']['tmp_name'];
 
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
@@ -84,4 +84,32 @@ function upload()
     move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
+function ubahAdm($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama_admin"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    if ($_FILES['gmbr']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = uploadAdm();
+    }
+    $query = "UPDATE admin SET
+                nama_admin = '$nama',
+                gambar_admin = '$gambar'
+            WHERE id_admin = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+function hapusAdm($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
+
+    return mysqli_affected_rows($koneksi);
 }
