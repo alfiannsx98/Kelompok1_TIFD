@@ -34,7 +34,6 @@ function tambahKtg($data)
 
     $query = "INSERT INTO kategori VALUES ('$hasil','$nama','$gambar')";
     mysqli_query($koneksi, $query);
-
     return mysqli_affected_rows($koneksi);
 }
 function uploadKtg()

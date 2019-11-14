@@ -76,9 +76,9 @@ require '../templates/sidebar.php';
                             <label for="gambar_admin" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
-                    <div class="form-group col-sm-3">
+                    <div class="form-group">
                         <label for="username"> Alamat : </label>
-                        <textarea name="alamat"><?= $gmbr['alamat']; ?></textarea>
+                        <textarea name="alamat" class="form-control" cols="30" rows="7"><?= $gmbr['alamat']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="username"> Tanggal Akun Dibuat : </label>
