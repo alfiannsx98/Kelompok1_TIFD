@@ -24,7 +24,7 @@ function tambahAdm($data)
 
     $id_admin = $hasil;
     $nama = htmlspecialchars($data["nama_admin"]);
-    $email = htmlspecialchars($data["email_admin"]);
+    $email = htmlspecialchars($data["email"]);
     $alamat = htmlspecialchars($data["alamat_admin"]);
     $password_admin = mysqli_real_escape_string($koneksi, $data["password_admin"]);
     $password_admin1 = mysqli_real_escape_string($koneksi, $data["password_admin1"]);
@@ -49,7 +49,7 @@ function tambahAdm($data)
     }
     $password = password_hash($password_admin, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin''$password_admin','$admin_created','$alamat','$level')";
+    $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin','$password','$admin_created','$alamat','$level')";
 
     mysqli_query($koneksi, $query);
 
@@ -84,4 +84,11 @@ function upload()
     move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
+function hapusAdm($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
+
+    return mysqli_affected_rows($koneksi);
 }
