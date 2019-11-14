@@ -28,7 +28,7 @@
             <span>Data Admin</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link" href="../toko/">
             <i class="fas fa-fw fa-store"></i>
             <span>Data Toko</span>
@@ -50,7 +50,7 @@
             <span>Data Barang</span>
         </a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item ">
         <a class="nav-link collapsed" href="../Kategori/">
             <i class="fas fa-fw fa-stream"></i>
             <span>Data Kategori</span>

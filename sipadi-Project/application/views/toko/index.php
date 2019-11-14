@@ -15,6 +15,8 @@ $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
+$toko = query("SELECT * FROM toko");
+
 ?>
 <?php require_once 'sidebar.php'; ?>
 
@@ -55,29 +57,15 @@ $gmbr = mysqli_fetch_assoc($sql);
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">TOKO</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data TOKO</h1>
             </div>
-            <!-- Content Row -->
-            <table id="example" class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Toko</th>
-                        <th>Gambar</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sumberdadi</td>
-                        <td>sumberdadi.jpg</td>
-                        <td>EDIT|HAPUS</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- /.container-fluid -->
-
+            <div class="col-lg-10">
+                <?php foreach ($toko as $tk) : ?>
+                    <form action="" class="user" enctype="multipart/form-data" method="post">
+                        <input type="text" name="id_tokok" value="<?= $tk['id_toko']; ?>">
+                    </form>
+                <?php endforeach; ?>
+            </div>
         </div>
         <!-- End of Main Content -->
     </div>
