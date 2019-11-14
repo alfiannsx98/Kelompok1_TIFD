@@ -81,13 +81,13 @@ $dtKrywn = query("SELECT * FROM admin");
                             <td><?= $i; ?></td>
                             <td><?= $krywn['nama_admin']; ?></td>
                             <td><?= $krywn['email_admin']; ?></td>
-                            <td><?= $krywn['gambar_admin']; ?></td>
-                            <td><?= $krywn['admin_created']; ?></td>
+                            <td><img src="<?= "gambar/" . $krywn['gambar_admin']; ?>" class="img-alt" height="100" width="100" alt=""></td>
+                            <td><?= date('d F Y', $krywn['admin_created']); ?></td>
                             <td><?= $krywn['alamat']; ?></td>
                             <td><?= $krywn['level']; ?></td>
                             <td>
-                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>
