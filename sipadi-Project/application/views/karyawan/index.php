@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../application/controllers/login/functions-login.php';
+require '../../controllers/admin/functions-admin.php';
 session_start();
 $_POST = $_SESSION;
 
@@ -22,6 +22,7 @@ $dtKrywn = query("SELECT * FROM admin");
 
 <!-- Modal -->
 <!-- Logout Modal-->
+
 
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -60,12 +61,16 @@ $dtKrywn = query("SELECT * FROM admin");
                 <h1 class="h3 mb-0 text-gray-800">Data Admin</h1>
             </div>
             <!-- Content Row -->
-            <table id="example" class="table table-striped table-bordered">
+            <table id="example" class="ui celled table">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Karyawan</th>
-                        <th>Gambar</th>
+                        <th>Nama Admin</th>
+                        <th>Email Admin</th>
+                        <th>Gambar Admin</th>
+                        <th>Admin Created</th>
+                        <th>Alamat</th>
+                        <th>Level</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -75,8 +80,16 @@ $dtKrywn = query("SELECT * FROM admin");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $krywn['nama_admin']; ?></td>
+                            <td><?= $krywn['email_admin']; ?></td>
                             <td><?= $krywn['gambar_admin']; ?></td>
-                            <td><a href="#">EDIT</a>|<a href="#">Hapus</a></td>
+                            <td><?= $krywn['admin_created']; ?></td>
+                            <td><?= $krywn['alamat']; ?></td>
+                            <td><?= $krywn['level']; ?></td>
+                            <td>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                            </td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
