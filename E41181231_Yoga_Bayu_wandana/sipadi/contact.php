@@ -62,7 +62,7 @@
 			<div class="col-lg-6 contact_col">
 				<div class="contact_contents">
 					<h1>Contact Us</h1>
-					<p>There are many ways to contact us. You may drop us a line, give us a call or send an email, choose what suits you the most.</p>
+					<p>Ada banyak cara untuk menghubungi kami. Anda dapat mengirimi kami telepon, menelepon kami atau mengirim email, pilih yang paling cocok untuk Anda.</p>
 					<div>
 						<p>(800) 686-6688</p>
 						<p>info.deercreative@gmail.com</p>
@@ -92,8 +92,8 @@
 
 			<div class="col-lg-6 get_in_touch_col">
 				<div class="get_in_touch_contents">
-					<h1>Get In Touch With Us!</h1>
-					<p>Fill out the form below to recieve a free and confidential.</p>
+					<h1>Hubungi Kami!</h1>
+					<p>Isi formulir di bawah ini untuk menerima yang gratis dan rahasia.</p>
 					<form action="post">
 						<div>
 							<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
@@ -121,14 +121,6 @@
 						<h4>Newsletter</h4>
 						<p>Subscribe to our newsletter and get 20% off your first purchase</p>
 					</div>
-				</div>
-				<div class="col-lg-6">
-					<form action="post">
-						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-							<input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-							<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>

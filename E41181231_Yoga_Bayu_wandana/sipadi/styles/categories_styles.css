@@ -534,7 +534,7 @@ section
 .main_nav_container
 {
 	width: 100%;
-	background: #FFFFFF;
+	background:rgb(3, 199, 189);
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
 }
 .navbar

@@ -531,7 +531,7 @@
 			<div class="row blogs_container">
 				<div class="col-lg-4 blog_item_col">
 					<div class="blog_item">
-						<div class="blog_background" style="background-image:url(images/blog_1.jpg)"></div>
+						<div class="blog_background" style="background-image:url(images/blog1.jpg)"></div>
 						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
 							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
 							<span class="blog_meta">by admin | dec 01, 2017</span>
@@ -541,7 +541,7 @@
 				</div>
 				<div class="col-lg-4 blog_item_col">
 					<div class="blog_item">
-						<div class="blog_background" style="background-image:url(images/blog_2.jpg)"></div>
+						<div class="blog_background" style="background-image:url(images/blog2.jpg)"></div>
 						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
 							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
 							<span class="blog_meta">by admin | dec 01, 2017</span>
@@ -551,7 +551,7 @@
 				</div>
 				<div class="col-lg-4 blog_item_col">
 					<div class="blog_item">
-						<div class="blog_background" style="background-image:url(images/blog_3.jpg)"></div>
+						<div class="blog_background" style="background-image:url(images/blog3.jpg)"></div>
 						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
 							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
 							<span class="blog_meta">by admin | dec 01, 2017</span>
@@ -573,14 +573,6 @@
 						<h4>Newsletter</h4>
 						<p>Subscribe to our newsletter and get 20% off your first purchase</p>
 					</div>
-				</div>
-				<div class="col-lg-6">
-					<form action="post">
-						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-							<input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-							<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>
