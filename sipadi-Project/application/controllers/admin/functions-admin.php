@@ -31,7 +31,7 @@ function tambahAdm($data)
     $admin_created = htmlspecialchars($data["admin_created"]);
     $level = htmlspecialchars($data["level"]);
 
-    $gambar_admin = upload();
+    $gambar_admin = uploadAdm();
     if (!$gambar_admin) {
         return false;
     }
@@ -50,7 +50,7 @@ function tambahAdm($data)
     $password = password_hash($password_admin, PASSWORD_DEFAULT);
 
     $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin','$password','$admin_created','$alamat','$level')";
-    
+
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);

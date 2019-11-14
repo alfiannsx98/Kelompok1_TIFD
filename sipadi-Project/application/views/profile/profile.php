@@ -68,7 +68,7 @@ require '../templates/sidebar.php';
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="username"> Gambar Admin : </label>
-                        <img src="<?= "../login/gambar/" . $gmbr['gambar_admin']; ?>" class="img-thumbnail">
+                        <img src="<?= "../karyawan/gambar/" . $gmbr['gambar_admin']; ?>" class="img-thumbnail">
                     </div>
                     <div class="form-group col-sm">
                         <div class="custom-file">
