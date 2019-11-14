@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../application/controllers/login/functions-login.php';
+require '../../controllers/toko/functions-toko.php';
 session_start();
 $_POST = $_SESSION;
 
@@ -57,12 +57,39 @@ $toko = query("SELECT * FROM toko");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data TOKO</h1>
+                <h1 class="h3 mb-0 text-gray-800">Ubah Data TOKO</h1>
             </div>
             <div class="col-lg-10">
                 <?php foreach ($toko as $tk) : ?>
                     <form action="" class="user" enctype="multipart/form-data" method="post">
-                        <input type="text" name="id_tokok" value="<?= $tk['id_toko']; ?>">
+                        <input type="hidden" name="id_toko" value="<?= $tk['id_toko']; ?>">
+                        <div class="form-group">
+                            <label for="nama_toko"> Nama Toko : </label>
+                            <input type="text" class="form-control form-control-user" value="<?= $tk['nama_toko']; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat_toko"> Alamat Toko : </label>
+                            <textarea name="alamat_toko" id="alamat_toko" class="form-control form-control" cols="30" rows="7"><?= $tk['alamat_toko']; ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Gambar Lama : </label>
+                            <br>
+                            <img src="<?= "gambar/" . $tk['gambar_sampul']; ?>" height="500" width="700" class="img-thumbnail" name="gambarLama">
+                        </div>
+                        <div class="form-group">
+                            <label for="gmbr"> Gambar Toko Baru : </label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="gambar_toko" name="gambar_toko">
+                                <label for="gambar_toko" class="custom-file-label">Pilih File</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi"> Deskripsi Toko : </label>
+                            <textarea name="deskripsi_toko" id="deskripsi_toko" class="form-control" cols="30" rows="10"><?= $tk['deskripsi_toko']; ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>
+                        </div>
                     </form>
                 <?php endforeach; ?>
             </div>
