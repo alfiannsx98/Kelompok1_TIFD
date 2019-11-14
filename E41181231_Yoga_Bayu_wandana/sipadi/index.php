@@ -73,8 +73,8 @@
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<li class="checkout">
-									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal" aria-hidden="true">
+								<li class="checkout">	
+									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
 										<i class="fa fa-shopping-cart"></i>
 									</button>
 								</li>
@@ -653,7 +653,9 @@
   </div>
 </div>
 </div>
+
 <!--lupa passwoerd-->
+
 <div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -674,13 +676,13 @@
             <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
 			<a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
           </form>
-          
-          <div class="text-center text-muted delimiter"><a href="lupassword.php" class="text-info">Forget Password</a></div>
           <div class="d-flex justify-content-center social-buttons">
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 <!--cart-->
 
