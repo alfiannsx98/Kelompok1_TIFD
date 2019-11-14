@@ -23,13 +23,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../karyawan/index.php">
+        <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data Karyawan</span>
+            <span>Data Admin</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../toko/index.php">
+        <a class="nav-link" href="../toko/">
             <i class="fas fa-fw fa-store"></i>
             <span>Data Toko</span>
         </a>

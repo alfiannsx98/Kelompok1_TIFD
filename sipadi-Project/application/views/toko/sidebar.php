@@ -17,7 +17,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="../admin">
+        <a class="nav-link" href="../admin/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data Karyawan</span>
+            <span>Data Admin</span>
         </a>
     </li>
     <li class="nav-item">
@@ -67,13 +67,13 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="../transaksi/index.php">
+        <a class="nav-link" href="../transaksi/">
             <i class="fas fa-fw fa-shopping-cart"></i>
             <span>Transaksi</span></a>
     </li>
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="../kurir/index.php">
+        <a class="nav-link" href="../kurir/">
             <i class="fas fa-fw fa-shipping-fast"></i>
             <span>Kurir</span></a>
     </li>
