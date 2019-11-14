@@ -22,10 +22,10 @@
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data Karyawan</span>
+            <span>Data Admin</span>
         </a>
     </li>
     <li class="nav-item">
@@ -50,7 +50,7 @@
             <span>Data Barang</span>
         </a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link collapsed" href="../Kategori/">
             <i class="fas fa-fw fa-stream"></i>
             <span>Data Kategori</span>

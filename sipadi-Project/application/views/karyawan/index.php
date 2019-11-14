@@ -57,7 +57,7 @@ $dtKrywn = query("SELECT * FROM admin");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Karyawan</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Admin</h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="table table-striped table-bordered">
@@ -70,7 +70,7 @@ $dtKrywn = query("SELECT * FROM admin");
                     </tr>
                 </thead>
                 <tbody>
-                <?php $i = 1; ?>
+                    <?php $i = 1; ?>
                     <?php foreach ($dtKrywn as $krywn) : ?>
                         <tr>
                             <td><?= $i; ?></td>
