@@ -39,10 +39,10 @@ function ubahTk($data)
 }
 function uploadTk()
 {
-    $namaFile = $_FILES['gmbr']['name'];
-    $ukuranFile = $_FILES['gmbr']['size'];
-    $error = $_FILES['gmbr']['error'];
-    $tmpName = $_FILES['gmbr']['tmp_name'];
+    $namaFile = $_FILES['gambar_toko']['name'];
+    $ukuranFile = $_FILES['gambar_toko']['size'];
+    $error = $_FILES['gambar_toko']['error'];
+    $tmpName = $_FILES['gambar_toko']['tmp_name'];
 
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
@@ -62,7 +62,7 @@ function uploadTk()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/kategori/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../../views/toko/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }

@@ -2,7 +2,7 @@
 require_once 'header.php';
 require '../../controllers/toko/functions-toko.php';
 session_start();
-$_POST = $_SESSION;
+
 
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
@@ -11,11 +11,27 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
+$toko = query("SELECT * FROM toko");
+
+if (isset($_POST["submit"])) {
+    if (ubahTk($_POST) > 0) {
+        echo "    
+        <script>
+            alert('data berhasil diedit!');
+            document.location.href = 'index.php';
+        </script>";
+    } else {
+        echo "<script>
+        alert('data gagal diedit!');
+        document.Location.href = 'index.php';
+        </script>";
+    }
+}
+$_POST = $_SESSION;
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
-$toko = query("SELECT * FROM toko");
 
 ?>
 <?php require_once 'sidebar.php'; ?>
@@ -63,9 +79,10 @@ $toko = query("SELECT * FROM toko");
                 <?php foreach ($toko as $tk) : ?>
                     <form action="" class="user" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="id_toko" value="<?= $tk['id_toko']; ?>">
+                        <input type="hidden" name="gambarLama" value="<?= $tk['gambar_toko']; ?>">
                         <div class="form-group">
                             <label for="nama_toko"> Nama Toko : </label>
-                            <input type="text" class="form-control form-control-user" value="<?= $tk['nama_toko']; ?>">
+                            <input type="text" class="form-control form-control-user" name="nama_toko" value="<?= $tk['nama_toko']; ?>">
                         </div>
                         <div class="form-group">
                             <label for="alamat_toko"> Alamat Toko : </label>
@@ -74,7 +91,7 @@ $toko = query("SELECT * FROM toko");
                         <div class="form-group">
                             <label for=""> Gambar Lama : </label>
                             <br>
-                            <img src="<?= "gambar/" . $tk['gambar_sampul']; ?>" height="500" width="700" class="img-thumbnail" name="gambarLama">
+                            <img src="<?= "gambar/" . $tk['gambar_sampul']; ?>" height="500" width="700" class="img-thumbnail">
                         </div>
                         <div class="form-group">
                             <label for="gmbr"> Gambar Toko Baru : </label>
