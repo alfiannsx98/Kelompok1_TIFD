@@ -43,13 +43,13 @@ function tambahAdm($data)
     }
 
     $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE email_admin = '$email'");
-    if (mysqlI_fetch_assoc($result)) {
+    if (mysqli_fetch_assoc($result)) {
         echo "<script>alert('email yang dipilih sudah terdaftar!');</script>";
         return false;
     }
     $password = password_hash($password_admin, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO ADMIN VALUES('$id_admin','$nama','$email','$gambar_admin','$password','$admin_created','$alamat','$level')";
+    $query = "INSERT INTO admin VALUES('$id_admin','$nama','$email','$gambar_admin','$password','$admin_created','$alamat','$level')";
 
     mysqli_query($koneksi, $query);
 

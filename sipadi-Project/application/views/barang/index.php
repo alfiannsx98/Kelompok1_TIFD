@@ -58,7 +58,7 @@ $dtBrg = query("SELECT * FROM barang");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Barang</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Barang <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="ui celled table">
@@ -67,12 +67,11 @@ $dtBrg = query("SELECT * FROM barang");
                         <th>No</th>
                         <th>Nama Barang</th>
                         <th>Kategori</th>
-                        <th>Harga Barang</th>
                         <th>Gambar Barang</th>
+                        <th>Harga Barang</th>
                         <th>Deskripsi</th>
-                        <th>Tanggal Upload</th>
-                        <th>Kadaluarsa</th>
                         <th>Stok</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,12 +81,15 @@ $dtBrg = query("SELECT * FROM barang");
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_brg']; ?></td>
                             <td><?= $brg['id_ktg']; ?></td>
+                            <td><?= $brg['gambar_brg']; ?></td>
                             <td><?= $brg['harga_brg']; ?></td>
-                            <td><?= $brg['gmbr_brg']; ?></td>
                             <td><?= $brg['deskripsi_brg']; ?></td>
-                            <td><?= $brg['tgl_upload']; ?></td>
-                            <td><?= $brg['brg_kadaluarsa']; ?></td>
-                            <td><?= $brg['jml_stok_tersedia']; ?></td>
+                            <td><?= $brg['stok']; ?></td>
+                            <td>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                            </td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
