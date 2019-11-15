@@ -81,7 +81,7 @@ $dtBrg = query("SELECT * FROM barang");
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_brg']; ?></td>
                             <td><?= $brg['id_ktg']; ?></td>
-                            <td><?= $brg['gambar_brg']; ?></td>
+                            <td><img src="<?= "gambar/" . $brg['gambar_brg']; ?>" height="150" width="150" alt=""></td>
                             <td><?= $brg['harga_brg']; ?></td>
                             <td><?= $brg['deskripsi_brg']; ?></td>
                             <td><?= $brg['stok']; ?></td>

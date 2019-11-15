@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_query("localhost", "root", "", "dbsipadifinal1");
+$koneksi = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 
 function query($query)
 {
@@ -55,8 +55,67 @@ function uploadBrg()
     $error = $_FILES['gmbr']['error'];
     $tmpName = $_FILES['gmbr']['tmp_name'];
 
-    if($error === 4)
-    {
-        echo "<script></script>"
+    if ($error === 4) {
+        echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
+        return false;
     }
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+        alert('Bukan gambar yang anda upload');
+        </script>
+        ";
+    }
+    if ($ukuranFile > 20000000) {
+        echo "<script>
+            alert('Gambar yang anda upload terlalu besar!');
+        </script>
+        ";
+    }
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, '../../views/barang/gambar/' . $namaFileBaru);
+
+    return $namaFileBaru;
+}
+function ubahBrg($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama_barang"]);
+    $kategori = htmlspecialchars($data["id_kategori"]);
+    $harga = htmlspecialchars($data["harga"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $stok = htmlspecialchars($data["stok"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    if ($_FILES['gmbr']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = uploadBrg();
+    }
+    $query = "UPDATE barang SET
+                nama_brg = '$nama',
+                id_ktg = '$kategori',
+                gambar_brg = '$gambar',
+                harga_brg = '$harga',
+                deskripsi_brg = '$deskripsi',
+                stok = '$stok'
+            WHERE id_brg = '$id' 
+    ";
+    var_dump($query);
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+function hapusBrg($id)
+{
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
+
+    return mysqli_affected_rows($koneksi);
 }
