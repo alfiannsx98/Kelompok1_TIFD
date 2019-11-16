@@ -70,6 +70,7 @@ $dtBrg = query("SELECT * FROM barang");
                         <th>Gambar Barang</th>
                         <th>Harga Barang</th>
                         <th>Deskripsi</th>
+                        <th>Tanggal Upload</th>
                         <th>Stok</th>
                         <th>Aksi</th>
                     </tr>
@@ -84,6 +85,7 @@ $dtBrg = query("SELECT * FROM barang");
                             <td><img src="<?= "gambar/" . $brg['gambar_brg']; ?>" height="150" width="150" alt=""></td>
                             <td><?= $brg['harga_brg']; ?></td>
                             <td><?= $brg['deskripsi_brg']; ?></td>
+                            <td><?= $brg['tgl_upload']; ?></td>
                             <td><?= $brg['stok']; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>

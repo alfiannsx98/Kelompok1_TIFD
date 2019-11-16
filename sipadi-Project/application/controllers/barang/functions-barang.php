@@ -28,7 +28,7 @@ function tambahBrg($data)
     $harga = htmlspecialchars($data["harga"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $stok = htmlspecialchars($data["stok"]);
-    $tgl_upload = time();
+    $tgl_upload = time($data["tgl_upload"]);
 
     $gambar_brg = uploadBrg();
     if (!$gambar_brg) {
