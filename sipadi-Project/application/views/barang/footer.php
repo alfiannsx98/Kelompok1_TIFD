@@ -46,6 +46,29 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    var i = 1;
+    $('#tambah').click(function()) {
+    i++;
+    $('dinamis').append('<tr id="row' + i + '"><td> <div class="col-sm"><input type = "number" name = "stok" class = "form-control" placeholder = "Masukkan Stok Barang"></div> </td><td><div class = "col-sm"><input type = "date" name = "expired" class = "form-control" placeholder = "Masukkan Stok Barang"></div></td><td><div class = "col-sm"><button id="' + i + '" type = "button" name = "kurang" class = "btn btn-danger btn-user btn-block btn_remove">kurangi Jumlah Data</button></div></td></tr>');
+    });
+    $(document).on('click', '.btn_remove', function() {
+        var button_id = $(this).attr("id");
+        $('#row' + button_id + '').remove();
+    });
+
+    $('#submit').click(function() {
+        $.ajax({
+            url: "tambah.php",
+            method: "POST",
+            data: $('#tambah').serialize(),
+            success: function(data) {
+                alert(data);
+                $('#add_name')[0].reset();
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

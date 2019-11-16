@@ -10,7 +10,6 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
-
 if (isset($_POST["submit"])) {
     if (tambahBrg($_POST) > 0) {
         echo "    
@@ -87,10 +86,39 @@ require 'sidebar.php';
                         <label for="deskripsi"> Deskripsi Barang : </label>
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control"></textarea>
                     </div>
+                    <!--  ditambahkan dinamis add form input -->
                     <div class="form-group">
-                        <label for="stok"> Stok Barang : </label>
-                        <input type="number" name="stok" class="form-control form-control-user" placeholder="Masukkan Stok Barang">
+                        <form name="tambah" id="tambah" action="">
+                            <table class="table table-bordered" id="dinamis">
+                                <tr>
+                                    <td><label for="stok">Masukkan Stok Barang</label></td>
+                                    <td><label for="expired">Masukkan Expired Date</label></td>
+                                    <td><label for="kurang">Aksi</label></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-sm">
+                                            <input type="number" name="stok" class="form-control" placeholder="Masukkan Stok Barang">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-sm">
+                                            <input type="date" name="expired" class="form-control" placeholder="Masukkan Stok Barang">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-sm">
+                                            <button type="button" name="kurang" class="btn btn-danger btn-user btn-block">kurangi Jumlah Data</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group">
+                                <button type="button" name="tambah" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
+                            </div>
+                        </form>
                     </div>
+                    <!-- bates ditambahkan dinamis add form input -->
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
