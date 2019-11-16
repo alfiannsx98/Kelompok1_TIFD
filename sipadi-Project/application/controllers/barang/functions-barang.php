@@ -98,7 +98,6 @@ function ubahBrg($data)
     $kategori = htmlspecialchars($data["id_kategori"]);
     $harga = htmlspecialchars($data["harga"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
-    $stok = htmlspecialchars($data["stok"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     if ($_FILES['gmbr']['error'] === 4) {
@@ -112,10 +111,22 @@ function ubahBrg($data)
                 gambar_brg = '$gambar',
                 harga_brg = '$harga',
                 deskripsi_brg = '$deskripsi',
-                stok = '$stok'
             WHERE id_brg = '$id' 
     ";
-    var_dump($query);
+    $number = count($_POST["stok"]);
+    $number1 = count($_POST["expired"]);
+    if ($number >= 1 && $number1 >= 1) {
+        for ($i = 0; $i < $number; $i++) {
+            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
+                $sql = "UPDATE dtl_brg SET
+                stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',
+                expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
+            WHERE id_brg = '$id'
+            ";
+                mysqli_query($koneksi, $sql);
+            }
+        }
+    }
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }

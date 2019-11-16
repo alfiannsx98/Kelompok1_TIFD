@@ -3,6 +3,10 @@ require_once 'header.php';
 require '../../../application/controllers/login/functions-login.php';
 session_start();
 
+$getKtg = mysqli_query($koneksi, "SELECT `barang`.*,`kategori`.`nama_kategori`
+            FROM `barang` JOIN `kategori`
+            ON `barang`.`id_ktg` = `kategori`.`id_kategori`
+    ");
 $_POST = $_SESSION;
 
 // $email = $_POST["email_admin"];
@@ -16,8 +20,7 @@ $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
-$dtBrg = query("SELECT * FROM barang");
-
+// $dtBrg = query("SELECT * FROM barang");
 ?>
 <?php require_once 'sidebar.php'; ?>
 
@@ -76,15 +79,15 @@ $dtBrg = query("SELECT * FROM barang");
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($dtBrg as $brg) : ?>
+                    <?php foreach ($getKtg as $brg) : ?>
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $brg['nama_brg']; ?></td>
-                            <td><?= $brg['id_ktg']; ?></td>
+                            <td><?= $brg['nama_kategori']; ?></td>
                             <td><img src="<?= "gambar/" . $brg['gambar_brg']; ?>" height="150" width="150" alt=""></td>
                             <td><?= $brg['harga_brg']; ?></td>
                             <td><?= $brg['deskripsi_brg']; ?></td>
-                            <td><?= $brg['tgl_upload']; ?></td>
+                            <td><?= date('d F Y', $brg['tgl_upload']); ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-trash-alt"></i></a>

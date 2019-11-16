@@ -26,7 +26,6 @@ if (isset($_POST["submit"])) {
         echo "    
         <script>
             alert('data gagal Diedit!');
-            document.location.href = 'index.php';
         </script>";
     }
 }
@@ -99,9 +98,27 @@ require 'sidebar.php';
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control"><?= $barang['deskripsi_brg']; ?></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="stok"> Stok Barang : </label>
-                        <input type="number" name="stok" class="form-control form-control-user" placeholder="Masukkan Stok Barang" value="<?= $barang['stok']; ?>">
+                        <table class="table table-bordered" id="dynamic_field">
+                            <tr>
+                                <td><label for="stok">Masukkan Stok Barang</label></td>
+                                <td><label for="expired">Masukkan Expired Date</label></td>
+                            </tr>
+                            <?php $dtlBrg = query("SELECT * FROM dtl_brg WHERE id_brg='$id'"); ?>
+                            <?php $i = 1 ?>
+                            <?php foreach ($dtlBrg as $brg) : ?>
+                                <tr>
+                                    <td>
+                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok'][$i]; ?>">
+                                    </td>
+                                    <td>
+                                        <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" value="<?= $brg['expired'][$i]; ?>">
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <?php $i++; ?>
+                        </table>
                     </div>
+                    <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>
                 </form>
