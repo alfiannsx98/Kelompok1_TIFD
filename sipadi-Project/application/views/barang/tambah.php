@@ -57,7 +57,7 @@ require 'sidebar.php';
                 <!-- Disini tempat membuat Edit Profil nya! -->
             </div>
             <div class="col-lg-10">
-                <form action="" method="post" class="user" enctype="multipart/form-data">
+                <form action="" method="post" class="user" name="tambahkeun" id="tambahkeun" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="username"> Nama Barang : </label>
                         <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required>
@@ -88,39 +88,28 @@ require 'sidebar.php';
                     </div>
                     <!--  ditambahkan dinamis add form input -->
                     <div class="form-group">
-                        <form name="tambah" id="tambah" action="">
-                            <table class="table table-bordered" id="dinamis">
-                                <tr>
-                                    <td><label for="stok">Masukkan Stok Barang</label></td>
-                                    <td><label for="expired">Masukkan Expired Date</label></td>
-                                    <td><label for="kurang">Aksi</label></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="col-sm">
-                                            <input type="number" name="stok" class="form-control" placeholder="Masukkan Stok Barang">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="col-sm">
-                                            <input type="date" name="expired" class="form-control" placeholder="Masukkan Stok Barang">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="col-sm">
-                                            <button type="button" name="kurang" class="btn btn-danger btn-user btn-block">kurangi Jumlah Data</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="form-group">
-                                <button type="button" name="tambah" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
-                            </div>
-                        </form>
+                        <table class="table table-bordered" id="dynamic_field">
+                            <tr>
+                                <td><label for="stok">Masukkan Stok Barang</label></td>
+                                <td><label for="expired">Masukkan Expired Date</label></td>
+                                <td><label for="kurang">Aksi</label></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" name="stok[]" class="form-control list_stok" placeholder="Masukkan Stok Barang">
+                                </td>
+                                <td>
+                                    <input type="date" name="expired[]" class="form-control list_expired" placeholder="Masukkan Stok Barang">
+                                </td>
+                                <td>
+                                    <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <!-- bates ditambahkan dinamis add form input -->
                     <hr>
-                    <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
+                    <button type="submit" id="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
                 <br>
                 <div class="text-center">

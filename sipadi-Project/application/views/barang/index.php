@@ -71,7 +71,6 @@ $dtBrg = query("SELECT * FROM barang");
                         <th>Harga Barang</th>
                         <th>Deskripsi</th>
                         <th>Tanggal Upload</th>
-                        <th>Stok</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -86,7 +85,6 @@ $dtBrg = query("SELECT * FROM barang");
                             <td><?= $brg['harga_brg']; ?></td>
                             <td><?= $brg['deskripsi_brg']; ?></td>
                             <td><?= $brg['tgl_upload']; ?></td>
-                            <td><?= $brg['stok']; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-trash-alt"></i></a>

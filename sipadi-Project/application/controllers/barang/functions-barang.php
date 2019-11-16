@@ -1,6 +1,5 @@
 <?php
 $koneksi = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
-
 function query($query)
 {
     global $koneksi;
@@ -14,7 +13,6 @@ function query($query)
 function tambahBrg($data)
 {
     global $koneksi;
-
     $rowDB1 = mysqli_query($koneksi, "SELECT * FROM barang");
     $field = mysqli_num_rows($rowDB1);
     $brg = "IDB";
@@ -27,7 +25,6 @@ function tambahBrg($data)
     $kategori = htmlspecialchars($data["id_kategori"]);
     $harga = htmlspecialchars($data["harga"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
-    $stok = htmlspecialchars($data["stok"]);
     $tgl_upload = time($data["tgl_upload"]);
 
     $gambar_brg = uploadBrg();
@@ -35,6 +32,16 @@ function tambahBrg($data)
         return false;
     }
 
+    $number = count($_POST["stok"]);
+    $number1 = count($_POST["expired"]);
+    if ($number > 1 && $number1 > 1) {
+        for ($i = 0; $i < $number; $i++) {
+            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
+                $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+                mysqli_query($koneksi, $sql);
+            }
+        }
+    }
     $result = mysqli_query($koneksi, "SELECT nama_brg FROM barang WHERE barang = '$nama'");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
@@ -42,7 +49,7 @@ function tambahBrg($data)
         </script>";
         return false;
     }
-    $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload','$stok')";
+    $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload')";
 
     mysqli_query($koneksi, $query);
 
