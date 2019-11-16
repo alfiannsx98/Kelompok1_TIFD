@@ -96,10 +96,10 @@ require 'sidebar.php';
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="number" name="stok[]" class="form-control list_stok" placeholder="Masukkan Stok Barang">
+                                    <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang">
                                 </td>
                                 <td>
-                                    <input type="date" name="expired[]" class="form-control list_expired" placeholder="Masukkan Stok Barang">
+                                    <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang">
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>

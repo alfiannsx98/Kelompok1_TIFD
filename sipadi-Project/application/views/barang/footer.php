@@ -65,7 +65,7 @@
                 method: "POST",
                 data: $('#tambahkeun').serialize(),
                 success: function(data) {
-                    alert(data);
+                    (data);
                     $('#tambahkeun')[0].reset();
                 }
             });
