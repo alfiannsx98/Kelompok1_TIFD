@@ -66,7 +66,7 @@ require 'sidebar.php';
                     <input type="hidden" name="gambarLama" value="<?= $kurir["gmbr"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama Kurir : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" value="<?= $kurir["nama_kurir"]; ?>" required>
+                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" placeholder="" value="<?= $kurir["nama_kurir"]; ?>" readonly>
                     </div>
                     <div class="form-group">
                         <label for="username"> Kota Tujuan : </label>
