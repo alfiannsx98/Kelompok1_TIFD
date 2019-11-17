@@ -15,7 +15,7 @@ function tambahKur($data)
 {
     global $koneksi;
 
-    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM kurir");
+    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM kurir WHERE id_kurir ");
     $field = mysqli_num_rows($rowDB1);
     $kur = "KUR";
     $d = date('m', time());
