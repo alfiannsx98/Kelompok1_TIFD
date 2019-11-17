@@ -88,7 +88,7 @@ require 'sidebar.php';
                     </div>
                     <!--  ditambahkan dinamis add form input -->
                     <div class="form-group">
-                        <table class="table table-bordered" id="dynamic_field">
+                        <table class="table table-bordered" id="fieldQue">
                             <tr>
                                 <td><label for="stok">Masukkan Stok Barang</label></td>
                                 <td><label for="expired">Masukkan Expired Date</label></td>

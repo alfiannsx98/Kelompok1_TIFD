@@ -110,7 +110,7 @@ function ubahBrg($data)
                 id_ktg = '$kategori',
                 gambar_brg = '$gambar',
                 harga_brg = '$harga',
-                deskripsi_brg = '$deskripsi',
+                deskripsi_brg = '$deskripsi'
             WHERE id_brg = '$id' 
     ";
     $number = count($_POST["stok"]);

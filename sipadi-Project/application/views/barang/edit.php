@@ -15,7 +15,7 @@ $id = $_GET['id'];
 $barang = query("SELECT * FROM barang WHERE id_brg = '$id'")[0];
 
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["update"])) {
     if (ubahBrg($_POST) > 0) {
         echo "    
         <script>
@@ -52,7 +52,7 @@ require 'sidebar.php';
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Tambah Barang</h1>
+                <h1 class="h3 mb-0 text-gray-800">Edit Barang</h1>
             </div>
 
             <!-- Content Row -->
@@ -98,7 +98,7 @@ require 'sidebar.php';
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control"><?= $barang['deskripsi_brg']; ?></textarea>
                     </div>
                     <div class="form-group">
-                        <table class="table table-bordered" id="dynamic_field">
+                        <table class="table table-bordered" id="fieldQue">
                             <tr>
                                 <td><label for="stok">Masukkan Stok Barang</label></td>
                                 <td><label for="expired">Masukkan Expired Date</label></td>
@@ -108,10 +108,10 @@ require 'sidebar.php';
                             <?php foreach ($dtlBrg as $brg) : ?>
                                 <tr>
                                     <td>
-                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok'][$i]; ?>">
+                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok']; ?>">
                                     </td>
                                     <td>
-                                        <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" value="<?= $brg['expired'][$i]; ?>">
+                                        <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" value="<?= $brg['expired']; ?>">
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -120,7 +120,7 @@ require 'sidebar.php';
                     </div>
                     <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
                     <hr>
-                    <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>
+                    <button type="submit" name="update" class="btn btn-success btn-user btn-block">Update Data</button>
                 </form>
                 <br>
                 <div class="text-center">
