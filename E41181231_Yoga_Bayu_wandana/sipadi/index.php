@@ -99,8 +99,8 @@
 			<div class="row align-items-center fill_height">
 				<div class="col">
 					<div class="main_slider_content">
-						<h6>Sistem Informasi Penjualan Sumberdadi</h6>
-						<h1>Grosir & Eceran</h1>
+						<h1>SIPADI</h1>
+						<h6>Sistem Informasi Pertanian Sumberdadi</h6>
 						<div class="red_button shop_now_button"><a href="#">shop now</a></div>
 					</div>
 				</div>
