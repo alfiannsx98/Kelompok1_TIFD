@@ -22,9 +22,74 @@
 
 	<!-- Header -->
 
-	<?php
-		require 'includes/header.php';
-	?>
+	<header class="header trans_300">
+
+		<!-- Top Navigation -->
+
+		<div class="top_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="top_nav_left">Sistem Informasi Pertanian Sumberdadi</div>
+					</div>
+					<div class="col-md-6 text-right">
+						<div class="top_nav_right">
+							<ul class="top_nav_menu">
+
+								<!-- Currency / Language / My Account -->
+								<li class="account">
+									<a href="#">
+										My Account
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="account_selection">
+									<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
+										<li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i>Login</a></li>
+										<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
+										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Navigation -->
+
+		<div class="main_nav_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="#">Sumber<span> Dadi</span></a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li><a href="#">Home</a></li>
+								<li><a href="index.php#kategori">Kategori</a></li>
+								<li><a href="index.php#produk">Produk</a></li>
+								<li><a href="index.php#about">About Us</a></li>
+							</ul>
+							<ul class="navbar_user">
+								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+								<li class="checkout">	
+									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
+										<i class="fa fa-shopping-cart"></i>
+									</button>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
 	<div class="container product_section_container">
 		<div class="row">
 			<div class="col product_section clearfix">
