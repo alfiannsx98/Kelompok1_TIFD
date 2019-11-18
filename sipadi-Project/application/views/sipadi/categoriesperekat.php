@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="styles/categories_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 </head>
 
 <body>
@@ -99,7 +101,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Biostimulan</a></li>
+						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Perekat</a></li>
 					</ul>
 				</div>
 
@@ -117,9 +119,9 @@
 							<li><a href="categorieszpt.php">ZPT</a></li>
 							<li><a href="categoriespuk.php">Pupuk</a></li>
 							<li><a href="categoriesher.php">Herbisida</a></li>
-							<li><a href="categoriesbenih.php">Benih</a></li>
-							<li><a href="categoriesperekat.php">Perekat</a></li>
-							<li class="active"><span><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Biostimulan</a></li>
+							<li><a href="#categoriesbenih.php">Benih</a></li>
+							<li class="active"><span><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Perekat</a></li>
+							<li><a href="categoriesbios.php">Biostimulan</a></li>
 						</ul>
 					</div>
 
@@ -287,6 +289,7 @@
 						<p>Subscribe to our newsletter and get 20% off your first purchase</p>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

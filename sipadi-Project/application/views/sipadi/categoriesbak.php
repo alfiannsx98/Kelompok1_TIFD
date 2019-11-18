@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SIPADI Categories</title>
+<title>Colo Shop Categories</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
@@ -22,74 +22,9 @@
 
 	<!-- Header -->
 
-	<header class="header trans_300">
-
-		<!-- Top Navigation -->
-
-		<div class="top_nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="top_nav_left">Sistem Informasi Pertanian Sumberdadi</div>
-					</div>
-					<div class="col-md-6 text-right">
-						<div class="top_nav_right">
-							<ul class="top_nav_menu">
-
-								<!-- Currency / Language / My Account -->
-								<li class="account">
-									<a href="#">
-										My Account
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="account_selection">
-									<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
-										<li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i>Login</a></li>
-										<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
-										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Main Navigation -->
-
-		<div class="main_nav_container">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-right">
-						<div class="logo_container">
-							<a href="#">Sumber<span> Dadi</span></a>
-						</div>
-						<nav class="navbar">
-							<ul class="navbar_menu">
-								<li><a href="#">Home</a></li>
-								<li><a href="index.php#kategori">Kategori</a></li>
-								<li><a href="index.php#produk">Produk</a></li>
-								<li><a href="index#about">About Us</a></li>
-							</ul>
-							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<li class="checkout">	
-									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</li>
-							</ul>
-							<div class="hamburger_container">
-								<i class="fa fa-bars" aria-hidden="true"></i>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</header>
+	<?php
+		require 'includes/header.php';
+	?>
 	<div class="container product_section_container">
 		<div class="row">
 			<div class="col product_section clearfix">
@@ -99,7 +34,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Biostimulan</a></li>
+						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Bakterisida</a></li>
 					</ul>
 				</div>
 
@@ -111,15 +46,15 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
-							<li><a href="categoriesinsek.php">Insektisida</a></li>
-							<li><a href="categoriesfungi.php">Fungisida</a></li>	
-							<li><a href="categoriesbak.php">Bakterisida</a></li>
+                            <li><a href="categoriesinsek.php">Insektisida</a></li>
+                            <li><a href="categoriesfungi.php">Fungisida</a></li>
+                            <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Bakterisida</a></li>
 							<li><a href="categorieszpt.php">ZPT</a></li>
 							<li><a href="categoriespuk.php">Pupuk</a></li>
 							<li><a href="categoriesher.php">Herbisida</a></li>
 							<li><a href="categoriesbenih.php">Benih</a></li>
 							<li><a href="categoriesperekat.php">Perekat</a></li>
-							<li class="active"><span><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Biostimulan</a></li>
+							<li><a href="categoriesbios.php">Biostimulan</a></li>
 						</ul>
 					</div>
 
@@ -167,36 +102,21 @@
 
 								<div class="product-grid">
 
-									<!-- Product pupuk -->
+									<!-- Product bakteri -->
 
-									<div class="product-item herbisida">
+									<div class="product-item bakterisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product1.png" alt="gambar">
+									<img src="images/productbakterisida1.png" alt="">
 								</div>
-								<div class="favorite"></div>
+								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<h6 class="product_name1"><a href="single.html">Bactocyn 150 AL (200ml)</a></h6>
 									<div class="product_price">Rp.30.000,00</div>
 								</div>
 							</div>
 							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
 						</div>
-
-						<div class="product-item herbisida">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/productherbisida1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Topshot (500ml)</a></h6>
-									<div class="product_price">Rp.20.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
 
 
 								</div>
