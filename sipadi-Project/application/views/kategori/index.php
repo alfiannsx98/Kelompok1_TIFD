@@ -15,7 +15,7 @@ $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
 
-$dtBrg = query("SELECT * FROM kategori");
+$dtKtg = query("SELECT * FROM kategori");
 
 ?>
 <?php require_once 'sidebar.php'; ?>
@@ -71,14 +71,14 @@ $dtBrg = query("SELECT * FROM kategori");
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($dtBrg as $brg) : ?>
+                    <?php foreach ($dtKtg as $ktg) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $brg['nama_kategori']; ?></td>
-                            <td><img src="<?= 'gambar/' . $brg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
+                            <td><?= $ktg['nama_kategori']; ?></td>
+                            <td><img src="<?= 'gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
-                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>

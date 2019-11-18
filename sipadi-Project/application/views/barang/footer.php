@@ -46,6 +46,62 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    // ini untuk tambah data
+    $(document).ready(function() {
+        var i = 1;
+        $('#add').click(function() {
+            i++;
+            $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok[]" placeholder="Masukkan data Stok" class="form-control stok_list" /></td><td><input type="date" name="expired[]" class="form-control expired_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
+        });
+
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+
+        $('#submit').click(function() {
+            $.ajax({
+                url: "tambah.php",
+                method: "POST",
+                data: $('#tambahkeun').serialize(),
+                success: function(data) {
+                    (data);
+                    $('#tambahkeun')[0].reset();
+                }
+            });
+        });
+
+    });
+</script>
+<script>
+    // ini untuk update data
+    $(document).ready(function() {
+        var i = 1;
+        $('#tmbh').click(function() {
+            i++;
+            $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok[]" placeholder="Masukkan data Stok" class="form-control stok_list" /></td><td><input type="date" name="expired[]" class="form-control expired_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
+        });
+
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+
+        $('#update').click(function() {
+            $.ajax({
+                url: "edit.php",
+                method: "POST",
+                data: $('#editkeun').serialize(),
+                success: function(data) {
+                    (data);
+                    $('#editkeun')[0].reset();
+                }
+            });
+        });
+
+    });
+</script>
 </body>
 
 </html>

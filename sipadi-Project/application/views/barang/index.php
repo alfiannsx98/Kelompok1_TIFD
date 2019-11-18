@@ -3,12 +3,24 @@ require_once 'header.php';
 require '../../../application/controllers/login/functions-login.php';
 session_start();
 
+$getKtg = mysqli_query($koneksi, "SELECT `barang`.*,`kategori`.`nama_kategori`
+            FROM `barang` JOIN `kategori`
+            ON `barang`.`id_ktg` = `kategori`.`id_kategori`
+    ");
+$_POST = $_SESSION;
+
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
+// $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
+$email = $_POST['email_admin'];
+$sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
+$gmbr = mysqli_fetch_assoc($sql);
+
+// $dtBrg = query("SELECT * FROM barang");
 ?>
 <?php require_once 'sidebar.php'; ?>
 
@@ -42,100 +54,48 @@ if (!isset($_SESSION["login"])) {
     <!-- Main Content -->
     <div id="content">
 
-        <?php require_once 'topbar.php'; ?>
+        <?php require_once '../../views/templates/topbar.php'; ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Barang</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Barang <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
             </div>
             <!-- Content Row -->
-            <table id="example" class="table table-striped table-bordered">
+            <table id="example" class="ui celled table">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama Barang</th>
-                        <th>Harga Barang</th>
+                        <th>Kategori</th>
                         <th>Gambar Barang</th>
+                        <th>Harga Barang</th>
                         <th>Deskripsi</th>
                         <th>Tanggal Upload</th>
-                        <th>Kadaluarsa</th>
-                        <th>Stok</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Columbus 600EC</td>
-                        <td>Rp.60.000</td>
-                        <td>columbus.jpg</td>
-                        <td>Columbus berfungsi untuk</td>
-                        <td>11-11-2019</td>
-                        <td>11-11-2020</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Murtox</td>
-                        <td>Rp.70.000</td>
-                        <td>murtox.jpg</td>
-                        <td>Murtox berfungsi untuk</td>
-                        <td>11-11-2019</td>
-                        <td>11-11-2020</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Pupuk Petroganik</td>
-                        <td>Rp.200.000</td>
-                        <td>petroganik.jpg</td>
-                        <td>Pupuk petroganik berfungsi untuk</td>
-                        <td>11-11-2019</td>
-                        <td>11-11-2020</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                    </tr>
-                    <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td>$162,700</td>
-                    </tr>
-                    <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td>$372,000</td>
-                    </tr>
-                    <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                        <td>$137,500</td>
-                    </tr>
-                    <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td>$327,900</td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($getKtg as $brg) : ?>
+                        <tr>
+                            <td><?= $i; ?></td>
+                            <td><?= $brg['nama_brg']; ?></td>
+                            <td><?= $brg['nama_kategori']; ?></td>
+                            <td><img src="<?= "gambar/" . $brg['gambar_brg']; ?>" height="150" width="150" alt=""></td>
+                            <td><?= $brg['harga_brg']; ?></td>
+                            <td><?= $brg['deskripsi_brg']; ?></td>
+                            <td><?= date('d F Y', $brg['tgl_upload']); ?></td>
+                            <td>
+                                <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <!-- /.container-fluid -->
