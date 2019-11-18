@@ -69,6 +69,7 @@ $dtKur = query("SELECT * FROM kurir");
                         <th>Nama Kurir</th>
                         <th>Kota Tujuan</th>
                         <th>Ongkir Kurir</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

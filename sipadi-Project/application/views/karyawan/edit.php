@@ -65,15 +65,19 @@ require 'sidebar.php';
                     <input type="hidden" name="id" value="<?= $admin["id_admin"]; ?>">
                     <input type="hidden" name="gambarLama" value="<?= $admin["gmbr"]; ?>">
                     <div class="form-group">
-                        <label for="username"> Nama Karyawan : </label>
+                        <label for="username"> Nama Admin : </label>
                         <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" value="<?= $admin["nama_admin"]; ?>" required>
                     </div>
                     <div class="form-group">
-                        <label for=""> Gambar Karyawawn Lama : </label>
+                        <label for="alamat_admin"> Alamat Admin : </label>
+                        <textarea name="alamat_admin" class="form-control" id="alamat_admin" cols="30" rows="6" placeholder="Masukkan Alamat Admin" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Gambar Admin Lama : </label>
                         <img class="img-thumbnail" src="<?= "gambar/" . $admin['gmbr']; ?>" width="300" height="300" alt="">
                     </div>
                     <div class="form-group">
-                        <label for="gmbr"> Gambar Karyawan Baru : </label>
+                        <label for="gmbr"> Gambar Admin Baru : </label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
                             <label for="gmbr" class="custom-file-label">Pilih File</label>

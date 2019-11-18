@@ -9,6 +9,8 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
+$kurir = query("SELECT * FROM kurir")[0];
+
 if (isset($_POST["submit"])) {
     if (tambahKur($_POST) > 0) {
         echo "
@@ -59,16 +61,18 @@ require 'sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= $kurir["id_kurir"]; ?>">
+                <input type="hidden" name="id" value="<?= $kurir["id_kurir"]; ?>">
                     <div class="form-group">
-                        <label for="nama_admin"> Nama Kurir : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" placeholder="Masukan Nama Kurir" required>
+                        <label for="username"> Nama Kurir : </label>
+                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" placeholder="" value="<?= $kurir["nama_kurir"]; ?>" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="nama_admin"> Kota Tujuan : </label>
+                        <label for="username"> Kota Tujuan : </label>
                         <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" placeholder="Masukan Kota Tujuan" required>
                     </div>
                     <div class="form-group">
-                        <label for="nama_admin"> Ongkir Kurir : </label>
+                        <label for="username"> Ongkir Kurir : </label>
                         <input type="text" class="form-control form-control-user" id="ongkir_kurir" name="ongkir_kurir" placeholder="Masukan Ongkir Kurir" required>
                     </div>
                     <hr>

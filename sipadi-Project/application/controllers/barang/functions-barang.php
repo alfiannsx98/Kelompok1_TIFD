@@ -110,7 +110,7 @@ function ubahBrg($data)
                 id_ktg = '$kategori',
                 gambar_brg = '$gambar',
                 harga_brg = '$harga',
-                deskripsi_brg = '$deskripsi',
+                deskripsi_brg = '$deskripsi'
             WHERE id_brg = '$id' 
     ";
     $number = count($_POST["stok"]);
@@ -121,7 +121,7 @@ function ubahBrg($data)
                 $sql = "UPDATE dtl_brg SET
                 stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',
                 expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
-            WHERE id_brg = '$id'
+            WHERE id_brg = '$id' AND expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "' OR stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "'
             ";
                 mysqli_query($koneksi, $sql);
             }
