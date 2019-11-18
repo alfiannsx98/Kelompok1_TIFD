@@ -63,6 +63,12 @@ require 'sidebar.php';
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
                     <input type="hidden" name="id_toko" class="form-control" id="id_toko" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "IDT001"; ?>" readonly>
+                    <input type="hidden" name="status_bayar" class="form-control" id="status_bayar" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
+                    <input type="hidden" class="form-control" value="0" name="tanggal_kirim">
+                    <input type="hidden" name="status_kirim" class="form-control" id="status_kirim" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
+                    <input type="hidden" name="status_kirim" class="form-control" id="status_kirim" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
+                    <input type="hidden" name="tgl_transaksi" class="form-control" id="tgl_transaksi" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= time(); ?>" readonly>
+                    <input type="hidden" name="bukti_transaksi" class="form-control" id="bukti_transaksi" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= time(); ?>" readonly>
                     <div class="form-group">
                         <label for="id_admin"> Nama Admin : </label>
                         <input type="text" class="form-control form-control-user" id="id_admin" name="id_admin" placeholder="Masukan Nama Admin" value="<?= "Belum Terkonfirmasi"; ?>" readonly>
@@ -76,26 +82,25 @@ require 'sidebar.php';
                         <textarea class="form-control" name="alamat_kirim" id="alamat_kirim"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="tgl_kirim"> Tanggal Dikirim : </label>
-                        <input type="date" class="form-control">
+                        <label for="kota_kirim"> Kota Kirim : </label>
+                        <input type="text" class="form-control" value="surabaya" name="kota_kirim" id="kota_kirim">
                     </div>
                     <div class="form-group">
-                        <label for="password_admin"> Password Admin : </label>
-                        <input type="password" name="password_admin" class="form-control form-control-user" placeholder="Masukkan password admin" required>
+                        <label for="ongkir_kurir"> Ongkos Kirim : </label>
+                        <input type="number" class="form-control" value="7000" name="ongkir" id="ongkir">
                     </div>
                     <div class="form-group">
-                        <label for="password_admin1"> Ulangi Password Admin : </label>
-                        <input type="password" name="password_admin1" class="form-control form-control-user" placeholder="Masukkan password admin" required>
+                        <label for="total_harga"> Total Harga : </label>
+                        <input type="number" class="form-control" name="total_harga" id="total_harga">
                     </div>
                     <div class="form-group">
-                        <label for="gmbr"> Gambar Admin : </label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input form-control form-control-user" id="gambar_admin" name="gambar_admin">
-                            <label for="gambar_admin" class="custom-file-label">Pilih File</label>
-                        </div>
+                        <label for="harga_final"> Harga Final : </label>
+                        <input type="number" class="form-control" name="harga_final" id="harga_final">
                     </div>
-                    <input type="hidden" name="admin_created" value="<?= time(); ?>">
-                    <input type="hidden" name="level" value="2">
+                    <div class="form-group">
+                        <label for="harga_final"> Harga Final : </label>
+                        <input type="number" class="form-control" name="harga_final" id="harga_final">
+                    </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
