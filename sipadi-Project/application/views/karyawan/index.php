@@ -66,13 +66,13 @@ $dtKrywn = query("SELECT * FROM admin");
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Admin</th>
-                        <th>Email Admin</th>
-                        <th>Gambar Admin</th>
-                        <th>Admin Created</th>
-                        <th>Alamat</th>
-                        <th>Level</th>
-                        <th>Aksi</th>
+                        <th style="width:125px;">Nama Admin</th>
+                        <th style="width:125px;">Email Admin</th>
+                        <th style="width:125px;">Gambar Admin</th>
+                        <th style="width:125px;">Admin Created</th>
+                        <th style="width:125px;">Alamat</th>
+                        <th style="width:125px;">Level</th>
+                        <th style="width:125px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

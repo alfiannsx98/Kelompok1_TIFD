@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-$kurir = query("SELECT * FROM kurir");
+$kurir = query("SELECT * FROM kurir")[0];
 
 if (isset($_POST["submit"])) {
     if (tambahKur($_POST) > 0) {
