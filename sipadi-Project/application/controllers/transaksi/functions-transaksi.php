@@ -10,3 +10,8 @@ function query($query)
     }
     return $rows;
 }
+function tambahTr($data)
+{
+    global $koneksi;
+    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM transaksi");
+}
