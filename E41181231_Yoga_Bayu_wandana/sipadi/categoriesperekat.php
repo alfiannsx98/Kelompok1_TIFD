@@ -72,7 +72,7 @@
 								<li><a href="#">Home</a></li>
 								<li><a href="index.php#kategori">Kategori</a></li>
 								<li><a href="index.php#produk">Produk</a></li>
-								<li><a href="index#about">About Us</a></li>
+								<li><a href="index.php#about">About Us</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
