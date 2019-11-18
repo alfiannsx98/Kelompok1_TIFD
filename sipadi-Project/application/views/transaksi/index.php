@@ -56,7 +56,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Admin <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Transaksi <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
                 </h1>
             </div>
             <!-- Content Row -->
@@ -77,6 +77,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                         <th>Status Kirim</th>
                         <th>Tanggal Transaksi</th>
                         <th>Bukti Transfer</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,7 +89,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                             <td><?= $tr['id_pembeli']; ?></td>
                             <td><?= $tr['id_toko']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
-                            <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
+                            <td><?= $tr['tgl_kirim'] ?></td>
                             <td><?= $tr['kota_pembeli']; ?></td>
                             <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_harga']; ?></td>
@@ -98,7 +99,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                             <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
                             <td><img src="<?= "gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
                             <td>
-                                <a class="btn btn-primary" href="edit.php?id=<?= $tr['id_transaksi']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="btn btn-danger" href="hapus.php?id=<?= $tr['id_transaksi']; ?>"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>

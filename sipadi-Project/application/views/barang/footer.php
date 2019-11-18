@@ -71,8 +71,8 @@
                 }
             });
         });
-
     });
+    // akhir dari tambah data
 </script>
 <script>
     // ini untuk update data

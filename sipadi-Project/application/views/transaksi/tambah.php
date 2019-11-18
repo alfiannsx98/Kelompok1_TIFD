@@ -1,5 +1,5 @@
 <?php
-require_once '../../controllers/admin/functions-admin.php';
+require_once '../../controllers/transaksi/functions-transaksi.php';
 require_once 'header.php';
 
 session_start();
@@ -10,7 +10,7 @@ if (!isset($_SESSION["login"])) {
 }
 
 if (isset($_POST["submit"])) {
-    if (tambahTr($_POST) > 0) {
+    if (tambahTr($_POST)) {
         echo "
             <script>
                 alert('Data Berhasil Ditambah');
@@ -52,7 +52,7 @@ require 'sidebar.php';
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Tambah Admin</h1>
+                <h1 class="h3 mb-0 text-gray-800">Tambah Transaksi</h1>
             </div>
 
             <!-- Content Row -->
@@ -66,23 +66,21 @@ require 'sidebar.php';
                     <input type="hidden" name="status_bayar" class="form-control" id="status_bayar" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
                     <input type="hidden" class="form-control" value="0" name="tanggal_kirim">
                     <input type="hidden" name="status_kirim" class="form-control" id="status_kirim" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
-                    <input type="hidden" name="status_kirim" class="form-control" id="status_kirim" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
+                    <input type="hidden" name="id_pembeli" class="form-control" id="id_pembeli" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "IDB001"; ?>" readonly>
+                    <input type="hidden" name="tgl_kirim" class="form-control" id="tgl_kirim" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "00/00/0000"; ?>" readonly>
                     <input type="hidden" name="tgl_transaksi" class="form-control" id="tgl_transaksi" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= time(); ?>" readonly>
                     <input type="hidden" name="bukti_transaksi" class="form-control" id="bukti_transaksi" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= time(); ?>" readonly>
-                    <div class="form-group">
-                        <label for="id_admin"> Nama Admin : </label>
-                        <input type="text" class="form-control form-control-user" id="id_admin" name="id_admin" placeholder="Masukan Nama Admin" value="<?= "Belum Terkonfirmasi"; ?>" readonly>
-                    </div>
+                    <input type="hidden" class="form-control form-control-user" id="id_admin" name="id_admin" placeholder="Masukan Nama Admin" value="<?= "Belum Terkonfirmasi"; ?>" readonly>
                     <div class="form-group">
                         <label for="email_admin"> Pembeli : </label>
                         <input type="email" class="form-control form-control-user" id="email" name="email" value="<?= "pembeli"; ?>" placeholder="Masukan Email Admin" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="alamat_kirim"> Alamat Kirim : </label>
+                        <label for="alamat_kirim"> Alamat Lengkap Penerima : </label>
                         <textarea class="form-control" name="alamat_kirim" id="alamat_kirim"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="kota_kirim"> Kota Kirim : </label>
+                        <label for="kota_kirim"> Kota Penerima : </label>
                         <input type="text" class="form-control" value="surabaya" name="kota_kirim" id="kota_kirim">
                     </div>
                     <div class="form-group">
@@ -98,8 +96,40 @@ require 'sidebar.php';
                         <input type="number" class="form-control" name="harga_final" id="harga_final">
                     </div>
                     <div class="form-group">
-                        <label for="harga_final"> Harga Final : </label>
-                        <input type="number" class="form-control" name="harga_final" id="harga_final">
+                        <label for="gmbr"> Masukkan bukti Transaksi : </label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input form-control form-control-user" id="gmbr" name="gmbr">
+                            <label for="gmbr" class="custom-file-label">Pilih File</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-bordered" id="fieldQue">
+                            <tr>
+                                <td><label for="stok">Pilih barang</label></td>
+                                <td><label for="expired">Harga Satuan</label></td>
+                                <td><label for="expired">Jumlah yang dibeli</label></td>
+                                <td><label for="kurang">Aksi</label></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <?php $brg = query("SELECT * FROM barang"); ?>
+                                    <select name="id_barang[]" id="id_barang[]" class="form-control id_barang_list">
+                                        <?php foreach ($brg as $barg) : ?>
+                                            <option value="<?= $barg['id_brg'] ?>"><?= $barg['nama_brg']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="harga_satuan[]" class="form-control harga_satuan_list" placeholder="Harga Satuan">
+                                </td>
+                                <td>
+                                    <input type="number" name="jml_dibeli[]" class="form-control jml_dibeli_list" placeholder="Masukkan jml Dibeli">
+                                </td>
+                                <td>
+                                    <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
