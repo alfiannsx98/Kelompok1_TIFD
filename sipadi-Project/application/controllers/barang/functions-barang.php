@@ -121,7 +121,7 @@ function ubahBrg($data)
                 $sql = "UPDATE dtl_brg SET
                 stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',
                 expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
-            WHERE id_brg = '$id' AND expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "' OR stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "'
+            WHERE id_brg = '" . mysqli_real_escape_string($koneksi, $id[$i]) . "' AND stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "' AND expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
             ";
                 mysqli_query($koneksi, $sql);
             }
