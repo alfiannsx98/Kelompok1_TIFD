@@ -14,6 +14,7 @@ $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin 
 $gmbr = mysqli_fetch_assoc($sql);
 
 $dtTransaksi = query("SELECT * FROM transaksi");
+// $dtTransaksi = query("SELECT * FROM transaksi WHERE status_bayar = '0' AND status_kirim = '0'"); <-kondisi didalam data Karyawan
 
 ?>
 <?php require_once 'sidebar.php'; ?>
