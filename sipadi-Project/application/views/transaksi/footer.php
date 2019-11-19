@@ -74,6 +74,26 @@
         });
     });
 </script>
+<script type="text/javascript">
+    function autofill() {
+        var id_brg = $("#id_barang").val();
+        $.ajax({
+            url: 'autofill.php',
+            data: 'id=' + id_brg
+        }).success(function(data) {
+            var json = data,
+                obj = JSON.parse(json);
+            $("#harga_brg").val(obj.harga);
+        });
+    }
+</script>
+
+<!-- <script>
+    function myFunction() {
+        var x = document.getElementById("id_barang").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+    }
+</script> -->
 </body>
 
 </html>

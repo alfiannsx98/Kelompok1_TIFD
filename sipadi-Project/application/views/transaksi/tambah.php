@@ -113,14 +113,14 @@ require 'sidebar.php';
                             <tr>
                                 <td>
                                     <?php $brg = query("SELECT * FROM barang"); ?>
-                                    <select name="id_barang[]" id="id_barang[]" class="form-control id_barang_list">
+                                    <select name="id_barang[]" id="id_barang" class="form-control id_barang_list" onchange="autofill()">
                                         <?php foreach ($brg as $barg) : ?>
                                             <option value="<?= $barg['id_brg'] ?>"><?= $barg['nama_brg']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="number" name="harga_satuan[]" class="form-control harga_satuan_list" placeholder="Harga Satuan">
+                                    <input type="text" name="harga_brg[]" id="harga_brg" class="form-control harga_brg_list" readonly>
                                 </td>
                                 <td>
                                     <input type="number" name="jml_dibeli[]" class="form-control jml_dibeli_list" placeholder="Masukkan jml Dibeli">
