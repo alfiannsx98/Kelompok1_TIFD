@@ -16,7 +16,7 @@ function tambahTr($data)
     $rowDB1 = mysqli_query($koneksi, "SELECT * FROM transaksi");
     $field = mysqli_num_rows($rowDB1);
     $brg = "IDTR";
-    $d = date('mdyy', time());
+    $d = date('mdy', time());
 
     $hasil = $brg . $d . "0" . ($field + 1);
 
@@ -89,4 +89,42 @@ function uploadBukti()
     move_uploaded_file($tmpName, '../../views/transaksi/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
+function updateByr()
+{
+    global $koneksi;
+    $email = $_POST['email_admin'];
+    $admin = mysqli_query($koneksi, "SELECT id_admin FROM admin WHERE email_admin = '$email'");
+    $id_adm = mysqli_fetch_assoc($admin);
+    $id_adm = $id_adm['id_admin'];
+
+    $id = $_GET["id"];
+    $query = "UPDATE transaksi SET
+        id_admin = '$id_adm',
+        status_bayar = '1'
+    WHERE id_transaksi = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+function updateKirim()
+{
+    global $koneksi;
+    $id = $_GET["id"];
+    $email = $_POST['email_admin'];
+
+    $admin = mysqli_query($koneksi, "SELECT id_admin FROM admin WHERE email_admin = '$email'");
+    $id_adm = mysqli_fetch_assoc($admin);
+    $id_adm = $id_adm['id_admin'];
+
+    $tgl = time();
+
+    $query = "UPDATE transaksi SET
+        id_admin = '$id_adm',
+        status_kirim = '1',
+        tgl_kirim = '$tgl'
+    WHERE id_transaksi = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
 }
