@@ -135,6 +135,21 @@ require 'sidebar.php';
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
                 <br>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script type="text/javascript">
+                    function autofill() {
+                        var id_brg = $("#id_barang").val();
+                        $.ajax({
+                            url: 'autofill.php',
+                            data: 'id=' + id_brg,
+                            success: function(data) {
+                                var json = data,
+                                    obj = JSON.parse(json);
+                                $('#harga_brg').val(obj.harga_brg);
+                            }
+                        });
+                    }
+                </script>
                 <div class="text-center">
                     <div class="row">
 
