@@ -46,6 +46,34 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    // ini untuk tambah data transaksi(detail)
+    $(document).ready(function() {
+        var i = 1;
+
+        $('#add').click(function() {
+            i++;
+            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_barang[]" class="form-control id_barang_list"><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan[]" class="form-control harga_satuan_list"></td><td><input type="number" name="jml_dibeli[]" id="jml_dibeli[]" class="form-control jml_dibeli_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
+        });
+
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+
+        $('#submit').click(function() {
+            $.ajax({
+                url: "tambah.php",
+                method: "POST",
+                data: $('#tambahkeun').serialize(),
+                success: function(data) {
+                    (data);
+                    $('#tambahkeun')[0].reset();
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

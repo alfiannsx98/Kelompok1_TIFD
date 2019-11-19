@@ -20,7 +20,6 @@ if (isset($_POST["update"])) {
         echo "    
         <script>
             alert('data berhasil Diedit!');
-            document.location.href = 'index.php';
         </script>";
     } else {
         echo "    
@@ -112,6 +111,9 @@ require 'sidebar.php';
                                     </td>
                                     <td>
                                         <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" value="<?= $brg['expired']; ?>">
+                                    </td>
+                                    <td hidden>
+                                        <input type="number" name="id_expired[]" class="form-control" placeholder="Masukkan Stok Barang" value="<?= $brg['id_exp']; ?>" hidden>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
