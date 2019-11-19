@@ -273,7 +273,7 @@
 						</div>
 					</div>
 				</div>
-</section>
+
 				<!-- Slider Navigation -->
 
 				<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
@@ -285,6 +285,7 @@
 			</div>
 		</div>
 	</div>
+</section>
 
 	<!-- New Arrivals -->
 <section id="produk">
