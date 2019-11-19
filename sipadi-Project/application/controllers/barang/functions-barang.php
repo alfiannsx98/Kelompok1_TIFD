@@ -13,6 +13,10 @@ function query($query)
 function tambahBrg($data)
 {
     global $koneksi;
+    // $rowDB2 = mysqli_query($koneksi, "SELECT * FROM expired");
+    // $field1 = mysqli_num_rows($rowDB2);
+    // $j = ($field1 + 1);
+
     $rowDB1 = mysqli_query($koneksi, "SELECT * FROM barang");
     $field = mysqli_num_rows($rowDB1);
     $brg = "IDB";
@@ -37,9 +41,11 @@ function tambahBrg($data)
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
             if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
-                $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+                $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','$i+1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
                 mysqli_query($koneksi, $sql);
             }
+            $sql1 = "INSERT INTO expired VALUES('$i+1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+            mysqli_query($koneksi, $sql1);
         }
     }
     $result = mysqli_query($koneksi, "SELECT nama_brg FROM barang WHERE nama_brg = '$nama'");
@@ -115,16 +121,15 @@ function ubahBrg($data)
     ";
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
+    $idExp = $data["id_expired"];
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
-            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
-                $sql = "UPDATE dtl_brg SET
+            $sql = "UPDATE dtl_brg SET
                 stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',
                 expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
-            WHERE id_brg = '" . mysqli_real_escape_string($koneksi, $id[$i]) . "' AND stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "' AND expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
+            WHERE id_exp = '$idExp[$i]'
             ";
-                mysqli_query($koneksi, $sql);
-            }
+            mysqli_query($koneksi, $sql);
         }
     }
     mysqli_query($koneksi, $query);
@@ -135,6 +140,7 @@ function hapusBrg($id)
     global $koneksi;
     mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
     mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
+    mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
 
     return mysqli_affected_rows($koneksi);
 }
