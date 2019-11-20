@@ -66,7 +66,7 @@ require 'sidebar.php';
                     <input type="hidden" name="gambarLama" value="<?= $kategori["gmbr"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama Kategori : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_kategori" name="nama_kategori" value="<?= $kategori["nama_kategori"]; ?>" required>
+                        <input type="text" class="form-control form-control-user" id="nama_kategori" name="nama_kategori" value="<?= $kategori["nama_kategori"]; ?>" required pattern="[a-zA-Z0-9\s]+">
                     </div>
                     <div class="form-group">
                         <label for=""> Gambar Kategori Lama : </label>

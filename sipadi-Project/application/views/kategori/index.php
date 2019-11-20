@@ -41,7 +41,10 @@ $dtKtg = query("SELECT * FROM kategori");
     </div>
 </div>
 
+
 <!-- End Modal -->
+
+<!-- Hapus Modal -->
 
 
 <!-- Content Wrapper -->
@@ -78,7 +81,7 @@ $dtKtg = query("SELECT * FROM kategori");
                             <td><img src="<?= 'gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <button class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>

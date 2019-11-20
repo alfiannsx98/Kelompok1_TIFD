@@ -23,12 +23,16 @@ function tambahKtg($data)
 
     $hasil = $ktg . $d . "0" . ($field + 1);
 
-
-
     $nama = htmlspecialchars($data["nama_kategori"]);
 
     $gambar = uploadKtg();
     if (!$gambar) {
+        return false;
+    }
+
+    $result = mysqli_query($koneksi, "SELECT nama_kategori FROM kategori WHERE nama_kategori='$nama'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>alert('Nama Kategori telah Terdaftar');</script>";
         return false;
     }
 
