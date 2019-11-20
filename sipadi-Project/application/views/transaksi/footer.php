@@ -79,29 +79,21 @@
 <script>
     function terisi() {
         $(document).on("change", ".terisi", function(e) {
-            var select = $(this);
-            var item_id = select.val();
-            var idf = select.data("idf");
+                    var select = $(this);
+                    var item_id = select.val();
+                    var idf = select.data("idf");
 
-            $.ajax({
-                url: "autofill.php",
-                method: "GET",
-                data: {
-                    data: 'id=' + id_brg,
-                },
-                dataType: "json"
-            }).done(function(data) {
-                $("#harga_satuan_" + j).val(data[0].harga_brg);
-            });
-        });
-    }
+                    $.ajax({
+                        url: "autofill.php",
+                        data: 'id=' + id_brg,
+                        success: function(data) {
+                            var json = data,
+                                obj = JSON.parse(json);
+                            $("#harga_satuan_" + j).val(data.harga_brg)
+                        }
+                    });
+                }
 </script>
-<!-- <script>
-    function myFunction() {
-        var x = document.getElementById("id_barang").value;
-        document.getElementById("demo").innerHTML = "You selected: " + x;
-    }
-</script> -->
 </body>
 
 </html>
