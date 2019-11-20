@@ -50,10 +50,12 @@
     // ini untuk tambah data transaksi(detail)
     $(document).ready(function() {
         var i = 1;
+        var j = 1;
 
         $('#add').click(function() {
             i++;
-            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_barang[]" class="form-control id_barang_list"><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan[]" class="form-control harga_satuan_list"></td><td><input type="number" name="jml_dibeli[]" id="jml_dibeli[]" class="form-control jml_dibeli_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
+            j++;
+            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" onchange="return terisi();" class="form-control id_barang_list terisi"><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli[]" id="jml_dibeli[]" class="form-control jml_dibeli_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
         });
 
         $(document).on('click', '.btn_remove', function() {
@@ -74,7 +76,26 @@
         });
     });
 </script>
+<script>
+    function terisi() {
+        $(document).on("change", ".terisi", function(e) {
+            var select = $(this);
+            var item_id = select.val();
+            var idf = select.data("idf");
 
+            $.ajax({
+                url: "autofill.php",
+                method: "GET",
+                data: {
+                    data: 'id=' + id_brg,
+                },
+                dataType: "json"
+            }).done(function(data) {
+                $("#harga_satuan_" + j).val(data[0].harga_brg);
+            });
+        });
+    }
+</script>
 <!-- <script>
     function myFunction() {
         var x = document.getElementById("id_barang").value;

@@ -114,13 +114,14 @@ require 'sidebar.php';
                                 <td>
                                     <?php $brg = query("SELECT * FROM barang"); ?>
                                     <select name="id_barang[]" id="id_barang" class="form-control id_barang_list" onchange="autofill()">
+                                        <option value="" disabled selected>Silahkan Pilih Item</option>
                                         <?php foreach ($brg as $barg) : ?>
                                             <option value="<?= $barg['id_brg'] ?>"><?= $barg['nama_brg']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="harga_brg[]" id="harga_brg" class="form-control harga_brg_list" readonly>
+                                    <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" readonly>
                                 </td>
                                 <td>
                                     <input type="number" name="jml_dibeli[]" class="form-control jml_dibeli_list" placeholder="Masukkan jml Dibeli">
@@ -135,7 +136,6 @@ require 'sidebar.php';
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
                 <br>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                 <script type="text/javascript">
                     function autofill() {
                         var id_brg = $("#id_barang").val();
@@ -145,7 +145,7 @@ require 'sidebar.php';
                             success: function(data) {
                                 var json = data,
                                     obj = JSON.parse(json);
-                                $('#harga_brg').val(obj.harga_brg);
+                                $('#harga_satuan').val(obj.harga_brg);
                             }
                         });
                     }
