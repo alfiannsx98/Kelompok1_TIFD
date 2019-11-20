@@ -74,6 +74,13 @@
         });
     });
 </script>
+
+<!-- <script>
+    function myFunction() {
+        var x = document.getElementById("id_barang").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+    }
+</script> -->
 </body>
 
 </html>
