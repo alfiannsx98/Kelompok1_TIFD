@@ -120,7 +120,7 @@ require 'sidebar.php';
                             <?php $i++; ?>
                         </table>
                     </div>
-                    <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
+                    <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
                     <button type="submit" name="update" class="btn btn-success btn-user btn-block">Update Data</button>
                 </form>

@@ -121,13 +121,14 @@ function ubahBrg($data)
     ";
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
+    $idbrg = ($_GET['id']);
     $idExp = $data["id_expired"];
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
             $sql = "UPDATE dtl_brg SET
                 stok = '" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',
                 expired = '" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "'
-            WHERE id_exp = '$idExp[$i]'
+            WHERE id_exp = '$idExp[$i]' AND id_brg = '$idbrg'
             ";
             mysqli_query($koneksi, $sql);
         }
