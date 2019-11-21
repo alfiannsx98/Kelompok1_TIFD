@@ -22,7 +22,7 @@
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Admin</span>
