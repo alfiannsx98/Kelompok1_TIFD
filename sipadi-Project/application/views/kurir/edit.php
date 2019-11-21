@@ -70,11 +70,11 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="username"> Kota Tujuan : </label>
-                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" value="<?= $kurir["kota_tujuan"]; ?>" required>
+                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" value="<?= $kurir["kota_tujuan"]; ?>" required pattern="[a-zA-ZX\s]+">
                     </div>
                     <div class="form-group">
                         <label for="username"> Ongkir Kurir : </label>
-                        <input type="text" class="form-control form-control-user" id="ongkir_kurir" name="ongkir_kurir" value="<?= $kurir["ongkir_kurir"]; ?>" required>
+                        <input type="number" class="form-control form-control-user" id="ongkir_kurir" name="ongkir_kurir" value="<?= $kurir["ongkir_kurir"]; ?>" required>
                     </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>

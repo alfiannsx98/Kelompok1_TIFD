@@ -61,19 +61,17 @@ require 'sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $kurir["id_kurir"]; ?>">
-                <input type="hidden" name="id" value="<?= $kurir["id_kurir"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama Kurir : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" placeholder="" value="<?= $kurir["nama_kurir"]; ?>" readonly>
+                        <input type="text" class="form-control form-control-user" id="nama_kurir" name="nama_kurir" placeholder="Masukkan Nama Kurir" value="JNE OKE" readonly>
                     </div>
                     <div class="form-group">
                         <label for="username"> Kota Tujuan : </label>
-                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" placeholder="Masukan Kota Tujuan" required>
+                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" placeholder="Masukan Kota Tujuan" required pattern="[a-zA-Z0-9\s]+">
                     </div>
                     <div class="form-group">
                         <label for="username"> Ongkir Kurir : </label>
-                        <input type="text" class="form-control form-control-user" id="ongkir_kurir" name="ongkir_kurir" placeholder="Masukan Ongkir Kurir" required>
+                        <input type="number" class="form-control form-control-user" id="ongkir_kurir" name="ongkir_kurir" placeholder="Masukan Ongkir Kurir" required>
                     </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
