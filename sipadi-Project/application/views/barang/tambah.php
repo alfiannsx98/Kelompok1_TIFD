@@ -21,7 +21,6 @@ if (isset($_POST["submit"])) {
         echo "    
         <script>
             alert('data gagal ditambah!');
-            document.location.href = 'index.php';
         </script>";
     }
 }
@@ -60,7 +59,7 @@ require 'sidebar.php';
                 <form action="" method="post" class="user" name="tambahkeun" id="tambahkeun" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="username"> Nama Barang : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required pattern="[a-zA-Z\s]+">
+                        <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required>
                     </div>
                     <div class="form-group">
                         <label for="id_kategori">Kategori : </label>

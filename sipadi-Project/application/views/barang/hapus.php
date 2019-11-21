@@ -11,6 +11,7 @@ require '../../controllers/barang/functions-barang.php';
 
 $id = $_GET["id"];
 
+
 if (hapusBrg($id) > 0) {
     echo "    
         <script>
