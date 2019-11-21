@@ -15,7 +15,7 @@ function tambahKur($data)
 {
     global $koneksi;
 
-    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM kurir WHERE id_kurir ");
+    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM kurir");
     $field = mysqli_num_rows($rowDB1);
     $kur = "KUR";
     $d = date('m', time());
@@ -28,9 +28,9 @@ function tambahKur($data)
     $ongkir_kurir = htmlspecialchars($data["ongkir_kurir"]);
 
 
-    
 
-    
+
+
 
     $query = "INSERT INTO kurir VALUES('$id_kurir','$nama','$kota_tujuan','$ongkir_kurir')";
 
@@ -39,35 +39,6 @@ function tambahKur($data)
     return mysqli_affected_rows($koneksi);
 }
 
-function uploadKur()
-{
-    $namaFile = $_FILES['gmbr']['name'];
-    $ukuranFile = $_FILES['gmbr']['size'];
-    $error = $_FILES['gmbr']['error'];
-    $tmpName = $_FILES['gmbr']['tmp_name'];
-
-    if ($error === 4) {
-        echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
-        return false;
-    }
-    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-    $ekstensiGambar = explode('.', $namaFile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
-    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script>alert('Bukan gambar yang telah anda upload');</script>";
-    }
-    if ($ukuranFile > 20000000) {
-        echo "<script>alert('Ukuran gambar yang anda upload terlalu besar');</script>";
-    }
-
-    $namaFileBaru = uniqid();
-    $namaFileBaru .= ".";
-    $namaFileBaru .= $ekstensiGambar;
-
-    move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
-
-    return $namaFileBaru;
-}
 function ubahKur($data)
 {
     global $koneksi;
@@ -77,7 +48,7 @@ function ubahKur($data)
     $kota_tujuan = htmlspecialchars($data["kota_tujuan"]);
     $ongkir_kurir = htmlspecialchars($data["ongkir_kurir"]);
 
-    
+
     $query = "UPDATE kurir SET
                 nama_kurir = '$nama',
                 kota_tujuan = '$kota_tujuan',

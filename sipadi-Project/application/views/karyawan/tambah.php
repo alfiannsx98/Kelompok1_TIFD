@@ -61,11 +61,11 @@ require 'sidebar.php';
                 <form action="" method="post" class="user" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nama_admin"> Nama Admin : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukan Nama Admin" required>
+                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" placeholder="Masukan Nama Admin" title="Isikan data dengan benar" required pattern="[a-zA-Z\s]+">
                     </div>
                     <div class="form-group">
                         <label for="email_admin"> Email Admin : </label>
-                        <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Masukan Email Admin" required>
+                        <input type="email" class="form-control form-control-user" id="email" name="email" title="Isikan data dengan benar" placeholder="Masukan Email Admin" required>
                     </div>
                     <div class="form-group">
                         <label for="alamat_admin"> Alamat Admin : </label>
@@ -73,11 +73,11 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="password_admin"> Password Admin : </label>
-                        <input type="password" name="password_admin" class="form-control form-control-user" placeholder="Masukkan password admin" required>
+                        <input type="password" name="password_admin" class="form-control form-control-user" placeholder="Masukkan password admin" title="Isikan data Minimum 8 Digit" maxlength="16" minlength="8" required>
                     </div>
                     <div class="form-group">
                         <label for="password_admin1"> Ulangi Password Admin : </label>
-                        <input type="password" name="password_admin1" class="form-control form-control-user" placeholder="Masukkan password admin" required>
+                        <input type="password" name="password_admin1" class="form-control form-control-user" placeholder="Masukkan password admin" maxlength="16" minlength="8" required>
                     </div>
                     <div class="form-group">
                         <label for="gmbr"> Gambar Admin : </label>

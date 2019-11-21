@@ -71,7 +71,6 @@ $dtKrywn = query("SELECT * FROM admin");
                         <th style="width:125px;">Gambar Admin</th>
                         <th style="width:125px;">Admin Created</th>
                         <th style="width:125px;">Alamat</th>
-                        <th style="width:125px;">Level</th>
                         <th style="width:125px;">Aksi</th>
                     </tr>
                 </thead>
@@ -85,10 +84,9 @@ $dtKrywn = query("SELECT * FROM admin");
                             <td><img src="<?= "gambar/" . $krywn['gambar_admin']; ?>" class="img-alt" height="100" width="100" alt=""></td>
                             <td><?= date('d F Y', $krywn['admin_created']); ?></td>
                             <td><?= $krywn['alamat']; ?></td>
-                            <td><?= $krywn['level']; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                <button class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>

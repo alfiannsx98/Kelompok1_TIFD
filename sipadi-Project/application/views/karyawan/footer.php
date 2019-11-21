@@ -46,6 +46,14 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    function myFunction() {
+        var r = confirm("Yakin Menghapus?");
+        if (r == true) {
+            document.location.href = 'hapus.php?id=<?= $krywn['id_admin']; ?>';
+        }
+    }
+</script>
 </body>
 
 </html>

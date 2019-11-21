@@ -63,24 +63,28 @@ require 'sidebar.php';
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $admin["id_admin"]; ?>">
-                    <input type="hidden" name="gambarLama" value="<?= $admin["gmbr"]; ?>">
+                    <input type="hidden" name="gambarLama" value="<?= $admin["gambar_admin"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama Admin : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" value="<?= $admin["nama_admin"]; ?>" required>
+                        <input type="text" class="form-control form-control-user" id="nama_admin" name="nama_admin" value="<?= $admin["nama_admin"]; ?>" required pattern="[a-zA-Z\s]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_admin"> Email Admin : </label>
+                        <input type="email" class="form-control form-control-user" id="email" name="email" title="Isikan data dengan benar" value="<?= $admin['email_admin']; ?>" readonly>
                     </div>
                     <div class="form-group">
                         <label for="alamat_admin"> Alamat Admin : </label>
-                        <textarea name="alamat_admin" class="form-control" id="alamat_admin" cols="30" rows="6" placeholder="Masukkan Alamat Admin" required></textarea>
+                        <textarea name="alamat_admin" class="form-control" id="alamat_admin" cols="30" rows="6" placeholder="Masukkan Alamat Admin" required><?= $admin['alamat']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for=""> Gambar Admin Lama : </label>
-                        <img class="img-thumbnail" src="<?= "gambar/" . $admin['gmbr']; ?>" width="300" height="300" alt="">
+                        <img class="img-thumbnail" src="<?= "gambar/" . $admin['gambar_admin']; ?>" width="300" height="300" alt="">
                     </div>
                     <div class="form-group">
                         <label for="gmbr"> Gambar Admin Baru : </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
-                            <label for="gmbr" class="custom-file-label">Pilih File</label>
+                            <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin">
+                            <label for="gambar_admin" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
                     <hr>

@@ -58,10 +58,10 @@ function tambahAdm($data)
 
 function uploadAdm()
 {
-    $namaFile = $_FILES['gmbr']['name'];
-    $ukuranFile = $_FILES['gmbr']['size'];
-    $error = $_FILES['gmbr']['error'];
-    $tmpName = $_FILES['gmbr']['tmp_name'];
+    $namaFile = $_FILES['gambar_admin']['name'];
+    $ukuranFile = $_FILES['gambar_admin']['size'];
+    $error = $_FILES['gambar_admin']['error'];
+    $tmpName = $_FILES['gambar_admin']['tmp_name'];
 
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
@@ -93,7 +93,7 @@ function ubahAdm($data)
     $nama = htmlspecialchars($data["nama_admin"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
-    if ($_FILES['gmbr']['error'] === 4) {
+    if ($_FILES['gambar_admin']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
         $gambar = uploadAdm();
