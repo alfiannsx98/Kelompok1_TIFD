@@ -80,7 +80,7 @@
         var i = 1;
         $('#tmbh').click(function() {
             i++;
-            $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok[]" placeholder="Masukkan data Stok" class="form-control stok_list" /></td><td><input type="date" name="expired[]" class="form-control expired_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
+            $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok[]" placeholder="Masukkan data Stok" class="form-control stok_list" required pattern="[-+]?[0-9]"></td><td><input type="date" name="expired[]" class="form-control expired_list" required></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function() {

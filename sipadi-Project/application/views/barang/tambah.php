@@ -60,11 +60,12 @@ require 'sidebar.php';
                 <form action="" method="post" class="user" name="tambahkeun" id="tambahkeun" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="username"> Nama Barang : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required>
+                        <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required pattern="[a-zA-Z\s]+">
                     </div>
                     <div class="form-group">
                         <label for="id_kategori">Kategori : </label>
-                        <select name="id_kategori" class="form-control">
+                        <select name="id_kategori" class="form-control" required>
+                            <option value="" disabled selected>Silahkan Pilih Item</option>
                             <?php $rslt = query("SELECT * FROM kategori"); ?>
                             <?php foreach ($rslt as $nmKTG) : ?>
                                 <option value="<?= $nmKTG['id_kategori']; ?>"><?= $nmKTG['nama_kategori']; ?></option>
@@ -74,17 +75,17 @@ require 'sidebar.php';
                     <div class="form-group">
                         <label for="gmbr"> Gambar Barang : </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
+                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr" required>
                             <label for="gmbr" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="harga"> Harga Barang: </label>
-                        <input type="number" name="harga" class="form-control form-control-user" placeholder="Masukkan harga barang">
+                        <input type="number" name="harga" min="3" class="form-control form-control-user" placeholder="Masukkan harga barang" required>
                     </div>
                     <div class="form-group">
                         <label for="deskripsi"> Deskripsi Barang : </label>
-                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control"></textarea>
+                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control" required></textarea>
                     </div>
                     <!--  ditambahkan dinamis add form input -->
                     <div class="form-group">
@@ -96,10 +97,10 @@ require 'sidebar.php';
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang">
+                                    <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" required pattern="[-+]?[0-9]">
                                 </td>
                                 <td>
-                                    <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang">
+                                    <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" required>
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
