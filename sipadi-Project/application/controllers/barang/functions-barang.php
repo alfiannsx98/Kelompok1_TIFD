@@ -40,12 +40,19 @@ function tambahBrg($data)
     $number1 = count($_POST["expired"]);
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
-            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
+            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '' && $_POST["expired"][$i] > time())) {
                 $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','$i+1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
                 mysqli_query($koneksi, $sql);
+                $sql1 = "INSERT INTO expired VALUES('$i+1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+                mysqli_query($koneksi, $sql1);
+                $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload')";
+
+                mysqli_query($koneksi, $query);
+            } else {
+                echo "<script>
+                    alert('Data Tidak Sesuai Mohon Isi Kembali!');
+                </script>";
             }
-            $sql1 = "INSERT INTO expired VALUES('$i+1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
-            mysqli_query($koneksi, $sql1);
         }
     }
     $result = mysqli_query($koneksi, "SELECT nama_brg FROM barang WHERE nama_brg = '$nama'");
@@ -55,9 +62,6 @@ function tambahBrg($data)
         </script>";
         return false;
     }
-    $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload')";
-
-    mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
 }
