@@ -70,6 +70,7 @@ require 'sidebar.php';
                     <div class="form-group">
                         <label for="id_kategori">Kategori : </label>
                         <select name="id_kategori" class="form-control">
+                            <option value="" disabled selected>Silahkan Pilih Item</option>
                             <?php $rslt = query("SELECT * FROM kategori"); ?>
                             <?php foreach ($rslt as $nmKTG) : ?>
                                 <option value="<?= $nmKTG['id_kategori']; ?>"><?= $nmKTG['nama_kategori']; ?></option>
