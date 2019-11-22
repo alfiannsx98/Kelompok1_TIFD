@@ -90,11 +90,11 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="harga"> Harga Barang: </label>
-                        <input type="number" name="harga" class="form-control form-control-user" placeholder="Masukkan harga barang" value="<?= $barang['harga_brg']; ?>">
+                        <input type="number" name="harga" class="form-control form-control-user" placeholder="Masukkan harga barang" value="<?= $barang['harga_brg']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="deskripsi"> Deskripsi Barang : </label>
-                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control"><?= $barang['deskripsi_brg']; ?></textarea>
+                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control" required><?= $barang['deskripsi_brg']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <table class="table table-bordered" id="fieldQue">
@@ -107,10 +107,10 @@ require 'sidebar.php';
                             <?php foreach ($dtlBrg as $brg) : ?>
                                 <tr>
                                     <td>
-                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok']; ?>">
+                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok']; ?>" required pattern="[-+]?[0-9]">
                                     </td>
                                     <td>
-                                        <input type="date" name="expired[]" class="form-control expired_list" placeholder="Masukkan Stok Barang" value="<?= $brg['expired']; ?>">
+                                        <input type="date" name="expired[]" class="form-control expired_list" value="<?= $brg['expired']; ?>" required>
                                     </td>
                                     <td hidden>
                                         <input type="number" name="id_expired[]" class="form-control" placeholder="Masukkan Stok Barang" value="<?= $brg['id_exp']; ?>" hidden>
@@ -120,6 +120,9 @@ require 'sidebar.php';
                             <?php $i++; ?>
                         </table>
                     </div>
+                    <td>
+                        <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
+                    </td>
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
                     <button type="submit" name="update" class="btn btn-success btn-user btn-block">Update Data</button>

@@ -39,8 +39,6 @@ function tambahBrg($data)
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM expired");
     $hitungExp1 = mysqli_num_rows($hitungExp);
-
-
     $hasil = mysqli_query($koneksi, "SELECT nama_brg FROM barang WHERE nama_brg = '$nama'");
     if (mysqli_fetch_assoc($hasil)) {
         echo "<script>
@@ -56,12 +54,11 @@ function tambahBrg($data)
             if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
                 $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
                 mysqli_query($koneksi, $sql);
-                $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+                $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "','$idBrg')";
                 mysqli_query($koneksi, $sql1);
             }
         }
     }
-
     $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload')";
 
     mysqli_query($koneksi, $query);
@@ -112,21 +109,17 @@ function ubahBrg($data)
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
+    $hitungExp = mysqli_query($koneksi, "SELECT * FROM expired");
+    $hitungExp1 = mysqli_num_rows($hitungExp);
+
     if ($_FILES['gmbr']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
         $gambar = uploadBrg();
     }
-    $query = "UPDATE barang SET
-                nama_brg = '$nama',
-                id_ktg = '$kategori',
-                gambar_brg = '$gambar',
-                harga_brg = '$harga',
-                deskripsi_brg = '$deskripsi'
-            WHERE id_brg = '$id' 
-    ";
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
+
     $idbrg = ($_GET['id']);
     $idExp = $data["id_expired"];
     if ($number >= 1 && $number1 >= 1) {
@@ -139,6 +132,28 @@ function ubahBrg($data)
             mysqli_query($koneksi, $sql);
         }
     }
+    error_reporting(0);
+    if (trim($_POST["stok1"] != '') && trim($_POST["expired1"] != '')) {
+        $n1 = count($_POST["stok1"]);
+        for ($j = 0; $j < $n1; $j++) {
+            $hitungExp1++;
+            if (trim($_POST["stok1"][$j] != '') && trim($_POST["expired1"][$j] != '')) {
+                $sql = "INSERT INTO dtl_brg VALUES('$idbrg','" . mysqli_real_escape_string($koneksi, $_POST["stok1"][$j]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "')";
+                mysqli_query($koneksi, $sql);
+                $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "','$idbrg')";
+                mysqli_query($koneksi, $sql1);
+            }
+        }
+    }
+
+    $query = "UPDATE barang SET
+    nama_brg = '$nama',
+    id_ktg = '$kategori',
+    gambar_brg = '$gambar',
+    harga_brg = '$harga',
+    deskripsi_brg = '$deskripsi'
+WHERE id_brg = '$id' 
+";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
