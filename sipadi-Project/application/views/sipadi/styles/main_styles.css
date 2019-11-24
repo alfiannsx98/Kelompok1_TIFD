@@ -1000,12 +1000,12 @@ section
 }
 .grid_sorting_button.active:hover
 {
-	background: #FE7C7F !important;
+	background: rgb(0, 132, 255) !important;
 }
 .grid_sorting_button.active
 {
 	color: #FFFFFF;
-	background: #fe4c50;
+	background: rgb(3, 199, 189);
 }
 
 /*********************************
