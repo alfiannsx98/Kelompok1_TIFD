@@ -82,11 +82,11 @@ $gmbr = mysqli_fetch_assoc($sql);
                         <input type="hidden" name="gambarLama" value="<?= $tk['gambar_toko']; ?>">
                         <div class="form-group">
                             <label for="nama_toko"> Nama Toko : </label>
-                            <input type="text" class="form-control form-control-user" name="nama_toko" value="<?= $tk['nama_toko']; ?>">
+                            <input type="text" class="form-control form-control-user" name="nama_toko" value="<?= $tk['nama_toko']; ?>" required pattern="[a-zA-Z\s]+">
                         </div>
                         <div class="form-group">
                             <label for="alamat_toko"> Alamat Toko : </label>
-                            <textarea name="alamat_toko" id="alamat_toko" class="form-control form-control" cols="30" rows="7"><?= $tk['alamat_toko']; ?></textarea>
+                            <textarea name="alamat_toko" id="alamat_toko" class="form-control form-control" cols="30" rows="7" required><?= $tk['alamat_toko']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for=""> Gambar Lama : </label>
@@ -102,7 +102,7 @@ $gmbr = mysqli_fetch_assoc($sql);
                         </div>
                         <div class="form-group">
                             <label for="deskripsi"> Deskripsi Toko : </label>
-                            <textarea name="deskripsi_toko" id="deskripsi_toko" class="form-control" cols="30" rows="10"><?= $tk['deskripsi_toko']; ?></textarea>
+                            <textarea name="deskripsi_toko" id="deskripsi_toko" class="form-control" cols="30" rows="10" required><?= $tk['deskripsi_toko']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Update Data</button>
