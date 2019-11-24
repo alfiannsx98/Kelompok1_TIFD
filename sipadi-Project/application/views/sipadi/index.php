@@ -666,9 +666,9 @@
           <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Product</th>
-              <th scope="col">Price</th>
-              <th scope="col">Qty</th>
+              <th scope="col">Produk</th>
+              <th scope="col">Harga</th>
+              <th scope="col">Jumlah</th>
               <th scope="col">Total</th>
               <th scope="col">Actions</th>
             </tr>
