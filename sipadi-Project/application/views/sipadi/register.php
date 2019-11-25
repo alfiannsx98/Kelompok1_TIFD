@@ -29,6 +29,7 @@ if (isset($_POST["register"])) {
 </head>
 
 <body class="" background=" images/d.jpg">
+    
     <div class="container col-md-7">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -109,11 +110,14 @@ if (isset($_POST["register"])) {
                                 <button class="btn btn-success btn-user btn-block" name="register" type="submit">
                                     Register Account
                                 </button>
+                                <a class="btn btn-primary btn-user btn-block" name="batal" href="index.php">
+                                    BATAL
+                                </a>
                                 <hr>
                             </form>
 
                             <div class="text-center">
-                                <a class="small" href="login.php">Sudah Punya Akun? Silahkan Login!</a>
+                                <a class="small" href="loginn.php">Sudah Punya Akun? Silahkan Login!</a>
                             </div>
                         </div>
                     </div>
