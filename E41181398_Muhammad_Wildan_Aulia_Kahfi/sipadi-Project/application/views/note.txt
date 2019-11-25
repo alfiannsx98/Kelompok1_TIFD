@@ -1,0 +1,1 @@
+di folder ini adalah tempat untuk pemisahan antara header footer dan body/badan nya, nanti akan dibuat tiap2 folder
