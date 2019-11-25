@@ -55,7 +55,7 @@
         $('#add').click(function() {
             i++;
             j++;
-            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" onchange="return terisi();" class="form-control id_barang_list terisi"><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli[]" id="jml_dibeli[]" class="form-control jml_dibeli_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
+            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli[]" id="jml_dibeli[]" class="form-control jml_dibeli_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
         });
 
         $(document).on('click', '.btn_remove', function() {
@@ -74,29 +74,41 @@
                 }
             });
         });
+        $(document).on("change", ".terisi", function(e) {
+            var select = $(this);
+            var item_id = select.val();
+            var idf = select.data("j");
+
+            $.ajax({
+                url: "autofill.php",
+                data: 'id=' + item_id,
+                success: function(data) {
+                    var json = data,
+                        obj = JSON.parse(json);
+                    $("#harga_satuan_" + j).val(obj.harga_brg)
+                }
+            });
+        });
     });
 </script>
-<script>
-    function terisi() {
-        $(document).on("change", ".terisi", function(e) {
-                    var select = $(this);
-                    var item_id = select.val();
-                    var idf = select.data("idf");
-
-                    $.ajax({
-                        url: "autofill.php",
-                        data: 'id=' + id_brg,
-                        success: function(data) {
-                            var json = data,
-                                obj = JSON.parse(json);
-                            $("#harga_satuan_" + j).val(data.harga_brg)
-                        }
-                    });
-                }
+<!-- untuk autofill bukan looping -->
+<script type="text/javascript">
+    function autofill() {
+        var id_brg = $("#id_barang").val();
+        $.ajax({
+            url: 'autofill.php',
+            data: 'id=' + id_brg,
+            success: function(data) {
+                var json = data,
+                    obj = JSON.parse(json);
+                $('#harga_satuan').val(obj.harga_brg);
+            }
+        });
+    }
 </script>
 <script>
     // INI FOOTERNYA UNTUK Change Nama Gambar
-    $('.custom-file-input').on('change',function(){
+    $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
