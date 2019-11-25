@@ -46,6 +46,13 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    // INI FOOTERNYA UNTUK Change Nama Gambar
+    $('.custom-file-input').on('change',function(){
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
+</script>
 </body>
 
 </html>
