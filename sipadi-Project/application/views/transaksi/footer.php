@@ -107,6 +107,21 @@
     }
 </script>
 <script>
+    $(document).ready(function() {
+        $('#ok').click(function() {
+            $.ajax({
+                url: "edit.php",
+                method: "POST",
+                data: $('#editkeun').serialize(),
+                success: function(data) {
+                    (data);
+                    $('#editkeun')[0].reset();
+                }
+            });
+        });
+    });
+</script>
+<script>
     // INI FOOTERNYA UNTUK Change Nama Gambar
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
