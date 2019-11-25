@@ -136,20 +136,7 @@ require 'sidebar.php';
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
                 </form>
                 <br>
-                <script type="text/javascript">
-                    function autofill() {
-                        var id_brg = $("#id_barang").val();
-                        $.ajax({
-                            url: 'autofill.php',
-                            data: 'id=' + id_brg,
-                            success: function(data) {
-                                var json = data,
-                                    obj = JSON.parse(json);
-                                $('#harga_satuan').val(obj.harga_brg);
-                            }
-                        });
-                    }
-                </script>
+
                 <div class="text-center">
                     <div class="row">
 

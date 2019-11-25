@@ -98,12 +98,17 @@ function updateByr()
     $id_adm = mysqli_fetch_assoc($admin);
     $id_adm = $id_adm['id_admin'];
 
+
+
     $id = $_GET["id"];
     $query = "UPDATE transaksi SET
         id_admin = '$id_adm',
         status_bayar = '1'
     WHERE id_transaksi = '$id' 
     ";
+
+
+
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
