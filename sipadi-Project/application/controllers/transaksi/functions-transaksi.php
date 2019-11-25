@@ -41,10 +41,11 @@ function tambahTr($data)
 
     $number = count($_POST["id_barang"]);
     $number1 = count($_POST["harga_satuan"]);
+    $jml_dibeli = "0";
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
-            if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli"][$i] != '')) {
-                $sql = "INSERT INTO dtl_transaksi VALUES('$idTransaksi','" . mysqli_real_escape_string($koneksi, $_POST["id_barang"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["harga_satuan"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["jml_dibeli"][$i]) . "')";
+            if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli_tmp"][$i] != '')) {
+                $sql = "INSERT INTO dtl_transaksi VALUES('$idTransaksi','" . mysqli_real_escape_string($koneksi, $_POST["id_barang"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["harga_satuan"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["jml_dibeli_tmp"][$i]) . "','$jml_dibeli')";
                 mysqli_query($koneksi, $sql);
             }
         }

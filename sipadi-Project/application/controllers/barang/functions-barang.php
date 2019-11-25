@@ -115,7 +115,12 @@ function ubahBrg($data)
     if ($_FILES['gmbr']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        $gambar = uploadBrg();
+        if (!unlink("../../views/barang/gambar/" . $gambarLama)) {
+            echo "<script>alert('error hapus gmbr');</script>";
+            return false;
+        } else {
+            $gambar = uploadBrg();
+        }
     }
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);

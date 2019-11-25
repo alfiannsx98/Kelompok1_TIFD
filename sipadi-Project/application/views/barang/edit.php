@@ -20,6 +20,7 @@ if (isset($_POST["update"])) {
         echo "    
         <script>
             alert('data berhasil Diedit!');
+            document.location.href = 'index.php';
         </script>";
     } else {
         echo "    
