@@ -82,7 +82,7 @@ require 'sidebar.php';
                     <div class="form-group">
                         <label for="gmbr"> Gambar Admin : </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input form-control form-control-user" id="gambar_admin" name="gambar_admin">
+                            <input type="file" class="custom-file-input" id="gambar_admin" name="gambar_admin">
                             <label for="gambar_admin" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
