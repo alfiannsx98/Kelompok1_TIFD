@@ -54,7 +54,7 @@ function uploadTk()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Maaf yang telah anda uplaod bukan gambar');</script>";
     }
-    if ($ukuranFile > 500000000) {
+    if ($ukuranFile > 900000000) {
         echo "<script>alert('Maaf file yang anda upload terlalu besar!');</script>";
     }
 
