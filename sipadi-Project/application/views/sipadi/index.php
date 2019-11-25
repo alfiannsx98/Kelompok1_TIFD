@@ -324,7 +324,7 @@
 						<div class="product-item insektisida">
 							<div class="product discount product_filter">
 								<div class="product_image">
-									<img src="images/productinsektisida1.png" alt="">
+									<a href="single.php"><img src="images/productinsektisida1.png" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>	
 								<div class="product_info">
@@ -332,7 +332,7 @@
 									<div class="product_price">Rp.60.000,00</div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="single.php">Tambah Keranjang</a></div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
 						</div>
 
 						<!-- Product Fungisida -->
@@ -340,7 +340,7 @@
 						<div class="product-item fungisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product2.png" alt="">
+									<a href="single.php"><img src="images/product2.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -356,7 +356,7 @@
 						<div class="product-item bakterisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productbakterisida1.png" alt="">
+									<a href="single.php"><img src="images/productbakterisida1.png" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
@@ -372,7 +372,7 @@
 						<div class="product-item pupuk">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productpupuk.png" alt="">
+									<a href="single.php"><img src="images/productpupuk.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -386,7 +386,7 @@
 						<div class="product-item pupuk">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productpupuk1.png" alt="">
+									<a href="single.php"><img src="images/productpupuk1.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -407,7 +407,7 @@
 						<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product1.png" alt="gambar">
+									<a href="single.php"><img src="images/product1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -421,7 +421,7 @@
 						<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productherbisida1.png" alt="gambar">
+									<a href="single.php"><img src="images/productherbisida1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -474,7 +474,7 @@
 						</div>
 						
 							
-						<div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
+						<div class="red_button deal_ofthe_week_button"><a href="#produk">shop now</a></div>
 					</div>
 				</div>
 			</div>
