@@ -15,25 +15,32 @@ function ubahPr($data)
 {
     global $koneksi;
 
-    $id_nik = $data["nik"];
+    $id_admin = $data["id_admin"];
     $nama_admin = htmlspecialchars($data["nama_admin"]);
     $email_admin = htmlspecialchars($data["email"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
     $alamat = htmlspecialchars($data["alamat"]);
+
     if ($_FILES['gambar_admin']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
+        if (!unlink("../../views/karyawan/gambar/" . $gambarLama)) {
+            echo "<script>alert('error hapus gmbr');</script>";
+            return false;
+        } else {
         $gambar = uploadPr();
+        }
     }
     $query = "UPDATE admin SET
                 nama_admin = '$nama_admin',
                 email_admin = '$email_admin',
                 gambar_admin = '$gambar',
                 alamat = '$alamat'
-            WHERE nik = '$id_nik';
+            WHERE id_admin = '$id_admin';
     ";
     mysqli_query($koneksi, $query);
 
+    
     return mysqli_affected_rows($koneksi);
 }
 function uploadPr()
@@ -61,7 +68,7 @@ function uploadPr()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/login/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
