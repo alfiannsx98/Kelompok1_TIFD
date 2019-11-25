@@ -160,15 +160,19 @@ WHERE id_brg = '$id'
 function hapusBrg($id)
 {
     global $koneksi;
+
+    $qr_file = mysqli_query($koneksi, "SELECT gambar_brg FROM barang WHERE id_brg='$id'");
+    $hsl =  mysqli_fetch_array($qr_file);
+
+    if (!unlink("../../views/barang/gambar/" . $hsl["gambar_brg"])) {
+        echo "<script>alert('error hapus gmbr');</script>";
+        return false;
+    }
     mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
     mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
     mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
 
-    $qr_file = mysqli_query($koneksi, "SELECT gambar_brg FROM barang WHERE id_brg='$id'");
 
-    if (!unlink("gambar/" . $qr_file)) {
-        echo "<script>alert('error hapus gmbr');</script>";
-    }
 
     return mysqli_affected_rows($koneksi);
 }
