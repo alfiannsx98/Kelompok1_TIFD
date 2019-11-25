@@ -828,7 +828,7 @@ section
 	align-items: center;
 	width: auto;
 	height: 40px;
-	background: #fe4c50;
+	background: rgb(3, 199, 189);
 	border-radius: 3px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -838,7 +838,7 @@ section
 }
 .red_button:hover
 {
-	background: #FE7C7F !important;
+	background:  #0095da !important;
 }
 .red_button a
 {
@@ -853,7 +853,7 @@ section
 }
 .shop_now_button
 {
-	width: 140px;
+	width: 160px;
 	margin-top: 32px;
 }
 .section_title

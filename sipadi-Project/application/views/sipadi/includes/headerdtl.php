@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">Sumber<span> Dadi</span></a>
+							<a href="index.php">Sumber<span> Dadi</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
