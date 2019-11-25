@@ -66,21 +66,13 @@
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<h2>Pocket cotton sweatshirt</h2>
-						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+						<h2>Columbus 600 EC</h2>
+						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ipsam autem, pariatur, veniam natus dolorum aliquam magni, ratione a iste necessitatibus? Nesciunt odio iure atque a aperiam ipsa ea architecto.</p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<span class="ti-truck"></span><span>free delivery</span>
 					</div>
-					<div class="original_price">$629.99</div>
-					<div class="product_price">$495.00</div>
-					<ul class="star_rating">
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-					</ul>
+					<div class="product_price">Rp.60.000</div>
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity:</span>
 						<div class="quantity_selector">
@@ -100,6 +92,8 @@
 	<!-- Tabs -->
 
 	<!-- Footer -->
+
+
 
 	<?php
 		require 'includes/footer.php';
