@@ -1,9 +1,10 @@
 <?php
-require 'includes/header_content.php';
+require 'includes/headerdtl.php';
 ?>
 
 <div class="container">
 <form>
+<div class="row-lg-4 justify-content-center">
     <div class="card">
         <div class="card-header">
             <h3>Keranjang</h3>
