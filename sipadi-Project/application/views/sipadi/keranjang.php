@@ -87,9 +87,17 @@ require 'includes/header_content.php';
                 </div>
             </div>
         </div>
+        <hr>
+        <div class="card-header">
+            <div class="form-group float-left col-6">
+              Total<input type="text" class="form-control">
+            </div>
+            <div class="btn btn-success float-right btn-lg" href="#">Pesan</div>
+        </div>
     </div>
 </form>
 </div>
+
 <?php
     require 'includes/footer.php';
 ?>
