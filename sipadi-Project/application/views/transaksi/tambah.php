@@ -61,7 +61,7 @@ require 'sidebar.php';
                 <!-- Disini tempat membuat Edit Profil nya! -->
             </div>
             <div class="col-lg-10">
-                <form action="" method="post" class="user" enctype="multipart/form-data">
+                <form action="" method="post" class="user" enctype="multipart/form-data" id="formKu">
                     <input type="hidden" name="id_toko" class="form-control" id="id_toko" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "IDT001"; ?>" readonly>
                     <input type="hidden" name="status_bayar" class="form-control" id="status_bayar" cols="30" rows="6" placeholder="Masukkan Alamat Admin" value="<?= "0"; ?>" readonly>
                     <input type="hidden" class="form-control" value="0" name="tanggal_kirim">
@@ -77,23 +77,20 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="alamat_kirim"> Alamat Lengkap Penerima : </label>
-                        <textarea class="form-control" name="alamat_kirim" id="alamat_kirim"></textarea>
+                        <textarea class="form-control" name="alamat_kirim" id="alamat_kirim" placeholder="Silahkan mengisi Anda"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="kota_kirim"> Kota Penerima : </label>
-                        <input type="text" class="form-control" value="surabaya" name="kota_kirim" id="kota_kirim">
+                        <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="autofill_kota()">
+                            <?php $kurir = query("SELECT * FROM kurir ORDER BY `kurir`.`kota_tujuan`"); ?>
+                            <?php foreach ($kurir as $kr) : ?>
+                                <option value="<?= $kr["id_kurir"] ?>"><?= $kr["kota_tujuan"]; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                        <input type="number" class="form-control" value="7000" name="ongkir" id="ongkir">
-                    </div>
-                    <div class="form-group">
-                        <label for="total_harga"> Total Harga : </label>
-                        <input type="number" class="form-control" name="total_harga" id="total_harga">
-                    </div>
-                    <div class="form-group">
-                        <label for="harga_final"> Harga Final : </label>
-                        <input type="number" class="form-control" name="harga_final" id="harga_final">
+                        <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" disabled>
                     </div>
                     <div class="form-group">
                         <label for="gmbr"> Masukkan bukti Transaksi : </label>
@@ -124,7 +121,10 @@ require 'sidebar.php';
                                     <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" readonly>
                                 </td>
                                 <td>
-                                    <input type="number" name="jml_dibeli_tmp[]" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
+                                    <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
+                                </td>
+                                <td hidden>
+                                    <input type="number" name="subtotal" id="subtotal" class="form-control">
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
@@ -132,8 +132,17 @@ require 'sidebar.php';
                             </tr>
                         </table>
                     </div>
+                    <div class="form-group">
+                        <label for="total_harga"> Total Harga : </label>
+                        <input type="number" class="form-control" name="total_harga" id="total_harga" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="harga_final"> Harga Final : </label>
+                        <input type="number" class="form-control" name="harga_final" id="harga_final" readonly>
+                    </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
+
                 </form>
                 <br>
 
