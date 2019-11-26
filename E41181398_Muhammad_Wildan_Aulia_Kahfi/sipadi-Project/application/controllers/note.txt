@@ -1,0 +1,1 @@
+Controller disini adalah folder untuk menyimpan function2 .php

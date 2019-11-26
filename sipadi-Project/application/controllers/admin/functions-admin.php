@@ -109,6 +109,17 @@ function ubahAdm($data)
 function hapusAdm($id)
 {
     global $koneksi;
+
+    $qr_file = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE id_admin='$id'");
+    $hsl =  mysqli_fetch_array($qr_file);
+
+    if (!unlink("../../views/karyawan/gambar/" . $hsl["gambar_admin"])) {
+        echo "<script>alert('error hapus gmbr');</script>";
+        return false;
+    }
+
+
+
     mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
 
     return mysqli_affected_rows($koneksi);

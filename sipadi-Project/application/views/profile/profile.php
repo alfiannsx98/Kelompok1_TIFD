@@ -56,7 +56,7 @@ require '../templates/sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
-                    <input type="hidden" name="nik" value="<?= $gmbr['nik']; ?>">
+                    <input type="hidden" name="id_admin" value="<?= $gmbr['id_admin']; ?>">
                     <input type="hidden" name="gambarLama" value="<?= $gmbr["gambar_admin"]; ?>">
                     <div class="form-group">
                         <label for="username"> Nama : </label>

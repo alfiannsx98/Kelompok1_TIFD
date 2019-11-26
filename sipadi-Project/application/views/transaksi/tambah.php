@@ -124,7 +124,7 @@ require 'sidebar.php';
                                     <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" readonly>
                                 </td>
                                 <td>
-                                    <input type="number" name="jml_dibeli[]" class="form-control jml_dibeli_list" placeholder="Masukkan jml Dibeli">
+                                    <input type="number" name="jml_dibeli_tmp[]" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>

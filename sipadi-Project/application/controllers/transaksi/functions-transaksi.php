@@ -41,10 +41,11 @@ function tambahTr($data)
 
     $number = count($_POST["id_barang"]);
     $number1 = count($_POST["harga_satuan"]);
+    $jml_dibeli = "0";
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
-            if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli"][$i] != '')) {
-                $sql = "INSERT INTO dtl_transaksi VALUES('$idTransaksi','" . mysqli_real_escape_string($koneksi, $_POST["id_barang"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["harga_satuan"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["jml_dibeli"][$i]) . "')";
+            if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli_tmp"][$i] != '')) {
+                $sql = "INSERT INTO dtl_transaksi VALUES('$idTransaksi','" . mysqli_real_escape_string($koneksi, $_POST["id_barang"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["harga_satuan"][$i]) . "','" . mysqli_real_escape_string($koneksi, $_POST["jml_dibeli_tmp"][$i]) . "','$jml_dibeli')";
                 mysqli_query($koneksi, $sql);
             }
         }
@@ -98,7 +99,20 @@ function updateByr()
     $id_adm = mysqli_fetch_assoc($admin);
     $id_adm = $id_adm['id_admin'];
 
-
+    $idTR = ($_GET["id"]);
+    $st = mysqli_query($koneksi, "SELECT id_barang FROM dtl_transaksi WHERE id_tr = '$idTR'");
+    $id_brg = mysqli_fetch_assoc($st);
+    $nmbr = count($_POST["harga_satuan"]);
+    $nmbr1 = count($_POST["jumlah_dibeli_tmp"]);
+    if ($nmbr >= 1 && $nmbr1 >= 1) {
+        for ($i = 0; $i < $nmbr; $i++) {
+            $sql = "UPDATE dtl_transaksi SET
+                jumlah_beli ='" . mysqli_real_escape_string($koneksi, $_POST["jumlah_beli"][$i]) . "',
+                jml_dibeli_tmp = '" . mysqli_real_escape_string($koneksi, $_POST["jml_dibeli_tmp"][$i]) . "'
+                WHERE id_tr = '$idTR[$i]' AND id_barang = '$id_brg'
+            ";
+        }
+    }
 
     $id = $_GET["id"];
     $query = "UPDATE transaksi SET
