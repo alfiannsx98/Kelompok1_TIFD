@@ -24,11 +24,11 @@ function ubahPr($data)
     if ($_FILES['gambar_admin']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
+        error_reporting(0);
         if (!unlink("../../views/karyawan/gambar/" . $gambarLama)) {
             echo "<script>alert('error hapus gmbr');</script>";
-            return false;
         } else {
-        $gambar = uploadPr();
+            $gambar = uploadPr();
         }
     }
     $query = "UPDATE admin SET
@@ -40,7 +40,7 @@ function ubahPr($data)
     ";
     mysqli_query($koneksi, $query);
 
-    
+
     return mysqli_affected_rows($koneksi);
 }
 function uploadPr()
