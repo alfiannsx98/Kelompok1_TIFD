@@ -36,7 +36,6 @@
                 <h6>50.00</h6>
                 </label>
                 <div class="float-right col-2">
-                    <div class="btn btn-warning" href="#">Edit</div>
                     <div class="btn btn-danger" href="#">Hapus</div>
                 </div>
             </div>
@@ -52,7 +51,6 @@
                 <h6>50.00</h6>
                 </label>
                 <div class="float-right col-2">
-                    <div class="btn btn-warning" href="#">Edit</div>
                     <div class="btn btn-danger" href="#">Hapus</div>
                 </div>
             </div>
@@ -68,7 +66,6 @@
                 <h6>50.00</h6>
                 </label>    
                 <div class="float-right col-2">
-                    <div class="btn btn-warning" href="#">Edit</div>
                     <div class="btn btn-danger" href="#">Hapus</div>
                 </div>
             </div>
@@ -84,7 +81,6 @@
                 <h6>50.00</h6>
                 </label>
                 <div class="float-right col-2">
-                    <div class="btn btn-warning" href="#">Edit</div>
                     <div class="btn btn-danger" href="#">Hapus</div>
                 </div>
             </div>
@@ -100,7 +96,6 @@
                 <h6>50.00</h6>
                 </label>
                 <div class="float-right col-2">
-                    <div class="btn btn-warning" href="#">Edit</div>
                     <div class="btn btn-danger" href="#">Hapus</div>
                 </div>
             </div>
