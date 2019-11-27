@@ -44,10 +44,10 @@ function ubahTk($data)
 }
 function uploadTk()
 {
-    $namaFile = $_FILES['gambar_toko']['name'];
-    $ukuranFile = $_FILES['gambar_toko']['size'];
-    $error = $_FILES['gambar_toko']['error'];
-    $tmpName = $_FILES['gambar_toko']['tmp_name'];
+    $namaFile = $_FILES['gambar_sampul']['name'];
+    $ukuranFile = $_FILES['gambar_sampul']['size'];
+    $error = $_FILES['gambar_sampul']['error'];
+    $tmpName = $_FILES['gambar_sampul']['tmp_name'];
 
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
