@@ -131,10 +131,10 @@ require 'sidebar.php';
                                 </td>
                             </tr>
                         </table>
-                    </div>
-                    <div class="form-group">
-                        <label for="total_harga"> Total Harga : </label>
-                        <input type="number" class="form-control" name="total_harga" id="total_harga" readonly>
+                        <div class="form-group">
+                            <label for="harga_final"> Harga Final : </label>
+                            <input type="number" class="form-control" name="harga_final" id="harga_final">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="harga_final"> Harga Final : </label>

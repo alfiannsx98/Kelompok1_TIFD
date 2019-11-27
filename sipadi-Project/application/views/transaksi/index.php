@@ -3,7 +3,21 @@ require_once 'header.php';
 require '../../controllers/transaksi/functions-transaksi.php';
 session_start();
 $_POST = $_SESSION;
-
+$getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
+                FROM `transaksi` 
+                JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
+                JOIN `admin` ON `admin`.`id_adm` = `transaksi`.`id_admin`
+                JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
+                JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
+                WHERE `transaksi`.`status_kirim` = 1
+");
+$var = "Belum Terkonfirmasi";
+$konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pembeli`.`nama_pembeli`
+            FROM `transaksi`
+            JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
+            JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
+            WHERE `transaksi`.`id_admin` = '$var' OR `transaksi`.`status_kirim` = 0
+");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
