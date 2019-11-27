@@ -90,7 +90,7 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                        <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" readonly>
+                        <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" disabled>
                     </div>
                     <div class="form-group">
                         <label for="gmbr"> Masukkan bukti Transaksi : </label>
@@ -105,7 +105,6 @@ require 'sidebar.php';
                                 <td><label for="stok">Pilih barang</label></td>
                                 <td><label for="expired">Harga Satuan</label></td>
                                 <td><label for="expired">Jumlah yang dibeli</label></td>
-                                <td><label for="kurang">Subtotal</label></td>
                                 <td><label for="kurang">Aksi</label></td>
                             </tr>
                             <tr>
@@ -133,8 +132,8 @@ require 'sidebar.php';
                             </tr>
                         </table>
                         <div class="form-group">
-                            <label for="harga_final"> Harga Total : </label>
-                            <input type="number" class="form-control" name="harga_total" id="harga_total">
+                            <label for="harga_final"> Harga Final : </label>
+                            <input type="number" class="form-control" name="harga_final" id="harga_final">
                         </div>
                     </div>
                     <div class="form-group">

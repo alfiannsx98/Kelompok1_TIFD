@@ -32,7 +32,6 @@ $_POST = $_SESSION;
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
-
 ?>
 <?php
 require 'sidebar.php';
