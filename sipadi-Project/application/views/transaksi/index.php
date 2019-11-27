@@ -3,6 +3,13 @@ require_once 'header.php';
 require '../../controllers/transaksi/functions-transaksi.php';
 session_start();
 $_POST = $_SESSION;
+$getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
+                FROM `transaksi` 
+                JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
+                JOIN `admin` ON `admin`.`id_admin` = `transaksi`.`id_admin`
+                JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
+                JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
+");
 
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
@@ -82,15 +89,15 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($dtTransaksi as $tr) : ?>
+                    <?php foreach ($getKota as $tr) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $tr['id_admin']; ?></td>
-                            <td><?= $tr['id_pembeli']; ?></td>
-                            <td><?= $tr['id_toko']; ?></td>
+                            <td><?= $tr['nama_admin']; ?></td>
+                            <td><?= $tr['nama_pembeli']; ?></td>
+                            <td><?= $tr['nama_toko']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
-                            <td><?= $tr['kota_pembeli']; ?></td>
+                            <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_harga']; ?></td>
                             <td><?= $tr['total_final']; ?></td>
