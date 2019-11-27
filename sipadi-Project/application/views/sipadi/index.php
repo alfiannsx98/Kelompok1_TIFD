@@ -102,11 +102,8 @@
 						<div class="main_slider_content">
 							<h1>SIPADI</h1>
 							<h6>Sistem Informasi Pertanian Sumberdadi</h6>
-							<<<<<<< HEAD <div class="red_button shop_now_button"><a href="#produk">shop now</a>
+								<div class="red_button shop_now_button"><a href="#produk">shop now</a>
 						</div>
-						=======
-						<div class="red_button shop_now_button"><a href="#">shop now</a></div>
-						>>>>>>> parent of d72ff2b... ok meski masih ada bug
 					</div>
 				</div>
 			</div>
@@ -606,18 +603,6 @@
 								<span class="blog_meta"></span>
 								<a class="blog_more" href="#">Read more</a>
 							</div>
-
-							<!-- Product perekat -->
-
-
-
-							<!-- Product benih -->
-
-
-
-							<!-- Product biostimulan -->
-
-
 						</div>
 					</div>
 				</div>
@@ -648,253 +633,130 @@
 		</section>
 		</div>
 
-		<!-- Benefit -->
-
-		<div class="benefit">
-			<div class="container">
-				<div class="row benefit_row">
-					<div class="col-lg-4 benefit_col">
-						<div class="benefit_item d-flex flex-row align-items-center">
-							<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-							<div class="benefit_content">
-								<h6>BIAYA KIRIM</h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 benefit_col">
-						<div class="benefit_item d-flex flex-row align-items-center">
-							<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-							<div class="benefit_content">
-								<h6>BARANG DITERIMA</h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 benefit_col">
-						<div class="benefit_item d-flex flex-row align-items-center">
-							<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-							<div class="benefit_content">
-								<h6>opening all week</h6>
-								<p>8AM - 09PM</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!-- MODAL DIALOG LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4>Login</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+         
+            <div class="form-group">
+              <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password1" placeholder="Your password...">
 			</div>
-		</div>
-
-		<!-- Blogs -->
-
-		<div class="blogs">
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<div class="section_title">
-							<h2>Latest Blogs</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row blogs_container">
-					<div class="col-lg-4 blog_item_col">
-						<div class="blog_item">
-							<div class="blog_background" style="background-image:url(images/blog1.jpg)"></div>
-							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-								<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-								<span class="blog_meta"></span>
-								<a class="blog_more" href="#">Read more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 blog_item_col">
-						<div class="blog_item">
-							<div class="blog_background" style="background-image:url(images/blog2.jpg)"></div>
-							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-								<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-								<span class="blog_meta"></span>
-								<a class="blog_more" href="#">Read more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 blog_item_col">
-						<div class="blog_item">
-							<div class="blog_background" style="background-image:url(images/blog3.jpg)"></div>
-							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-								<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-								<span class="blog_meta"></span>
-								<a class="blog_more" href="#">Read more</a>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="form-group">
+			<button type="button" class="btn btn-info col-md-4 btn-round">Login</button>
+			<button href="#" type="button" class="btn btn-success btn-info col-md-4 btn-round" data-toggle="modal" data-target="#forgetModal" aria-hidden="true">Lupa Password</button>
 			</div>
-		</div>
+          <div class="d-flex justify-content-center social-buttons">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
-		<!-- Newsletter -->
-		<section id="about">
-			<div class="newsletter">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-								<h4>Newsletter</h4>
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!--lupa passwoerd-->
 
-			<<<<<<< HEAD <script src="js/jquery-3.2.1.min.js">
-				</script>
-				<script src="styles/bootstrap4/popper.js"></script>
-				<script src="styles/bootstrap4/bootstrap.min.js"></script>
-				<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-				<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-				<script src="plugins/easing/easing.js"></script>
-				<script src="js/custom.js"></script>
+<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div class="form-title text-center">
+            <h4>Lupa Password</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+            <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="namaemail"placeholder="Alamat Email">
 
-				=======
-				>>>>>>> parent of d72ff2b... ok meski masih ada bug
-				<!-- Footer -->
+            <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
+			<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
+            </form>
+            <div class="d-flex justify-content-center social-buttons">
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+<!--cart-->
 
-				<?php
-				require 'includes/footer.php';
-				?>
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">
+            Your Shopping Cart
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <table class="table table-image">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Produk</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col">Total</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="w-25">
+                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                </td>
+                <td>Vans Sk8-Hi MTE Shoes</td>
+                <td>89$</td>
+                <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
+                <td>178$</td>
+                <td>
+                <a href="#" class="btn btn-danger btn-sm">
+                    <i class="fa fa-times"></i>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table> 
+        <div class="d-flex justify-content-end">
+            <h5>Total: <span class="price text-success">89$</span></h5>
+        </div>
+        </div>
+        <div class="modal-footer border-top-0 d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Checkout</button>
+        </div>
+    </div>
+    </div>
+</div>
 
-		</section>
-		</div>
-
-		<!-- MODAL DIALOG LOGIN -->
-		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-bottom-0">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="form-title text-center">
-							<h4>Login</h4>
-						</div>
-						<div class="d-flex flex-column text-center">
-
-							<div class="form-group">
-								<input type="email" class="form-control" id="email1" placeholder="Your email address...">
-							</div>
-							<div class="form-group">
-								<input type="password" class="form-control" id="password1" placeholder="Your password...">
-							</div>
-							<div class="form-group">
-								<button type="button" class="btn btn-info col-md-4 btn-round">Login</button>
-								<button href="#" type="button" class="btn btn-success btn-info col-md-4 btn-round" data-toggle="modal" data-target="#forgetModal" aria-hidden="true">Lupa Password</button>
-							</div>
-							<div class="d-flex justify-content-center social-buttons">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!--lupa passwoerd-->
-
-		<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-bottom-0">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="form-title text-center">
-							<h4>Lupa Password</h4>
-						</div>
-						<div class="d-flex flex-column text-center">
-							<form>
-								<div class="form-group">
-									<input type="text" class="form-control" id="namaemail" placeholder="Alamat Email">
-
-									<button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
-									<<<<<<< HEAD <a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
-
-										<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
-
-										<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
-										>>>>>>> parent of 34bd077... bbbb
-										=======
-										<a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
-										>>>>>>> parent of d72ff2b... ok meski masih ada bug
-							</form>
-							<div class="d-flex justify-content-center social-buttons">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<!--cart-->
-
-		<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-bottom-0">
-						<h5 class="modal-title" id="exampleModalLabel">
-							Your Shopping Cart
-						</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<table class="table table-image">
-							<thead>
-								<tr>
-									<th scope="col"></th>
-									<th scope="col">Produk</th>
-									<th scope="col">Harga</th>
-									<th scope="col">Jumlah</th>
-									<th scope="col">Total</th>
-									<th scope="col">Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="w-25">
-										<img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-									</td>
-									<td>Vans Sk8-Hi MTE Shoes</td>
-									<td>89$</td>
-									<td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-									<td>178$</td>
-									<td>
-										<a href="#" class="btn btn-danger btn-sm">
-											<i class="fa fa-times"></i>
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="d-flex justify-content-end">
-							<h5>Total: <span class="price text-success">89$</span></h5>
-						</div>
-					</div>
-					<div class="modal-footer border-top-0 d-flex justify-content-between">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-success">Checkout</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="styles/bootstrap4/popper.js"></script>
-		<script src="styles/bootstrap4/bootstrap.min.js"></script>
-		<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-		<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-		<script src="plugins/easing/easing.js"></script>
-		<script src="js/custom.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
 </body>
 
 </html>
