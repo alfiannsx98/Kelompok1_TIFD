@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
 
 
 <div class="container">
-<form> 
+<form>
     <div class="card">
         <div class="card-header">
           <div class="form-group float-left col-6">
@@ -119,3 +120,4 @@
 <script src="js/custom.js"></script>
 <?php
     require 'includes/footer.php';
+?>
