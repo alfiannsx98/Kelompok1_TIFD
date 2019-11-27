@@ -208,27 +208,16 @@
     });
 </script>
 <script>
-    // $('#fieldQue').click(function() {
-    //     var totalSum = 0;
-    //     var totalSum1 = 0;
-    //     // $('#subtotal').each(function() {
-    //     //     var inputVal = parseInt($(this).val())
-    //     //     if ($.isNumeric(inputVal)) {
-    //     //         totalSum += parseInt(inputVal)
-    //     //     }
-    //     // });
-    //     $('#subtotal1').each(function() {
-    //         var inputVal1 = parseInt($(this).val())
-    //         if ($.isNumeric(inputVal1)) {
-    //             totalSum1 += parseInt(inputVal1)
-    //         }
-    //     });
-    //     var subtotal1 = parseInt($('#subtotal').val())
-    //     var subtotal2 = parseInt($(totalSum1).val())
-
-    //     var totalHarga = subtotal1 + subtotal2
-    //     $('#total_harga').attr('value', totalHarga)
-    // });
+    $('#formKu').click(function() {
+        var totalSum = 0;
+        $('#subtotal').each(function() {
+            var inputVal = parseInt($(this).val())
+            if ($.isNumeric(inputVal)) {
+                totalSum += parseInt(inputVal)
+            }
+        });
+        $('#total_harga').attr('value', totalSum)
+    });
 </script>
 <script type="text/JavaScript">
     $('#formKu').click(function(){

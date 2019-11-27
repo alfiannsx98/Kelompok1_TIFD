@@ -79,9 +79,9 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>ID Transaksi</th>
                         <th>Nama Admin</th>
                         <th>Nama Pembeli</th>
+                        <th>Nama Toko</th>
                         <th>Alamat Kirim</th>
                         <th>tgl_kirim</th>
                         <th>Kota Pembeli</th>
@@ -96,72 +96,17 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($getKota as $tr) : ?>
+                    <?php foreach ($dtTransaksi as $tr) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $tr['id_transaksi']; ?></td>
                             <td><?= $tr['id_admin']; ?></td>
-                            <td><?= $tr['nama_pembeli']; ?></td>
+                            <td><?= $tr['id_pembeli']; ?></td>
+                            <td><?= $tr['id_toko']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
-                            <td><?= $tr['kota_tujuan']; ?></td>
+                            <td><?= $tr['kota_pembeli']; ?></td>
                             <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_harga']; ?></td>
-                            <td><?= $tr['total_final']; ?></td>
-                            <td>
-                                <?php if ($tr['status_bayar'] == 1) : ?>
-                                    <div class='alert alert-success small'><i class='fas fa-check'></i></div>
-                                <?php else : ?>
-                                    <a class='btn btn-warning' href='edit.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
-                                <?php endif; ?>
-                            </td>
-                            <td>
-                                <?php if ($tr['status_kirim'] == 1) : ?>
-                                    <div class='alert alert-success small'><i class='fas fa-check'></i></div>
-                                <?php else : ?>
-                                    <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
-                                <?php endif; ?>
-                            </td>
-                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
-                            <td><img src="<?= "gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
-
-                        </tr>
-                        <?php $i++; ?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <br>
-            <hr>
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Transaksi Yang Belum Terverifikasi </h1>
-                </h1>
-            </div>
-            <table id="example" class="ui celled table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Status</th>
-                        <th>Kota Pembeli</th>
-                        <th>Alamat Kirim</th>
-                        <th>Nama Pembeli</th>
-                        <th>Ongkir Kurir</th>
-                        <th>Total Harga</th>
-                        <th>Status Bayar</th>
-                        <th>Status Kirim</th>
-                        <th>Tgl Transaksi</th>
-                        <th>Bukti Transfer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($konfirm as $tr) : ?>
-                        <tr>
-                            <td><?= $i; ?></td>
-                            <td><?= $tr['id_admin']; ?></td>
-                            <td><?= $tr['kota_tujuan']; ?></td>
-                            <td><?= $tr['alamat_kirim']; ?></td>
-                            <td><?= $tr['nama_pembeli']; ?></td>
-                            <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_final']; ?></td>
                             <td>
                                 <?php if ($tr['status_bayar'] == 1) : ?>
