@@ -541,7 +541,9 @@ section
 /*********************************
 3.4 Main Navigation
 *********************************/
-
+.container_cart{
+	padding-top: 100px;
+}	
 .main_nav_container
 {
 	width: 100%;
