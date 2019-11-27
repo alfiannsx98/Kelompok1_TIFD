@@ -636,7 +636,7 @@
               <input type="text" class="form-control" id="namaemail"placeholder="Alamat Email">
 
             <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
-			<a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
+			<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
           </form>
           <div class="d-flex justify-content-center social-buttons">
         </div>
