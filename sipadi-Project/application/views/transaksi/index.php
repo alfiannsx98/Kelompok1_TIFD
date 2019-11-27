@@ -16,7 +16,7 @@ $konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pem
             FROM `transaksi`
             JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
             JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
-            WHERE `transaksi`.`id_admin` = '$var' AND `transaksi`.`status_kirim` = 0
+            WHERE `transaksi`.`id_admin` = '$var' OR `transaksi`.`status_kirim` = 0
 ");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");

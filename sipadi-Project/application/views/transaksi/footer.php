@@ -55,7 +55,7 @@
         $('#add').click(function() {
             i++;
             j++;
-            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli" class="form-control jml_dibeli_tmp_list" /></td><td><input type="number" name="subtotal" id="subtotal1" class="form-control"></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
+            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli[]" class="form-control jml_dibeli_tmp_list" /></td><td hidden><input type="number" name="subtotal" id="subtotal1" class="form-control"></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
         });
 
         $(document).on('click', '.btn_remove', function() {
@@ -91,30 +91,9 @@
         });
         $('#fieldQue').click(function() {
             var bil5 = parseInt($('#harga_satuan_' + j).val())
-            var bil6 = parseInt($('#jml_dibeli').val())
-            var hasil = bil5 * bil6
+            var bil6 = parseInt($('#jml_dibeli' + j).val())
+            var hasil = bil3 + bil4
             $('#subtotal1').attr('value', hasil)
-        });
-        $('#fieldQue').click(function() {
-            var totalSum = 0;
-            var totalSum1 = 0;
-            // $('#subtotal').each(function() {
-            //     var inputVal = parseInt($(this).val())
-            //     if ($.isNumeric(inputVal)) {
-            //         totalSum += parseInt(inputVal)
-            //     }
-            // });
-            $('#harga_satuan_' + j).each(function() {
-                var inputVal1 = parseInt($('#subtotal1').val())
-                if ($.isNumeric(inputVal1)) {
-                    totalSum1 += parseInt(inputVal1)
-                }
-            });
-            var subtotal1 = parseInt($('#subtotal').val())
-            var subtotal2 = parseInt($(totalSum1).val())
-
-            var totalHarga = subtotal1 + subtotal2
-            $('#total_harga').attr('value', totalHarga)
         });
     });
 </script>
