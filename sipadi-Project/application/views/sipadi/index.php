@@ -629,7 +629,6 @@
 	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 	<script src="plugins/easing/easing.js"></script>
 	<script src="js/custom.js"></script>
-=======
 
 	<!-- Footer -->
 
