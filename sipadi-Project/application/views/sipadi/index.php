@@ -101,7 +101,7 @@
 					<div class="main_slider_content">
 						<h1>SIPADI</h1>
 						<h6>Sistem Informasi Pertanian Sumberdadi</h6>
-						<div class="red_button shop_now_button"><a href="#">shop now</a></div>
+						<div class="red_button shop_now_button"><a href="#produk">shop now</a></div>
 					</div>
 				</div>
 			</div>
@@ -472,9 +472,7 @@
 								</li>
 							</ul>
 						</div>
-						
-							
-						<div class="red_button deal_ofthe_week_button"><a href="#produk">shop now</a></div>
+						<div class="red_button shop_now_button"><a href="#produk">shop now</a></div>
 					</div>
 				</div>
 			</div>
