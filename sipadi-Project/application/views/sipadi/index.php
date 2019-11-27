@@ -622,8 +622,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="styles/bootstrap4/popper.js"></script>
 	<script src="styles/bootstrap4/bootstrap.min.js"></script>
@@ -632,8 +630,7 @@
 	<script src="plugins/easing/easing.js"></script>
 	<script src="js/custom.js"></script>
 =======
-=======
->>>>>>> parent of 34bd077... bbbb
+
 	<!-- Footer -->
 
 	<?php
@@ -696,9 +693,11 @@
               <input type="text" class="form-control" id="namaemail"placeholder="Alamat Email">
 
             <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
-<<<<<<< HEAD
+
 			<a href="login.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
-=======
+
+			<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
+
 			<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
 >>>>>>> parent of 34bd077... bbbb
           </form>
@@ -771,10 +770,6 @@
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
-<<<<<<< HEAD
->>>>>>> parent of 1bdeb02... gnti link
-=======
->>>>>>> parent of 34bd077... bbbb
 </body>
 
 </html>
