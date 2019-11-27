@@ -399,7 +399,19 @@
 						
 
 						<!-- Product zpt -->
-
+						<div class="product-item zpt">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a href="single.php"><img src="images/product1.png" alt="gambar">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<div class="product_price">Rp.30.000,00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						</div>
 						
 
 						<!-- Product herbisida -->
@@ -433,15 +445,51 @@
 						</div>
 
 						<!-- Product perekat -->
-
+						<div class="product-item perekat">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a href="single.php"><img src="images/product1.png" alt="gambar">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<div class="product_price">Rp.30.000,00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						</div>
 						
 
 						<!-- Product benih -->
-
+						<div class="product-item benih">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a href="single.php"><img src="images/product1.png" alt="gambar">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<div class="product_price">Rp.30.000,00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						</div>
 						
 
 						<!-- Product biostimulan -->
-
+						<div class="product-item biostimulan">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a href="single.php"><img src="images/product1.png" alt="gambar">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<div class="product_price">Rp.30.000,00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						</div>
 						
 					</div>
 				</div>
