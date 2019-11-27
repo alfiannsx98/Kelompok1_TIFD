@@ -1313,12 +1313,12 @@ section
 .deal_ofthe_week_button
 {
 	width: 140px;
-	background: #1e1e27;
+	background: rgb(3, 199, 189);
 	margin-top: 52px;
 }
 .deal_ofthe_week_button:hover
 {
-	background: #2b2b34 !important;
+	background: #0095da!important;
 }
 
 /*********************************
