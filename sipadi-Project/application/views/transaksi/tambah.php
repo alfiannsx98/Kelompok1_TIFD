@@ -123,7 +123,7 @@ require 'sidebar.php';
                                 <td>
                                     <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
                                 </td>
-                                <td hidden>
+                                <td>
                                     <input type="number" name="subtotal" id="subtotal" class="form-control">
                                 </td>
                                 <td>
@@ -131,14 +131,14 @@ require 'sidebar.php';
                                 </td>
                             </tr>
                         </table>
-                    </div>
-                    <div class="form-group">
-                        <label for="total_harga"> Total Harga : </label>
-                        <input type="number" class="form-control" name="total_harga" id="total_harga" readonly>
+                        <div class="form-group">
+                            <label for="harga_final"> Harga Final : </label>
+                            <input type="number" class="form-control" name="harga_final" id="harga_final">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="harga_final"> Harga Final : </label>
-                        <input type="number" class="form-control" name="harga_final" id="harga_final" readonly>
+                        <input type="number" class="form-control" name="harga_final" id="harga_final">
                     </div>
                     <hr>
                     <button type="submit" name="submit" class="btn btn-success btn-user btn-block">Simpan Data</button>
