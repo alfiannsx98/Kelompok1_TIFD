@@ -79,7 +79,7 @@ $gmbr = mysqli_fetch_assoc($sql);
                 <?php foreach ($toko as $tk) : ?>
                     <form action="" class="user" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="id_toko" value="<?= $tk['id_toko']; ?>">
-                        <input type="hidden" name="gambarLama" value="<?= $tk['gambar_toko']; ?>">
+                        <input type="hidden" name="gambarLama" value="<?= $tk['gambar_sampul']; ?>">
                         <div class="form-group">
                             <label for="nama_toko"> Nama Toko : </label>
                             <input type="text" class="form-control form-control-user" name="nama_toko" value="<?= $tk['nama_toko']; ?>" required pattern="[a-zA-Z\s]+">
@@ -91,13 +91,13 @@ $gmbr = mysqli_fetch_assoc($sql);
                         <div class="form-group">
                             <label for=""> Gambar Lama : </label>
                             <br>
-                            <img src="<?= "gambar/" . $tk['gambar_sampul']; ?>" height="500" width="700" class="img-thumbnail">
+                            <img src="<?= "../toko/gambar/" . $tk['gambar_sampul']; ?>" height="500" width="700" class="img-thumbnail">
                         </div>
                         <div class="form-group">
                             <label for="gmbr"> Gambar Toko Baru : </label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="gambar_toko" name="gambar_toko">
-                                <label for="gambar_toko" class="custom-file-label">Pilih File</label>
+                                <input type="file" class="custom-file-input" id="gambar_sampul" name="gambar_sampul">
+                                <label for="gambar_sampul" class="custom-file-label">Pilih File</label>
                             </div>
                         </div>
                         <div class="form-group">

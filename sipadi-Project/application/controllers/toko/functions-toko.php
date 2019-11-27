@@ -21,10 +21,15 @@ function ubahTk($data)
     $gambarLama = htmlspecialchars($data["gambarLama"]);
     $deskripsi = htmlspecialchars($data["deskripsi_toko"]);
 
-    if ($_FILES['gambar_toko']['error'] === 4) {
+    if ($_FILES['gambar_sampul']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
+        if (!unlink("../../views/toko/gambar/" . $gambarLama)) {
+            echo "<script>alert('error hapus gmbr');</script>";
+            return false;   
+        } else {
         $gambar = uploadTk();
+        }
     }
     $query = "UPDATE toko SET
                 nama_toko = '$nama',
