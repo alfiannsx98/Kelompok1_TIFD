@@ -136,7 +136,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 <h1 class="h3 mb-0 text-gray-800">Data Transaksi Yang Belum Terverifikasi </h1>
                 </h1>
             </div>
-            <table id="example" class="ui celled table">
+            <table id="example1" class="ui celled table">
                 <thead>
                     <tr>
                         <th>No</th>

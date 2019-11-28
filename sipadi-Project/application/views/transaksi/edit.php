@@ -66,8 +66,8 @@ require 'sidebar.php';
                             <tr>
                                 <input type="hidden" name="email" value="<?= $email; ?>">
                                 <td><label for="stok">harga satuan</label></td>
+                                <td><label for="expired">Jumlah Beli</label></td>
                                 <td><label for="expired">temporari jmlh beli</label></td>
-                                <td><label for="expired"> jumlah beli</label></td>
                             </tr>
                             <?php $trnsksi = query("SELECT * FROM dtl_transaksi WHERE id_tr='$id'"); ?>
                             <?php $i = 1 ?>

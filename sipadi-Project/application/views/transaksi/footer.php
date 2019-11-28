@@ -45,6 +45,9 @@
     $(document).ready(function() {
         $('#example').DataTable();
     });
+    $(document).ready(function() {
+        $('#example1').DataTable();
+    })
 </script>
 <script>
     // ini untuk tambah data transaksi(detail)
@@ -232,7 +235,7 @@
 </script>
 <script type="text/JavaScript">
     $('#formKu').click(function(){
-        var bil3 = parseInt($('#total_harga').val())
+        var bil3 = parseInt($('#harga_total').val())
         var bil4 = parseInt($('#ongkir_kurir').val())
 
         var hasil = bil3 + bil4
