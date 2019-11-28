@@ -99,9 +99,9 @@ function updateByr($data)
 {
     global $koneksi;
     $email = $_POST['email'];
-    $admin = mysqli_query($koneksi, "SELECT id_adm FROM admin WHERE email_admin = '$email'");
+    $admin = mysqli_query($koneksi, "SELECT id_admin FROM admin WHERE email_admin = '$email'");
     $id_adm = mysqli_fetch_assoc($admin);
-    $id_adm = $id_adm['id_adm'];
+    $id_adm = $id_adm['id_admin'];
 
 
     $idTR = ($_GET["id"]);
@@ -128,7 +128,7 @@ function updateByr($data)
     }
     $id = $_GET["id"];
     $query = "UPDATE transaksi SET
-        id_admin = '$id_adm',
+        id_adm = '$id_adm',
         status_bayar = '1'
     WHERE id_transaksi = '$id' 
     ";
@@ -144,14 +144,14 @@ function updateKirim()
     $id = $_GET["id"];
     $email = $_POST['email_admin'];
 
-    $admin = mysqli_query($koneksi, "SELECT id_adm FROM admin WHERE email_admin = '$email'");
+    $admin = mysqli_query($koneksi, "SELECT id_admin FROM admin WHERE email_admin = '$email'");
     $id_adm = mysqli_fetch_assoc($admin);
-    $id_adm = $id_adm['id_adm'];
+    $id_adm = $id_adm['id_admin'];
 
     $tgl = time();
 
     $query = "UPDATE transaksi SET
-        id_admin = '$id_adm',
+        id_adm = '$id_adm',
         status_kirim = '1',
         tgl_kirim = '$tgl'
     WHERE id_transaksi = '$id' 

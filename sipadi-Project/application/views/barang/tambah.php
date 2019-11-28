@@ -2,8 +2,6 @@
 require_once '../../controllers/barang/functions-barang.php';
 require_once 'header.php';
 session_start();
-
-
 // $email = $_POST["email_admin"];
 // $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 if (!isset($_SESSION["login"])) {

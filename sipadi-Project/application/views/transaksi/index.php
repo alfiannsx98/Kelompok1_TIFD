@@ -6,7 +6,7 @@ $_POST = $_SESSION;
 $getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
                 FROM `transaksi` 
                 JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
-                JOIN `admin` ON `admin`.`id_adm` = `transaksi`.`id_admin`
+                JOIN `admin` ON `admin`.`id_admin` = `transaksi`.`id_adm`
                 JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
                 JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
                 WHERE `transaksi`.`status_kirim` = 1
@@ -16,7 +16,7 @@ $konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pem
             FROM `transaksi`
             JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
             JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
-            WHERE `transaksi`.`id_admin` = '$var' AND `transaksi`.`status_kirim` = 0
+            WHERE `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0
 ");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
@@ -100,7 +100,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $tr['id_transaksi']; ?></td>
-                            <td><?= $tr['id_admin']; ?></td>
+                            <td><?= $tr['nama_admin']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
@@ -157,7 +157,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                     <?php foreach ($konfirm as $tr) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $tr['id_admin']; ?></td>
+                            <td><?= $tr['id_adm']; ?></td>
                             <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>

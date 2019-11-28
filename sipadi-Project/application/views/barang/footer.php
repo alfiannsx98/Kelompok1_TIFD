@@ -54,12 +54,10 @@
             i++;
             $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok[]" placeholder="Masukkan data Stok" class="form-control stok_list" required></td><td><input type="date" name="expired[]" class="form-control expired_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
         });
-
         $(document).on('click', '.btn_remove', function() {
             var button_id = $(this).attr("id");
             $('#row' + button_id + '').remove();
         });
-
         $('#submit').click(function() {
             $.ajax({
                 url: "tambah.php",
@@ -82,12 +80,10 @@
             i++;
             $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok1[]" placeholder="Masukkan data Stok" class="form-control stok_list" required pattern="[-+]?[0-9]"></td><td><input type="date" name="expired1[]" class="form-control expired_list" required></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');
         });
-
         $(document).on('click', '.btn_remove', function() {
             var button_id = $(this).attr("id");
             $('#row' + button_id + '').remove();
         });
-
         $('#update').click(function() {
             $.ajax({
                 url: "edit.php",
@@ -99,7 +95,6 @@
                 }
             });
         });
-
     });
 </script>
 <script>
@@ -112,7 +107,7 @@
 </script>
 <script>
     // INI FOOTERNYA UNTUK Change Nama Gambar
-    $('.custom-file-input').on('change',function(){
+    $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
