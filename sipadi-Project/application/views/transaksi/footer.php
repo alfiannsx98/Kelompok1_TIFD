@@ -52,8 +52,8 @@
 <script>
     // ini untuk tambah data transaksi(detail)
     $(document).ready(function() {
-        var i = 0;
-        var j = 0;
+        var i = 1;
+        var j = 1;
 
         $('#add').click(function() {
             i++;

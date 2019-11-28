@@ -92,7 +92,7 @@ require 'sidebar.php';
                     </div>
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
-                    <button type="submit" name="update" class="btn btn-success btn-user btn-block">Update Data</button>
+                    <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block">Update Data</button>
                 </form>
                 <br>
                 <div class="text-center">
@@ -144,4 +144,9 @@ require 'sidebar.php';
             </div>
         </div>
     </div>
+    <script>
+        window.onload = function() {
+            document.onclick('#update');
+        };
+    </script>
     <?php require_once 'footer.php'; ?>
