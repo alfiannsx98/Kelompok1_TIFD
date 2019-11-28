@@ -52,8 +52,8 @@
 <script>
     // ini untuk tambah data transaksi(detail)
     $(document).ready(function() {
-        var i = 1;
-        var j = 1;
+        var i = 0;
+        var j = 0;
 
         $('#add').click(function() {
             i++;
@@ -92,30 +92,30 @@
                 }
             });
         });
-        $('#fieldQue').click(function() {
-            var bil5 = parseInt($('#harga_satuan_' + j).val())
-            var bil6 = parseInt($('#jml_dibeli_' + j).val())
-            var hasil = bil5 * bil6
-            $('#subtotal1_' + j).attr('value', hasil)
-        });
+        // $('#fieldQue').click(function() {
+
+        // });
         $('#fieldQue').click(function() {
             var totalSum = 0;
             var totalSum1 = 0;
+            var bil5 = parseInt($('#harga_satuan_' + j).val())
+            var bil6 = parseInt($('#jml_dibeli_' + j).val())
+            var hasil = bil5 * bil6
+            $('#subtotal1_' + j).attr('value', hasil);
             $('#subtotal').each(function() {
-                var inputVal = parseInt($(this).val())
+                var inputVal = $(this).val();
                 if ($.isNumeric(inputVal)) {
                     totalSum += parseFloat(inputVal)
                 }
+                $('#id_brg_' + j).each(function() {
+                    var inputVal1 = $('#subtotal1_' + j).val();
+                    if ($.isNumeric(inputVal1)) {
+                        totalSum1 += parseFloat(inputVal1)
+                    }
+                });
+                var totalHarga = totalSum + (totalSum1 += totalSum1)
+                $('#harga_total').attr('value', totalHarga);
             });
-            $('#id_brg_' + j).each(function() {
-                var inputVal1 = parseInt($('#subtotal1_' + j).val())
-                if ($.isNumeric(inputVal1)) {
-                    totalSum1 += parseFloat(inputVal1)
-                }
-            });
-
-            var totalHarga = totalSum + totalSum1
-            $('#harga_total').attr('value', totalHarga)
         });
     });
 </script>

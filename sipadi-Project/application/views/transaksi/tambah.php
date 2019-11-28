@@ -118,14 +118,14 @@ require 'sidebar.php';
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td>
-                                    <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" readonly>
+                                <td class="ass">
+                                    <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan_list" readonly>
                                 </td>
-                                <td>
+                                <td class="ass">
                                     <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
                                 </td>
-                                <td>
-                                    <input type="number" name="subtotal" id="subtotal" class="form-control" readonly>
+                                <td class="ass">
+                                    <input type="number" name="subtotal" id="subtotal" class="form-control subtotallist" readonly>
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
