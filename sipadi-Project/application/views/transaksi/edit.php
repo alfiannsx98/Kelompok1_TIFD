@@ -20,6 +20,7 @@ if (isset($_POST["update"])) {
         echo "    
         <script>
             alert('data berhasil Diedit!');
+            document.location.href = 'index.php';
         </script>";
     } else {
         echo "    
@@ -74,16 +75,16 @@ require 'sidebar.php';
                             <?php foreach ($trnsksi as $brg) : ?>
                                 <tr>
                                     <td hidden>
-                                        <input type="number" name="no[]" id="no" value="<?= $brg["no"]; ?>">
+                                        <input type="number" name="no[]" id="no" value="<?= $brg["no"]; ?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="number" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" value="<?= $brg['harga_satuan']; ?>" required pattern="[-+]?[0-9]">
+                                        <input type="number" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" value="<?= $brg['harga_satuan']; ?>" required pattern="[-+]?[0-9]" readonly>
                                     </td>
                                     <td>
-                                        <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" value="<?= $brg['jumlah_beli']; ?>" required>
+                                        <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" value="<?= $brg['jumlah_beli']; ?>" required readonly>
                                     </td>
                                     <td>
-                                        <input type="number" name="jumlah_beli[]" id="jumlah_beli" class="form-control jumlah_beli_list" value="<?= $brg['jml_dibeli_tmp']; ?>">
+                                        <input type="number" name="jumlah_beli[]" id="jumlah_beli" class="form-control jumlah_beli_list" value="<?= $brg['jml_dibeli_tmp']; ?>" readonly>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -92,7 +93,14 @@ require 'sidebar.php';
                     </div>
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
-                    <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block">Update Data</button>
+                    <?php $jml = query("SELECT * FROM dtl_transaksi WHERE id_tr='$id'"); ?>
+                    <?php foreach ($jml as $j) : ?>
+                        <?php if ($j['jml_dibeli_tmp'] == 0) : ?>
+                            <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block" hidden>Update Data</button>
+                        <?php else : ?>
+                            <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block">Update Data</button>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </form>
                 <br>
                 <div class="text-center">
@@ -144,9 +152,4 @@ require 'sidebar.php';
             </div>
         </div>
     </div>
-    <script>
-        window.onload = function() {
-            document.onclick('#update');
-        };
-    </script>
     <?php require_once 'footer.php'; ?>

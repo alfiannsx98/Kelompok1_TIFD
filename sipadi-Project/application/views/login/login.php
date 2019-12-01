@@ -3,12 +3,12 @@ require '../../../application/controllers/login/functions-login.php';
 require_once 'login_header.php';
 session_start();
 
-if (isset($_COOKIE['nik']) && isset($_COOKIE['key'])) {
-    $nik = $_COOKIE['nik'];
+if (isset($_COOKIE['id_admin']) && isset($_COOKIE['key'])) {
+    $id = $_COOKIE['id_admin'];
     $key = $_COOKIE['key'];
 
-    // Ambil username berdasarkan nik nya
-    $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE nik='$nik'");
+    // Ambil username berdasarkan id nya
+    $result = mysqli_query($koneksi, "SELECT email_admin FROM admin WHERE id_admin='$id'");
     $row = mysqli_fetch_assoc($result);
 
     // cek cookie dan username
@@ -27,19 +27,27 @@ if (isset($_POST["login"])) {
     $password = $_POST["password_admin"];
 
     $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
+    $level = mysqli_query($koneksi, "SELECT level FROM admin WHERE email_admin = '$email'");
 
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row["password_admin"])) {
-            $_SESSION["login"] = true;
-            $_SESSION = $_POST;
-
-            if (isset($_POST['remember'])) {
-                setcookie('nik', $row['nik'], time() + 60);
-                setcookie('key', hash('sha256', $row['email_admin']), time() + 60);
+        $lv = mysqli_fetch_assoc($level);
+        if ($lv['level'] != 1) {
+            if (password_verify($password, $row["password_admin"])) {
+                $_POST["level"] = 2;
+                $_SESSION["login"] = true;
+                $_SESSION = $_POST;
+                header("location: ../transaksi/");
+                exit;
             }
-            header("location: ../admin/");
-            exit;
+        } else {
+            if (password_verify($password, $row["password_admin"])) {
+                $_POST["level"] = 1;
+                $_SESSION["login"] = true;
+                $_SESSION = $_POST;
+                header("location: ../admin/");
+                exit;
+            }
         }
     }
     $error = true;
