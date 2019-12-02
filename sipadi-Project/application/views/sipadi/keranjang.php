@@ -25,7 +25,7 @@
           <div class="form-group float-left col-6">
             <h3>Keranjang</h3>
           </div>
-          <div class="btn btn-success float-right btn-lg"><a href="single.php">Kembali</a></div>
+          <a href="single.php" class="btn btn-success float-right btn-user btn-lg">Kembali</a>
         </div>
         <div class="card-body">
             <h5>Nama Mitra</h5>
