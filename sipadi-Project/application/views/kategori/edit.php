@@ -30,6 +30,14 @@ if (isset($_POST["submit"])) {
     }
 }
 $_POST = $_SESSION;
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login/login.php");
+    exit;
+}
+if (($_POST["level"] == 2)) {
+    header("Location: ../operator/");
+    exit;
+}
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);

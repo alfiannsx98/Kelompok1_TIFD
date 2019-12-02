@@ -6,7 +6,14 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 $_POST = $_SESSION;
-
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login/login.php");
+    exit;
+}
+if (($_POST["level"] == 2)) {
+    header("Location: ../operator/");
+    exit;
+}
 require '../../controllers/transaksi/functions-transaksi.php';
 
 $id = $_GET["id"];

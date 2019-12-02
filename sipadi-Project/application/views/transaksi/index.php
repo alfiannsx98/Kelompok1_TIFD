@@ -2,7 +2,7 @@
 require_once 'header.php';
 require '../../controllers/transaksi/functions-transaksi.php';
 session_start();
-$_POST = $_SESSION;
+
 $getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
                 FROM `transaksi` 
                 JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
@@ -18,11 +18,16 @@ $konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pem
             JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
             WHERE `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0
 ");
+// $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
+$_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
-// $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
+if (($_POST["level"] == 2)) {
+    header("Location: ../operator/");
+    exit;
+}
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
