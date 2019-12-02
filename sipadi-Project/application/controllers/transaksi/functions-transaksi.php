@@ -26,9 +26,9 @@ function tambahTr($data)
     $id_toko = htmlspecialchars($data["id_toko"]);
     $alamat_kirim = htmlspecialchars($data["alamat_kirim"]);
     $tgl_kirim = htmlspecialchars($data["tgl_kirim"]);
-    $kota_pembeli = htmlspecialchars($data["kota_kirim"]);
-    $ongkir = htmlspecialchars($data["ongkir"]);
-    $total_harga = htmlspecialchars($data["total_harga"]);
+    $ongkir = htmlspecialchars($data["kota_kirim"]);
+    $ongkir_kurir = htmlspecialchars($data["ongkir_kurir"]);
+    $total_harga = htmlspecialchars($data["harga_total"]);
     $total_final = htmlspecialchars($data["harga_final"]);
     $status_bayar = htmlspecialchars($data["status_bayar"]);
     $status_kirim = htmlspecialchars($data["status_kirim"]);
@@ -55,7 +55,7 @@ function tambahTr($data)
         }
     }
 
-    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$kota_pembeli','$ongkir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar')";
+    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar')";
 
     mysqli_query($koneksi, $query);
 
@@ -128,7 +128,7 @@ function updateByr($data)
     }
     $id = $_GET["id"];
     $query = "UPDATE transaksi SET
-        id_admin = '$id_adm',
+        id_adm = '$id_adm',
         status_bayar = '1'
     WHERE id_transaksi = '$id' 
     ";
@@ -151,7 +151,7 @@ function updateKirim()
     $tgl = time();
 
     $query = "UPDATE transaksi SET
-        id_admin = '$id_adm',
+        id_adm = '$id_adm',
         status_kirim = '1',
         tgl_kirim = '$tgl'
     WHERE id_transaksi = '$id' 

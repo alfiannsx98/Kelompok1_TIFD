@@ -45,6 +45,9 @@
     $(document).ready(function() {
         $('#example').DataTable();
     });
+    $(document).ready(function() {
+        $('#example1').DataTable();
+    })
 </script>
 <script>
     // ini untuk tambah data transaksi(detail)
@@ -55,7 +58,7 @@
         $('#add').click(function() {
             i++;
             j++;
-            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli[]" class="form-control jml_dibeli_tmp_list" /></td><td hidden><input type="number" name="subtotal" id="subtotal1" class="form-control"></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
+            $('#fieldQue').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi" readonly></td><td><input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_' + j + '" class="form-control jml_dibeli_tmp_list" placeholder="masukkan jml dibeli"></td><td><input type="number" name="subtotal" id="subtotal1_' + j + '" class="form-control subtotallist" readonly></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
         });
 
         $(document).on('click', '.btn_remove', function() {
@@ -77,7 +80,7 @@
         $(document).on("change", ".terisi", function(e) {
             var select = $(this);
             var item_id = select.val();
-            var idf = select.data("j");
+            var j = select.data("j");
 
             $.ajax({
                 url: "autofill.php",
@@ -89,12 +92,30 @@
                 }
             });
         });
+        // $('#fieldQue').click(function() {
         $('#fieldQue').click(function() {
+            var totalSum = 0;
+            var totalSum1 = 0;
             var bil5 = parseInt($('#harga_satuan_' + j).val())
-            var bil6 = parseInt($('#jml_dibeli' + j).val())
-            var hasil = bil3 + bil4
-            $('#subtotal1').attr('value', hasil)
+            var bil6 = parseInt($('#jml_dibeli_' + j).val())
+            var hasil = bil5 * bil6
+            $('#subtotal1_' + j).attr('value', hasil);
+            $('#subtotal').each(function() {
+                var inputVal = $(this).val();
+                if ($.isNumeric(inputVal)) {
+                    totalSum += parseFloat(inputVal)
+                }
+                $('#id_brg_' + j).each(function() {
+                    var inputVal1 = $('#subtotal1_' + j).val();
+                    if ($.isNumeric(inputVal1)) {
+                        totalSum1 += parseFloat(inputVal1)
+                    }
+                });
+                var totalHarga = totalSum + totalSum1
+                // $('#harga_total').attr('value', totalHarga);
+            });
         });
+        // });
     });
 </script>
 <!-- untuk autofill bukan looping -->
@@ -133,8 +154,10 @@
     // ini untuk update data
     $(document).ready(function() {
         var i = 1;
+        var j = 1;
         $('#tmbh').click(function() {
             i++;
+            j++;
             $('#editkeun').append('<tr id="row' + i + '"><td><?php $brg = query("SELECT * FROM barang"); ?><select name="id_barang[]" id="id_brg_' + j + '" data-j="' + j + '" class="form-control id_barang_list terisi"><option value="" disabled selected>Silahkan Pilih Item</option><?php foreach ($brg as $barang) : ?><option value="<?= $barang['id_brg']; ?>"><?= $barang['nama_brg']; ?></option><?php endforeach; ?></select></td><td><input type="number" name="harga_satuan[]" id="harga_satuan_' + j + '" class="form-control harga_satuan_list terisi"></td><td><input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli[]" class="form-control jml_dibeli_tmp_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td>');
         });
 
@@ -154,7 +177,6 @@
                 }
             });
         });
-
     });
 </script>
 <script>
@@ -189,24 +211,55 @@
     });
 </script>
 <script>
-    $('#formKu').click(function() {
-        var totalSum = 0;
-        $('#subtotal').each(function() {
-            var inputVal = parseInt($(this).val())
-            if ($.isNumeric(inputVal)) {
-                totalSum += parseInt(inputVal)
-            }
+    // $('#fieldQue').click(function() {
+    //     var totalSum = 0;
+    //     var totalSum1 = 0;
+    //     // $('#subtotal').each(function() {
+    //     //     var inputVal = parseInt($(this).val())
+    //     //     if ($.isNumeric(inputVal)) {
+    //     //         totalSum += parseInt(inputVal)
+    //     //     }
+    //     // });
+    //     $('#subtotal1').each(function() {
+    //         var inputVal1 = parseInt($(this).val())
+    //         if ($.isNumeric(inputVal1)) {
+    //             totalSum1 += parseInt(inputVal1)
+    //         }
+    //     });
+    //     var subtotal1 = parseInt($('#subtotal').val())
+    //     var subtotal2 = parseInt($(totalSum1).val())
+
+    //     var totalHarga = subtotal1 + subtotal2
+    //     $('#total_harga').attr('value', totalHarga)
+    // });
+</script>
+<script type="text/javascript">
+    $(function() {
+        var total_harga = function() {
+            var sum = 0;
+
+            $('.subtotallist').each(function() {
+                var num = $(this).val();
+
+                if (num !== 0) {
+                    sum += parseInt(num);
+                }
+            });
+
+            $('#harga_total').val(sum);
+        }
+        $('.subtotallist').click(function() {
+            total_harga();
         });
-        $('#total_harga').attr('value', totalSum)
     });
 </script>
-<script type="text/JavaScript">
-    $('#formKu').click(function(){
-        var bil3 = parseInt($('#total_harga').val())
+<script type="text/javascript">
+    $('#formKu').click(function() {
+        var bil3 = parseInt($('#harga_total').val())
         var bil4 = parseInt($('#ongkir_kurir').val())
 
         var hasil = bil3 + bil4
-        $('#harga_final').attr('value',hasil)
+        $('#harga_final').attr('value', hasil)
     });
 </script>
 </body>

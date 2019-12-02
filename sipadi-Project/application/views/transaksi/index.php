@@ -6,7 +6,7 @@ $_POST = $_SESSION;
 $getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
                 FROM `transaksi` 
                 JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
-                JOIN `admin` ON `admin`.`id_adm` = `transaksi`.`id_admin`
+                JOIN `admin` ON `admin`.`id_admin` = `transaksi`.`id_adm`
                 JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
                 JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
                 WHERE `transaksi`.`status_kirim` = 1
@@ -16,7 +16,7 @@ $konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pem
             FROM `transaksi`
             JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
             JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
-            WHERE `transaksi`.`id_admin` = '$var' OR `transaksi`.`status_kirim` = 0
+            WHERE `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0
 ");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
@@ -79,9 +79,9 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>ID Transaksi</th>
                         <th>Nama Admin</th>
                         <th>Nama Pembeli</th>
-                        <th>Nama Toko</th>
                         <th>Alamat Kirim</th>
                         <th>tgl_kirim</th>
                         <th>Kota Pembeli</th>
@@ -96,17 +96,72 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($dtTransaksi as $tr) : ?>
+                    <?php foreach ($getKota as $tr) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $tr['id_admin']; ?></td>
-                            <td><?= $tr['id_pembeli']; ?></td>
-                            <td><?= $tr['id_toko']; ?></td>
+                            <td><?= $tr['id_transaksi']; ?></td>
+                            <td><?= $tr['nama_admin']; ?></td>
+                            <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
-                            <td><?= $tr['kota_pembeli']; ?></td>
+                            <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_harga']; ?></td>
+                            <td><?= $tr['total_final']; ?></td>
+                            <td>
+                                <?php if ($tr['status_bayar'] == 1) : ?>
+                                    <div class='alert alert-success small'><i class='fas fa-check'></i></div>
+                                <?php else : ?>
+                                    <a class='btn btn-warning' href='edit.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if ($tr['status_kirim'] == 1) : ?>
+                                    <div class='alert alert-success small'><i class='fas fa-check'></i></div>
+                                <?php else : ?>
+                                    <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
+                                <?php endif; ?>
+                            </td>
+                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
+                            <td><img src="<?= "gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
+
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <br>
+            <hr>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Data Transaksi Yang Belum Terverifikasi </h1>
+                </h1>
+            </div>
+            <table id="example1" class="ui celled table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Status</th>
+                        <th>Kota Pembeli</th>
+                        <th>Alamat Kirim</th>
+                        <th>Nama Pembeli</th>
+                        <th>Ongkir Kurir</th>
+                        <th>Total Harga</th>
+                        <th>Status Bayar</th>
+                        <th>Status Kirim</th>
+                        <th>Tgl Transaksi</th>
+                        <th>Bukti Transfer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($konfirm as $tr) : ?>
+                        <tr>
+                            <td><?= $i; ?></td>
+                            <td><?= $tr['id_adm']; ?></td>
+                            <td><?= $tr['kota_tujuan']; ?></td>
+                            <td><?= $tr['alamat_kirim']; ?></td>
+                            <td><?= $tr['nama_pembeli']; ?></td>
+                            <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_final']; ?></td>
                             <td>
                                 <?php if ($tr['status_bayar'] == 1) : ?>

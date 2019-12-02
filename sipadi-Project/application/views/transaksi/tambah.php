@@ -90,7 +90,7 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                        <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" disabled>
+                        <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" readonly>
                     </div>
                     <div class="form-group">
                         <label for="gmbr"> Masukkan bukti Transaksi : </label>
@@ -105,6 +105,7 @@ require 'sidebar.php';
                                 <td><label for="stok">Pilih barang</label></td>
                                 <td><label for="expired">Harga Satuan</label></td>
                                 <td><label for="expired">Jumlah yang dibeli</label></td>
+                                <td><label for="kurang">Subtotal</label></td>
                                 <td><label for="kurang">Aksi</label></td>
                             </tr>
                             <tr>
@@ -118,13 +119,13 @@ require 'sidebar.php';
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" readonly>
+                                    <input type="text" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan_list" readonly>
                                 </td>
                                 <td>
                                     <input type="number" name="jml_dibeli_tmp[]" id="jml_dibeli_tmp" class="form-control jml_dibeli_tmp_list" placeholder="Masukkan jml Dibeli">
                                 </td>
-                                <td hidden>
-                                    <input type="number" name="subtotal" id="subtotal" class="form-control">
+                                <td>
+                                    <input type="number" name="subtotal" id="subtotal" class="form-control subtotallist" readonly>
                                 </td>
                                 <td>
                                     <button type="button" name="add" id="add" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
@@ -132,8 +133,8 @@ require 'sidebar.php';
                             </tr>
                         </table>
                         <div class="form-group">
-                            <label for="harga_final"> Harga Final : </label>
-                            <input type="number" class="form-control" name="harga_final" id="harga_final">
+                            <label for="harga_final"> Harga Total : </label>
+                            <input type="number" class="form-control" name="harga_total" id="harga_total" readonly>
                         </div>
                     </div>
                     <div class="form-group">
