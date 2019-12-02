@@ -37,7 +37,7 @@ if (isset($_POST["login"])) {
                 $_POST["level"] = 2;
                 $_SESSION["login"] = true;
                 $_SESSION = $_POST;
-                header("location: ../transaksi/");
+                header("location: ../operator/");
                 exit;
             }
         } else {

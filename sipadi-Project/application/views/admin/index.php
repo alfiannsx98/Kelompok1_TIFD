@@ -11,7 +11,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 if (($_POST["level"] == 2)) {
-    header("Location: ../transaksi/");
+    header("Location: ../operator/");
     exit;
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
