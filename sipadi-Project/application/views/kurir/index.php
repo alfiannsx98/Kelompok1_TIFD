@@ -10,6 +10,10 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
+if (($_POST["level"] == 2)) {
+    header("Location: ../operator/");
+    exit;
+}
 $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE email_admin = '$email'");

@@ -4,10 +4,12 @@ require '../../../application/controllers/login/functions-login.php';
 session_start();
 $_POST = $_SESSION;
 
-// $email = $_POST["email_admin"];
-// $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
+    exit;
+}
+if (($_POST["level"] == 2)) {
+    header("Location: ../operator/");
     exit;
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
