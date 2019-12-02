@@ -27,11 +27,18 @@
           </div>
           <a href="single.php" class="btn btn-success float-right btn-user btn-lg">Kembali</a>
         </div>
-        <div class="card-body">
+        <!--carbody1-->
+        <div class="card-body ml-4">
+            <div class="">
+                <input class="form-check-input mt-5" type="checkbox" value="" id="defaultCheck1">
+            </div>
+        <div class="float-left">    
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl6RoYEe-XNIhoOk3KrxwVChTRDYG8fj76L3KJMnYft07uFwp9" alt="" width="75px">
+            </div>
             <h5>Nama Mitra</h5>
             <h6>Jl.Raya PB Sudirman no.128</h6>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                
                 <label class="form-check-label" for="defaultCheck1">
                 File.pdf x1
                 <h6>50.00</h6>
@@ -42,11 +49,18 @@
             </div>
         </div>
         <hr>
-        <div class="card-body">
+        <!--cardbody2-->
+        <div class="card-body ml-4">
+            <div class="">
+                <input class="form-check-input mt-5" type="checkbox" value="" id="defaultCheck1">
+            </div>
+        <div class="float-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl6RoYEe-XNIhoOk3KrxwVChTRDYG8fj76L3KJMnYft07uFwp9" alt="" width="75px">
+            </div>
             <h5>Nama Mitra</h5>
             <h6>Jl.Raya PB Sudirman no.128</h6>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                
                 <label class="form-check-label" for="defaultCheck1">
                 File.pdf x1
                 <h6>50.00</h6>
@@ -57,26 +71,18 @@
             </div>
         </div>
         <hr>
-        <div class="card-body">
-            <h5>Nama Mitra</h5>
-            <h6>Jl.Raya PB Sudirman no.128</h6>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                File.pdf x1
-                <h6>50.00</h6>
-                </label>    
-                <div class="float-right col-2">
-                    <div class="btn btn-danger" href="#">Hapus</div>
-                </div>
+        <!--cardbody3-->
+        <div class="card-body ml-4">
+            <div class="">
+                <input class="form-check-input mt-5" type="checkbox" value="" id="defaultCheck1">
             </div>
-        </div>
-        <hr>
-        <div class="card-body">
+        <div class="float-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl6RoYEe-XNIhoOk3KrxwVChTRDYG8fj76L3KJMnYft07uFwp9" alt="" width="75px">
+            </div>
             <h5>Nama Mitra</h5>
             <h6>Jl.Raya PB Sudirman no.128</h6>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                
                 <label class="form-check-label" for="defaultCheck1">
                 File.pdf x1
                 <h6>50.00</h6>
@@ -87,11 +93,40 @@
             </div>
         </div>
         <hr>
-        <div class="card-body">
+        <!--carbody4-->
+        <div class="card-body ml-4">
+            <div class="">
+                <input class="form-check-input mt-5" type="checkbox" value="" id="defaultCheck1">
+            </div>
+        <div class="float-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl6RoYEe-XNIhoOk3KrxwVChTRDYG8fj76L3KJMnYft07uFwp9" alt="" width="75px">
+            </div>
             <h5>Nama Mitra</h5>
             <h6>Jl.Raya PB Sudirman no.128</h6>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                
+                <label class="form-check-label" for="defaultCheck1">
+                File.pdf x1
+                <h6>50.00</h6>
+                </label>
+                <div class="float-right col-2">
+                    <div class="btn btn-danger" href="#">Hapus</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--cardbody5-->
+        <div class="card-body ml-4">
+            <div class="">
+                <input class="form-check-input mt-5" type="checkbox" value="" id="defaultCheck1">
+            </div>
+        <div class="float-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl6RoYEe-XNIhoOk3KrxwVChTRDYG8fj76L3KJMnYft07uFwp9" alt="" width="75px">
+            </div>
+            <h5>Nama Mitra</h5>
+            <h6>Jl.Raya PB Sudirman no.128</h6>
+            <div class="form-check">
+                
                 <label class="form-check-label" for="defaultCheck1">
                 File.pdf x1
                 <h6>50.00</h6>
