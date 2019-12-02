@@ -35,7 +35,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Bakterisida</a></li>
+						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Bakterisida</a></li>
 					</ul>
 				</div>
 
@@ -58,11 +58,6 @@
 							<li><a href="categoriesbios.php">Biostimulan</a></li>
 						</ul>
 					</div>
-
-					<!-- Price Range Filtering -->
-					<!-- Sizes -->
-
-					<!-- Color -->
 
 				</div>
 
@@ -108,11 +103,11 @@
 									<div class="product-item bakterisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productbakterisida1.png" alt="">
+								<a href="single.php"><img src="images/productbakterisida1.png" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Bactocyn 150 AL (200ml)</a></h6>
+									<h6 class="product_name1"><a href="single.php">Bactocyn 150 AL (200ml)</a></h6>
 									<div class="product_price">Rp.30.000,00</div>
 								</div>
 							</div>

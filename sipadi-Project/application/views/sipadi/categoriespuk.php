@@ -108,7 +108,7 @@
 									<div class="product-item pupuk">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productpupuk.png" alt="">
+								<a href="single.php"><img src="images/productpupuk.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -122,7 +122,7 @@
 						<div class="product-item pupuk">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productpupuk1.png" alt="">
+								<a href="single.php"><img src="images/productpupuk1.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">

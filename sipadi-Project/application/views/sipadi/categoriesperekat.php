@@ -109,7 +109,7 @@
 									<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product1.png" alt="gambar">
+								<a href="single.php"><img src="images/product1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -123,7 +123,7 @@
 						<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productherbisida1.png" alt="gambar">
+								<a href="single.php"><img src="images/productherbisida1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">

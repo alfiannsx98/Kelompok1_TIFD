@@ -35,7 +35,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Biostimulan</a></li>
+						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Biostimulan</a></li>
 					</ul>
 				</div>
 
@@ -108,11 +108,11 @@
 									<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product1.png" alt="gambar">
+								<a href="single.php"><img src="images/product1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
+									<h6 class="product_name1"><a href="single.php">Herbisida Primaxone (200ml)</a></h6>
 									<div class="product_price">Rp.30.000,00</div>
 								</div>
 							</div>
@@ -122,7 +122,7 @@
 						<div class="product-item herbisida">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/productherbisida1.png" alt="gambar">
+								<a href="single.php"><img src="images/productherbisida1.png" alt="gambar">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">

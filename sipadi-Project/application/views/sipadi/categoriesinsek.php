@@ -108,11 +108,11 @@
 									<div class="product-item insektisida">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="images/productinsektisida1.png" alt="">
+											<a href="single.php"><img src="images/productinsektisida1.png" alt="">
 											</div>
 										<div class="favorite favorite_left"></div>	
 											<div class="product_info">
-												<h6 class="product_name1"><a href="single.html">Columbus 600EC (500ml)</a></h6>
+												<h6 class="product_name1"><a href="single.php">Columbus 600EC (500ml)</a></h6>
 												<div class="product_price">Rp.60.000,00</div>
 											</div>
 									</div>
