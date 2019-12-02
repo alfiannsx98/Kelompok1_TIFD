@@ -70,31 +70,31 @@ require_once 'login_header.php';
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
                                     <?php if (isset($error)) : ?>
                                         <p class="alert-danger">Username/Password Salah</p>
                                     <?php endif; ?>
-                                </div>
-                                <form action="" method="post" class="user">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
-                                    </div>
-                                    <hr>
-                                    <!-- <input type="checkbox" name="remember" id="remember" class="">
+                                    <form action="" method="post" class="user">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
+                                        </div>
+                                        <hr>
+                                        <!-- <input type="checkbox" name="remember" id="remember" class="">
                                 <label for="remember">Remember Me</label> -->
-                                    <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                                    <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
-                                </form>
-                                <br>
-                                <div class="text-center">
-                                    <a class="small" href="reset-password.php">Lupa Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a href="register.php" class="small">Register</a>
+                                        <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
+                                    </form>
+                                    <br>
+                                    <div class="text-center">
+                                        <a class="small" href="reset-password.php">Lupa Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="register.php" class="small">Register</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
