@@ -1,3 +1,4 @@
+<?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
 <!-- Header -->
 <?php
 require 'includes/header.php';
@@ -640,7 +641,7 @@ require 'includes/slider.php';
 			</div>
 			<div class="modal-footer border-top-0 d-flex justify-content-between">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				
+
 			</div>
 		</div>
 	</div>

@@ -84,7 +84,7 @@ require_once 'login_header.php';
                                 <!-- <input type="checkbox" name="remember" id="remember" class="">
                                 <label for="remember">Remember Me</label> -->
                                 <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                                <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
+                                <a href="../sipadi/" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
                             </form>
                             <br>
                             <div class="text-center">
