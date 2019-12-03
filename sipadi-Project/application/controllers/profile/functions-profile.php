@@ -72,3 +72,31 @@ function uploadPr()
 
     return $namaFileBaru;
 }
+function ubahPassword($data)
+{
+    global $koneksi;
+
+    $id_admin = $data['id_admin'];
+    $passwordLama = mysqli_real_escape_string($koneksi, $data['passwordLama']);
+    $password = mysqli_real_escape_string($koneksi, $data['password']);
+    $password1 = mysqli_real_escape_string($koneksi, $data['password1']);
+
+    $cek_password_lama = password_hash($passwordLama, PASSWORD_DEFAULT);
+
+    $cekbenar = mysqli_query($koneksi, "SELECT password_admin FROM admin WHERE id_admin='$id_admin' OR password_admin ='$cek_password_lama'");
+    if(!mysqli_fetch_assoc($cekbenar)){
+        echo "<script>alert('Password lama anda salah!');</script>";
+        return false;
+    }
+    if($password !== $password1){
+        echo "<script>('Password anda tidak cocok');</script>";
+        return false;
+    }
+    $passwordBaru = password_hash($password, PASSWORD_DEFAULT);
+    $query = "UPDATE admin SET
+            password_admin = '$passwordBaru'
+            WHERE id_admin = '$id_admin'
+    ";
+    mysqli_query($koneksi,$query);
+    return mysqli_affected_rows($koneksi);
+}

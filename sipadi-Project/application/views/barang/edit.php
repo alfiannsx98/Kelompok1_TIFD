@@ -30,7 +30,7 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../../login/login.php");
     exit;
 }
-if (!($_POST["level"] == 2)) {
+if (($_POST["level"] == 2)) {
     header("Location: ../admin/");
     exit;
 }

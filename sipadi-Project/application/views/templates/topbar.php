@@ -42,10 +42,13 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
-                <a class="dropdown-item" href="../password/password.php?id_admin=<?=$id_admin?>">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Ganti Password
-                </a>
+                <?php $psswd = mysqli_query($koneksi, "SELECT id_admin FROM admin WHERE email_admin='$email'"); ?>
+                <?php foreach ($psswd as $p) : ?>
+                    <a class="dropdown-item" href="../password/password.php?id=<?= $p['id_admin']; ?>">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Ganti Password
+                    </a>
+                <?php endforeach; ?>
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                     Activity Log
