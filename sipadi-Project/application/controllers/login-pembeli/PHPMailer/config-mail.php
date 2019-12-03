@@ -10,9 +10,9 @@ require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 require 'koneksi.php';
 
-$emailTo = $_POST["email_admin"];
+$emailTo = $_POST["email_pembeli"];
 $code = uniqid(true);
-$query = mysqli_query($koneksi, "INSERT INTO token_admin (kode,email) VALUES ('$code','$emailTo')");
+$query = mysqli_query($koneksi, "INSERT INTO token_user (kode,email) VALUES ('$code','$emailTo')");
 if (!$query) {
     exit("ERROR");
 }
@@ -24,7 +24,7 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 's67023671@gmail.com';                     // SMTP username
+    $mail->Username   = 'asd@gmail.com';                     // SMTP username
     $mail->Password   = 'IndowebsteR9';                               // SMTP password
     $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
@@ -44,7 +44,7 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Email Verifikasi telah terkirim!. Silahkan cek email anda!';
     echo '<br>';
     echo '<a href="../../../views/sipadi/">Kembali</a>';
 } catch (Exception $e) {
