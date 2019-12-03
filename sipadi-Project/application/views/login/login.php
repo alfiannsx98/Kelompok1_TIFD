@@ -103,4 +103,5 @@ require_once 'login_header.php';
             </div>
         </div>
     </div>
+
     <?php require_once 'login_footer.php'; ?>
