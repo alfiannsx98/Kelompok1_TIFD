@@ -55,51 +55,47 @@ if (isset($_POST["login"])) {
 require_once 'login_header.php';
 ?>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary ">
     <div class="container"></div>
-    <div class="row justify-content-center">
 
-        <div class="col-lg-6">
+    <div class="col-lg-6 ">
 
-            <!-- Outer Row -->
-            <div class="card o-hidden border-0 shadow-lg-6 my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login!</h1>
+        <!-- Outer Row -->
+        <div class="card o-hidden border-0 shadow-lg-6 my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Login!</h1>
+                            </div>
+                            <?php if (isset($error)) : ?>
+                                <p class="alert-danger">Username/Password Salah</p>
+                            <?php endif; ?>
+                            <form action="" method="post" class="user">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
                                 </div>
-                                <?php if (isset($error)) : ?>
-                                    <p class="alert-danger">Username/Password Salah</p>
-                                <?php endif; ?>
-                                <form action="" method="post" class="user">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
-                                    </div>
-                                    <hr>
-                                    <!-- <input type="checkbox" name="remember" id="remember" class="">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
+                                </div>
+                                <hr>
+                                <!-- <input type="checkbox" name="remember" id="remember" class="">
                                 <label for="remember">Remember Me</label> -->
-                                    <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                                    <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
-                                </form>
-                                <br>
-                                <div class="text-center">
-                                    <a class="small" href="reset-password.php">Lupa Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a href="register.php" class="small">Register</a>
-                                </div>
+                                <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
+                                <a href="#" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
+                            </form>
+                            <br>
+                            <div class="text-center">
+                                <a class="small" href="reset-password.php">Lupa Password?</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <?php require_once 'login_footer.php'; ?>
