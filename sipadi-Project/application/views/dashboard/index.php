@@ -1,4 +1,5 @@
 <div class="container-fluid">
+<?php require_once 'sidebar.php'; ?>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
