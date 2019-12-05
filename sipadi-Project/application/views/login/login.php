@@ -52,50 +52,53 @@ if (isset($_POST["login"])) {
     }
     $error = true;
 }
-require_once 'login_header.php';
 ?>
+<!doctype html>
+<html lang="en">
 
-<body class="bg-gradient-primary ">
-    <div class="container"></div>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <div class="col-lg-6 ">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css" type="text/css">
 
-        <!-- Outer Row -->
-        <div class="card o-hidden border-0 shadow-lg-6 my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Login!</h1>
-                            </div>
-                            <?php if (isset($error)) : ?>
-                                <p class="alert-danger">Username/Password Salah</p>
-                            <?php endif; ?>
-                            <form action="" method="post" class="user">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="email_admin" name="email_admin" placeholder="Masukkan Email Anda" value="">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" id="password_admin" name="password_admin" placeholder="masukkan Password" value="">
-                                </div>
-                                <hr>
-                                <!-- <input type="checkbox" name="remember" id="remember" class="">
-                                <label for="remember">Remember Me</label> -->
-                                <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                                <a href="../sipadi/" class="btn btn-success btn-user btn-block">kembali ke laman awal</a>
-                            </form>
-                            <br>
-                            <div class="text-center">
-                                <a class="small" href="reset-password.php">Lupa Password?</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="text-center">Form Login</h4>
+        <hr>
+        <?php if (isset($error)) : ?>
+            <p class="alert-danger">Username/Password Salah</p>
+        <?php endif; ?>
+        <form method="post" class="user">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="email" name="email_admin" class="form-control" placeholder="Masukan Username Anda">
             </div>
-        </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password_admin" class="form-control" placeholder="Masukan Password Anda">
+            </div>
+
+            <button type="submit" name="login" class="btn btn-primary">Login</button>
+            <a href="../sipadi/" class="btn btn-success btn-user">Kembali</a>
+        </form>
     </div>
-    </div>
-    </div>
-    <?php require_once 'login_footer.php'; ?>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
