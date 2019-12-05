@@ -28,7 +28,7 @@ if (isset($_POST["login"])) {
 		if (password_verify($password, $row["password_pembeli"])) {
 			$_SESSION["login"] = true;
 			$_SESSION = $_POST;
-			header("location: ../sipadi/categoriesbak.php");
+			header("location: ../sipadi/categoriesinsek.php");
 		}
 	}
 	$error = true;
