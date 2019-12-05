@@ -32,7 +32,7 @@
 							<ul class="top_nav_menu">
 
 								<!-- Currency / Language / My Account -->
-								<?php if ($_POST["login"] = true) : ?>
+								<?php if ($_SESSION["login_pembeli"] = true) : ?>
 									<li class="account">
 										<a href="#">
 											Selamat Datang
@@ -43,7 +43,7 @@
 											<li><a href="#" data-toggle="modal" data-target="#"><i class="fa fa-sign-in"></i>Profil</a></li>
 											<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
 											<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Ganti Password</a></li>
-											<li><a href="#"><i class="fas fa-logout" aria-hidden="true"></i>Logout</a></li>
+											<li><a href="../../controllers/login-pembeli/logout.php"><i class="fas fa-logout" aria-hidden="true"></i>Logout</a></li>
 										</ul>
 									</li>
 								<?php else : ?>
