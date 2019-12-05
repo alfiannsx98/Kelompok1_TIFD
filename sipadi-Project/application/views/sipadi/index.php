@@ -15,7 +15,7 @@ if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
 if (isset($_SESSION["login_pembeli"])) {
 	header("Location: ../sipadi/");
 }
-$_SESSION["login_pembeli"] = false;
+
 if (isset($_POST["login"])) {
 	$email = $_POST["email_pembeli"];
 	$password = $_POST["password_pembeli"];
@@ -26,11 +26,12 @@ if (isset($_POST["login"])) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
 			$_SESSION["login_pembeli"] = true;
-			header("location: ../sipadi/categoriesinsek.php");
+			header("location: ../sipadi/");
 		}
 	}
 	$error = true;
 }
+$_SESSION["login_pembeli"] = false;
 ?>
 <!-- Header -->
 <?php
