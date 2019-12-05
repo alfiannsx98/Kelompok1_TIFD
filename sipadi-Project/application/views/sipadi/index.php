@@ -1,4 +1,39 @@
 <?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
+<?php
+
+if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
+	$id = $_COOKIE['id_pembeli'];
+	$key = $_COOKIE['key'];
+
+	$result = mysqli_query($koneksi, "SELECT email_pembeli FROM pembeli WHERE id_pembeli='$id'");
+	$row = mysqli_fetch_assoc($result);
+
+	if ($key === hash('sha256', $row['email_pembeli'])) {
+		$_SESSION['login'] = true;
+	}
+}
+
+if (isset($_SESSION["login"])) {
+	header("Location: ../sipadi/");
+	exit;
+}
+if (isset($_POST["login"])) {
+	$email = $_POST["email_pembeli"];
+	$password = $_POST["password_pembeli"];
+
+	$result = mysqli_query($koneksi, "SELECT * FROM pembeli WHERE email_pembeli = '$email'");
+
+	if (mysqli_num_rows($result) === 1) {
+		$row = mysqli_fetch_assoc($result);
+		if (password_verify($password, $row["password_pembeli"])) {
+			$_SESSION["login"] = true;
+			$_SESSION = $_POST;
+			header("location: ../sipadi/categoriesbak.php");
+		}
+	}
+	$error = true;
+}
+?>
 <!-- Header -->
 <?php
 require 'includes/header.php';
@@ -7,6 +42,7 @@ require 'includes/header.php';
 <?php
 require 'includes/slider.php';
 ?>
+
 <div class="super_container"></div>
 
 <!-- Kategori -->
@@ -531,121 +567,11 @@ require 'includes/slider.php';
 </section>
 </div>
 
-<!-- MODAL DIALOG LOGIN -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header border-bottom-0">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="form-title text-center">
-					<h4>Login</h4>
-				</div>
-				<div class="d-flex flex-column text-center">
-					<div class="form-group">
-						<input type="email" class="form-control" id="email1" placeholder="Your email address...">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" id="password1" placeholder="Your password...">
-					</div>
-					<div class="form-group">
-						<button type="button" class="btn btn-info col-md-4 btn-round">Login</button>
-						<button href="#" type="button" class="btn btn-success btn-info col-md-4 btn-round" data-toggle="modal" data-target="#forgetModal" aria-hidden="true">Lupa Password</button>
-					</div>
-					<div class="d-flex justify-content-center social-buttons">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
-<!--lupa passwoerd-->
 
-<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header border-bottom-0">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="form-title text-center">
-					<h4>Lupa Password</h4>
-				</div>
-				<div class="d-flex flex-column text-center">
-					<form>
-						<div class="form-group">
-							<input type="text" class="form-control" id="namaemail" placeholder="Alamat Email">
 
-							<button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
-							<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
-					</form>
-					<div class="d-flex justify-content-center social-buttons">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-<!--cart-->
 
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header border-bottom-0">
-				<h5 class="modal-title" id="exampleModalLabel">
-					Your Shopping Cart
-				</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<table class="table table-image">
-					<thead>
-						<tr>
-							<th scope="col"></th>
-							<th scope="col">Produk</th>
-							<th scope="col">Harga</th>
-							<th scope="col">Jumlah</th>
-							<th scope="col">Total</th>
-							<th scope="col">Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="w-25">
-								<img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-							</td>
-							<td>Vans Sk8-Hi MTE Shoes</td>
-							<td>89$</td>
-							<td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-							<td>178$</td>
-							<td>
-								<a href="#" class="btn btn-danger btn-sm">
-									<i class="fa fa-times"></i>
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="d-flex justify-content-end">
-					<h5>Total: <span class="price text-success">89$</span></h5>
-				</div>
-			</div>
-			<div class="modal-footer border-top-0 d-flex justify-content-between">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-			</div>
-		</div>
-	</div>
-</div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>

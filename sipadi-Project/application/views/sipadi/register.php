@@ -15,7 +15,7 @@ if (isset($_POST["register"])) {
 <div class="text-center">
     <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
 </div>
-<form class="user" method="post" action="../../controllers/login-pembeli/PHPMailer/config-mail.php" enctype="multipart/form-data">
+<form class="user" method="post" action="" enctype="multipart/form-data">
     <div class="form-group row">
         <div class="col-sm-12 mb-3 mb-sm-0">
             <input type="text" class="form-control form-control-user" id="nama_pembeli" name="nama_pembeli" placeholder="Masukkan nama Pembeli" required>
