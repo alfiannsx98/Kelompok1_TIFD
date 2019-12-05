@@ -32,7 +32,7 @@
 							<ul class="top_nav_menu">
 
 								<!-- Currency / Language / My Account -->
-								<?php if ($_SESSION["login_pembeli"] == true) : ?>
+								<?php if (isset($_SESSION["login_pembeli"])) : ?>
 									<li class="account">
 										<a href="#">
 											Selamat Datang

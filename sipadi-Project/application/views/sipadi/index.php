@@ -25,7 +25,7 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			$_SESSION["login_pembeli"] = true;
+			$_SESSION["login_pembeli"] = 1;
 			header("location: ../sipadi/");
 		}
 	}
