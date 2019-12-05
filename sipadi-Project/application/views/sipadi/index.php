@@ -1,6 +1,5 @@
 <?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
-
 if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
 	$id = $_COOKIE['id_pembeli'];
 	$key = $_COOKIE['key'];
@@ -13,10 +12,10 @@ if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
 	}
 }
 
-if (isset($_SESSION["login"])) {
+if (isset($_SESSION["login_pembeli"])) {
 	header("Location: ../sipadi/");
-	exit;
 }
+$_SESSION["login_pembeli"] = false;
 if (isset($_POST["login"])) {
 	$email = $_POST["email_pembeli"];
 	$password = $_POST["password_pembeli"];
@@ -26,8 +25,7 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			$_SESSION["login"] = true;
-			$_SESSION = $_POST;
+			$_SESSION["login_pembeli"] = true;
 			header("location: ../sipadi/categoriesinsek.php");
 		}
 	}
