@@ -17,10 +17,8 @@ if (($_POST["level"] == 2)) {
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
-while($gmbr = mysqli_fetch_assoc($sql)){
-    $gbr = $gmbr["gambar_admin"];
-    $id_admin = $gmbr["id_admin"];
-}
+$gmbr = mysqli_fetch_assoc($sql);
+
 
 $dtKrywn = query("SELECT * FROM admin");
 
@@ -93,7 +91,7 @@ $dtKrywn = query("SELECT * FROM admin");
                             <td><?= $krywn['alamat']; ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <button class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>

@@ -29,6 +29,7 @@ function tambahBrg($data)
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $tgl_upload = time();
     $gambar_brg = uploadBrg();
+    $is_active = 0;
     if (!$gambar_brg) {
         return false;
     }
@@ -41,6 +42,8 @@ function tambahBrg($data)
         </script>";
         return false;
     }
+    $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload','$is_active')";
+    mysqli_query($koneksi, $query);
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
     if ($number >= 1 && $number1 >= 1) {
@@ -49,14 +52,11 @@ function tambahBrg($data)
             if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
                 $sql = "INSERT INTO dtl_brg VALUES('$idBrg','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
                 mysqli_query($koneksi, $sql);
-                var_dump($sql);
                 $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "','$idBrg')";
                 mysqli_query($koneksi, $sql1);
             }
         }
     }
-    $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload')";
-    mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
 function uploadBrg()
@@ -108,6 +108,7 @@ function ubahBrg($data)
             echo "<script>alert('error hapus gmbr');</script>";
             return false;
         } else {
+            unlink("../../views/barang/gambar/" . $gambarLama);
             $gambar = uploadBrg();
         }
     }
@@ -115,6 +116,15 @@ function ubahBrg($data)
     $number1 = count($_POST["expired"]);
     $idbrg = ($_GET['id']);
     $idExp = $data["id_expired"];
+    $query = "UPDATE barang SET
+    nama_brg = '$nama',
+    id_ktg = '$kategori',
+    gambar_brg = '$gambar',
+    harga_brg = '$harga',
+    deskripsi_brg = '$deskripsi'
+WHERE id_brg = '$id' 
+";
+    mysqli_query($koneksi, $query);
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
             $sql = "UPDATE dtl_brg SET
@@ -138,15 +148,6 @@ function ubahBrg($data)
             }
         }
     }
-    $query = "UPDATE barang SET
-    nama_brg = '$nama',
-    id_ktg = '$kategori',
-    gambar_brg = '$gambar',
-    harga_brg = '$harga',
-    deskripsi_brg = '$deskripsi'
-WHERE id_brg = '$id' 
-";
-    mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
 function hapusBrg($id)
@@ -155,14 +156,14 @@ function hapusBrg($id)
     $qr_file = mysqli_query($koneksi, "SELECT gambar_brg FROM barang WHERE id_brg='$id'");
     $hsl =  mysqli_fetch_array($qr_file);
     if (!unlink("../../views/barang/gambar/" . $hsl["gambar_brg"])) {
-        mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
-        mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
+        mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
+        mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
         return mysqli_affected_rows($koneksi);
     } else {
-        mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
-        mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
+        mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
+        mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
         return mysqli_affected_rows($koneksi);
     }
 }

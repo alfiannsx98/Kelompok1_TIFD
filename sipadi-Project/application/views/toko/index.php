@@ -34,10 +34,8 @@ if (($_POST["level"] == 2)) {
 }
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
-while($gmbr = mysqli_fetch_assoc($sql)){
-    $gbr = $gmbr["gambar_admin"];
-    $id_admin = $gmbr["id_admin"];
-}
+$gmbr = mysqli_fetch_assoc($sql);
+
 
 
 ?>
