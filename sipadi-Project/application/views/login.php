@@ -28,6 +28,8 @@
 
         <button type="submit" class="btn btn-primary">Login</button>
         <button type="reset"  class="btn btn-danger">Reset</button>
+
+        <a href="Lupa Password"></a>
     </form>
     </div>
 
