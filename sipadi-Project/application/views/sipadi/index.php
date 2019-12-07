@@ -241,6 +241,7 @@ require 'includes/slider.php';
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".insektisida">Insektisida</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".fungisida">Fungisida</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".bakterisida">Bakterisida</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".zpt">ZPT</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".pupuk">Pupuk</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".herbisida">Herbisida</li>

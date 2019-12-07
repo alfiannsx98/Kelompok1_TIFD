@@ -978,7 +978,7 @@ section
 .grid_sorting_button
 {
 	height: 40px;
-	min-width: 102px;
+	min-width: 90px;
 	padding-left: 25px;
 	padding-right: 25px;
 	cursor: pointer;
