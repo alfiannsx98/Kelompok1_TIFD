@@ -90,6 +90,7 @@ function ubahAdm($data)
     global $koneksi;
 
     $id = $data["id"];
+    $alamat = htmlspecialchars($data["alamat_admin"]);
     $nama = htmlspecialchars($data["nama_admin"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
@@ -100,7 +101,8 @@ function ubahAdm($data)
     }
     $query = "UPDATE admin SET
                 nama_admin = '$nama',
-                gambar_admin = '$gambar'
+                gambar_admin = '$gambar',
+                alamat = '$alamat'
             WHERE id_admin = '$id' 
     ";
     mysqli_query($koneksi, $query);
@@ -114,13 +116,11 @@ function hapusAdm($id)
     $hsl =  mysqli_fetch_array($qr_file);
 
     if (!unlink("../../views/karyawan/gambar/" . $hsl["gambar_admin"])) {
-        echo "<script>alert('error hapus gmbr');</script>";
-        return false;
+        mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
+        return mysqli_affected_rows($koneksi);
+    } else {
+        unlink("../../views/karyawan/gambar/" . $hsl["gambar_admin"]);
+        mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
+        return mysqli_affected_rows($koneksi);
     }
-
-
-
-    mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
-
-    return mysqli_affected_rows($koneksi);
 }

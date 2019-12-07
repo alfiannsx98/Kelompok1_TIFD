@@ -81,7 +81,7 @@ $dtKtg = query("SELECT * FROM kategori");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $ktg['nama_kategori']; ?></td>
-                            <td><img src="<?= 'gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
+                            <td><img src="<?= '../../views/kategori/gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <button class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>

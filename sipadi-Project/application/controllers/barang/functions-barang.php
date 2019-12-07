@@ -122,8 +122,8 @@ function ubahBrg($data)
     gambar_brg = '$gambar',
     harga_brg = '$harga',
     deskripsi_brg = '$deskripsi'
-WHERE id_brg = '$id' 
-";
+    WHERE id_brg = '$id' 
+    ";
     mysqli_query($koneksi, $query);
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
@@ -161,6 +161,7 @@ function hapusBrg($id)
         mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
         return mysqli_affected_rows($koneksi);
     } else {
+        unlink("../../views/barang/gambar/" . $hsl["gambar_brg"]);
         mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");

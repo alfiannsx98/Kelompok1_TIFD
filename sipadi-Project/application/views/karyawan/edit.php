@@ -1,4 +1,4 @@
-]<?php
+<?php
 require_once '../../controllers/admin/functions-admin.php';
 require_once 'header.php';
 session_start();
