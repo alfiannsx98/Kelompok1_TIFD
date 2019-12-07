@@ -105,7 +105,8 @@ function ubahBrg($data)
         $gambar = $gambarLama;
     } else {
         if (!unlink("../../views/barang/gambar/" . $gambarLama)) {
-            $gambar = uploadBrg();
+            echo "<script>alert('error hapus gmbr');</script>";
+            return false;
         } else {
             unlink("../../views/barang/gambar/" . $gambarLama);
             $gambar = uploadBrg();
