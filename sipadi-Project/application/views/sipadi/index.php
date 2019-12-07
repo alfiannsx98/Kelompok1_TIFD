@@ -257,20 +257,27 @@ require 'includes/slider.php';
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 						<!-- Product insektisida -->
-
+						<?php $barang = query("SELECT * FROM barang");?>
+						<?php foreach($barang as $br): ?>
 						<div class="product-item insektisida">
+						
 							<div class="product discount product_filter">
+			
+							
+							
 								<div class="product_image">
-									<a href="single.php"><img src="images/productinsektisida1.png" alt="">
+									<a href="single.php"><img src="<?= "../barang/gambar/".$br["gambar_brg"]; ?>" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name1"><a href="single.php">Columbus 600EC (500ml)</a></h6>
-									<div class="product_price">Rp.60.000,00</div>
+									<h6 class="product_name1"><a href="single.php"><?= $br["nama_brg"]; ?></a></h6>
+									<div class="product_price">Rp. <?= $br["harga_brg"]; ?></div>
 								</div>
 							</div>
 							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+						
 						</div>
+						<?php  endforeach; ?>
 
 						<!-- Product Fungisida -->
 
