@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="login.css" type="text/css">
+    <link rel="stylesheet" href="login/login.css" type="text/css">
 
     <title>Hello, world!</title>
   </head>
@@ -29,7 +29,7 @@
         <button type="submit" class="btn btn-primary">Login</button>
         <button type="reset"  class="btn btn-danger">Reset</button>
 
-        <a href="Lupa Password"></a>
+        <a href="Lupapassword.php" class="text-center">Lupa Password</a>
     </form>
     </div>
 
