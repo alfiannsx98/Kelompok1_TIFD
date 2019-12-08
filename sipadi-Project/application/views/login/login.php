@@ -80,14 +80,14 @@ if (isset($_POST["login"])) {
                 <label>Username</label>
                 <input type="email" name="email_admin" class="form-control" placeholder="Masukan Username Anda">
             </div>
-
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password_admin" class="form-control" placeholder="Masukan Password Anda">
             </div>
-
-            <button type="submit" name="login" class="btn btn-primary">Login</button>
-            <a href="../sipadi/" class="btn btn-success btn-user">Kembali</a>
+            <center><button type="submit" name="login" class="btn btn-primary">Login</button>
+                <a href="../sipadi/" class="btn btn-success btn-user">Kembali</a></center>
+            <br>
+            <center><a href="../login/reset-password.php">Lupa Password?</a></center>
         </form>
     </div>
 

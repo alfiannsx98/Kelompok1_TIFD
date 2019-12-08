@@ -25,10 +25,11 @@ function ubahTk($data)
         $gambar = $gambarLama;
     } else {
         if (!unlink("../../views/toko/gambar/" . $gambarLama)) {
-            echo "<script>alert('error hapus gmbr');</script>";
-            return false;   
+            unlink("../../views/toko/gambar/" . $gambarLama);
+            $gambar = uploadTk();
         } else {
-        $gambar = uploadTk();
+            unlink("../..views/toko/gambar/" . $gambarLama);
+            $gambar = uploadTk();
         }
     }
     $query = "UPDATE toko SET
