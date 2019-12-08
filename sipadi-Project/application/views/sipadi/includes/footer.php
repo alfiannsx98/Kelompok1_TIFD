@@ -8,7 +8,6 @@
 						<li><a href="#">FAQs</a></li>
 						<li><a href="contact.html">Contact us</a></li>
 						<li><a href="../login/login.php">Author</a></li>
-						<li><a href="contact.php">Contact us</a></li>
 					</ul>
 				</div>
 			</div>
