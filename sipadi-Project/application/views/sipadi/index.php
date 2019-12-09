@@ -1,18 +1,19 @@
 <?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
-if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
-	$id = $_COOKIE['id_pembeli'];
-	$key = $_COOKIE['key'];
 
-	$result = mysqli_query($koneksi, "SELECT email_pembeli FROM pembeli WHERE id_pembeli='$id'");
-	$row = mysqli_fetch_assoc($result);
+// if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
+// 	$id = $_COOKIE['id_pembeli'];
+// 	$key = $_COOKIE['key'];
 
-	if ($key === hash('sha256', $row['email_pembeli'])) {
-		$_SESSION['login'] = true;
-	}
-}
+// 	$result = mysqli_query($koneksi, "SELECT email_pembeli FROM pembeli WHERE id_pembeli='$id'");
+// 	$row = mysqli_fetch_assoc($result);
 
-if (isset($_SESSION["login_pembeli"])) {
+// 	if ($key === hash('sha256', $row['email_pembeli'])) {
+// 		$_SESSION['login'] = true;
+// 	}
+// }
+
+if (isset($_SESSION["login_pembeli"]) == 1) {
 	header("Location: ../sipadi/");
 }
 
@@ -25,17 +26,20 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			$_SESSION["login_pembeli"] = 1;
 			header("location: ../sipadi/");
+			$_SESSION["login_pembeli"] = 1;
 		}
 	}
 	$error = true;
 }
-$_SESSION["login_pembeli"] = false;
 ?>
 <!-- Header -->
 <?php
-require 'includes/header.php';
+if (isset($_SESSION["login_pembeli"]) === 1) {
+	require 'includes/header.php';
+} else {
+	require 'includes/header-login.php';
+}
 ?>
 <!-- Slider -->
 <?php
@@ -273,11 +277,10 @@ require 'includes/slider.php';
 									<h6 class="product_name1"><a href="single.php"><?= $br["nama_brg"]; ?></a></h6>
 									<div class="product_price">Rp. <?= $br["harga_brg"]; ?></div>
 								</div>
+								<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
+
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						
-						</div>
-						<?php  endforeach; ?>
+						<?php endforeach; ?>
 
 						<!-- Product Fungisida -->
 
