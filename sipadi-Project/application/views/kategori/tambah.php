@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
         echo "    
         <script>
             alert('data berhasil ditambah!');
-            document.location.href = 'index.php';
+            document.Location.href = 'index.php';
         </script>";
     } else {
         echo "    
@@ -68,10 +68,10 @@ require 'sidebar.php';
                         <input type="text" class="form-control form-control-user" id="nama_kategori" name="nama_kategori" placeholder="Masukan Kategori Anda" required pattern="[a-zA-Z0-9\s]+">
                     </div>
                     <div class="form-group">
-                        <label for="gmbr"> Gambar Kategori : </label>
+                        <label for="gmbr_ktg"> Gambar Kategori : </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
-                            <label for="gmbr" class="custom-file-label">Pilih File</label>
+                            <input type="file" class="custom-file-input" id="gmbr_ktg" name="gmbr_ktg">
+                            <label for="gmbr_ktg" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
                     <hr>

@@ -19,17 +19,11 @@ function ubahKtg($data)
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama_kategori"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
-
+    $file = "../../views/kategori/gambar/" . $gambarLama;
     if ($_FILES['gmbr_ktg']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        if (!file_exists("../../views/kategori/gambar/" . $gambarLama)) {
-            unlink("../../views/kategori/gambar/" . $gambarLama);
-            $gambar = uploadKtg();
-        } else {
-            unlink("../..views/kategori/gambar/" . $gambarLama);
-            $gambar = uploadKtg();
-        }
+        $gambar = uploadKtg();
     }
     $query = "UPDATE kategori SET
                 nama_kategori = '$nama',
