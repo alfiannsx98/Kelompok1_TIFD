@@ -24,10 +24,8 @@ if (isset($_POST["submit"])) {
     } else {
         echo "<script>
         alert('data gagal diedit!');
-        document.Location.href = 'index.php';
         </script>";
     }
-    var_dump(ubahKtg($_POST));
 }
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
@@ -62,7 +60,6 @@ require 'sidebar.php';
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Edit Kategori</h1>
             </div>
-
             <!-- Content Row -->
             <div class="row">
                 <!-- Content Row -->

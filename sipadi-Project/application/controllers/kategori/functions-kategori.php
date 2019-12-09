@@ -19,11 +19,19 @@ function ubahKtg($data)
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama_kategori"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
-    $file = "../../views/kategori/gambar/" . $gambarLama;
+    $path = '../../views/kategori/gambar/' . $gambarLama;
+
+
     if ($_FILES['gmbr_ktg']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        $gambar = uploadKtg();
+        if (!unlink("../../views/kategori/gambar/" . $gambarLama)) {
+            unlink("../../views/kategori/gambar/" . $gambarLama);
+            $gambar = uploadKtg();
+        } else {
+            unlink("../../views/kategori/gambar/" . $gambarLama);
+            $gambar = uploadKtg();
+        }
     }
     $query = "UPDATE kategori SET
                 nama_kategori = '$nama',
@@ -79,7 +87,7 @@ function uploadKtg()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Maaf yang telah anda uplaod bukan gambar');</script>";
     }
-    if ($ukuranFile > 500000000) {
+    if ($ukuranFile > 900000000) {
         echo "<script>alert('Maaf file yang anda upload terlalu besar!');</script>";
     }
 
