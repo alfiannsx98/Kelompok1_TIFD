@@ -6,7 +6,7 @@
 					<ul class="footer_nav">
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">FAQs</a></li>
-						<li><a href="contact.html">Contact us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
 						<li><a href="../login/login.php">Author</a></li>
 					</ul>
 				</div>
