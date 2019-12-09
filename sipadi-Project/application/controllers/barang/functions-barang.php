@@ -105,8 +105,6 @@ function ubahBrg($data)
         $gambar = $gambarLama;
     } else {
         if (!unlink("../../views/barang/gambar/" . $gambarLama)) {
-            //echo "<script>alert('error hapus gmbr');</script>";
-            //return false;
             $gambar = uploadBrg();
         } else {
             unlink("../../views/barang/gambar/" . $gambarLama);
@@ -117,15 +115,6 @@ function ubahBrg($data)
     $number1 = count($_POST["expired"]);
     $idbrg = ($_GET['id']);
     $idExp = $data["id_expired"];
-    $query = "UPDATE barang SET
-    nama_brg = '$nama',
-    id_ktg = '$kategori',
-    gambar_brg = '$gambar',
-    harga_brg = '$harga',
-    deskripsi_brg = '$deskripsi'
-    WHERE id_brg = '$id' 
-    ";
-    mysqli_query($koneksi, $query);
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
             $sql = "UPDATE dtl_brg SET
@@ -149,6 +138,15 @@ function ubahBrg($data)
             }
         }
     }
+    $query = "UPDATE barang SET
+    nama_brg = '$nama',
+    id_ktg = '$kategori',
+    gambar_brg = '$gambar',
+    harga_brg = '$harga',
+    deskripsi_brg = '$deskripsi'
+    WHERE id_brg = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
 function hapusBrg($id)

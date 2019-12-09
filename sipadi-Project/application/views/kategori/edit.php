@@ -28,6 +28,7 @@ if (isset($_POST["submit"])) {
         document.Location.href = 'index.php';
         </script>";
     }
+    var_dump(ubahKtg($_POST));
 }
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {

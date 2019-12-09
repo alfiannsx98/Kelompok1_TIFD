@@ -270,7 +270,7 @@ require 'includes/slider.php';
 
 
 									<div class="product_image">
-										<a href="single.php"><img src="<?= "../barang/gambar/" . $br["gambar_brg"]; ?>" alt="">
+										<a href=<?= "single.php?id=" . $br["id_brg"]; ?>><img src="<?= "../barang/gambar/" . $br["gambar_brg"]; ?>" alt="">
 									</div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_info">

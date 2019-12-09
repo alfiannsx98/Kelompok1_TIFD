@@ -24,6 +24,7 @@ if (isset($_POST["update"])) {
             alert('data gagal Diedit!');
         </script>";
     }
+    var_dump(ubahBrg($_POST));
 }
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
@@ -74,7 +75,7 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="id_kategori">Kategori : </label>
-                        <select name="id_kategori" class="form-control">
+                        <select name="id_kategori" class="form-control" required>
                             <option value="" disabled selected>Silahkan Pilih Item</option>
                             <?php $rslt = query("SELECT * FROM kategori"); ?>
                             <?php foreach ($rslt as $nmKTG) : ?>
