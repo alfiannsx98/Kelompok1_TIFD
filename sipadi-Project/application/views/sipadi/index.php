@@ -1,6 +1,6 @@
 <?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
-
+session_start();
 // if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
 // 	$id = $_COOKIE['id_pembeli'];
 // 	$key = $_COOKIE['key'];
@@ -13,9 +13,6 @@
 // 	}
 // }
 
-if (isset($_SESSION["login_pembeli"]) == 1) {
-	header("Location: ../sipadi/");
-}
 
 if (isset($_POST["login"])) {
 	$email = $_POST["email_pembeli"];
@@ -35,10 +32,10 @@ if (isset($_POST["login"])) {
 ?>
 <!-- Header -->
 <?php
-if (isset($_SESSION["login_pembeli"]) === 1) {
-	require 'includes/header.php';
-} else {
+if (isset($_SESSION["login_pembeli"]) == 1) {
 	require 'includes/header-login.php';
+} else {
+	require 'includes/header.php';
 }
 ?>
 <!-- Slider -->
