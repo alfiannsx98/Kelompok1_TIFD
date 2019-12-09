@@ -57,21 +57,24 @@ require 'includes/slider.php';
 				<div class="owl-carousel owl-theme product_slider">
 
 					<!-- Slide 1 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
+					<?php $kategori = query("SELECT * FROM kategori");?>
+						<?php foreach($kategori as $ktgr): ?>
+						<div class="owl-item product_slider_item">
+						
+							<div class="product-item">
+								<div class="product discount">
+									<div class="product_image">
 									<img src="images/INSEKTISIDA.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesinsek.php">Insektisida</a></h6>
-									<div class="product_price">20pcs</div>
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_info">
+										<h6 class="product_name"><a href="categoriesinsek.php"><?= $ktgr["nama_kategori"]; ?></a></h6>
+										<div class="product_price">20pcs</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					<?php  endforeach; ?>
 
 					<!-- Slide 2 -->
 
@@ -262,9 +265,6 @@ require 'includes/slider.php';
 						<div class="product-item insektisida">
 						
 							<div class="product discount product_filter">
-			
-							
-							
 								<div class="product_image">
 									<a href="single.php"><img src="<?= "../barang/gambar/".$br["gambar_brg"]; ?>" alt="">
 								</div>
