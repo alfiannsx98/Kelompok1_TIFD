@@ -20,6 +20,7 @@ if (isset($_POST["submit"])) {
         echo "    
         <script>
             alert('data berhasil diedit!');
+            document.location.href = 'index.php';
         </script>";
     } else {
         echo "<script>

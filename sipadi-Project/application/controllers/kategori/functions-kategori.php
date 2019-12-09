@@ -19,8 +19,6 @@ function ubahKtg($data)
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama_kategori"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
-    $path = '../../views/kategori/gambar/' . $gambarLama;
-
 
     if ($_FILES['gmbr_ktg']['error'] === 4) {
         $gambar = $gambarLama;
