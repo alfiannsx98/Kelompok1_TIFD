@@ -68,7 +68,7 @@ require 'includes/slider.php';
 							<div class="product-item">
 								<div class="product discount">
 									<div class="product_image">
-										<img src="images/INSEKTISIDA.png" alt="gambar">
+										<img src="<?= "../../views/kategori/gambar/" . $ktgr['gmbr']; ?>" alt="gambar">
 									</div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_info">
