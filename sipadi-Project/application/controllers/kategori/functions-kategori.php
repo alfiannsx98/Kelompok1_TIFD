@@ -12,6 +12,34 @@ function query($query)
     }
     return $rows;
 }
+function ubahKtg($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama_kategori"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    if ($_FILES['gmbr_ktg']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        if (!file_exists("../../views/kategori/gambar/" . $gambarLama)) {
+            unlink("../../views/kategori/gambar/" . $gambarLama);
+            $gambar = uploadKtg();
+        } else {
+            unlink("../..views/kategori/gambar/" . $gambarLama);
+            $gambar = uploadKtg();
+        }
+    }
+    $query = "UPDATE kategori SET
+                nama_kategori = '$nama',
+                gmbr = '$gambar'
+            WHERE id_kategori = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
 function tambahKtg($data)
 {
     global $koneksi;
@@ -42,10 +70,10 @@ function tambahKtg($data)
 }
 function uploadKtg()
 {
-    $namaFile = $_FILES['gmbr']['name'];
-    $ukuranFile = $_FILES['gmbr']['size'];
-    $error = $_FILES['gmbr']['error'];
-    $tmpName = $_FILES['gmbr']['tmp_name'];
+    $namaFile = $_FILES['gmbr_ktg']['name'];
+    $ukuranFile = $_FILES['gmbr_ktg']['size'];
+    $error = $_FILES['gmbr_ktg']['error'];
+    $tmpName = $_FILES['gmbr_ktg']['tmp_name'];
 
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
@@ -69,28 +97,7 @@ function uploadKtg()
 
     return $namaFileBaru;
 }
-function ubahKtg($data)
-{
-    global $koneksi;
 
-    $id = $data["id"];
-    $nama = htmlspecialchars($data["nama_kategori"]);
-    $gambarLama = htmlspecialchars($data["gambarLama"]);
-
-    if ($_FILES['gmbr']['error'] === 4) {
-        $gambar = $gambarLama;
-    } else {
-        $gambar = uploadKtg();
-    }
-    $query = "UPDATE kategori SET
-                nama_kategori = '$nama',
-                gmbr = '$gambar'
-            WHERE id_kategori = '$id' 
-    ";
-    mysqli_query($koneksi, $query);
-
-    return mysqli_affected_rows($koneksi);
-}
 function hapusKtg($id)
 {
     global $koneksi;

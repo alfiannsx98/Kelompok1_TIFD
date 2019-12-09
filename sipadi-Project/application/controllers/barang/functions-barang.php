@@ -101,16 +101,7 @@ function ubahBrg($data)
     $gambarLama = htmlspecialchars($data["gambarLama"]);
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM expired");
     $hitungExp1 = mysqli_num_rows($hitungExp);
-    if ($_FILES['gmbr']['error'] === 4) {
-        $gambar = $gambarLama;
-    } else {
-        if (!unlink("../../views/barang/gambar/" . $gambarLama)) {
-            $gambar = uploadBrg();
-        } else {
-            unlink("../../views/barang/gambar/" . $gambarLama);
-            $gambar = uploadBrg();
-        }
-    }
+
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
     $idbrg = ($_GET['id']);
@@ -138,6 +129,15 @@ function ubahBrg($data)
             }
         }
     }
+    if ($_FILES['gmbr']['error'] === 4) {
+        $gambar = $gambarLama;
+    } elseif (file_exists("../../views/barang/gambar/" . $gambarLama)) {
+        unlink("../../views/barang/gambar/" . $gambarLama);
+        $gambar = uploadBrg();
+    } else {
+        $gambar = uploadBrg();
+    }
+    var_dump($gambar);
     $query = "UPDATE barang SET
     nama_brg = '$nama',
     id_ktg = '$kategori',
