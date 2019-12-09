@@ -27,7 +27,7 @@
 
 		<?php
 		$id = $_GET['id'];
-		require 'includes/headerdtl.php';
+		require 'includes/header.php';
 		?>
 
 		<?php
