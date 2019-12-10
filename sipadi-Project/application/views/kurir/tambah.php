@@ -70,7 +70,7 @@ require 'sidebar.php';
                     </div>
                     <div class="form-group">
                         <label for="username"> Kota Tujuan : </label>
-                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" placeholder="Masukan Kota Tujuan" required pattern="[a-zA-Z0-9\s]+">
+                        <input type="text" class="form-control form-control-user" id="kota_tujuan" name="kota_tujuan" placeholder="Masukan Kota Tujuan" required pattern="[a-zA-Z\s]+">
                     </div>
                     <div class="form-group">
                         <label for="username"> Ongkir Kurir : </label>

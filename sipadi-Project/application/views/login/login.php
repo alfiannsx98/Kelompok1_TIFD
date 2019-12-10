@@ -85,7 +85,7 @@ if (isset($_POST["login"])) {
                 <input type="password" name="password_admin" class="form-control" placeholder="Masukan Password Anda">
             </div>
             <center>
-                <a type="submit" name="login" class="btn btn-primary">Login</a>
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
                 <a type="button" href="../sipadi/" name="kembali" class="btn btn-success">Kembali</a>
             </center>
             <br>

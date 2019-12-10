@@ -67,7 +67,7 @@
 					<div class="row">
 						<div class="col-lg-12 text-right">
 							<div class="logo_container">
-								<a href="#">Sumber<span> Dadi</span></a>
+								<a href="index.php">Sumber<span> Dadi</span></a>
 							</div>
 							<nav class="navbar">
 								<ul class="navbar_menu">
@@ -76,10 +76,15 @@
 									<li><a href="#produk">Produk</a></li>
 									<li><a href="#about">About Us</a></li>
 								</ul>
+
 								<ul class="navbar_user">
 									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li class="checkout">
-										<a class="btn btn-success" href="cart.php?id=<?= $rslt['id_pembeli']; ?>"><i class="fa fa-shopping-cart"></i></a>
+										<?php
+											$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");
+											$dt = mysqli_num_rows($dtcart);
+											?>
+										<a class="btn btn-success" href="cart.php?id=<?= $rslt['id_pembeli']; ?>"><i class="fa fa-shopping-cart"><span id="checkout_items" class="checkout_items"><?= $dt ?></span></i></a>
 										<!-- <button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
 										<i class="fa fa-shopping-cart"></i>
 									</button> -->

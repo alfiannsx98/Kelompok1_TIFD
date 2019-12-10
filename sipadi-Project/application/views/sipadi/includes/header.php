@@ -73,9 +73,9 @@
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
+									<a href="cart.php" class="btn btn-success">
 										<i class="fa fa-shopping-cart"></i>
-									</button>
+									</a>
 								</li>
 							</ul>
 							<div class="hamburger_container">
