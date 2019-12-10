@@ -68,7 +68,7 @@ if (isset($_POST["login"])) {
     <title>Login Admin</title>
 </head>
 
-<body>
+<body class="kotak" background="../sipadi/images/d.jpg">
     <div class="container">
         <h4 class="text-center">Form Login</h4>
         <hr>
@@ -85,7 +85,8 @@ if (isset($_POST["login"])) {
                 <input type="password" name="password_admin" class="form-control" placeholder="Masukan Password Anda">
             </div>
             <center><button type="submit" name="login" class="btn btn-primary">Login</button>
-                <a href="../sipadi/" class="btn btn-success btn-user">Kembali</a></center>
+            <button type="submit" name="kembali" class ="btn btn-success">Kembali</button>
+            </center>
             <br>
             <center><a href="../login/reset-password.php">Lupa Password?</a></center>
         </form>

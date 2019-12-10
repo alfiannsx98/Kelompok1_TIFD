@@ -3,6 +3,11 @@
     margin-top: 9%;
     box-shadow: 0 3px 20px rgba(0,0,0,0.3);
     padding: 40px;
+    background-color: #fff;
+    z-index: 1;
+}
+.kotak{
+    background: url('../sipadi/images/d.jpg');
 }
 
 button{

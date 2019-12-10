@@ -25,10 +25,8 @@ if (isset($_POST["submit"])) {
     } else {
         echo "<script>
         alert('data gagal diedit!');
-        document.Location.href = 'index.php';
         </script>";
     }
-    var_dump(ubahKtg($_POST));
 }
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
@@ -63,7 +61,6 @@ require 'sidebar.php';
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Edit Kategori</h1>
             </div>
-
             <!-- Content Row -->
             <div class="row">
                 <!-- Content Row -->
@@ -82,10 +79,10 @@ require 'sidebar.php';
                         <img class="img-thumbnail" src="<?= "gambar/" . $kategori['gmbr']; ?>" width="300" height="300" alt="">
                     </div>
                     <div class="form-group">
-                        <label for="gmbr"> Gambar Kategori Baru : </label>
+                        <label for="gmbr_ktg"> Gambar Kategori Baru : </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr">
-                            <label for="gmbr" class="custom-file-label">Pilih File</label>
+                            <input type="file" class="custom-file-input" id="gmbr_ktg" name="gmbr_ktg">
+                            <label for="gmbr_ktg" class="custom-file-label">Pilih File</label>
                         </div>
                     </div>
                     <hr>

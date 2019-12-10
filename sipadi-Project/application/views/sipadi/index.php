@@ -13,7 +13,6 @@ session_start();
 // 	}
 // }
 
-
 if (isset($_POST["login"])) {
 	$email = $_POST["email_pembeli"];
 	$password = $_POST["password_pembeli"];
@@ -25,14 +24,18 @@ if (isset($_POST["login"])) {
 		if (password_verify($password, $row["password_pembeli"])) {
 			header("location: ../sipadi/");
 			$_SESSION["login_pembeli"] = 1;
+			$_SESSION['email'] = $email;
 		}
 	}
 	$error = true;
 }
+
 ?>
 <!-- Header -->
 <?php
 if (isset($_SESSION["login_pembeli"]) == 1) {
+	$mail = $_SESSION['email'];
+	$result = mysqli_query($koneksi, "SELECT * FROM pembeli WHERE email_pembeli = '$mail'");
 	require 'includes/header-login.php';
 } else {
 	require 'includes/header.php';

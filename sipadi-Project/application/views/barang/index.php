@@ -95,7 +95,7 @@ $gmbr = mysqli_fetch_assoc($sql);
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <button class="btn btn-danger" href="hapus.php?id=<?= $brg['id_brg']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                                <a href="cetak_satuan.php?id=<?= $brg['id_brg']; ?>" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
