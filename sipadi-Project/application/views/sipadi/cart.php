@@ -16,18 +16,17 @@ if (isset($_SESSION['login_pembeli']) == 1) {
 
 $cart = query("SELECT * FROM cart WHERE id_users='$id'");
 ?>
-<tr>
-    <td>No</td>
-    <td>as</td>
-    <td>as</td>
-</tr>
-<tr>
-    <?php foreach ($cart as $rslt) : ?>
-        <td><?= $rslt['id_cart']; ?></td>
-        <td><?= $rslt['id_users']; ?></td>
-        <td><?= $rslt['id_barangs']; ?></td>
-        <td><?= $rslt['qty']; ?></td>
-        <td><?= $rslt['tgl_transaksi']; ?></td>
-    <?php endforeach; ?>
-</tr>
-<?php require 'includes/footer.php'; ?>
+<?php foreach ($cart as $rs) : ?>
+    <div class="container single_product_container">
+
+
+
+    </div>
+
+
+
+    <?php
+        require 'includes/footer.php';
+        ?>
+<?php endforeach; ?>
+</div>
