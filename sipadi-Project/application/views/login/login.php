@@ -84,8 +84,9 @@ if (isset($_POST["login"])) {
                 <label>Password</label>
                 <input type="password" name="password_admin" class="form-control" placeholder="Masukan Password Anda">
             </div>
-            <center><button type="submit" name="login" class="btn btn-primary">Login</button>
-            <button type="submit" name="kembali" class ="btn btn-success">Kembali</button>
+            <center>
+                <a type="submit" name="login" class="btn btn-primary">Login</a>
+                <a type="button" href="../sipadi/" name="kembali" class="btn btn-success">Kembali</a>
             </center>
             <br>
             <center><a href="../login/reset-password.php">Lupa Password?</a></center>
