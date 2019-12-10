@@ -28,7 +28,7 @@ function ubahTk($data)
             unlink("../../views/toko/gambar/" . $gambarLama);
             $gambar = uploadTk();
         } else {
-            unlink("../..views/toko/gambar/" . $gambarLama);
+            unlink("../../views/toko/gambar/" . $gambarLama);
             $gambar = uploadTk();
         }
     }

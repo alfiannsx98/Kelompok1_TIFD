@@ -180,6 +180,16 @@ h6::selection
 {
 	color: #db5246;
 }
+.kotak{
+	padding: 30px;
+	background-color:rgb(230, 230, 230) ;
+	border-radius:2% ;
+}
+.kotakk{
+	width: 100%;
+	background-color: rgb(3, 240, 208);
+	padding:15px;
+}
 section
 {
 	display: block;
