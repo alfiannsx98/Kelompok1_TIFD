@@ -75,7 +75,7 @@ function tambahBrg($data)
     $rowDB1 = mysqli_query($koneksi, "SELECT * FROM barang");
     $field = mysqli_num_rows($rowDB1);
     $brg = "IDB";
-    $d = date('m', time());
+    $d = date('dm', time());
     $hasil = $brg . $d . "0" . ($field + 1);
     $idBrg = $hasil;
     $nama = htmlspecialchars($data["nama_barang"]);
@@ -99,6 +99,8 @@ function tambahBrg($data)
     }
     $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload','$is_active')";
     mysqli_query($koneksi, $query);
+    var_dump($query);
+    return mysqli_affected_rows($koneksi);
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
     if ($number >= 1 && $number1 >= 1) {
@@ -112,6 +114,7 @@ function tambahBrg($data)
             }
         }
     }
+
     return mysqli_affected_rows($koneksi);
 }
 function uploadBrg()
