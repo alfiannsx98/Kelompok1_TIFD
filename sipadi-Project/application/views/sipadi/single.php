@@ -76,15 +76,19 @@ foreach ($produk as $pr) :
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<form action="" method="post" enctype="multipart/form-data">
+						<form action="" method="post" enctype="multipart/form-data" id="formKu">
 							<h2><?= $pr['nama_brg']; ?></h2>
 							<p><?= $pr['deskripsi_brg']; ?></p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-						<?php $result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'"); ?>
-						<?php foreach ($result as $ahe) : ?>
-							<input type="hidden" name="id_users" value="<?= $ahe['id_pembeli']; ?>">
-						<?php endforeach; ?>
+						<?php if (isset($_SESSION["login_pembeli"]) == 1) : ?>
+							<?php
+									$result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'");
+									?>
+							<?php foreach ($result as $ahe) : ?>
+								<input type="hidden" name="id_users" value="<?= $ahe['id_pembeli']; ?>">
+							<?php endforeach; ?>
+						<?php endif; ?>
 						<input type="hidden" name="id_barangs" value=<?= $id; ?>>
 						<span class="ti-truck"></span><span>Ongkir Berbayar</span>
 					</div>
@@ -92,7 +96,9 @@ foreach ($produk as $pr) :
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity: </span>
 					</div>
-					<input type="number" name="qty_dibeli" class="form-control">
+					<input type="number" name="harga" id="harga" class="form-control" value="<?= $pr['harga_brg']; ?>" readonly>
+					<input type=" number" name="qty_dibeli" id="qty_dibeli" class="form-control">
+					<input type="number" name="subtotal" id="subtotal" class="form-control">
 				<?php endforeach; ?>
 				<div class="shop_now_button">
 					<button class="btn btn-primary" type="submit" name="add">add to cart</button>

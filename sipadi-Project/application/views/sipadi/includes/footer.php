@@ -44,6 +44,15 @@
 		});
 	}
 </script>
+<script type="text/javascript">
+	$("#formKu").click(function() {
+		var bil1 = parseInt($("#qty_dibeli").val())
+		var bil2 = parseInt($("#harga").val())
+
+		var hasil = bil1 * bil2
+		$("#subtotal").attr("value", hasil);
+	});
+</script>
 
 <script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>

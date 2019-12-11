@@ -59,162 +59,30 @@ require 'includes/slider.php';
 			</div>
 			<div class="product_slider_container">
 				<div class="owl-carousel owl-theme product_slider">
-
+					<?php
+					$getrow = query('SELECT kategori.nama_kategori, COUNT(barang.id_brg) as total FROM barang RIGHT JOIN kategori on kategori.id_kategori = barang.id_ktg GROUP BY kategori.id_kategori');
+					?>
 					<!-- Slide 1 -->
 					<?php $kategori = query("SELECT * FROM kategori"); ?>
-					<?php foreach ($kategori as $ktgr) : ?>
-						<div class="owl-item product_slider_item">
+					<?php foreach ($getrow as $ktgr) : ?>
+						<?php foreach ($kategori as $ktr) : ?>
+							<div class="owl-item product_slider_item">
 
-							<div class="product-item">
-								<div class="product discount">
-									<div class="product_image">
-										<img src="<?= "../../views/kategori/gambar/" . $ktgr['gmbr']; ?>" alt="gambar">
-									</div>
-									<div class="favorite favorite_left"></div>
-									<div class="product_info">
-										<h6 class="product_name"><a href="categoriesinsek.php"><?= $ktgr["nama_kategori"]; ?></a></h6>
-										<div class="product_price">20pcs</div>
+								<div class="product-item">
+									<div class="product discount">
+										<div class="product_image">
+											<img src="<?= "../../views/kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
+										</div>
+										<div class="favorite favorite_left"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="categoriesinsek.php"><?= $ktr["nama_kategori"]; ?></a></h6>
+											<div class="product_price"><?= $ktgr['total']; ?>pcs</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						<?php endforeach; ?>
 					<?php endforeach; ?>
-
-					<!-- Slide 2 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/fungisida.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesfungi.php">Fungisida</a></h6>
-									<div class="product_price">30pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 3 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/bakterisida.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesbak.php">Bakterisida</a></h6>
-									<div class="product_price">10pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 4 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/zpt.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categorieszpt.php">ZPT</a></h6>
-									<div class="product_price">10pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 5 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/pupuk.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriespuk.php">Pupuk</a></h6>
-									<div class="product_price">15pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 6 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/herbisida.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesher.php">Herbisida</a></h6>
-									<div class="product_price">50pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 7 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/benih.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesbenih.php">Benih</a></h6>
-									<div class="product_price">5pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 8 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/perekat.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesperekat.php">Perekat</a></h6>
-									<div class="product_price">40pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide 9 -->
-
-					<div class="owl-item product_slider_item">
-						<div class="product-item">
-							<div class="product discount">
-								<div class="product_image">
-									<img src="images/bios.png" alt="gambar">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="categoriesbios.php">Biostimulan</a></h6>
-									<div class="product_price">10pcs</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<!-- Slider Navigation -->
@@ -246,15 +114,10 @@ require 'includes/slider.php';
 					<div class="new_arrivals_sorting">
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".insektisida">Insektisida</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".fungisida">Fungisida</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".Bakterisida">Bakterisida</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".zpt">ZPT</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".pupuk">Pupuk</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".herbisida">Herbisida</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".benih">Benih</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".perekat">Perekat</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".biostimulan">Biostimulan</li>
+							<?php $kategori = mysqli_query($koneksi, "SELECT * FROM kategori"); ?>
+							<?php foreach ($kategori as $ktg) : ?>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".<?= $ktg['nama_kategori'] ?>"><?= $ktg['nama_kategori']; ?></li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
 				</div>
@@ -264,9 +127,13 @@ require 'includes/slider.php';
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 						<!-- Product insektisida -->
-						<?php $barang = query("SELECT * FROM barang"); ?>
+						<?php
+						$barang = mysqli_query($koneksi, "SELECT `barang`.*,`kategori`.`nama_kategori`
+            					FROM `barang` JOIN `kategori`
+            					ON `barang`.`id_ktg` = `kategori`.`id_kategori`
+    						"); ?>
 						<?php foreach ($barang as $br) : ?>
-							<div class="product-item insektisida">
+							<div class="product-item <?= $br['nama_kategori'] ?>">
 
 								<div class="product discount product_filter">
 									<div class="product_image">
@@ -282,162 +149,6 @@ require 'includes/slider.php';
 								</div>
 							</div>
 						<?php endforeach; ?>
-
-						<!-- Product Fungisida -->
-
-						<div class="product-item fungisida">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product2.png" alt="">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Fungisida Murtox (100ml)</a></h6>
-									<div class="product_price">Rp.70.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-						<!-- Product Bakterisida -->
-
-						<div class="product-item bakterisida">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/productbakterisida1.png" alt="">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Bactocyn 150 AL (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-						<!-- Product pupuk -->
-
-						<div class="product-item pupuk">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/productpupuk.png" alt="">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Multi Flora (1000ml)</a></h6>
-									<div class="product_price">Rp.50.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-						<div class="product-item pupuk">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/productpupuk1.png" alt="">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Pupuk Organik (40kg)</a></h6>
-									<div class="product_price">Rp.200.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-
-						<!-- Product zpt -->
-						<div class="product-item zpt">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-
-						<!-- Product herbisida -->
-
-						<div class="product-item herbisida">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-						<div class="product-item herbisida">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/productherbisida1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Topshot (500ml)</a></h6>
-									<div class="product_price">Rp.20.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-						<!-- Product perekat -->
-						<div class="product-item perekat">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-
-						<!-- Product benih -->
-						<div class="product-item benih">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
-
-
-						<!-- Product biostimulan -->
-						<div class="product-item biostimulan">
-							<div class="product product_filter">
-								<div class="product_image">
-									<a href="single.php"><img src="images/product1.png" alt="gambar">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name1"><a href="single.html">Herbisida Primaxone (200ml)</a></h6>
-									<div class="product_price">Rp.30.000,00</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Tambah Keranjang</a></div>
-						</div>
 
 					</div>
 				</div>

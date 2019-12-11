@@ -28,7 +28,7 @@ $cart = query("SELECT * FROM cart WHERE id_users='$id'");
                         <th data-field="category">Category</th>
                         <th data-field="price">Price</th>
                         <th data-field="quantity">Quantity</th>
-                        <th data-field="total">Total</th>
+                        <th data-field="total">Subtotal</th>
                         <th data-field="aksi">Aksi</th>
                     </tr>
                 </thead>
@@ -39,7 +39,8 @@ $cart = query("SELECT * FROM cart WHERE id_users='$id'");
                             barang.harga_brg as 'harga',
                             kategori.nama_kategori as 'kategori',
                             cart.qty_dibeli as 'dibeli',
-                            cart.id_cart as 'id_cart'
+                            cart.id_cart as 'id_cart',
+                            cart.subtotal as 'subtotal'
                             FROM barang,kategori,cart
                             WHERE cart.id_barangs = barang.id_brg AND barang.id_ktg = kategori.id_kategori;
                 "
@@ -51,7 +52,7 @@ $cart = query("SELECT * FROM cart WHERE id_users='$id'");
                             <td><?= $r['kategori']; ?></td>
                             <td><?= $r['harga']; ?></td>
                             <td><?= $r['dibeli']; ?></td>
-                            <td><?= $r['harga'] * $r['dibeli']; ?></td>
+                            <td><?= $r['subtotal']; ?></td>
                             <td><a href="hapus_cart.php?id=<?= $r['id_cart']; ?>"><i class="material-icons red-text">Hapus</i></a></td>
                         </tr>
                     <?php endforeach; ?>
@@ -60,11 +61,11 @@ $cart = query("SELECT * FROM cart WHERE id_users='$id'");
         </table>
         <div class="form-group">
             <label for="alamat_kirim"> Alamat Lengkap Penerima : </label>
-            <textarea class="form-control" name="alamat_kirim" id="alamat_kirim" placeholder="Silahkan mengisi Anda"></textarea>
+            <textarea class="form-control" name="alamat_kirim" id="alamat_kirim" placeholder="Silahkan mengisi Anda" required></textarea>
         </div>
         <div class="form-group">
             <label for="kota_kirim"> Kota Penerima : </label>
-            <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="autofill_kota()">
+            <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="autofill_kota()" required>
                 <?php $kurir = query("SELECT * FROM kurir ORDER BY `kurir`.`kota_tujuan`"); ?>
                 <?php foreach ($kurir as $kr) : ?>
                     <option value="<?= $kr["id_kurir"] ?>"><?= $kr["kota_tujuan"]; ?></option>

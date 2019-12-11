@@ -29,6 +29,7 @@ function tambahCart($data)
     $id_usr = htmlspecialchars($data['id_users']);
     $id_barangs = htmlspecialchars($data['id_barangs']);
     $qty_dibeli = htmlspecialchars($data['qty_dibeli']);
+    $subtotal = htmlspecialchars($data['subtotal']);
     $tgl_transaksi = time();
 
     $result = mysqli_query($koneksi, "SELECT id_barangs FROM cart WHERE id_barangs='$id_barangs'");
@@ -37,7 +38,7 @@ function tambahCart($data)
         return false;
     }
 
-    $query = "INSERT INTO cart VALUES('$hasil','$id_usr','$id_barangs','$qty_dibeli','$tgl_transaksi')";
+    $query = "INSERT INTO cart VALUES('$hasil','$id_usr','$id_barangs','$qty_dibeli','$subtotal','$tgl_transaksi')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }

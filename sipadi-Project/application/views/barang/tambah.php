@@ -10,7 +10,6 @@ if (isset($_POST["submit"])) {
         echo "    
         <script>
             alert('data berhasil ditambah!');
-            document.location.href = 'index.php';
         </script>";
     } else {
         echo "    
