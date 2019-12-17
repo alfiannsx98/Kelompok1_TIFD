@@ -23,7 +23,7 @@
 	<?php
 	$qr = query("SELECT id_pembeli FROM pembeli WHERE email_pembeli='$mail'");
 	foreach ($qr as $rslt) :
-		?>
+	?>
 		<header class="header trans_300">
 
 			<!-- Top Navigation -->
@@ -81,9 +81,9 @@
 									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li class="checkout">
 										<?php
-											$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");
-											$dt = mysqli_num_rows($dtcart);
-											?>
+															$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");
+															$dt = mysqli_num_rows($dtcart);
+										?>
 										<a class="btn btn-success" href="cart.php?id=<?= $rslt['id_pembeli']; ?>"><i class="fa fa-shopping-cart"><span id="checkout_items" class="checkout_items"><?= $dt ?></span></i></a>
 										<!-- <button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
 										<i class="fa fa-shopping-cart"></i>

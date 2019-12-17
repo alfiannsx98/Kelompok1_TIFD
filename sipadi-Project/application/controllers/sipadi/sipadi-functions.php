@@ -45,8 +45,6 @@ function tambahCart($data)
 function checkout($data)
 {
     global $koneksi;
-
-    global $koneksi;
     $rowDB1 = mysqli_query($koneksi, "SELECT * FROM transaksi");
     $field = mysqli_num_rows($rowDB1);
     $brg = "IDTR";
@@ -55,11 +53,11 @@ function checkout($data)
     $hasil = $brg . $d . "0" . ($field + 1);
 
     $idTransaksi = $hasil;
-    $id_admin = htmlspecialchars($data["id_admin"]);
+    $id_admin = "Belum Terkonfirmasi";
     $id_pembeli = htmlspecialchars($data['id_users']);
     $id_toko = "IDT001";
     $alamat_kirim = htmlspecialchars($data["alamat_kirim"]);
-    $tgl_kirim = htmlspecialchars($data["tgl_kirim"]);
+    $tgl_kirim = "00/00/0000";
     $ongkir = htmlspecialchars($data["kota_kirim"]);
     $ongkir_kurir = htmlspecialchars($data["ongkir_kurir"]);
     $total_harga = htmlspecialchars($data["harga_total"]);
@@ -75,9 +73,12 @@ function checkout($data)
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM dtl_transaksi");
     $hitungExp1 = mysqli_num_rows($hitungExp);
+    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar')";
 
+    mysqli_query($koneksi, $query);
     $number = count($_POST["id_barang"]);
     $number1 = count($_POST["harga_satuan"]);
+
     $jml_dibeli = "0";
     if ($number >= 1 && $number1 >= 1) {
         for ($i = 0; $i < $number; $i++) {
@@ -89,9 +90,42 @@ function checkout($data)
         }
     }
 
-    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar')";
+    $dlt = mysqli_query($koneksi, "DELETE * FROM cart WHERE id_users='$id_pembeli'");
 
-    mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
+}
+function uploadBukti()
+{
+    $namaFile = $_FILES['gmbr']['name'];
+    $ukuranFile = $_FILES['gmbr']['size'];
+    $error = $_FILES['gmbr']['error'];
+    $tmpName = $_FILES['gmbr']['tmp_name'];
+
+    if ($error === 4) {
+        echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
+        return false;
+    }
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+        alert('Bukan gambar yang anda upload');
+        </script>
+        ";
+    }
+    if ($ukuranFile > 20000000) {
+        echo "<script>
+            alert('Gambar yang anda upload terlalu besar!');
+        </script>
+        ";
+    }
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, '../../views/transaksi/gambar/' . $namaFileBaru);
+
+    return $namaFileBaru;
 }
