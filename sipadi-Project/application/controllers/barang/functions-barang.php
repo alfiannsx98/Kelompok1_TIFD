@@ -99,8 +99,6 @@ function tambahBrg($data)
     }
     $query = "INSERT INTO barang VALUES('$idBrg','$nama','$kategori','$gambar_brg','$harga','$deskripsi','$tgl_upload','$is_active')";
     mysqli_query($koneksi, $query);
-    var_dump($query);
-    return mysqli_affected_rows($koneksi);
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
     if ($number >= 1 && $number1 >= 1) {
