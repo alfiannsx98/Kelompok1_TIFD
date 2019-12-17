@@ -7,6 +7,7 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+
 }
 
 header {
@@ -47,6 +48,7 @@ header a{
     padding: 20px;
     text-align: center;
     overflow: hidden;
+    background-image:url("MOCK UP.jpg");
 }
 
 #container ul p{
@@ -89,6 +91,7 @@ header a{
     border-right: 3rem;
     
 }*/
+
 
 .container-contact {
     margin: 0;
@@ -147,6 +150,7 @@ footer {
 
 .social {
     padding: 20px;
+    border: 2px solid blue;
 }
 
 .social li {
@@ -159,12 +163,13 @@ footer {
 
 #About>section>ul>li{
     padding: 20px 0 0 0;
+    
 }
 #About section{
     width: 80%;
     margin: 0 auto;
     height: auto;
-    color:grey;
+    color:rgb(119, 105, 105);
 }
 
 #About>section>ul>li>img{
@@ -174,21 +179,26 @@ footer {
     height: auto;
     padding: 0 30px 0 0;
     border-right: 3rem;
+   
 }
 
 .About ul{
     list-style: none;
+   
 }
 .About li{
     margin: 0rem 6rem;
+    list-style: none;
 }
 section li h3, p{
     margin: 1rem 0 0;
+    text-decoration: none;
 }
 header::after{
     content: "";
     clear: both;
     display: block;
 }
+
 
 

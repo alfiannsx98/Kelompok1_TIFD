@@ -2,17 +2,20 @@
     margin: 0;
     padding: 0;
 }
-
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+   background-color: rgb(240, 240, 240);
 }
 
 header {
-    background-color: rgb(223, 18, 18);
-    overflow: hidden;
-    border-bottom: 5px solid rgb(141, 14, 14);
+    background-color:rgb(7, 110, 158,0.8);
+    position: fixed;
+    z-index: 1; 
+    width: 100%;
 }
 
 
@@ -39,15 +42,17 @@ header h1,h4{
 
 header a{
     text-decoration: none;
-    color: white;
-    padding: 20px;  
+    color:rgb(255, 255, 255);
+    padding: 15px;  
 }
-
+header span{
+    color:rgb(248, 170, 0);
+}
 #container {
-    padding: 20px;
     text-align: center;
     overflow: hidden;
     color:grey;
+    
 }
 
 #container ul p{
@@ -57,7 +62,7 @@ header a{
 }
 
 #container img{
-    width: 300px;
+    width: 100%;
     position: relative;
 }
 
@@ -71,11 +76,17 @@ header a{
 
 footer {
     text-align: center;
-    color:grey;
+    bottom: 0%;
+    width: 100%;
+    padding: 40px 0 25px 0;
+    background-color: rgb(161, 2, 95);
+    /* overflow: hidden;  */
+    clear: both;
 }
 
 .social {
-    padding: 20px;
+    padding: 10px; 
+    /* border: 2px solid blue;  */
 }
 
 .social li {
@@ -84,4 +95,140 @@ footer {
 
 .social img{
     width: 50px;
+}
+section h1{
+    color: black;
+
+}
+#about{
+    padding-top: 75px;
+    width: 100%;
+}
+
+.About>section>ul>li{
+    list-style: none;
+}
+.About section{
+    width: 100%;
+    margin-left: 20px;
+    height: auto;
+    color:gray;
+    overflow: hidden;
+
+}
+.About section h2{
+    color: black;
+}
+
+.About>section>ul>li>img{
+    float: left;
+    margin: 2rem;
+    max-width: 12rem;
+    height: auto;
+
+}
+.About h1 {
+    text-align: center;
+}
+
+.About ul img{
+    margin: 0rem 6rem;
+    list-style: none;
+}
+.About section ul li img{
+    margin-top: 100px;
+    padding-right: 65px;
+}
+
+.tulisanabout{
+    float: left;
+    width: 70%;
+    margin-top:20px ; 
+}
+.tulisanabout h3 {
+    text-align: center;
+}
+.tulisanaboutbanner{
+    float: left;
+    width: 20%;
+    margin-top:20px ;
+    margin-left: 10px; 
+    background-color: rgb(248, 170, 0);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.tulisanaboutbanner h2{
+    margin-top: 20px;
+}
+.tulisanaboutbanner p{
+    color: white;
+}
+.tulisanaboutbanner button{
+    padding: 10px;
+    background-color:rgb(7, 110, 158); 
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+.tulisanaboutbanner button a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.gmbr img{
+    padding-left:100px;
+    width: 70%;
+}
+
+.container-contact {
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    color:rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    background-color: rgb(7, 110, 158);
+    overflow: hidden;
+}
+.judul h1{
+    text-align: center;
+}
+#contact {
+    list-style: none;
+}
+
+.content{
+    margin: 90px 30px;  
+    width: 700px; 
+    margin-left: 150px ;
+    overflow: hidden;
+}
+
+.contact{
+    margin: 90px 30px; 
+    width: 200px; 
+    border-left:2px solid rgb(255, 255, 255);
+}
+h2, img,h3 {
+    margin-left: 15px;
+}
+
+img{
+    float: left;
+}
+
+
+h3{
+    font-size: 14px;
+}
+
+.icon ul li{
+    list-style: none;
+}
+
+.contact img{
+    width: 20px;
+    padding-top: 10px;
 }
