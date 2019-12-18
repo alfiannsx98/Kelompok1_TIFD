@@ -63,7 +63,7 @@ $dtKrywn = query("SELECT * FROM admin");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Admin <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Admin <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="cetak.php" target="_blank" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
                 </h1>
             </div>
             <!-- Content Row -->
@@ -92,7 +92,7 @@ $dtKrywn = query("SELECT * FROM admin");
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <button class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                                <a href="cetak_satuan.php?id=<?= $krywn['id_admin']; ?>" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
