@@ -94,7 +94,6 @@ $gmbr = mysqli_fetch_assoc($sql);
                   $dtusr = mysqli_query($koneksi, "SELECT * FROM admin");
                   $usr = mysqli_num_rows($dtusr);
                   ?>
-
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $usr; ?></div>
                 </div>
                 <div class="col-auto">
