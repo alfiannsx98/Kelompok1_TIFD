@@ -228,38 +228,38 @@ require 'includes/slider.php';
 		<div class="row">
 			<div class="col text-center">
 				<div class="section_title">
-					<h2>Latest Blogs</h2>
+					<h2>Cara Pemesanan</h2>
 				</div>
 			</div>
 		</div>
 		<div class="row blogs_container">
 			<div class="col-lg-4 blog_item_col">
 				<div class="blog_item">
-					<div class="blog_background" style="background-image:url(images/blog1.jpg)"></div>
+					<div class="blog_background" style="background-image:url(images/carapemesanan.jpg)"></div>
 					<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-						<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+						<h4>Login dan Register</h4>
+						<P class="blog_title">Pertama anda harus login, kalau belum punya akun dipersilahkan register terlebih dahulu, isi semua field yang ada di register, selanjutnya anda bisa mengakses website</P>
 						<span class="blog_meta"></span>
-						<a class="blog_more" href="#">Read more</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 blog_item_col">
 				<div class="blog_item">
-					<div class="blog_background" style="background-image:url(images/blog2.jpg)"></div>
+					<div class="blog_background" style="background-image:url(images/carapemesanan.jpg)"></div>
 					<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-						<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+						<h4>Beli Produk</h4>
+						<P class="blog_title">Pilih produk yang anda butuhkan, klik add to cart untuk menambahkan barang ke keranjang, jika beli satu produk langsung klik Beli</P>
 						<span class="blog_meta"></span>
-						<a class="blog_more" href="#">Read more</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 blog_item_col">
 				<div class="blog_item">
-					<div class="blog_background" style="background-image:url(images/blog3.jpg)"></div>
+					<div class="blog_background" style="background-image:url(images/carapemesanan.jpg)"></div>
 					<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-						<h4 class="blog_title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+						<h4>Pembayaran</h4>
+						<p class="blog_title">Setelah melakukan pembelian langkah selanjutnya pembayaran dengan cara transfer uang dan barang anda siap untuk dikirim</p>
 						<span class="blog_meta"></span>
-						<a class="blog_more" href="#">Read more</a>
 					</div>
 				</div>
 			</div>
@@ -269,18 +269,6 @@ require 'includes/slider.php';
 
 <!-- Newsletter -->
 <section id="about">
-	<div class="newsletter">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-						<h4>Newsletter</h4>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Footer -->
 
