@@ -12,8 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+	<link rel="stylesheet" type="text/css" href="styles/single_styles.css">
+	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 
 </head>
 
@@ -71,9 +74,9 @@
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
+									<a href="cart.php" class="btn btn-success">
 										<i class="fa fa-shopping-cart"></i>
-									</button>
+									</a>
 								</li>
 							</ul>
 							<div class="hamburger_container">
