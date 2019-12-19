@@ -12,10 +12,10 @@ $html = '<!DOCTYPE html>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/print.css">
-        <title>Daftar Mahasiswa</title>
+        <title>Daftar Barang</title>
     </head>
     <body>
-        <h1>Daftar Mahasiswa</h1>
+        <h1>Daftar Barang Mahasiswa</h1>
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>

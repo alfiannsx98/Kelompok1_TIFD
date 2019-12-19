@@ -63,7 +63,7 @@ $dtKtg = query("SELECT * FROM kategori");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Kategori <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Kategori <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="cetak.php" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
             </div>
             <!-- Content Row -->
             <table id="example" class="table table-striped table-bordered">
@@ -84,7 +84,7 @@ $dtKtg = query("SELECT * FROM kategori");
                             <td><img src="<?= '../../views/kategori/gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <button class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
+                                <a class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>

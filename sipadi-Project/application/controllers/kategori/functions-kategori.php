@@ -105,7 +105,7 @@ function hapusKtg($id)
     $qr_file = mysqli_query($koneksi, "SELECT gmbr FROM kategori WHERE id_kategori='$id'");
     $hsl =  mysqli_fetch_array($qr_file);
 
-    if (!unlink("../../views/kategori/gambar/" . $hsl["gmbr"])) {
+    if (unlink("../../views/kategori/gambar/" . $hsl["gmbr"])) {
         mysqli_query($koneksi, "DELETE FROM kategori WHERE id_kategori='$id'");
 
         return mysqli_affected_rows($koneksi);
