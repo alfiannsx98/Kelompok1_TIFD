@@ -11,7 +11,7 @@ if (isset($_SESSION["login_pembeli"]) == 1) {
 	$result = mysqli_query($koneksi, "SELECT * FROM pembeli WHERE email_pembeli = '$mail'");
 	require 'includes/header-login.php';
 } else {
-	require 'includes/header.php';
+	require 'includes/headerdtl.php';
 }
 
 
