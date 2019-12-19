@@ -92,7 +92,7 @@ $dtKrywn = query("SELECT * FROM admin");
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $krywn['id_admin']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <button class="btn btn-danger" href="hapus.php?id=<?= $krywn['id_admin']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                                <a href="cetak_satuan.php?id=<?= $krywn['id_admin']; ?>" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
