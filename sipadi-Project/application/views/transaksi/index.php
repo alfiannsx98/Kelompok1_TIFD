@@ -104,7 +104,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                     <?php $i = 1; ?>
                     <?php foreach ($getKota as $tr) : ?>
                         <tr>
-                            <td><?= $i; ?></td>
+                            <td><?= $i; ?><a href="cek.php?=id<?= $tr['id_transaksi']; ?>"><i class="fas fa-eye"></i></a> </td>
                             <td><?= $tr['id_transaksi']; ?></td>
                             <td><?= $tr['nama_admin']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>

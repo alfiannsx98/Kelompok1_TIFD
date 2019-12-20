@@ -20,7 +20,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'"
 $gmbr = mysqli_fetch_assoc($sql);
 
 
-$dtKrywn = query("SELECT * FROM admin");
+$dtKrywn = query("SELECT * FROM admin where level='2'");
 
 ?>
 <?php require_once 'sidebar.php'; ?>
