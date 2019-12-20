@@ -25,5 +25,6 @@ if (hapusKtg($id) > 0) {
     echo "    
         <script>
             alert('data gagal dihapus!');
+            document.location.href = 'index.php';
         </script>";
 }
