@@ -73,7 +73,7 @@ $gmbr = mysqli_fetch_assoc($sql);
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Data Total Penjualan</div>
                   <?php $dt = query("SELECT SUM(total_final) AS duit FROM transaksi"); ?>
                   <?php foreach ($dt as $duit) : ?>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= $duit['duit']; ?></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($duit['duit']);  ?></div>
                   <?php endforeach; ?>
                 </div>
                 <div class="col-auto">

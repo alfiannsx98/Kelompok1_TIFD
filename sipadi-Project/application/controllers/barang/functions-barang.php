@@ -37,16 +37,18 @@ function ubahBrg($data)
             mysqli_query($koneksi, $sql);
         }
     }
-    error_reporting(0);
     if (trim($_POST["stok1"] != '') && trim($_POST["expired1"] != '')) {
-        $n1 = count($_POST["stok1"]);
-        for ($j = 0; $j < $n1; $j++) {
-            $hitungExp1++;
-            if (trim($_POST["stok1"][$j] != '') && trim($_POST["expired1"][$j] != '')) {
-                $sql = "INSERT INTO dtl_brg VALUES('$idbrg','" . mysqli_real_escape_string($koneksi, $_POST["stok1"][$j]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "')";
-                mysqli_query($koneksi, $sql);
-                $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "','$idbrg')";
-                mysqli_query($koneksi, $sql1);
+        $n1 = $_POST["stok1"];
+        if ($n1 != 0) {
+            $n1 = count($_POST["stok1"]);
+            for ($j = 0; $j < $n1; $j++) {
+                $hitungExp1++;
+                if (trim($_POST["stok1"][$j] != '') && trim($_POST["expired1"][$j] != '')) {
+                    $sql = "INSERT INTO dtl_brg VALUES('$idbrg','" . mysqli_real_escape_string($koneksi, $_POST["stok1"][$j]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "')";
+                    mysqli_query($koneksi, $sql);
+                    $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "','$idbrg')";
+                    mysqli_query($koneksi, $sql1);
+                }
             }
         }
     }
@@ -133,17 +135,21 @@ function uploadBrg()
         alert('Bukan gambar yang anda upload');
         </script>
         ";
+        return false;
     }
     if ($ukuranFile > 20000000) {
         echo "<script>
             alert('Gambar yang anda upload terlalu besar!');
         </script>
         ";
+        return false;
     }
     $namaFileBaru = uniqid();
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
+
     move_uploaded_file($tmpName, '../../views/barang/gambar/' . $namaFileBaru);
+
     return $namaFileBaru;
 }
 
