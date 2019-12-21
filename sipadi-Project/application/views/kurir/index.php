@@ -87,7 +87,7 @@ $dtKur = query("SELECT * FROM kurir");
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $kur['id_kurir']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <button class="btn btn-danger" href="hapus.php?id=<?= $kur['id_kurir']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></button>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a>
+                                <a href="cetak_satuan.php?id=<?= $kur['id_kurir']; ?>" class="btn btn-warning"><i class="fas fa-print"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
