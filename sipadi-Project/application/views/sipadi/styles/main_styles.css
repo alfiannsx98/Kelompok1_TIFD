@@ -1204,11 +1204,13 @@ section {
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+	margin-top: 40px;
 }
 
 .add_to_cart_button a {
 	font-size: 12px;
 	font-weight: 600;
+	
 }
 
 .product-item:hover .add_to_cart_button {

@@ -72,9 +72,9 @@
 							<nav class="navbar">
 								<ul class="navbar_menu">
 									<li><a href="#">Home</a></li>
-									<li><a href="#kategori">Kategori</a></li>
-									<li><a href="#produk">Produk</a></li>
-									<li><a href="#about">About Us</a></li>
+									<li><a href="index.php#kategori">Kategori</a></li>
+									<li><a href="index.php#produk">Produk</a></li>
+									<li><a href="index.php#about">About Us</a></li>
 								</ul>
 
 								<ul class="navbar_user">
