@@ -74,7 +74,7 @@ $dtKrywn = query("SELECT * FROM admin where level='2'");
                         <th style="width:125px;">Nama Admin</th>
                         <th style="width:125px;">Email Admin</th>
                         <th style="width:125px;">Gambar Admin</th>
-                        <th style="width:125px;">Admin Created</th>
+                        <th style="width:125px;">Admin Dibuat</th>
                         <th style="width:125px;">Alamat</th>
                         <th style="width:125px;">Aksi</th>
                     </tr>
