@@ -563,7 +563,7 @@ section
 .navbar_menu li a
 {
 	display: block;
-	color: #1e1e27;
+	color: #ffffff;
 	font-size: 13px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -576,7 +576,7 @@ section
 }
 .navbar_menu li a:hover
 {
-	color: #b5aec4;
+	color: #000000;
 }
 .navbar_user
 {

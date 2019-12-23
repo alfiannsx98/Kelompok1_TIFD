@@ -212,8 +212,8 @@ require 'includes/slider.php';
 				<div class="benefit_item d-flex flex-row align-items-center">
 					<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 					<div class="benefit_content">
-						<h6>opening all week</h6>
-						<p>8AM - 09PM</p>
+						<h6>Buka senin-sabtu</h6>
+						<p>08.00AM - 17.00PM</p>
 					</div>
 				</div>
 			</div>
