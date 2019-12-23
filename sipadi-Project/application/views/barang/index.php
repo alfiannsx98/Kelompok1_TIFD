@@ -77,7 +77,7 @@ $gmbr = mysqli_fetch_assoc($sql);
                         <th>Gambar Barang</th>
                         <th>Harga Barang</th>
                         <th>Deskripsi</th>
-                        <th>Tanggal Upload</th>
+                        <th>Tanggal Diunggah</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
