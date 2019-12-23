@@ -40,4 +40,4 @@ $html .=    '</table>
     </body>
     </html>';
 $mpdf->WriteHTML($html);
-$mpdf->Output('daftar-kurir.pdf', \Mpdf\Output\Destination::INLINE);
+$mpdf->Output('daftar-kurirs.pdf', \Mpdf\Output\Destination::INLINE);
