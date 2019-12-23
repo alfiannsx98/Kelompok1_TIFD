@@ -83,13 +83,13 @@ foreach ($produk as $pr) :
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<?php if (isset($_SESSION["login_pembeli"]) == 1) : ?>
 							<?php
-																												$result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'");
+							$result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'");
 							?>
 							<?php foreach ($result as $ahe) : ?>
 								<input type="hidden" name="id_users" value="<?= $ahe['id_pembeli']; ?>">
 							<?php endforeach; ?>
 						<?php endif; ?>
-						<input type="hidden" name="id_barangs" value=<?= $id; ?>>
+						<input type="hidden" name="id_barangs" value="<?= $id; ?>">
 						<span class="ti-truck"></span><span>Ongkir Berbayar</span>
 					</div>
 					<div class="product_price">Rp. <?= $pr['harga_brg']; ?></div>
@@ -116,5 +116,5 @@ foreach ($produk as $pr) :
 	<!-- Footer -->
 
 	<?php
-																										require 'includes/footer.php';
+	require 'includes/footer.php';
 	?>
