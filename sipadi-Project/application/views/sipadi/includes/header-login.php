@@ -44,10 +44,11 @@
 										</a>
 										<ul class="account_selection">
 											<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
-											<li><a href="#" data-toggle="modal" data-target="#"><i class="fa fa-sign-in"></i>Profil</a></li>
+											<li><a href="#"><i class="fa fa-sign-in"></i>Profil</a></li>
 											<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
-											<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Ganti Password</a></li>
-											<li><a href="../../controllers/login-pembeli/logout.php"><i class="fas fa-logout" aria-hidden="true"></i>Logout</a></li>
+											<li><a href="../../views/sipadi/daftar_tr.php"><i class="fa fa-money"></i>Daftar Transaksi Anda</a></li>
+											<li><a href="#"><i class="fa fa-user-plus"></i>Ganti Password</a></li>
+											<li><a href="../../controllers/login-pembeli/logout.php"><i class="fas fa-logout"></i>Logout</a></li>
 										</ul>
 									</li>
 
@@ -71,7 +72,7 @@
 							</div>
 							<nav class="navbar">
 								<ul class="navbar_menu">
-									<li><a href="#">Home</a></li>
+									<li><a href="index.php">Home</a></li>
 									<li><a href="index.php#kategori">Kategori</a></li>
 									<li><a href="index.php#produk">Produk</a></li>
 									<li><a href="index.php#about">About Us</a></li>
@@ -81,8 +82,8 @@
 									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li class="checkout">
 										<?php
-															$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");
-															$dt = mysqli_num_rows($dtcart);
+										$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");
+										$dt = mysqli_num_rows($dtcart);
 										?>
 										<a class="btn btn-success" href="cart.php?id=<?= $rslt['id_pembeli']; ?>"><i class="fa fa-shopping-cart"><span id="checkout_items" class="checkout_items"><?= $dt ?></span></i></a>
 										<!-- <button href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal">

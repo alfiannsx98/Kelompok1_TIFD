@@ -66,10 +66,12 @@ function checkout($data)
     $status_kirim = htmlspecialchars($data["status_kirim"]);
     $tgl_transaksi = htmlspecialchars($data["tgl_transaksi"]);
 
-    $bukti_bayar = uploadBukti();
-    if (!$bukti_bayar) {
-        $bukti_bayar = "checkout.jpg";
-    }
+    $bukti_bayar = "checkout.jpg";
+
+    // $bukti_bayar = uploadBukti();
+    // if (!$bukti_bayar) {
+    //     $bukti_bayar = "checkout.jpg";
+    // }
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM dtl_transaksi");
     $hitungExp1 = mysqli_num_rows($hitungExp);
@@ -90,9 +92,13 @@ function checkout($data)
         }
     }
 
-    $dlt = mysqli_query($koneksi, "DELETE * FROM cart WHERE id_users='$id_pembeli'");
-
-
+    for ($i = 0; $i <= $number; $i++) {
+        $hitungExp1++;
+        if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli_tmp"][$i] != '')) {
+            $dlt = "DELETE FROM cart WHERE id_cart='$i' OR id_users='$id_pembeli'";
+            mysqli_query($koneksi, $dlt);
+        }
+    }
     return mysqli_affected_rows($koneksi);
 }
 function uploadBukti()

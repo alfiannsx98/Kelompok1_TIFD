@@ -35,7 +35,6 @@ if (isset($_POST["checkout"])) {
         ";
     }
 }
-
 ?>
 <div class="container single_product_container">
     <form action="" method="post" class="user" enctype="multipart/form-data">
@@ -44,23 +43,24 @@ if (isset($_POST["checkout"])) {
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Checkout</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Daftar Transaksi</a></li>
                     </ul>
                 </div>
                 <table class="table col-10">
                     <thead>
                         <tr>
-                            <th data-field="name">Item Name</th>
-                            <th data-field="category">Category</th>
-                            <th data-field="price">Price</th>
-                            <th data-field="quantity">Quantity</th>
-                            <th data-field="total">Subtotal</th>
+                            <th data-field="name">Kode Transaksi</th>
+                            <th data-field="category">Alamat Kirim</th>
+                            <th data-field="price">Kota Dituju</th>
+                            <th data-field="quantity">Harga Keseluruhan</th>
+                            <th data-field="total">Nomor Rekening</th>
+                            <th data-field="total">Bukti Transfer</th>
                             <th data-field="aksi">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $querycmnd = query(
-                            "SELECT barang.nama_brg as 'nm_brg',
+                            "SELECT transaksi.id_transaksi as 'nm_brg',
                             barang.id_brg as 'id_brg',
                             barang.harga_brg as 'harga',
                             kategori.nama_kategori as 'kategori',
@@ -86,44 +86,6 @@ if (isset($_POST["checkout"])) {
                     </tbody>
             </div>
             </table>
-            <div class="form-group">
-                <label for="alamat_kirim"> Alamat Lengkap Penerima : </label>
-                <textarea class="form-control" name="alamat_kirim" id="alamat_kirim" placeholder="Silahkan mengisi Anda" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="kota_kirim"> Kota Penerima : </label>
-                <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="autofill_kota()" required>
-                    <?php $kurir = query("SELECT * FROM kurir ORDER BY `kurir`.`kota_tujuan`"); ?>
-                    <?php foreach ($kurir as $kr) : ?>
-                        <option value="<?= $kr["id_kurir"] ?>"><?= $kr["kota_tujuan"]; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" readonly>
-            </div>
-            <div class="form-group">
-                <label for="total"> Total Harga : </label>
-                <input type="number" class="form-control" name="harga_total" id="harga_total">
-            </div>
-            <div class="form-group">
-                <label for="harga_final"> Harga Final : </label>
-                <input type="number" class="form-control" name="harga_final" id="harga_final">
-            </div>
-            <input type="hidden" name="status_bayar" id="" value="0">
-            <input type="hidden" name="status_kirim" id="" value="0">
-            <input type="hidden" name="tgl_transaksi" id="" value="<?= time(); ?>">
-            <?php
-            $qry = query("SELECT id_pembeli FROM pembeli WHERE id_pembeli='$id'");
-            foreach ($qry as $rsllt) :
-            ?>
-                <input type="hidden" name="id_users" id="" value="<?= $rsllt['id_pembeli']; ?>">
-            <?php endforeach; ?>
-            <br>
-            <center>
-                <button name="checkout" type="submit" class="btn btn-success">Checkout!</button>
-            </center>
         </div>
     </form>
 </div>
