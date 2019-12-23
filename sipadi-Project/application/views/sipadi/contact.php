@@ -24,7 +24,7 @@
 	<!-- Header -->
 
 	<?php
-		require 'includes/headerdtl.php';
+		require 'includes/header.php';
 	?>
 
 	<div class="container contact_container">
