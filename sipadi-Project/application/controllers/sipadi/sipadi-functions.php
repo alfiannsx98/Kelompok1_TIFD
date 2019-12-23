@@ -135,3 +135,26 @@ function uploadBukti()
 
     return $namaFileBaru;
 }
+
+function updateTr($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+    $rekening = htmlspecialchars($data["rekening_pembeli"]);
+    $gambar = uploadBukti();
+    if (!$gambar) {
+        echo "<script>
+        alert('Gambar gagal diupload!');
+            </script>";
+        return false;
+    }
+    $query = "UPDATE transaksi SET
+                bukti_transfer = '$gambar',
+                rekening_pembeli = '$rekening'
+            WHERE id_transaksi = '$id' 
+    ";
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}

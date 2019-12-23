@@ -51,36 +51,34 @@ if (isset($_POST["checkout"])) {
                         <tr>
                             <th data-field="name">Kode Transaksi</th>
                             <th data-field="category">Alamat Kirim</th>
-                            <th data-field="price">Kota Dituju</th>
                             <th data-field="quantity">Harga Keseluruhan</th>
                             <th data-field="total">Nomor Rekening</th>
                             <th data-field="total">Bukti Transfer</th>
                             <th data-field="aksi">Aksi</th>
+                            <th>Status Barang</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $querycmnd = query(
-                            "SELECT transaksi.id_transaksi as 'nm_brg',
-                            barang.id_brg as 'id_brg',
-                            barang.harga_brg as 'harga',
-                            kategori.nama_kategori as 'kategori',
-                            cart.qty_dibeli as 'dibeli',
-                            cart.id_cart as 'id_cart',
-                            cart.subtotal as 'subtotal'
-                            FROM barang,kategori,cart
-                            WHERE cart.id_barangs = barang.id_brg AND barang.id_ktg = kategori.id_kategori;
-                "
-                        );
+                        <?php $querycmnd = query("SELECT * FROM transaksi");
                         ?>
                         <?php foreach ($querycmnd as $r) : ?>
                             <tr>
                                 <td hidden><input type="hidden" name="id_barang[]" id="" value="<?= $r['id_brg'] ?>"></td>
-                                <td><input type="hidden"><?= $r['nm_brg']; ?></td>
-                                <td><input type="hidden"><?= $r['kategori']; ?></td>
-                                <td><input type="hidden" name="harga_satuan[]" value="<?= $r['harga']; ?>">Rp. <?= $r['harga']; ?></td>
-                                <td><input type="hidden" name="jml_dibeli_tmp[]" value="<?= $r['dibeli']; ?>"><?= $r['dibeli']; ?></td>
-                                <td><input type="hidden">Rp. <?= $r['subtotal']; ?></td>
-                                <td><a href="hapus_cart.php?id=<?= $r['id_cart']; ?>"><i class="material-icons red-text">Hapus</i></a></td>
+                                <td><input type="hidden"><?= $r['id_transaksi']; ?></td>
+                                <td><input type="hidden"><?= $r['alamat_kirim']; ?></td>
+                                <td><input type="hidden">Rp. <?= $r['total_final']; ?></td>
+                                <td><input type="hidden"><?= $r['rekening_pembeli']; ?></td>
+                                <td><img class="img-thumbnail" height="200px" width="200px" src="../../views/transaksi/gambar/<?= $r['bukti_transfer']; ?>" alt=""></td>
+                                <td><a href="upload_transfer.php?id=<?= $r['id_transaksi']; ?>"><i class="material-icons red-text">Upload Bukti Transfer</i></a></td>
+                                <?php if ($r['status_kirim'] == 1) : ?>
+                                    <td>
+                                        <div class="badge badge-pill badge-success">Terkirim</div>
+                                    </td>
+                                <?php else : ?>
+                                    <td>
+                                        <div class="badge badge-pill badge-warning">Belum Terkirim</div>
+                                    </td>
+                                <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
