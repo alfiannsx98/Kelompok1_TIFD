@@ -43,7 +43,7 @@ foreach ($produk as $pr) :
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
+				<div class="breadcrumbs d-flex flex-row align-items-center" style="padding-top:170px">
 					<ul>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="categoriesinsek.php"><i class="fa fa-angle-right" aria-hidden="true"></i>categories</a></li>
