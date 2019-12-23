@@ -48,12 +48,13 @@
 		<div class="row">
 			<div class="col">
 				<div id="google_map">
-					<div class="map_container">
-						<div id="map"></div>
+					<div class="map_container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.699409194101!2d113.71522175323192!3d-8.209688228986323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd696f7d10ace89%3A0xd889be3d4aa49522!2sToko%20Pertanian%20SUMBERDADI!5e0!3m2!1sid!2sid!4v1577082811565!5m2!1sid!2sid" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		
 
 		<!-- Contact Us -->
 
@@ -88,7 +89,6 @@
 			<div class="col-lg-6 get_in_touch_col">
 				<div class="get_in_touch_contents">
 					<h1>Hubungi Kami!</h1>
-					<p>Isi formulir di bawah ini untuk menerima yang gratis dan rahasia.</p>
 					<form action="post">
 						<div>
 							<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
@@ -114,7 +114,7 @@
 		require 'includes/footer.php';
 	?>
 </div>
-
+<iframe src="" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
