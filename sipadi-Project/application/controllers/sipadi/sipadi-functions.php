@@ -68,7 +68,7 @@ function checkout($data)
 
     $bukti_bayar = uploadBukti();
     if (!$bukti_bayar) {
-        return false;
+        $bukti_bayar = "checkout.jpg";
     }
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM dtl_transaksi");

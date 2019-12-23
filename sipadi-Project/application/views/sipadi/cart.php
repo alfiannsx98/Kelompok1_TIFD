@@ -121,8 +121,8 @@ if (isset($_POST["checkout"])) {
             <input type="hidden" name="status_kirim" id="" value="0">
             <input type="hidden" name="tgl_transaksi" id="" value="<?= time(); ?>">
             <?php
-                                                                                                            $qry = query("SELECT id_pembeli FROM pembeli WHERE id_pembeli='$id'");
-                                                                                                            foreach ($qry as $rsllt) :
+            $qry = query("SELECT id_pembeli FROM pembeli WHERE id_pembeli='$id'");
+            foreach ($qry as $rsllt) :
             ?>
                 <input type="hidden" name="id_users" id="" value="<?= $rsllt['id_pembeli']; ?>">
             <?php endforeach; ?>
@@ -136,5 +136,5 @@ if (isset($_POST["checkout"])) {
 
 
 <?php
-                                                                                                            require 'includes/footer.php';
+require 'includes/footer.php';
 ?>

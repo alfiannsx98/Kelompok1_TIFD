@@ -1732,3 +1732,6 @@ section {
 .footer_social ul li a:hover {
 	color: #fe4c50;
 }
+#review_submit{
+	width: 250px;
+}

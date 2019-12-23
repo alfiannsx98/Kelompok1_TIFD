@@ -43,7 +43,7 @@ foreach ($produk as $pr) :
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
+				<div class="breadcrumbs d-flex flex-row align-items-center" style="padding-top:170px">
 					<ul>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="categoriesinsek.php"><i class="fa fa-angle-right" aria-hidden="true"></i>categories</a></li>
@@ -83,13 +83,13 @@ foreach ($produk as $pr) :
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<?php if (isset($_SESSION["login_pembeli"]) == 1) : ?>
 							<?php
-																												$result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'");
+							$result = mysqli_query($koneksi, "SELECT id_pembeli FROM pembeli WHERE email_pembeli = '$mail'");
 							?>
 							<?php foreach ($result as $ahe) : ?>
 								<input type="hidden" name="id_users" value="<?= $ahe['id_pembeli']; ?>">
 							<?php endforeach; ?>
 						<?php endif; ?>
-						<input type="hidden" name="id_barangs" value=<?= $id; ?>>
+						<input type="hidden" name="id_barangs" value="<?= $id; ?>">
 						<span class="ti-truck"></span><span>Ongkir Berbayar</span>
 					</div>
 					<div class="product_price">Rp. <?= $pr['harga_brg']; ?></div>
@@ -116,5 +116,5 @@ foreach ($produk as $pr) :
 	<!-- Footer -->
 
 	<?php
-																										require 'includes/footer.php';
+	require 'includes/footer.php';
 	?>
