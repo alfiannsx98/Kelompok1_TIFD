@@ -98,9 +98,10 @@ $gmbr = mysqli_fetch_assoc($sql);
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah User Admin Terdaftar</div>
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Operator yang Terdaftar</div>
                   <?php
-                  $dtusr = mysqli_query($koneksi, "SELECT * FROM admin");
+                  $var1 = "2";
+                  $dtusr = mysqli_query($koneksi, "SELECT * FROM admin where level='$var1'");
                   $usr = mysqli_num_rows($dtusr);
                   ?>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $usr; ?></div>
@@ -118,7 +119,7 @@ $gmbr = mysqli_fetch_assoc($sql);
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah User Terdaftar</div>
+                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Pembeli yang Terdaftar</div>
                   <?php
                   $dtkry = mysqli_query($koneksi, "SELECT * FROM pembeli");
                   $kry = mysqli_num_rows($dtkry);
@@ -137,8 +138,8 @@ $gmbr = mysqli_fetch_assoc($sql);
           </div>
         </div>
         <?php
-        $var = "Belum Terkonfirmasi";
-        $krjg = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE  `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0");
+        $var = "1";
+        $krjg = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE  `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 1");
         $cart = mysqli_num_rows($krjg);
         ?>
         <div class="col-xl-3 col-md-6 mb-4">
@@ -146,7 +147,7 @@ $gmbr = mysqli_fetch_assoc($sql);
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaksi Belum Terkonfirmasi</div>
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaksi Berhasil Terkonfirmasi</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $cart; ?></div>
                 </div>
                 <div class="col-auto">

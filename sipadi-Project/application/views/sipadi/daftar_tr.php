@@ -67,7 +67,11 @@ if (isset($_POST["checkout"])) {
                                 <td><input type="hidden"><?= $r['id_transaksi']; ?></td>
                                 <td><input type="hidden"><?= $r['alamat_kirim']; ?></td>
                                 <td><input type="hidden">Rp. <?= $r['total_final']; ?></td>
-                                <td><input type="hidden"><?= $r['rekening_pembeli']; ?></td>
+                                <?php if ($r['rekening_pembeli'] == "Belum Terisi") : ?>
+                                    <td><input type="hidden"><span class="badge badge-warning"><?= $r['rekening_pembeli']; ?></span></td>
+                                <?php else : ?>
+                                    <td><input type="hidden"><?= $r['rekening_pembeli']; ?></td>
+                                <?php endif; ?>
                                 <td><img class="img-thumbnail" height="200px" width="200px" src="../../views/transaksi/gambar/<?= $r['bukti_transfer']; ?>" alt=""></td>
                                 <?php if ($r['status_bayar'] == 1) : ?>
                                     <td>

@@ -65,6 +65,7 @@ function checkout($data)
     $status_bayar = htmlspecialchars($data["status_bayar"]);
     $status_kirim = htmlspecialchars($data["status_kirim"]);
     $tgl_transaksi = htmlspecialchars($data["tgl_transaksi"]);
+    $no_rekening = "Belum Terisi";
 
     $bukti_bayar = "checkout.jpg";
 
@@ -75,7 +76,7 @@ function checkout($data)
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM dtl_transaksi");
     $hitungExp1 = mysqli_num_rows($hitungExp);
-    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar')";
+    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar','$no_rekening')";
 
     mysqli_query($koneksi, $query);
     $number = count($_POST["id_barang"]);
@@ -92,9 +93,10 @@ function checkout($data)
         }
     }
 
-    for ($i = 0; $i <= $number; $i++) {
+
+    for ($j = 0; $j <= $number; $j++) {
         $hitungExp1++;
-        if (trim($_POST["harga_satuan"][$i] != '') && trim($_POST["jml_dibeli_tmp"][$i] != '')) {
+        if (trim($_POST["harga_satuan"][$j] != '') && trim($_POST["jml_dibeli_tmp"][$j] != '')) {
             $dlt = "DELETE FROM cart WHERE id_cart='$i' OR id_users='$id_pembeli'";
             mysqli_query($koneksi, $dlt);
         }
