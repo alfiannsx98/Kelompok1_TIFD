@@ -36,6 +36,7 @@ if (isset($_POST["login"])) {
             if (password_verify($password, $row["password_admin"])) {
                 $_POST["level"] = 2;
                 $_SESSION["login"] = true;
+                $_SESSION["admin"] = $result;
                 $_SESSION = $_POST;
                 header("location: ../operator/");
                 exit;
@@ -44,6 +45,7 @@ if (isset($_POST["login"])) {
             if (password_verify($password, $row["password_admin"])) {
                 $_POST["level"] = 1;
                 $_SESSION["login"] = true;
+                $_SESSION["admin"] = $result;
                 $_SESSION = $_POST;
                 header("location: ../admin/");
                 exit;

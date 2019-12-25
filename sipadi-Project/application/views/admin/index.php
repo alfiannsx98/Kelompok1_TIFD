@@ -61,7 +61,16 @@ $gmbr = mysqli_fetch_assoc($sql);
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
       </div>
-
+      <?php
+      $var = "Belum Terkonfirmasi";
+      $krjg = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE  `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0");
+      $cart = mysqli_num_rows($krjg);
+      ?>
+      <?php if ($cart >= 1) : ?>
+        <div class="alert alert-warning" role="alert">
+          Haloo <?= $email; ?> Ada <span class="badge badge-pill badge-success"><?= $cart; ?></span> pesanan yang belum dikonfirmasi nih!
+        </div>
+      <?php endif; ?>
       <!-- Content Row -->
       <div class="row">
         <!-- Content Row -->
