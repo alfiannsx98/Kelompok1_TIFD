@@ -89,7 +89,7 @@ p {
 	font-size: 14px;
 	line-height: 1.7;
 	font-weight: 500;
-	color: #989898;
+	color: #ffffff;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
@@ -120,11 +120,11 @@ a:link {
 
 p a:active {
 	position: relative;
-	color: #FF6347;
+	color: rgb(0, 102, 255);
 }
 
 p a:hover {
-	color: #FF6347;
+	color:rgb(0, 102, 255);
 	background: #fde0db;
 }
 
@@ -134,7 +134,7 @@ p a:hover::after {
 
 ::selection {
 	background: #fde0db;
-	color: #FF6347;
+	color: rgb(0, 102, 255);
 }
 
 p::selection {
