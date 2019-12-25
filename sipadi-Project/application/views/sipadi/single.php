@@ -37,14 +37,14 @@ if (isset($_POST["add"])) {
 $produk = query("SELECT * FROM barang WHERE id_brg='$id'");
 foreach ($produk as $pr) :
 ?>
-	<div class="container ">
+	<div class="container">
 		<div class="row">
 			<div class="col">
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center" style="padding-top:170px">
-					<ul>
+				<div class="breadcrumbs d-flex flex-row align-items-center" style="padding-top:200px">
+					<ul style="padding-bottom: 40px">
 						<li><a href="index.php">Home</a></li>
 						<li><a href="categoriesinsek.php"><i class="fa fa-angle-right" aria-hidden="true"></i>categories</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i><?= $pr['nama_brg']; ?></a></li>
