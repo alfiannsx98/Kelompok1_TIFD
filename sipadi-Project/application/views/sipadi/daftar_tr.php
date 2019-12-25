@@ -69,7 +69,13 @@ if (isset($_POST["checkout"])) {
                                 <td><input type="hidden">Rp. <?= $r['total_final']; ?></td>
                                 <td><input type="hidden"><?= $r['rekening_pembeli']; ?></td>
                                 <td><img class="img-thumbnail" height="200px" width="200px" src="../../views/transaksi/gambar/<?= $r['bukti_transfer']; ?>" alt=""></td>
-                                <td><a href="upload_transfer.php?id=<?= $r['id_transaksi']; ?>"><i class="material-icons red-text">Upload Bukti Transfer</i></a></td>
+                                <?php if ($r['status_bayar'] == 1) : ?>
+                                    <td>
+                                        <div class="badge badge-pill badge-success">Pembayaran Berhasil</div>
+                                    </td>
+                                <?php else : ?>
+                                    <td><a href="upload_transfer.php?id=<?= $r['id_transaksi']; ?>"><i class="material-icons red-text">Upload Bukti Transfer</i></a></td>
+                                <?php endif; ?>
                                 <?php if ($r['status_kirim'] == 1) : ?>
                                     <td>
                                         <div class="badge badge-pill badge-success">Terkirim</div>
