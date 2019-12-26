@@ -64,7 +64,7 @@ function checkout($data)
     $total_final = htmlspecialchars($data["harga_final"]);
     $status_bayar = htmlspecialchars($data["status_bayar"]);
     $status_kirim = htmlspecialchars($data["status_kirim"]);
-    $tgl_transaksi = htmlspecialchars($data["tgl_transaksi"]);
+    $tgl_transaksi = date('Y-m-j', time());;
     $no_rekening = "Belum Terisi";
 
     $bukti_bayar = "checkout.jpg";

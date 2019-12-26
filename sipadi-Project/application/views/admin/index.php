@@ -184,7 +184,7 @@ $gmbr = mysqli_fetch_assoc($sql);
             <!-- Card Body -->
             <div class="card-body">
               <div class="chart-area">
-                <canvas id="myAreaChart"></canvas>
+                <canvas id="ChartKu"></canvas>
               </div>
             </div>
           </div>

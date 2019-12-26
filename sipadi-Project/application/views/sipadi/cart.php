@@ -113,7 +113,7 @@ if (isset($_POST["checkout"])) {
             </div>
             <input type="hidden" name="status_bayar" id="" value="0">
             <input type="hidden" name="status_kirim" id="" value="0">
-            <input type="hidden" name="tgl_transaksi" id="" value="<?= time(); ?>">
+            <input type="hidden" name="tgl_transaksi" id="" value="<?= date('Y-m-j', time()); ?>">
             <?php
             $qry = query("SELECT id_pembeli FROM pembeli WHERE id_pembeli='$id'");
             foreach ($qry as $rsllt) :
