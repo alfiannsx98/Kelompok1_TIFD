@@ -35,7 +35,7 @@ foreach ($barang as $row) {
                 <td>' . $row["id_brg"] . '</td>
                 <td>' . $row["nama_brg"] . '</td>
                 <td>' . $row["id_ktg"] . '</td>
-                <td>Rp. ' . $row["harga_brg"] . '</td>
+                <td>Rp. ' . number_format($row["harga_brg"]) . '</td>
                 <td>' . $row["deskripsi_brg"] . '</td>
                 <td>' . $row["tgl_upload"] . '</td>
             </tr>';
