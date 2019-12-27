@@ -109,7 +109,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                             <td><?= $tr['nama_admin']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
-                            <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
+                            <td><?= $tr['tgl_kirim']; ?></td>
                             <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['ongkir_kurir']; ?></td>
                             <td><?= $tr['total_harga']; ?></td>
@@ -128,7 +128,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                                     <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
                                 <?php endif; ?>
                             </td>
-                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
+                            <td><?= $tr['tgl_transaksi']; ?></td>
                             <td><img src="<?= "gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
 
                         </tr>
@@ -183,7 +183,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                                     <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
                                 <?php endif; ?>
                             </td>
-                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
+                            <td><?= $tr['tgl_transaksi']; ?></td>
                             <td><img src="<?= "gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
 
                         </tr>
