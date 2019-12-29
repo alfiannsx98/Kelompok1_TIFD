@@ -11,11 +11,17 @@ $html = '<!DOCTYPE html>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="css/print.css">
         <title>Daftar Barang</title>
     </head>
     <body>
-        <h1>Daftar Barang Mahasiswa</h1>
+        <h2>SumberDadi</h2>
+        <p>Jl. Wolter Monginsidi No.89, Langsepam,</p>
+        <p>Rowo Indah, Kec. Ajung, Kabupaten Jember, Jawa Timur 68175</p>
+        <hr>
+
+        <center>
+            <h1>Daftar Barang</h1>
+        </center>        
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
