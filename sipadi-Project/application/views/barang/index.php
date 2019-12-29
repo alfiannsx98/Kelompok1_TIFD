@@ -86,11 +86,11 @@ $gmbr = mysqli_fetch_assoc($sql);
                     <?php foreach ($getKtg as $brg) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $brg['nama_brg']; ?></td>
+                            <td style="width: 10%;"><?= $brg['nama_brg']; ?></td>
                             <td><?= $brg['nama_kategori']; ?></td>
                             <td><img src="<?= "gambar/" . $brg['gambar_brg']; ?>" height="150" width="150" alt=""></td>
-                            <td><?= $brg['harga_brg']; ?></td>
-                            <td><?= $brg['deskripsi_brg']; ?></td>
+                            <td><?= "Rp . " . number_format($brg['harga_brg']); ?></td>
+                            <td style="width: 15%;"><?= $brg['deskripsi_brg']; ?></td>
                             <td><?= date('d F Y', $brg['tgl_upload']); ?></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $brg['id_brg']; ?>"><i class="fas fa-pencil-alt"></i></a>
