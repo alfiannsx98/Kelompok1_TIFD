@@ -12,11 +12,15 @@
           <h4>Lupa Password</h4>
         </div>
         <div class="d-flex flex-column text-center">
-          <form>
+          <form action="../../controllers/login/PHPMailer/config-mail.php" method="post" class="user">
             <div class="form-group">
               <input type="text" class="form-control" id="namaemail"placeholder="Alamat Email">
-
-            <button type="button" class="btn btn-info btn-block btn-round">KIRIM</button>
+              <?php
+                if (isset($_POST["reset-submit"])) {
+                   $_POST["email_pembeli"];
+                     } ?>
+              <input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan Email Anda" value="">
+            <button name="reset-submit" class="btn btn-info btn-block btn-round">KIRIM</button>
 			      <a href="loginn.php" class="btn btn-success btn-user btn-block">kembali ke Login</a>
           </form>
           

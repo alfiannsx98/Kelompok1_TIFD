@@ -320,7 +320,7 @@
 						
 						<!-- Product insektisida -->
 
-						<div class="product-item insektisida">
+						<div class="product-item"id="insektisida">
 							<div class="product discount product_filter">
 								<div class="product_image">
 									<img src="images/productinsektisida1.png" alt="">
