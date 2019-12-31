@@ -34,6 +34,12 @@
             <span>Data Toko</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../contact/">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Data Hubungi Kami</span>
+        </a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
