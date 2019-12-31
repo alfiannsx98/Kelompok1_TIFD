@@ -93,7 +93,8 @@ if (isset($_POST["login"])) {
             <br>
             <center><a href="../login/reset-password.php">Lupa Password?</a></center>
             <br>
-            <center><a href="../login/register.php">Tidak Punya Akun? Buat Sekarang</a></center>
+            <!--
+            <center><a href="../login/register.php">Tidak Punya Akun? Buat Sekarang</a></center>-->
         </form>
     </div>
 
