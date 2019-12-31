@@ -10,9 +10,9 @@ require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 require 'koneksi.php';
 
-$emailTo = $_POST["email_admin"];
+$emailTo = $_POST["email_pembeli"];
 $code = uniqid(true);
-$query = mysqli_query($koneksi, "INSERT INTO token_admin (kode,email) VALUES ('$code','$emailTo')");
+$query = mysqli_query($koneksi, "INSERT INTO token_user (kode,email) VALUES ('$code','$emailTo')");
 if (!$query) {
     exit("ERROR");
 }
@@ -26,7 +26,7 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'alfianrochmatul@gmail.com';                     // SMTP username
+    $mail->Username   = 'alfianrochmatul77@gmail.com';                     // SMTP username
     $mail->Password   = 'indowebster9';                               // SMTP password
     $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 587;                                   // TCP port to connect to
@@ -37,7 +37,7 @@ try {
     $mail->addReplyTo('no-reply@gmail.com', 'No reply');
 
     // Content
-    $url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "../../../../views/login/resetpassword.php?code=$code";
+    $url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "../../../../views/login/resetpassword_user.php?code=$code";
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Alamat Reset Password';
     $mail->Body    = "<h1>Berikut adalah alamat untuk reset password anda</h1> 
@@ -48,7 +48,7 @@ try {
     $mail->send();
     echo 'Message has been sent';
     echo '<br>';
-    echo '<a href="../../../views/login/login.php">Kembali</a>';
+    echo '<a href="../../../views/sipadi/">Kembali</a>';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
