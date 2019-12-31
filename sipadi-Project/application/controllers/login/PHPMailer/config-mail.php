@@ -16,7 +16,9 @@ $query = mysqli_query($koneksi, "INSERT INTO token_admin (kode,email) VALUES ('$
 if (!$query) {
     exit("ERROR");
 }
+
 // Instantiation and passing `true` enables exceptions
+
 $mail = new PHPMailer(true);
 
 try {

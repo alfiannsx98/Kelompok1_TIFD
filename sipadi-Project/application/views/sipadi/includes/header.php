@@ -203,8 +203,8 @@
 							<?php
                 				if (isset($_POST["reset-submit"])) {
                   				 $_POST["email_pembeli"];
-                    			 } ?>
-              				  <input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan Email Anda" value="">
+                    		} ?>
+              				<input type="text" class="form-control form-control-user" id="email_pembeli" name="email_pembeli" placeholder="Masukkan Email Anda" value="">
 							</div>
 							<button name="reset-submit" class="btn btn-info btn-block btn-round">KIRIM</button>
 							<a href="index.php" class="btn btn-success btn-user btn-block">kembali</a>
