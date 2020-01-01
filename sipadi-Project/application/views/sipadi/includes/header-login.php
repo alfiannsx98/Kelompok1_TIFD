@@ -81,7 +81,6 @@
 								</ul>
 
 								<ul class="navbar_user">
-									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li class="checkout">
 										<?php
 										$dtcart = mysqli_query($koneksi, "SELECT * FROM cart");

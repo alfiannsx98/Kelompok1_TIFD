@@ -535,7 +535,7 @@ section
 .main_nav_container
 {
 	width: 100%;
-	background: #FFFFFF;
+	background: rgb(3, 199, 189);
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
 }
 .navbar
@@ -553,7 +553,7 @@ section
 .navbar_menu li a
 {
 	display: block;
-	color: #1e1e27;
+	color: #ffffff;
 	font-size: 13px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -566,7 +566,7 @@ section
 }
 .navbar_menu li a:hover
 {
-	color: #b5aec4;
+	color: #000000;
 }
 .navbar_user
 {
@@ -814,7 +814,7 @@ section
 }
 .logo_container a span
 {
-	color: #fe4c50;
+	color: #ffffff;
 }
 .red_button
 {
