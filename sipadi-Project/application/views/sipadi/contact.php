@@ -89,11 +89,11 @@
 				<div class="col-lg-6 get_in_touch_col">
 					<div class="get_in_touch_contents">
 						<h1>Hubungi Kami!</h1>
-						<form action="post">
+						<form action="" method="POST">
 							<div>
 								<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Nama" required="required" data-error="Name is required.">
 								<input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required.">
-								<input id="input_nohp" class="form_input input_nohp input_ph" type="number" name="name" placeholder="NO HP" required="required" data-error="Nomor is required.">
+								<input id="input_nohp" class="form_input input_nohp input_ph" type="text" name="name" placeholder="NO HP" required="required" data-error="Nomor is required.">
 								<textarea id="input_message" class="input_ph input_message" name="message" placeholder="Pesan" rows="3" required data-error="Please, write us a message."></textarea>
 							</div>
 							<div>
