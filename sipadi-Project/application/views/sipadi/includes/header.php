@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 	<link rel="stylesheet" type="text/css" href="styles/single_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 </head>
 
@@ -70,7 +72,6 @@
 								<li><a href="#about">About Us</a></li>
 							</ul>
 							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li class="checkout">
 									<a href="cart.php" class="btn btn-success">
 										<i class="fa fa-shopping-cart"></i>

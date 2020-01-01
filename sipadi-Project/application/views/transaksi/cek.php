@@ -21,6 +21,8 @@ if (($_POST["level"] == 2)) {
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
+
+
 ?>
 <?php
 require 'sidebar.php';
@@ -54,16 +56,20 @@ require 'sidebar.php';
                         <table class="table table-bordered" id="editkeun" name="editkeun">
                             <tr>
                                 <input type="hidden" name="email" value="<?= $email; ?>">
+                                <td><label for="stok">nama barang</label></td>
                                 <td><label for="stok">harga satuan</label></td>
                                 <td><label for="expired">Jumlah Beli</label></td>
                                 <td><label for="expired">temporari jmlh beli</label></td>
                             </tr>
-                            <?php $trnsksi = query("SELECT * FROM dtl_transaksi WHERE id_tr='$id'"); ?>
+                            <?php $trnsksi = query("SELECT `dtl_transaksi`.*,`barang`.`nama_brg` FROM dtl_transaksi 
+                            JOIN `barang` ON `barang`.`id_brg` = `dtl_transaksi`.`id_barang`
+                            WHERE id_tr='$id'"); ?>
                             <?php $i = 1 ?>
                             <?php foreach ($trnsksi as $brg) : ?>
                                 <tr>
-                                    <td hidden>
-                                        <input type="number" name="no[]" id="no" value="<?= $brg["no"]; ?>" readonly>
+                                    
+                                    <td>
+                                        <input type="text" name="id_transaksi[]" id="id_transaksi" class="form-control id_transaksi" value="<?= $brg["nama_brg"]; ?>" readonly>
                                     </td>
                                     <td>
                                         <input type="number" name="harga_satuan[]" id="harga_satuan" class="form-control harga_satuan" value="<?= $brg['harga_satuan']; ?>" required pattern="[-+]?[0-9]" readonly>
@@ -78,17 +84,12 @@ require 'sidebar.php';
                             <?php endforeach; ?>
                             <?php $i++; ?>
                         </table>
+                        <a  href="index.php" name="kembali" id="kembali" class="btn btn-success btn-user btn-block">Kembali</a>
                     </div>
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
                     <?php $jml = query("SELECT * FROM dtl_transaksi WHERE id_tr='$id'"); ?>
-                    <?php foreach ($jml as $j) : ?>
-                        <?php if ($j['jml_dibeli_tmp'] == 0) : ?>
-                            <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block" hidden>Update Data</button>
-                        <?php else : ?>
-                            <button type="submit" name="update" id="update" class="btn btn-success btn-user btn-block">Update Data</button>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                    
                 </form>
                 <br>
                 <div class="text-center">

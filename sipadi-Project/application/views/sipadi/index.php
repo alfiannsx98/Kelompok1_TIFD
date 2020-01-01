@@ -248,7 +248,7 @@ require 'includes/slider.php';
 					<div class="blog_background" style="background-image:url(images/carapemesanan.jpg)"></div>
 					<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
 						<h4>Beli Produk</h4>
-						<P class="blog_title">Pilih produk yang anda butuhkan, klik add to cart untuk menambahkan barang ke keranjang, jika beli satu produk langsung klik Beli</P>
+						<P class="blog_title">Pilih produk yang anda butuhkan, klik add to cart untuk menambahkan barang & Beli</P>
 						<span class="blog_meta"></span>
 					</div>
 				</div>
