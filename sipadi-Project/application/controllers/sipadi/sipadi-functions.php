@@ -160,3 +160,32 @@ function updateTr($data)
 
     return mysqli_affected_rows($koneksi);
 }
+
+function tambahCont($data)
+{
+    global $koneksi;
+
+    $rowDB1 = mysqli_query($koneksi, "SELECT * FROM contact");
+    $field = mysqli_num_rows($rowDB1);
+    $cont = "CONT";
+    $d = date('m', time());
+
+    $hasil = $cont . $d . "0" . ($field + 1);
+
+    $id = $hasil;
+    $nama = htmlspecialchars($data["nama"]);
+    $email = htmlspecialchars($data["email"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $pesan = htmlspecialchars($data["pesan"]);
+
+
+
+
+
+
+    $query = "INSERT INTO contact VALUES('','$nama','$email','$no_hp','$pesan')";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}

@@ -2,6 +2,9 @@
 <?php
 session_start();
 require '../../controllers/sipadi/sipadi-functions.php';
+
+
+
 if (isset($_SESSION["login_pembeli"]) == 1) {
 	$mail = $_SESSION['email'];
 	$result = mysqli_query($koneksi, "SELECT * FROM pembeli WHERE email_pembeli = '$mail'");
@@ -25,6 +28,22 @@ if (isset($_POST["login"])) {
 		}
 	}
 	$error = true;
+}
+if (isset($_POST["submit"])) {
+    if (tambahCont($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data Berhasil Ditambah');
+                document.location.href = 'index.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data Gagal Ditambah');
+            </script>
+        ";
+    }
 }
 ?>
 
@@ -84,15 +103,15 @@ if (isset($_POST["login"])) {
 			<div class="col-lg-6 get_in_touch_col">
 				<div class="get_in_touch_contents">
 					<h1>Hubungi Kami!</h1>
-					<form action= " " method="POST">
+					<form action= "" method="POST">
 						<div>
-							<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Nama" required="required" data-error="Name is required.">
+							<input id="input_name" class="form_input input_name input_ph" type="text" name="nama" placeholder="Nama" required="required" data-error="Name is required.">
 							<input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required.">
-							<input id="input_nohp" class="form_input input_nohp input_ph" type="text" name="name" placeholder="NO HP" required="required" data-error="Nomor is required.">
-							<textarea id="input_message" class="input_ph input_message" name="message" placeholder="Pesan" rows="3" required data-error="Please, write us a message."></textarea>
+							<input id="input_nohp" class="form_input input_nohp input_ph" type="text" name="no_hp" placeholder="NO HP" required="required" data-error="Nomor is required.">
+							<textarea id="input_message" class="input_ph input_message" name="pesan" placeholder="Pesan" rows="3" required data-error="Please, write us a message."></textarea>
 						</div>
 						<div>
-							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">Kirim Pesan</button>
+							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" name="submit" value="Submit">Kirim Pesan</button>
 						</div>
 					</form>
 				</div>
