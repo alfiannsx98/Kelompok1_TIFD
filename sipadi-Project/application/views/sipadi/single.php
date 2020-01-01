@@ -13,7 +13,22 @@ if (isset($_SESSION["login_pembeli"]) == 1) {
 } else {
 	require 'includes/headerdtl.php';
 }
+if (isset($_POST["login"])) {
+	$email = $_POST["email_pembeli"];
+	$password = $_POST["password_pembeli"];
 
+	$result = mysqli_query($koneksi, "SELECT * FROM pembeli WHERE email_pembeli = '$email'");
+
+	if (mysqli_num_rows($result) === 1) {
+		$row = mysqli_fetch_assoc($result);
+		if (password_verify($password, $row["password_pembeli"])) {
+			header("location: ../sipadi/");
+			$_SESSION["login_pembeli"] = 1;
+			$_SESSION['email'] = $email;
+		}
+	}
+	$error = true;
+}
 
 if (isset($_POST["add"])) {
 	if (tambahCart($_POST) > 0) {
