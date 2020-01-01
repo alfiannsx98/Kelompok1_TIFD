@@ -77,7 +77,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Transaksi <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="cetak.php" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Transaksi <a href="cetak.php" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
                 </h1>
             </div>
             <!-- Content Row -->

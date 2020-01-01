@@ -75,7 +75,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Transaksi <a class="btn btn-primary" href="tambah.php"><i class="fas fa-user-plus"></i></a> <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Transaksi <a href="#" class="btn btn-warning"><i class="fas fa-print"></i></a></h1>
                 </h1>
             </div>
             <!-- Content Row -->
@@ -126,7 +126,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                                     <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
                                 <?php endif; ?>
                             </td>
-                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
+                            <td><?= $tr['tgl_transaksi']; ?></td>
                             <td><img src="<?= "../../transaksi/gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
 
                         </tr>
@@ -181,7 +181,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                                     <a class='btn btn-warning' href='edit1.php?id=<?= $tr['id_transaksi']; ?>'><i class='fas fa-check'></i></a>
                                 <?php endif; ?>
                             </td>
-                            <td><?= date('d F Y', $tr['tgl_transaksi']); ?></td>
+                            <td><?= $tr['tgl_transaksi']; ?></td>
                             <td><img src="<?= "../../transaksi/gambar/" . $tr['bukti_transfer']; ?>" class="img-alt" height="100" width="100" alt=""></td>
 
                         </tr>
