@@ -84,7 +84,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
             <table id="example" class="ui celled table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th style="width: 50px;">No</th>
                         <th>ID Transaksi</th>
                         <th>Nama Admin</th>
                         <th>Nama Pembeli</th>
@@ -92,7 +92,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                         <th>tgl_kirim</th>
                         <th>Kota Pembeli</th>
                         <th>Ongkos Kirim</th>
-                        <th>Total Harga</th>
                         <th>Total Final</th>
                         <th>Status Bayar</th>
                         <th>Status Kirim</th>
@@ -104,16 +103,15 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                     <?php $i = 1; ?>
                     <?php foreach ($getKota as $tr) : ?>
                         <tr>
-                            <td><?= $i; ?><a href="cek.php?id=<?= $tr['id_transaksi']; ?>"><i class="fas fa-eye"></i></a> </td>
+                            <td style="width: 50px;"><?= $i; ?> <a href="cek.php?id=<?= $tr['id_transaksi']; ?>"><i class="fas fa-eye"></i></a> <a class="alert-warning" href="cetak_satuan.php?id=<?= $tr['id_transaksi']; ?>"> <i class="fas fa-print"></i> </a></td>
                             <td><?= $tr['id_transaksi']; ?></td>
                             <td><?= $tr['nama_admin']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
-                            <td><?= $tr['tgl_kirim']; ?></td>
+                            <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
                             <td><?= $tr['kota_tujuan']; ?></td>
-                            <td><?= $tr['ongkir_kurir']; ?></td>
-                            <td><?= $tr['total_harga']; ?></td>
-                            <td><?= $tr['total_final']; ?></td>
+                            <td><?= "Rp ." . number_format($tr['ongkir_kurir']); ?></td>
+                            <td><?= "Rp ." . number_format($tr['total_final']); ?></td>
                             <td>
                                 <?php if ($tr['status_bayar'] == 1) : ?>
                                     <div class='alert alert-success small'><i class='fas fa-check'></i></div>
@@ -167,8 +165,8 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                             <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>
-                            <td><?= $tr['ongkir_kurir']; ?></td>
-                            <td><?= $tr['total_final']; ?></td>
+                            <td><?= "Rp ." . number_format($tr['ongkir_kurir']); ?></td>
+                            <td><?= "Rp ." . number_format($tr['total_final']); ?></td>
                             <td>
                                 <?php if ($tr['status_bayar'] == 1) : ?>
                                     <div class='alert alert-success small'><i class='fas fa-check'></i></div>
