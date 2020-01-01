@@ -75,7 +75,7 @@ require 'includes/slider.php';
 										</div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="categoriesinsek.php"><?= $ktr["nama_kategori"]; ?></a></h6>
+											<h6 class="product_name"><a href="index.php#produk" data-filter=".<?= $ktg['nama_kategori'] ?>"><?= $ktr["nama_kategori"]; ?></a></h6>
 											<div class="product_price"><?= $ktgr['total']; ?>pcs</div>
 										</div>
 									</div>
