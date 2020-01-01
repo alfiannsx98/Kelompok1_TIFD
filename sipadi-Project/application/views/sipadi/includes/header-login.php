@@ -16,6 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 	<link rel="stylesheet" type="text/css" href="styles/single_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 </head>
 
@@ -44,7 +46,7 @@
 										</a>
 										<ul class="account_selection">
 											<!-- <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">Login</button>  -->
-											<li><a href="#"><i class="fa fa-sign-in"></i>Profil</a></li>
+											<li><a href="<?= "profil.php?id=" . $rslt['id_pembeli']; ?>"><i class="fa fa-user"></i>Profil</a></li>
 											<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
 											<li><a href="../../views/sipadi/daftar_tr.php"><i class="fa fa-money"></i>Daftar Transaksi Anda</a></li>
 											<li><a href="../../views/sipadi/ganti_password.php"><i class="fa fa-lock"></i>Ganti Password</a></li>

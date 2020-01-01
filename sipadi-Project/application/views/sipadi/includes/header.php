@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 	<link rel="stylesheet" type="text/css" href="styles/single_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 </head>
 
