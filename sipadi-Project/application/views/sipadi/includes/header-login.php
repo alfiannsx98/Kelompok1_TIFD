@@ -49,7 +49,7 @@
 											<li><a href="<?= "profil.php?id=" . $rslt['id_pembeli']; ?>"><i class="fa fa-user"></i>Profil</a></li>
 											<!-- <li><a href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li> -->
 											<li><a href="../../views/sipadi/daftar_tr.php"><i class="fa fa-money"></i>Daftar Transaksi Anda</a></li>
-											<li><a href="../../views/sipadi/ganti_password.php"><i class="fa fa-lock"></i>Ganti Password</a></li>
+											<li><a href="../../views/sipadi/ganti_password.php?id=<?= $rslt['id_pembeli'] ?>"><i class="fa fa-lock"></i>Ganti Password</a></li>
 											<li><a href="../../controllers/login-pembeli/logout.php"><i class="fas fa-logout"></i>Logout</a></li>
 										</ul>
 									</li>

@@ -189,3 +189,31 @@ function tambahCont($data)
 
     return mysqli_affected_rows($koneksi);
 }
+function gantiPass($data)
+{
+    global $koneksi;
+
+    $id_pembeli = $data['id_pembeli'];
+    $passwordLama = mysqli_real_escape_string($koneksi, $data['passwordLama']);
+    $password = mysqli_real_escape_string($koneksi, $data['password']);
+    $password1 = mysqli_real_escape_string($koneksi, $data['password1']);
+
+    $cek_password_lama = password_hash($passwordLama, PASSWORD_DEFAULT);
+
+    $cekBenar = mysqli_query($koneksi, "SELECT password_pembeli FROM pembeli WHERE id_pembeli='$id_pembeli' AND password_pembeli='$cek_password_lama'");
+    if (mysqli_fetch_assoc($cekBenar)) {
+        echo "<script>alert('Password Lama anda Salah!')</script>";
+        return false;
+    }
+    if ($password !== $password1) {
+        echo "<script>alert('Password tidak cocok');</script>";
+        return false;
+    }
+    $passwordBaru = password_hash($password, PASSWORD_DEFAULT);
+    $query = "UPDATE pembeli SET 
+            password_pembeli = '$passwordBaru'
+            WHERE id_pembeli = '$id_pembeli'            
+    ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
