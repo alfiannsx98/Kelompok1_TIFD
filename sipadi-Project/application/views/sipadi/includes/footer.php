@@ -30,8 +30,73 @@
 </section>
 </div>
 
+<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+
 <script type="text/javascript">
-	function autofill_kota() {
+	$.ajax({
+		method: 'GET',
+		url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_provinsi.php',
+		dataType: 'JSON',
+		success: function(result) {
+			provinsi = '<option disabled selected hidden>Pilih Provinsi</option>';
+			$.each(result.rajaongkir.results, function(index, data) {
+				provinsi += '<option value="' + data.province_id + '">' + data.province + '</option>';
+			});
+			$('#kota_provinsi').html(provinsi);
+		}
+	});
+
+	function get_kota() {
+		$('#kota_kirim').html('<option disabled hidden selected>Mohon Tunggu ...</option>');
+		$.ajax({
+			method: 'GET',
+			url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_kota.php',
+			data: {
+				'province': $('#kota_provinsi').val()
+			},
+			dataType: 'JSON',
+			success: function(result) {
+				kota = '<option disabled selected hidden>Pilih Kota</option>';
+				$.each(result.rajaongkir.results, function(index, data) {
+					kota += '<option value="' + data.city_id + '">' + data.city_name + '</option>';
+				});
+				$('#kota_kirim').html(kota);
+			}
+		});
+	}
+
+	function get_ongkir() {
+		$.ajax({
+			method: 'GET',
+			url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_ongkir.php',
+			data: {
+				'city_id': $('#kota_kirim').val(),
+				'berat': 1000
+			},
+			dataType: 'JSON',
+			success: function(result) {
+				field_ongkir = '<ul>';
+				$.each(result.rajaongkir.results[0].costs, function(index1, jenis_ongkir) {
+					$.each(jenis_ongkir.cost, function(index1, tarif) {
+						field_ongkir += '<li><input type="radio" value="" name="kurir">' + jenis_ongkir.description + ' [' + tarif.value + ']</li>';
+					});
+				});
+				field_ongkir += '</ul>';
+				$('#opsi_ongkir').html(field_ongkir);
+			}
+		});
+	}
+	// $('#kota_provinsi')
+
+	function autofill_kota(id) {
+		alert(id);
 		var kota_kirim = $("#kota_kirim").val();
 		$.ajax({
 			url: '../transaksi/autofill_ongkir.php',
@@ -44,15 +109,6 @@
 		});
 	}
 </script>
-<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="js/custom.js"></script>
-
 
 <script type="text/javascript">
 	$("#formKu").click(function() {

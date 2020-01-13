@@ -90,18 +90,23 @@ if (isset($_POST["checkout"])) {
                 <label for="alamat_kirim"> Alamat Lengkap Penerima : </label>
                 <textarea class="form-control" name="alamat_kirim" id="alamat_kirim" placeholder="Silahkan mengisi Anda" required></textarea>
             </div>
-            <div class="form-group">
-                <label for="kota_kirim"> Kota Penerima : </label>
-                <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="autofill_kota()" required>
-                    <?php $kurir = query("SELECT * FROM kurir ORDER BY `kurir`.`kota_tujuan`"); ?>
-                    <?php foreach ($kurir as $kr) : ?>
-                        <option value="<?= $kr["id_kurir"] ?>"><?= $kr["kota_tujuan"]; ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="kota_provinsi"> Kota Provinsi : </label>
+                    <select name="kota_provinsi" id="kota_provinsi" class="form-control" onchange="get_kota()" required>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="kota_kirim"> Kota Penerima : </label>
+                    <select name="kota_kirim" id="kota_kirim" class="form-control" onchange="get_ongkir()" required>
+
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                <input type="number" class="form-control" name="ongkir_kurir" id="ongkir_kurir" readonly>
+                <div id="opsi_ongkir"></div>
             </div>
             <div class="form-group">
                 <label for="total"> Total Harga : </label>

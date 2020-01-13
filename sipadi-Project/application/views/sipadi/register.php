@@ -64,7 +64,7 @@ if (isset($_POST["register"])) {
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="gambar_nik" name="gambar_nik" aria-describedby="gambar_nik">
-                <label class="custom-file-label">Pilih Gambar NIK anda</label>
+                <label class="custom-file-label">Pilih Gambar KTP anda</label>
             </div>
         </div>
     </div>
