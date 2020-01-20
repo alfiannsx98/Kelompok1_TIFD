@@ -75,7 +75,7 @@
 <script>
     // ini untuk update data
     $(document).ready(function() {
-        var i = 1;
+        var i = 2;
         $('#tmbh').click(function() {
             i++;
             $('#fieldQue').append('<tr id="row' + i + '"><td><input type="number" name="stok1[]" placeholder="Masukkan data Stok" class="form-control stok_list" required pattern="[-+]?[0-9]"></td><td><input type="date" name="expired1[]" class="form-control expired_list" required></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-user btn-block btn_remove">Hapus Data</button></td></tr>');

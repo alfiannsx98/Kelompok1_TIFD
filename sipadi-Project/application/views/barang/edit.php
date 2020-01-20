@@ -120,15 +120,16 @@ require 'sidebar.php';
                                     </td>
                                     <td hidden>
                                         <input type="number" name="id_expired[]" class="form-control" placeholder="Masukkan Stok Barang" value="<?= $brg['id_exp']; ?>" hidden>
+                                        <input type="number" name="stok1[]" class="form-control" placeholder="Masukkan Stok Barang" value="1">
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                             <?php $i++; ?>
                         </table>
                     </div>
-                    <td>
+                    <!-- <td>
                         <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
-                    </td>
+                    </td> -->
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
                     <button type="submit" name="update" class="btn btn-success btn-user btn-block">Update Data</button>

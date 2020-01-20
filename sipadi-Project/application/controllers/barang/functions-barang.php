@@ -14,6 +14,7 @@ function query($query)
 function ubahBrg($data)
 {
     global $koneksi;
+
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama_barang"]);
     $kategori = htmlspecialchars($data["id_kategori"]);
@@ -22,6 +23,12 @@ function ubahBrg($data)
     $gambarLama = htmlspecialchars($data["gambarLama"]);
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM expired");
     $hitungExp1 = mysqli_num_rows($hitungExp);
+
+    if ($_FILES['gmbr']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = uploadBrg();
+    }
 
     $number = count($_POST["stok"]);
     $number1 = count($_POST["expired"]);
@@ -36,26 +43,6 @@ function ubahBrg($data)
             ";
             mysqli_query($koneksi, $sql);
         }
-    }
-    if (trim($_POST["stok1"] != '') && trim($_POST["expired1"] != '')) {
-        $n1 = $_POST["stok1"];
-        if ($n1 != 0) {
-            $n1 = count($_POST["stok1"]);
-            for ($j = 0; $j < $n1; $j++) {
-                $hitungExp1++;
-                if (trim($_POST["stok1"][$j] != '') && trim($_POST["expired1"][$j] != '')) {
-                    $sql = "INSERT INTO dtl_brg VALUES('$idbrg','" . mysqli_real_escape_string($koneksi, $_POST["stok1"][$j]) . "','$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "')";
-                    mysqli_query($koneksi, $sql);
-                    $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired1"][$j]) . "','$idbrg')";
-                    mysqli_query($koneksi, $sql1);
-                }
-            }
-        }
-    }
-    if ($_FILES['gmbr']['error'] === 4) {
-        $gambar = $gambarLama;
-    } else {
-        $gambar = uploadBrg();
     }
     $query = "UPDATE barang SET
     nama_brg = '$nama',
@@ -123,6 +110,7 @@ function uploadBrg()
     $ukuranFile = $_FILES['gmbr']['size'];
     $error = $_FILES['gmbr']['error'];
     $tmpName = $_FILES['gmbr']['tmp_name'];
+
     if ($error === 4) {
         echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
         return false;
@@ -131,19 +119,12 @@ function uploadBrg()
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script>
-        alert('Bukan gambar yang anda upload');
-        </script>
-        ";
-        return false;
+        echo "<script>alert('Maaf yang telah anda uplaod bukan gambar');</script>";
     }
-    if ($ukuranFile > 20000000) {
-        echo "<script>
-            alert('Gambar yang anda upload terlalu besar!');
-        </script>
-        ";
-        return false;
+    if ($ukuranFile > 900000000) {
+        echo "<script>alert('Maaf file yang anda upload terlalu besar!');</script>";
     }
+
     $namaFileBaru = uniqid();
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
