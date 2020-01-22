@@ -11,6 +11,29 @@ function query($query)
     }
     return $rows;
 }
+function pengadaan($data)
+{
+    global $koneksi;
+    $id = htmlspecialchars($data["id_barang"]);
+
+    $hitungExp = mysqli_query($koneksi, "SELECT * FROM expired");
+    $hitungExp1 = mysqli_num_rows($hitungExp);
+
+    $number = count($_POST["stok"]);
+    $number1 = count($_POST["expired"]);
+    if ($number >= 1 && $number1 >= 1) {
+        for ($i = 0; $i < $number; $i++) {
+            $hitungExp1++;
+            if (trim($_POST["stok"][$i] != '') && trim($_POST["expired"][$i] != '')) {
+                $sql = "INSERT INTO dtl_brg VALUES('$id','" . mysqli_real_escape_string($koneksi, $_POST["stok"][$i]) . "',$hitungExp1,'" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "')";
+                mysqli_query($koneksi, $sql);
+                $sql1 = "INSERT INTO expired VALUES('$hitungExp1','" . mysqli_real_escape_string($koneksi, $_POST["expired"][$i]) . "','$idBrg')";
+                mysqli_query($koneksi, $sql1);
+            }
+        }
+    }
+    return mysqli_affected_rows($koneksi);
+}
 function ubahBrg($data)
 {
     global $koneksi;
