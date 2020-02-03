@@ -1081,7 +1081,8 @@ section {
 }
 
 .product_image img {
-	width: 100%;
+	width: 268px;
+	height: 268px;
 }
 
 .product_info {
