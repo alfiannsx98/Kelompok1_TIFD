@@ -1,5 +1,5 @@
 <?php
-require '../../controllers/login-pembeli/functions-login-pembeli.php';
+require '../controllers/login-pembeli/functions-login-pembeli.php';
 
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
@@ -10,7 +10,7 @@ if (isset($_POST["register"])) {
 }
 
 ?>
-<?php require '../../views/login-pembeli/header.php'; ?>
+<?php require '../views/login-pembeli/header.php'; ?>
 
 <div class="text-center">
     <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
@@ -76,4 +76,4 @@ if (isset($_POST["register"])) {
     </a>
     <hr>
 </form>
-<?php require '../../views/login-pembeli/footer.php'; ?>
+<?php require '../views/login-pembeli/footer.php'; ?>
