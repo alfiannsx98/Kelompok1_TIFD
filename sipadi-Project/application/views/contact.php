@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-require '../../controllers/sipadi/sipadi-functions.php';
+require '../controllers/sipadi/sipadi-functions.php';
 
 
 
