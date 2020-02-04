@@ -10,7 +10,7 @@ if (($_POST["level"] == 2)) {
     header("Location: ../operator/");
     exit;
 }
-require '../../controllers/kurir/functions-kurir.php';
+require '../controllers/kurir/functions-kurir.php';
 
 $id = $_GET["id"];
 

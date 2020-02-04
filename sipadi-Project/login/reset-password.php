@@ -8,7 +8,7 @@ require_once 'login_header.php';
                 <div class="row">
                     <div class="col-lg">
                         <div class="p-5">
-                            <form action="../../controllers/login/PHPMailer/config-mail.php" method="post" class="user">
+                            <form action="../controllers/login/PHPMailer/config-mail.php" method="post" class="user">
                                 <div class="form-group">
                                     <center>
                                         <h1 class="col-lg">RESET PASSWORD</h1>

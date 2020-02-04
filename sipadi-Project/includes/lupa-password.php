@@ -1,7 +1,7 @@
 <?php
 require_once 'login_header.php';
-require '../../controllers/login/functions-login-pembeli.php';
-include("../../controllers/login/PHPMailer/koneksi.php");
+require '../controllers/login/functions-login-pembeli.php';
+include("../controllers/login/PHPMailer/koneksi.php");
 
 if (!isset($_GET["code"])) {
     exit("Tidak bisa menemukan Kode!");

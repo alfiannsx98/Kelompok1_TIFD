@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../controllers/profile/functions-profile.php';
+require '../../controllers/profile/functions-profile.php';
 session_start();
 
 
@@ -18,11 +18,11 @@ if (isset($_POST["update"])) {
 // $_GET['id'];
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
-    header("Location: ../login/login.php");
+    header("Location: ../../login/login.php");
     exit;
 }
 if (($_POST["level"] != 2)) {
-    header("Location: ../admin/");
+    header("Location: ../../admin/");
     exit;
 }
 $email = $_POST['email_admin'];
@@ -135,7 +135,7 @@ require '../../templates/sidebar.php';
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../../../../application/controllers/login/logout.php">Logout</a>
+                <a class="btn btn-primary" href="../../application/controllers/login/logout.php">Logout</a>
             </div>
         </div>
     </div>

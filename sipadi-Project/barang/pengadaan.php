@@ -1,5 +1,5 @@
 <?php
-require_once '../../controllers/barang/functions-barang.php';
+require_once '../controllers/barang/functions-barang.php';
 require_once 'header.php';
 
 session_start();
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
 }
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
-    header("Location: ../../login/login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 if (($_POST["level"] == 2)) {
@@ -133,7 +133,7 @@ require 'sidebar.php';
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../../../application/controllers/login/logout.php">Logout</a>
+                    <a class="btn btn-primary" href="../application/controllers/login/logout.php">Logout</a>
                 </div>
             </div>
         </div>

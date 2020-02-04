@@ -1,5 +1,5 @@
 <?php
-require '../../../controllers/transaksi/functions-transaksi.php';
+require '../../controllers/transaksi/functions-transaksi.php';
 
 $id = $_GET['id'];
 

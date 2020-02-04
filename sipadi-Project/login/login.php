@@ -1,5 +1,5 @@
 <?php
-require '../../../application/controllers/login/functions-login.php';
+require '../controllers/login/functions-login.php';
 
 session_start();
 

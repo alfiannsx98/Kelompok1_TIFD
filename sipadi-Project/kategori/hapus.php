@@ -11,7 +11,7 @@ if (($_POST["level"] == 2)) {
     exit;
 }
 
-require '../../controllers/kategori/functions-kategori.php';
+require '../controllers/kategori/functions-kategori.php';
 
 $id = $_GET["id"];
 

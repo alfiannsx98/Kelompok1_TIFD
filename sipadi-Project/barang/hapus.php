@@ -5,14 +5,14 @@ session_start();
 
 $_POST = $_SESSION;
 if (!isset($_SESSION["login"])) {
-    header("Location: ../../login/login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 if (($_POST["level"] == 2)) {
     header("Location: ../operator/");
     exit;
 }
-require '../../controllers/barang/functions-barang.php';
+require '../controllers/barang/functions-barang.php';
 
 $id = $_GET["id"];
 

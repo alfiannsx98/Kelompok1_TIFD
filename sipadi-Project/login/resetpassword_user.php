@@ -1,7 +1,7 @@
 <?php
 require_once 'login_header.php';
-require '../../controllers/login/functions-login.php';
-include("../../controllers/login/PHPMailer/koneksi.php");
+require '../controllers/login/functions-login.php';
+include("../controllers/login/PHPMailer/koneksi.php");
 
 if (!isset($_GET["code"])) {
     exit("Tidak bisa menemukan Kode!");
@@ -30,7 +30,7 @@ if (isset($_POST["simpan"])) {
         $query = mysqli_query($koneksi, "UPDATE pembeli SET password_pembeli='$password' WHERE email_pembeli='$email'");
         if ($query) {
             $query = mysqli_query($koneksi, "DELETE FROM token_user WHERE kode='$code'");
-            echo "<a href='../../sipadi/' class='btn btn-success'>Kembali</a>";
+            echo "<a href='../sipadi/' class='btn btn-success'>Kembali</a>";
         } else {
             echo "ada sesuatu yang salah!";
         }

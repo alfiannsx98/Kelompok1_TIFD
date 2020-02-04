@@ -24,11 +24,11 @@ function ubahTk($data)
     if ($_FILES['gambar_sampul']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        if (!unlink("../../views/toko/gambar/" . $gambarLama)) {
-            unlink("../../views/toko/gambar/" . $gambarLama);
+        if (!unlink("../views/toko/gambar/" . $gambarLama)) {
+            unlink("../views/toko/gambar/" . $gambarLama);
             $gambar = uploadTk();
         } else {
-            unlink("../../views/toko/gambar/" . $gambarLama);
+            unlink("../views/toko/gambar/" . $gambarLama);
             $gambar = uploadTk();
         }
     }
@@ -68,7 +68,7 @@ function uploadTk()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/toko/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../views/toko/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }

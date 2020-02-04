@@ -22,7 +22,7 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			header("location: sipadi/");
+			header("location: index.php");
 			$_SESSION["login_pembeli"] = 1;
 			$_SESSION['email'] = $email;
 		}

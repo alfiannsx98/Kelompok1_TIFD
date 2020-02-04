@@ -198,7 +198,7 @@
 						<h4>Lupa Password</h4>
 					</div>
 					<div class="d-flex flex-column text-center">
-						<form action="../../controllers/login/PHPMailer/config-user.php" method="post" class="user">
+						<form action="../controllers/login/PHPMailer/config-user.php" method="post" class="user">
 							<div class="form-group">
 								<?php
 								if (isset($_POST["reset-submit"])) {

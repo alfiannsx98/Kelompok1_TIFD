@@ -25,7 +25,7 @@ function ubahPr($data)
         $gambar = $gambarLama;
     } else {
         error_reporting(0);
-        if (!unlink("../../views/karyawan/gambar/" . $gambarLama)) {
+        if (!unlink("../views/karyawan/gambar/" . $gambarLama)) {
             echo "<script>alert('error hapus gmbr');</script>";
         } else {
             $gambar = uploadPr();
@@ -68,7 +68,7 @@ function uploadPr()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../views/karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }

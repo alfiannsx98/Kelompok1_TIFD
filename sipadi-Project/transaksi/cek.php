@@ -1,5 +1,5 @@
 <?php
-require_once '../../controllers/transaksi/functions-transaksi.php';
+require_once '../controllers/transaksi/functions-transaksi.php';
 require_once 'header.php';
 session_start();
 
@@ -67,7 +67,7 @@ require 'sidebar.php';
                             <?php $i = 1 ?>
                             <?php foreach ($trnsksi as $brg) : ?>
                                 <tr>
-                                    
+
                                     <td>
                                         <input type="text" name="id_transaksi[]" id="id_transaksi" class="form-control id_transaksi" value="<?= $brg["nama_brg"]; ?>" readonly>
                                     </td>
@@ -84,12 +84,12 @@ require 'sidebar.php';
                             <?php endforeach; ?>
                             <?php $i++; ?>
                         </table>
-                        <a  href="index.php" name="kembali" id="kembali" class="btn btn-success btn-user btn-block">Kembali</a>
+                        <a href="index.php" name="kembali" id="kembali" class="btn btn-success btn-user btn-block">Kembali</a>
                     </div>
                     <!-- <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button> -->
                     <hr>
                     <?php $jml = query("SELECT * FROM dtl_transaksi WHERE id_tr='$id'"); ?>
-                    
+
                 </form>
                 <br>
                 <div class="text-center">
@@ -136,7 +136,7 @@ require 'sidebar.php';
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../../../application/controllers/login/logout.php">Logout</a>
+                    <a class="btn btn-primary" href="../application/controllers/login/logout.php">Logout</a>
                 </div>
             </div>
         </div>

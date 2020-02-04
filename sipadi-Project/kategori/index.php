@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../application/controllers/login/functions-login.php';
+require '../controllers/login/functions-login.php';
 session_start();
 $_POST = $_SESSION;
 
@@ -38,7 +38,7 @@ $dtKtg = query("SELECT * FROM kategori");
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../../../application/controllers/login/logout.php">Logout</a>
+                <a class="btn btn-primary" href="../controllers/login/logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@ $dtKtg = query("SELECT * FROM kategori");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $ktg['nama_kategori']; ?></td>
-                            <td><img src="<?= '../../views/kategori/gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
+                            <td><img src="<?= '../kategori/gambar/' . $ktg['gmbr']; ?>" class="img-thumbnail" height="100" width="100"></td>
                             <td>
                                 <a class="btn btn-primary" href="edit.php?id=<?= $ktg['id_kategori']; ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="btn btn-danger" href="hapus.php?id=<?= $ktg['id_kategori']; ?>" onclick="myFunction()"><i class="fas fa-trash-alt"></i></a>

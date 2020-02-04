@@ -14,7 +14,7 @@ if (($_POST["level"] == 2)) {
     header("Location: ../operator/");
     exit;
 }
-require '../../controllers/transaksi/functions-transaksi.php';
+require '../controllers/transaksi/functions-transaksi.php';
 
 $id = $_GET["id"];
 $email = $_POST['email_admin'];

@@ -5,7 +5,7 @@
 				<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
 					<ul class="footer_nav">
 						<li><a href="contact.php">Contact us</a></li>
-						<li><a href="../login/login.php">Author</a></li>
+						<li><a href="login/login.php">Author</a></li>
 					</ul>
 				</div>
 			</div>

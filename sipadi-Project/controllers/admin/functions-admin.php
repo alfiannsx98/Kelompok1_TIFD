@@ -81,7 +81,7 @@ function uploadAdm()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/karyawan/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../views/karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
@@ -115,11 +115,11 @@ function hapusAdm($id)
     $qr_file = mysqli_query($koneksi, "SELECT gambar_admin FROM admin WHERE id_admin='$id'");
     $hsl =  mysqli_fetch_array($qr_file);
 
-    if (!unlink("../../views/karyawan/gambar/" . $hsl["gambar_admin"])) {
+    if (!unlink("../views/karyawan/gambar/" . $hsl["gambar_admin"])) {
         mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
         return mysqli_affected_rows($koneksi);
     } else {
-        unlink("../../views/karyawan/gambar/" . $hsl["gambar_admin"]);
+        unlink("../views/karyawan/gambar/" . $hsl["gambar_admin"]);
         mysqli_query($koneksi, "DELETE FROM admin WHERE id_admin='$id'");
         return mysqli_affected_rows($koneksi);
     }

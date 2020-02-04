@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '../../templates/vendor/autoload.php';
+require_once __DIR__ . '../templates/vendor/autoload.php';
 
-require '../../controllers/admin/functions-admin.php';
+require '../controllers/admin/functions-admin.php';
 $id = $_GET['id'];
 $karyawan = query("SELECT * FROM admin WHERE id_admin='$id'");
 

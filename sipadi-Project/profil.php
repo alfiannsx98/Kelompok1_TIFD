@@ -1,4 +1,4 @@
-<?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
+<?php require '../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
 session_start();
 // if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
@@ -63,7 +63,7 @@ if (isset($_SESSION["login_pembeli"]) == 1) {
 	?>
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container text-center">
-				<img src="<?= "../../views/login-pembeli/gambar/" . $pr['gambar_pembeli'] ?>" width="200" class="rounded-circle">
+				<img src="<?= "../views/login-pembeli/gambar/" . $pr['gambar_pembeli'] ?>" width="200" class="rounded-circle">
 				<h1 class="display-4"><?= $pr['nama_pembeli']; ?></h1>
 				<p class="lead">Selamat Datang di Website Kami</p>
 			</div>

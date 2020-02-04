@@ -1,5 +1,5 @@
 <?php
-require_once '../../controllers/kategori/functions-kategori.php';
+require_once '../controllers/kategori/functions-kategori.php';
 require_once 'header.php';
 session_start();
 

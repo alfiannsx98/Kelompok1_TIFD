@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../../controllers/transaksi/functions-transaksi.php';
+require '../../controllers/transaksi/functions-transaksi.php';
 session_start();
 $_POST = $_SESSION;
 $getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
@@ -53,7 +53,7 @@ $dtTransaksi = query("SELECT * FROM transaksi");
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../../../../application/controllers/login/logout.php">Logout</a>
+                <a class="btn btn-primary" href="../../application/controllers/login/logout.php">Logout</a>
             </div>
         </div>
     </div>

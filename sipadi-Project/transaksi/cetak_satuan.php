@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '../../templates/vendor/autoload.php';
+require_once __DIR__ . '../templates/vendor/autoload.php';
 
-require '../../controllers/transaksi/functions-transaksi.php';
+require '../controllers/transaksi/functions-transaksi.php';
 $id = $_GET['id'];
 $transaksi = query("SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
 FROM `transaksi` 

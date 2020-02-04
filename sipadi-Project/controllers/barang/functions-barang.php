@@ -152,7 +152,7 @@ function uploadBrg()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../../views/barang/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../views/barang/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
@@ -162,13 +162,13 @@ function hapusBrg($id)
     global $koneksi;
     $qr_file = mysqli_query($koneksi, "SELECT gambar_brg FROM barang WHERE id_brg='$id'");
     $hsl =  mysqli_fetch_array($qr_file);
-    if (!unlink("../../views/barang/gambar/" . $hsl["gambar_brg"])) {
+    if (!unlink("../views/barang/gambar/" . $hsl["gambar_brg"])) {
         mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");
         return mysqli_affected_rows($koneksi);
     } else {
-        unlink("../../views/barang/gambar/" . $hsl["gambar_brg"]);
+        unlink("../views/barang/gambar/" . $hsl["gambar_brg"]);
         mysqli_query($koneksi, "DELETE FROM expired WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM dtl_brg WHERE id_brg='$id'");
         mysqli_query($koneksi, "DELETE FROM barang WHERE id_brg='$id'");

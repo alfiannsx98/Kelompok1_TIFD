@@ -11,7 +11,7 @@ if (($_POST["level"] == 2)) {
     header("Location: ../operator/");
     exit;
 }
-require '../../controllers/admin/functions-admin.php';
+require '../controllers/admin/functions-admin.php';
 
 $id = $_GET["id"];
 

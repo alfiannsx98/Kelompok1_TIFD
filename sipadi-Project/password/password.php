@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require '../../controllers/profile/functions-profile.php';
+require '../controllers/profile/functions-profile.php';
 session_start();
 
 
@@ -60,10 +60,10 @@ require '../templates/sidebar.php';
             </div>
             <div class="col-lg-10">
                 <form action="" method="post" class="user" enctype="multipart/form-data">
-                    <input type="hidden" name="id_admin" value="<?= $_GET['id'];?>">
+                    <input type="hidden" name="id_admin" value="<?= $_GET['id']; ?>">
                     <div class="form-group">
                         <label for="username"> Password Lama : </label>
-                        <input type="password" class="form-control form-control-user" id="passwordLama" name="passwordLama" placeholder="Masukkan Pasword lama anda"  required>
+                        <input type="password" class="form-control form-control-user" id="passwordLama" name="passwordLama" placeholder="Masukkan Pasword lama anda" required>
                     </div>
                     <div class="form-group">
                         <label for="username"> Password Baru : </label>
@@ -135,7 +135,7 @@ require '../templates/sidebar.php';
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../../../application/controllers/login/logout.php">Logout</a>
+                <a class="btn btn-primary" href="../application/controllers/login/logout.php">Logout</a>
             </div>
         </div>
     </div>

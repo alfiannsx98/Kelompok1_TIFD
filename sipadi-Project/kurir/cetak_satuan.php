@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '../../templates/vendor/autoload.php';
+require_once __DIR__ . '../templates/vendor/autoload.php';
 
-require '../../controllers/kurir/functions-kurir.php';
+require '../controllers/kurir/functions-kurir.php';
 $id = $_GET['id'];
 $barang = query("SELECT * FROM kurir WHERE id_kurir='$id'");
 
