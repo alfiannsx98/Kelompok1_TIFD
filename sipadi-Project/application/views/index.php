@@ -1,4 +1,4 @@
-<?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
+<?php require '../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
 session_start();
 // if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
@@ -22,7 +22,7 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			header("location: ../sipadi/");
+			header("location: sipadi/");
 			$_SESSION["login_pembeli"] = 1;
 			$_SESSION['email'] = $email;
 		}
@@ -71,7 +71,7 @@ require 'includes/slider.php';
 								<div class="product-item">
 									<div class="product discount">
 										<div class="product_image">
-											<img src="<?= "../../views/kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
+											<img src="<?= "../views/kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
 										</div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
@@ -137,7 +137,7 @@ require 'includes/slider.php';
 
 								<div class="product discount product_filter">
 									<div class="product_image">
-										<a href="single.php?id=<?= $br['id_brg']; ?>"><img src="<?= "../barang/gambar/" . $br["gambar_brg"]; ?>" alt="">
+										<a href="single.php?id=<?= $br['id_brg']; ?>"><img src="<?= "barang/gambar/" . $br["gambar_brg"]; ?>" alt="">
 									</div>
 									<div class="product_info">
 										<h6 class="product_name1"><a href="single.php?id=<?= $br['id_brg']; ?>"><?= $br["nama_brg"]; ?></a></h6>
