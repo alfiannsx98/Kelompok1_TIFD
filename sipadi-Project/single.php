@@ -1,5 +1,5 @@
 <?php
-require '../controllers/sipadi/sipadi-functions.php';
+require 'controllers/sipadi/sipadi-functions.php';
 session_start();
 ?>
 <?php
@@ -22,7 +22,7 @@ if (isset($_POST["login"])) {
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if (password_verify($password, $row["password_pembeli"])) {
-			header("location: ../sipadi/");
+			header("location: sipadi/");
 			$_SESSION["login_pembeli"] = 1;
 			$_SESSION['email'] = $email;
 		}
@@ -76,13 +76,13 @@ foreach ($produk as $pr) :
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
-									<li class="active"><img src="<?= "../../views/barang/gambar/" . $pr['gambar_brg']; ?>" alt="" data-image="images/inseksingle.jpg"></li>
+									<li class="active"><img src="<?= "barang/gambar/" . $pr['gambar_brg']; ?>" alt="" data-image="images/inseksingle.jpg"></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(<?= "../../views/barang/gambar/" . $pr['gambar_brg']; ?>)"></div>
+								<div class="single_product_image_background" style="background-image:url(<?= "barang/gambar/" . $pr['gambar_brg']; ?>)"></div>
 							</div>
 						</div>
 					</div>

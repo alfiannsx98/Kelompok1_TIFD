@@ -1,4 +1,4 @@
-<?php require '../controllers/sipadi/sipadi-functions.php'; ?>
+<?php require 'controllers/sipadi/sipadi-functions.php'; ?>
 <?php
 session_start();
 // if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
@@ -71,7 +71,7 @@ require 'includes/slider.php';
 								<div class="product-item">
 									<div class="product discount">
 										<div class="product_image">
-											<img src="<?= "../views/kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
+											<img src="<?= "kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
 										</div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
