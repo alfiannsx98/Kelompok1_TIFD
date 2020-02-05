@@ -70,11 +70,11 @@ $dtKrywn = query("SELECT * FROM admin where level='2'");
             <table id="example" class="ui celled table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th style="width:30px">No</th>
                         <th style="width:125px;">Nama Admin</th>
                         <th style="width:125px;">Email Admin</th>
                         <th style="width:125px;">Gambar Admin</th>
-                        <th style="width:125px;">Admin Dibuat</th>
+                        <th style="width:115px;">Admin Dibuat</th>
                         <th style="width:125px;">Alamat</th>
                         <th style="width:125px;">Aksi</th>
                     </tr>

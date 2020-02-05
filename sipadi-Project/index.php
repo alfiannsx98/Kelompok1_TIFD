@@ -141,7 +141,7 @@ require 'includes/slider.php';
 									</div>
 									<div class="product_info">
 										<h6 class="product_name1"><a href="single.php?id=<?= $br['id_brg']; ?>"><?= $br["nama_brg"]; ?></a></h6>
-										<a class="btn btn-primary btn-lg btn-block add_to_cart_button" href="single.php?id=<?= $br['id_brg']; ?>">READ MORE</a>
+										<a class="btn btn-primary  btn-block add_to_cart_button" href="single.php?id=<?= $br['id_brg']; ?>">READ MORE</a>
 										<div class="product_price" style="top: -110px">Rp. <?= $br["harga_brg"]; ?>
 										</div>
 
