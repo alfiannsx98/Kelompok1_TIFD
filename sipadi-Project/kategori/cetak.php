@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../templates/vendor/autoload.php';
+require_once __DIR__ . '../../templates/vendor/autoload.php';
 
 require '../controllers/barang/functions-barang.php';
 $barang = query("SELECT * FROM Kategori");
