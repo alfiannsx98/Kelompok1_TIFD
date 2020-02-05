@@ -66,7 +66,7 @@ require 'includes/slider.php';
 
 							<div class="product-item">
 								<div class="product discount">
-									<div class="product_image">
+									<div class="product_image1">
 										<img src="<?= "kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
 									</div>
 									<div class="favorite favorite_left"></div>
@@ -77,19 +77,20 @@ require 'includes/slider.php';
 								</div>
 							</div>
 						</div>
-					<?php endforeach; ?>
 				</div>
+			<?php endforeach; ?>
+			</div>
 
-				<!-- Slider Navigation -->
+			<!-- Slider Navigation -->
 
-				<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-					<i class="fa fa-chevron-left" aria-hidden="true"></i>
-				</div>
-				<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-					<i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</div>
+			<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+				<i class="fa fa-chevron-left" aria-hidden="true"></i>
+			</div>
+			<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+				<i class="fa fa-chevron-right" aria-hidden="true"></i>
 			</div>
 		</div>
+	</div>
 	</div>
 </section>
 
@@ -136,7 +137,7 @@ require 'includes/slider.php';
 									</div>
 									<div class="product_info">
 										<h6 class="product_name1"><a href="single.php?id=<?= $br['id_brg']; ?>"><?= $br["nama_brg"]; ?></a></h6>
-										<a class="btn btn-primary  btn-block add_to_cart_button" href="single.php?id=<?= $br['id_brg']; ?>">READ MORE</a>
+										<a class="btn btn-primary btn-lg btn-block add_to_cart_button" href="single.php?id=<?= $br['id_brg']; ?>">READ MORE</a>
 										<div class="product_price" style="top: -110px">Rp. <?= $br["harga_brg"]; ?>
 										</div>
 
