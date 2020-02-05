@@ -1079,10 +1079,14 @@ section {
 .product_image {
 	width: 100%;
 }
-
-.product_image img {
+.product_image1 img {
 	width: 268px;
 	height: 268px;
+}
+
+.product_image img {
+	width: 220px;
+	height: 220px;
 }
 
 .product_info {
