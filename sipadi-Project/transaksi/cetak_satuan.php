@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../templates/vendor/autoload.php';
+require_once __DIR__ . '../../templates/vendor/autoload.php';
 
 require '../controllers/transaksi/functions-transaksi.php';
 $id = $_GET['id'];

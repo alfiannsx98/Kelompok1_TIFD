@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
-require 'controllers/sipadi/sipadi-functions.php';
 
-
+require '/controllers/sipadi/sipadi-functions.php';
 
 if (isset($_SESSION["login_pembeli"]) == 1) {
 	$mail = $_SESSION['email'];

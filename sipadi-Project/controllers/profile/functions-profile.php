@@ -68,7 +68,7 @@ function uploadPr()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../views/karyawan/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../karyawan/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
