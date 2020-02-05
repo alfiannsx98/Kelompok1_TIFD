@@ -1,16 +1,26 @@
 <?php
-require '../controllers/login-pembeli/functions-login-pembeli.php';
+require 'controllers/login-pembeli/functions-login-pembeli.php';
 
 if (isset($_POST["register"])) {
     if (register($_POST) > 0) {
-        echo "<script>alert('user baru berhasil ditambahkan');</script>";
+        echo "
+        <script>
+            alert('user baru berhasil ditambahkan');
+            document.location.href = 'index.php';
+        </script>
+        
+        ";
     } else {
-        echo mysqli_error($koneksi);
+        echo "
+            <script>
+                alert('Data Gagal Ditambah');
+            </script>
+        ";
     }
 }
 
 ?>
-<?php require '../views/login-pembeli/header.php'; ?>
+<?php require 'login-pembeli/header.php'; ?>
 
 <div class="text-center">
     <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
@@ -76,4 +86,6 @@ if (isset($_POST["register"])) {
     </a>
     <hr>
 </form>
-<?php require '../views/login-pembeli/footer.php'; ?>
+
+
+<?php require 'login-pembeli/footer.php'; ?>
