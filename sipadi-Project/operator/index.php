@@ -1,6 +1,6 @@
 <?php
 require_once 'admin_header.php';
-require '../application/controllers/login/functions-login.php';
+require '../controllers/login/functions-login.php';
 session_start();
 $_POST = $_SESSION;
 
@@ -11,7 +11,7 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 if (!($_POST["level"] == 2)) {
-  header("Location: ../admin/");
+  header("Location: admin/");
   exit;
 }
 // $koneksi1 = mysqli_connect("localhost", "root", "", "dbsipadifinal1");
@@ -37,7 +37,7 @@ $gmbr = mysqli_fetch_assoc($sql);
       <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="../application/controllers/login/logout.php">Logout</a>
+        <a class="btn btn-primary" href="../controllers/login/logout.php">Logout</a>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ $gmbr = mysqli_fetch_assoc($sql);
   <!-- Main Content -->
   <div id="content">
 
-    <?php require_once '../operator/topbar.php'; ?>
+    <?php require_once 'topbar.php'; ?>
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -188,4 +188,4 @@ $gmbr = mysqli_fetch_assoc($sql);
   </div>
   <!-- /.container-fluid -->
 
-  <?php require_once '../admin/admin_footer.php'; ?>
+  <?php require_once 'admin_footer.php'; ?>
