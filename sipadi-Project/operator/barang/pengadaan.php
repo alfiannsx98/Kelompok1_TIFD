@@ -1,6 +1,6 @@
 <?php
 require_once '../../controllers/barang/functions-barang.php';
-require_once '../header.php';
+require_once 'header.php';
 
 session_start();
 if (isset($_POST["submit"])) {
@@ -22,8 +22,8 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
-if (($_POST["level"] == 2)) {
-    header("Location: ../admin/");
+if ((!$_POST["level"] == 2)) {
+    header("Location: ../login/login.php");
     exit;
 }
 $email = $_POST['email_admin'];
