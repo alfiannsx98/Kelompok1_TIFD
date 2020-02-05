@@ -76,11 +76,7 @@
             <span>Transaksi</span></a>
     </li>
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="../kurir/index.php">
-            <i class="fas fa-fw fa-shipping-fast"></i>
-            <span>Kurir</span></a>
-    </li>
+    
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
