@@ -86,6 +86,10 @@ require 'sidebar.php';
                         <input type="number" name="harga" min="3" class="form-control form-control-user" placeholder="Masukkan harga barang" required>
                     </div>
                     <div class="form-group">
+                        <label for="harga"> Berat Barang (Satuan Gram): </label>
+                        <input type="number" name="berat" min="2" class="form-control form-control-user" placeholder="Masukkan berat barang" required>
+                    </div>
+                    <div class="form-group">
                         <label for="deskripsi"> Deskripsi Barang : </label>
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control" required></textarea>
                     </div>
