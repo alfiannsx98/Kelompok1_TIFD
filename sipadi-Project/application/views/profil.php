@@ -1,4 +1,4 @@
-<?php require '../../controllers/sipadi/sipadi-functions.php'; ?>
+<?php require '../controllers/sipadi/sipadi-functions.php'; ?>
 <?php
 session_start();
 // if (isset($_COOKIE['id_pembeli']) && isset($_COOKIE['key'])) {
