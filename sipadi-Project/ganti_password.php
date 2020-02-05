@@ -1,5 +1,5 @@
 <?php
-require '../../controllers/sipadi/sipadi-functions.php';
+require '/controllers/sipadi/sipadi-functions.php';
 session_start();
 
 $id = $_GET['id'];
