@@ -66,31 +66,30 @@ require 'includes/slider.php';
 
 							<div class="product-item">
 								<div class="product discount">
-									<div class="product_image1">
+									<div class="product_image">
 										<img src="<?= "kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
 									</div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_info">
 										<h6 class="product_name"><a href="index.php#produk" data-filter=".<?= $ktg['nama_kategori'] ?>"><?= $ktr["nama_kategori"]; ?></a></h6>
-										<div class="product_price"><?= $ktgr['total']; ?>pcs</div>
+
 									</div>
 								</div>
 							</div>
 						</div>
+					<?php endforeach; ?>
 				</div>
-			<?php endforeach; ?>
-			</div>
 
-			<!-- Slider Navigation -->
+				<!-- Slider Navigation -->
 
-			<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-				<i class="fa fa-chevron-left" aria-hidden="true"></i>
-			</div>
-			<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-				<i class="fa fa-chevron-right" aria-hidden="true"></i>
+				<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+					<i class="fa fa-chevron-left" aria-hidden="true"></i>
+				</div>
+				<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+					<i class="fa fa-chevron-right" aria-hidden="true"></i>
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </section>
 

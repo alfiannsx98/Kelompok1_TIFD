@@ -73,9 +73,13 @@ require 'sidebar.php';
                         <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" value="<?= $barang['nama_brg']; ?>" required>
                     </div>
                     <div class="form-group">
+                        <label for="harga"> Berat Barang (Satuan Gram): </label>
+                        <input type="number" name="berat" min="2" class="form-control form-control-user" placeholder="Masukkan berat barang" value="<?= $barang['berat']; ?>" required>
+                    </div>
+                    <div class="form-group">
                         <label for="id_kategori">Kategori : </label>
                         <select name="id_kategori" class="form-control" required>
-                            <option value="" disabled selected>Silahkan Pilih Item</option>
+                            <option value="<?= $barang['id_ktg']; ?>" selected>Silahkan Pilih Kategori</option>
                             <?php $rslt = query("SELECT * FROM kategori"); ?>
                             <?php foreach ($rslt as $nmKTG) : ?>
                                 <option value="<?= $nmKTG['id_kategori']; ?>"><?= $nmKTG['nama_kategori']; ?></option>
@@ -101,31 +105,6 @@ require 'sidebar.php';
                     <div class="form-group">
                         <label for="deskripsi"> Deskripsi Barang : </label>
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control" required><?= $barang['deskripsi_brg']; ?></textarea>
-                    </div>
-                    <div class="form-group">
-                        <table class="table table-bordered" id="fieldQue">
-                            <tr>
-                                <td><label for="stok">Masukkan Stok Barang</label></td>
-                                <td><label for="expired">Masukkan Expired Date</label></td>
-                            </tr>
-                            <?php $dtlBrg = query("SELECT * FROM dtl_brg WHERE id_brg='$id'"); ?>
-                            <?php $i = 1 ?>
-                            <?php foreach ($dtlBrg as $brg) : ?>
-                                <tr>
-                                    <td>
-                                        <input type="number" name="stok[]" class="form-control stok_list" placeholder="Masukkan Stok Barang" value="<?= $brg['stok']; ?>" required pattern="[-+]?[0-9]">
-                                    </td>
-                                    <td>
-                                        <input type="date" name="expired[]" class="form-control expired_list" value="<?= $brg['expired']; ?>" required>
-                                    </td>
-                                    <td hidden>
-                                        <input type="number" name="id_expired[]" class="form-control" placeholder="Masukkan Stok Barang" value="<?= $brg['id_exp']; ?>" hidden>
-                                        <input type="number" name="stok1[]" class="form-control" placeholder="Masukkan Stok Barang" value="1">
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                            <?php $i++; ?>
-                        </table>
                     </div>
                     <!-- <td>
                         <button type="button" name="tmbh" id="tmbh" class="btn btn-primary btn-user btn-block">Tambah Jumlah Data</button>
