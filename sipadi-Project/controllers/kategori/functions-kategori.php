@@ -23,11 +23,11 @@ function ubahKtg($data)
     if ($_FILES['gmbr_ktg']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        if (!unlink("../views/kategori/gambar/" . $gambarLama)) {
-            unlink("../views/kategori/gambar/" . $gambarLama);
+        if (!unlink("../kategori/gambar/" . $gambarLama)) {
+            unlink("../kategori/gambar/" . $gambarLama);
             $gambar = uploadKtg();
         } else {
-            unlink("../views/kategori/gambar/" . $gambarLama);
+            unlink("../kategori/gambar/" . $gambarLama);
             $gambar = uploadKtg();
         }
     }
@@ -93,7 +93,7 @@ function uploadKtg()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../views/kategori/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../kategori/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
@@ -105,12 +105,12 @@ function hapusKtg($id)
     $qr_file = mysqli_query($koneksi, "SELECT gmbr FROM kategori WHERE id_kategori='$id'");
     $hsl =  mysqli_fetch_array($qr_file);
 
-    if (unlink("../views/kategori/gambar/" . $hsl["gmbr"])) {
+    if (unlink("../kategori/gambar/" . $hsl["gmbr"])) {
         mysqli_query($koneksi, "DELETE FROM kategori WHERE id_kategori='$id'");
 
         return mysqli_affected_rows($koneksi);
     } else {
-        unlink("../views/kategori/gambar/" . $hsl["gmbr"]);
+        unlink("../kategori/gambar/" . $hsl["gmbr"]);
         mysqli_query($koneksi, "DELETE FROM kategori WHERE id_kategori='$id'");
 
         return mysqli_affected_rows($koneksi);
