@@ -1,5 +1,5 @@
 <?php
-require '../../controllers/sipadi/sipadi-functions.php';
+require 'controllers/sipadi/sipadi-functions.php';
 session_start();
 
 $id = $_GET['id'];
@@ -24,7 +24,7 @@ if (isset($_POST["ganti"])) {
 }
 
 ?>
-<?php require '../../views/login-pembeli/header.php'; ?>
+<?php require 'login-pembeli/header.php'; ?>
 
 <div class="text-center">
     <h1 class="h4 text-gray-900 mb-4">Ganti Password</h1>
@@ -54,4 +54,4 @@ if (isset($_POST["ganti"])) {
     </a>
     <hr>
 </form>
-<?php require '../../views/login-pembeli/footer.php'; ?>
+<?php require 'login-pembeli/footer.php'; ?>

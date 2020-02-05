@@ -91,7 +91,7 @@ function uploadBukti()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../views/transaksi/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, '../transaksi/gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 }

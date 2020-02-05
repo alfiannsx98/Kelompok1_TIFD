@@ -88,7 +88,7 @@ if (isset($_POST["login"])) {
             </div>
             <center>
                 <button type="submit" name="login" class="btn btn-primary">Login</button>
-                <a type="button" href="../sipadi/" name="kembali" class="btn btn-success">Kembali</a>
+                <a type="button" href="../" name="kembali" class="btn btn-success">Kembali</a>
             </center>
             <br>
             <center><a href="../login/reset-password.php">Lupa Password?</a></center>
