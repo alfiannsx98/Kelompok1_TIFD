@@ -42,7 +42,7 @@
 <script type="text/javascript">
 	$.ajax({
 		method: 'GET',
-		url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_provinsi.php',
+		url: 'http://localhost/Kelompok1_TIFD/sipadi-Project/controllers/rajaongkir/get_provinsi.php',
 		dataType: 'JSON',
 		success: function(result) {
 			provinsi = '<option disabled selected hidden>Pilih Provinsi</option>';
@@ -57,7 +57,7 @@
 		$('#kota_kirim').html('<option disabled hidden selected>Mohon Tunggu ...</option>');
 		$.ajax({
 			method: 'GET',
-			url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_kota.php',
+			url: 'http://localhost/Kelompok1_TIFD/sipadi-Project/controllers/rajaongkir/get_kota.php',
 			data: {
 				'province': $('#kota_provinsi').val()
 			},
@@ -75,7 +75,7 @@
 	function get_ongkir() {
 		$.ajax({
 			method: 'GET',
-			url: 'http://localhost/kelompok1_TIFD/sipadi-Project/application/controllers/rajaongkir/get_ongkir.php',
+			url: 'http://localhost/Kelompok1_TIFD/sipadi-Project/controllers/rajaongkir/get_ongkir.php',
 			data: {
 				'city_id': $('#kota_kirim').val(),
 				'berat': 1000
