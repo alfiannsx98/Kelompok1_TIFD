@@ -17,24 +17,24 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="../admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../karyawan/index.php">
+        <a class="nav-link" href="../karyawan/">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Admin</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../toko/index.php">
+        <a class="nav-link" href="../toko/">
             <i class="fas fa-fw fa-store"></i>
             <span>Data Toko</span>
         </a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="../contact/">
             <i class="fas fa-fw fa-comments"></i>
             <span>Data Hubungi Kami</span>
@@ -51,11 +51,13 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="../barang/index.php">
+        <a class="nav-link collapsed" href="../barang/">
             <i class="fas fa-fw fa-box"></i>
             <span>Data Barang</span>
         </a>
-        <a class="nav-link collapsed" href="../kategori/">
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link collapsed" href="../Kategori/">
             <i class="fas fa-fw fa-stream"></i>
             <span>Data Kategori</span>
         </a>
