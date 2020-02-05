@@ -113,6 +113,8 @@ foreach ($produk as $pr) :
 					</div>
 					<input type="hidden" name="harga" id="harga" class="form-control" value="<?= $pr['harga_brg']; ?>" readonly>
 					<input type="number" name="qty_dibeli" id="qty_dibeli" class="form-control">
+					<input type="hidden" name="berat" id="berat" value="<?= $pr['berat']; ?>" class="form-control">
+					<input type="hidden" name="berat_total" id="berat_total" class="form-control">
 					<input type="hidden" name="subtotal" id="subtotal" class="form-control">
 				<?php endforeach; ?>
 				<div class="shop_now_button">

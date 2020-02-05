@@ -54,6 +54,7 @@ if (isset($_POST["checkout"])) {
                             <th data-field="category">Kategori</th>
                             <th data-field="price">Harga</th>
                             <th data-field="quantity">Jumlah Dibeli</th>
+                            <th data-field="quantity">Total Berat Barang</th>
                             <th data-field="total">Subtotal</th>
                             <th data-field="aksi">Aksi</th>
                         </tr>
@@ -66,7 +67,8 @@ if (isset($_POST["checkout"])) {
                             kategori.nama_kategori as 'kategori',
                             cart.qty_dibeli as 'dibeli',
                             cart.id_cart as 'id_cart',
-                            cart.subtotal as 'subtotal'
+                            cart.subtotal as 'subtotal',
+                            cart.total_berat as 'beratTotal'
                             FROM barang,kategori,cart
                             WHERE cart.id_barangs = barang.id_brg AND barang.id_ktg = kategori.id_kategori;
                 "
@@ -79,6 +81,7 @@ if (isset($_POST["checkout"])) {
                                 <td><input type="hidden"><?= $r['kategori']; ?></td>
                                 <td><input type="number" name="harga_satuan[]" value="<?= $r['harga']; ?>" hidden>Rp. <?= $r['harga']; ?></td>
                                 <td><input type="number" name="jml_dibeli_tmp[]" value="<?= $r['dibeli']; ?>" hidden><?= $r['dibeli']; ?></td>
+                                <td><input type="number" id="beratTotal" class="form-control beratTotal" value="<?= $r['beratTotal']; ?>" hidden><?= $r['beratTotal'] . ' gr'; ?></td>
                                 <td><input type="number" id="subtotals" class="form-control subtotalsa" value="<?= $r['subtotal']; ?>" hidden>Rp. <?= $r['subtotal']; ?></td>
                                 <td><a href="hapus_cart.php?id=<?= $r['id_cart']; ?>"><i class="material-icons red-text">Hapus</i></a></td>
                             </tr>
@@ -119,6 +122,9 @@ if (isset($_POST["checkout"])) {
                 <label for="harga_final"> Harga Final : </label>
                 <input type="number" class="form-control" name="harga_final" id="harga_final" readonly>
             </div>
+            <div hidden>
+                <input type="number" name="keseluruhanBerat" id="keseluruhanBerat">
+            </div>
             <input type="hidden" name="status_bayar" id="" value="0">
             <input type="hidden" name="status_kirim" id="" value="0">
             <?php
@@ -139,3 +145,48 @@ if (isset($_POST["checkout"])) {
 <?php
 require 'includes/footer.php';
 ?>
+<script type="text/javascript">
+    $(function() {
+        var total_berat = function() {
+            var sum = 0;
+
+            $('.beratTotal').each(function() {
+                var num = $(this).val();
+
+                if (num !== 0) {
+                    sum += parseInt(num);
+                }
+            });
+
+            $('#keseluruhanBerat').val(sum);
+        }
+        $('#formKu').click(function() {
+            total_berat();
+        });
+    });
+</script>
+<script type="text/javascript">
+    function get_ongkir() {
+        $('#opsi_ongkir').html('<option disabled hidden selected>Mohon Tunggu Sedang memproses ...</option>');
+        $.ajax({
+            method: 'GET',
+            url: 'http://localhost/Kelompok1_TIFD/sipadi-Project/controllers/rajaongkir/get_ongkir.php',
+            data: {
+                'city_id': $('#kota_kirim').val(),
+                'berat': $('#keseluruhanBerat').val()
+            },
+            dataType: 'JSON',
+            success: function(result) {
+                field_ongkir = '<ul>';
+                $.each(result.rajaongkir.results[0].costs, function(index1, jenis_ongkir) {
+                    $.each(jenis_ongkir.cost, function(index1, tarif) {
+                        field_ongkir += '<option value="' + tarif.value + '">Paket "' + jenis_ongkir.description + '" (Harga Rp. ' + tarif.value + ') Durasi (Selama ' + tarif.etd + ' Hari) Dengan Jumlah total berat barang (' + $('#keseluruhanBerat').val() / 1000 + 'KG)</option>'
+                        // field_ongkir += '<li><input type="radio" value="' + tarif.value + '" name="kurir" id="harga_ongkier">' + jenis_ongkir.description + ' [' + tarif.value + ']</li>';
+                    });
+                });
+                field_ongkir += '</ul>';
+                $('#opsi_ongkir').html(field_ongkir);
+            }
+        });
+    }
+</script>

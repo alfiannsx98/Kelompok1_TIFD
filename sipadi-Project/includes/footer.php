@@ -72,29 +72,7 @@
 		});
 	}
 
-	function get_ongkir() {
-		$('#opsi_ongkir').html('<option disabled hidden selected>Mohon Tunggu Sedang memproses ...</option>');
-		$.ajax({
-			method: 'GET',
-			url: 'http://localhost/Kelompok1_TIFD/sipadi-Project/controllers/rajaongkir/get_ongkir.php',
-			data: {
-				'city_id': $('#kota_kirim').val(),
-				'berat': 1500
-			},
-			dataType: 'JSON',
-			success: function(result) {
-				field_ongkir = '<ul>';
-				$.each(result.rajaongkir.results[0].costs, function(index1, jenis_ongkir) {
-					$.each(jenis_ongkir.cost, function(index1, tarif) {
-						field_ongkir += '<option value="' + tarif.value + '">Paket "' + jenis_ongkir.description + '" (Harga Rp. ' + tarif.value + ') Durasi (Selama ' + tarif.etd + ' Hari)</option>'
-						// field_ongkir += '<li><input type="radio" value="' + tarif.value + '" name="kurir" id="harga_ongkier">' + jenis_ongkir.description + ' [' + tarif.value + ']</li>';
-					});
-				});
-				field_ongkir += '</ul>';
-				$('#opsi_ongkir').html(field_ongkir);
-			}
-		});
-	}
+
 	// $('#kota_provinsi')
 
 	function autofill_kota(id) {
@@ -148,6 +126,15 @@
 
 		var hasil = bil1 + bil2
 		$("#harga_final").attr("value", hasil);
+	});
+</script>
+<script type="text/javascript">
+	$("#formKu").click(function autoterisi() {
+		var bil1 = parseInt($("#berat").val())
+		var bil2 = parseInt($("#qty_dibeli").val())
+
+		var hasil = bil1 * bil2
+		$("#berat_total").attr("value", hasil);
 	});
 </script>
 <!-- <script type="text/javascript">
