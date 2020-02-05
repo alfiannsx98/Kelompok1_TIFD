@@ -58,13 +58,12 @@ function checkout($data)
     $id_toko = "IDT001";
     $alamat_kirim = htmlspecialchars($data["alamat_kirim"]);
     $tgl_kirim = "00/00/0000";
-    $ongkir = htmlspecialchars($data["kota_kirim"]);
-    $ongkir_kurir = htmlspecialchars($data["ongkir_kurir"]);
-    $total_harga = htmlspecialchars($data["harga_total"]);
+    $ongkir = htmlspecialchars($data["ongkir_kurir"]);
+    $total_harga = htmlspecialchars($data["harga_subtotal"]);
     $total_final = htmlspecialchars($data["harga_final"]);
     $status_bayar = htmlspecialchars($data["status_bayar"]);
     $status_kirim = htmlspecialchars($data["status_kirim"]);
-    $tgl_transaksi = date('Y-m-j', time());;
+    $tgl_transaksi = date('Y-m-j', time());
     $no_rekening = "Belum Terisi";
 
     $bukti_bayar = "checkout.jpg";
@@ -76,7 +75,7 @@ function checkout($data)
 
     $hitungExp = mysqli_query($koneksi, "SELECT * FROM dtl_transaksi");
     $hitungExp1 = mysqli_num_rows($hitungExp);
-    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$ongkir_kurir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar','$no_rekening')";
+    $query = "INSERT INTO transaksi VALUES('$idTransaksi','$id_admin','$id_pembeli','$id_toko','$alamat_kirim','$tgl_kirim','$ongkir','$total_harga','$total_final','$status_bayar','$status_kirim','$tgl_transaksi','$bukti_bayar','$no_rekening')";
 
     mysqli_query($koneksi, $query);
     $number = count($_POST["id_barang"]);

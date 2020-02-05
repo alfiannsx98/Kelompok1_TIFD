@@ -5,7 +5,7 @@ if (!isset($_SESSION['login_pembeli']) == 1) {
     exit;
     require 'includes/header.php';
 }
-require '../../controllers/sipadi/sipadi-functions.php';
+require 'controllers/sipadi/sipadi-functions.php';
 
 $id = $_GET["id"];
 

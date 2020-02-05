@@ -3,18 +3,16 @@ require_once 'header.php';
 require '../controllers/transaksi/functions-transaksi.php';
 session_start();
 
-$getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
+$getKota = mysqli_query($koneksi, "SELECT `transaksi`.*,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
                 FROM `transaksi` 
-                JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
                 JOIN `admin` ON `admin`.`id_admin` = `transaksi`.`id_adm`
                 JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
                 JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
                 WHERE `transaksi`.`status_kirim` = 1
 ");
 $var = "Belum Terkonfirmasi";
-$konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`kurir`.kota_tujuan,`pembeli`.`nama_pembeli`
+$konfirm = mysqli_query($koneksi, "SELECT `transaksi`.*,`pembeli`.`nama_pembeli`
             FROM `transaksi`
-            JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
             JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
             WHERE `transaksi`.`id_adm` = '$var' OR `transaksi`.`status_kirim` = 0
 ");
@@ -90,7 +88,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                         <th>Nama Pembeli</th>
                         <th>Alamat Kirim</th>
                         <th>tgl_kirim</th>
-                        <th>Kota Pembeli</th>
                         <th>Ongkos Kirim</th>
                         <th>Total Final</th>
                         <th>Status Bayar</th>
@@ -109,7 +106,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                             <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= date('d F Y', $tr['tgl_kirim']); ?></td>
-                            <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= "Rp ." . number_format($tr['ongkir_kurir']); ?></td>
                             <td><?= "Rp ." . number_format($tr['total_final']); ?></td>
                             <td>
@@ -145,7 +141,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                     <tr>
                         <th>No</th>
                         <th>Status</th>
-                        <th>Kota Pembeli</th>
                         <th>Alamat Kirim</th>
                         <th>Nama Pembeli</th>
                         <th>Ongkir Kurir</th>
@@ -162,7 +157,6 @@ $dtTransaksi = query("SELECT * FROM transaksi");
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $tr['id_adm']; ?></td>
-                            <td><?= $tr['kota_tujuan']; ?></td>
                             <td><?= $tr['alamat_kirim']; ?></td>
                             <td><?= $tr['nama_pembeli']; ?></td>
                             <td><?= "Rp ." . number_format($tr['ongkir_kurir']); ?></td>

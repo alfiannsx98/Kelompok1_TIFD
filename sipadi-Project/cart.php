@@ -38,7 +38,7 @@ if (isset($_POST["checkout"])) {
 
 ?>
 <div class="container single_product_container">
-    <form action="" method="post" class="user" enctype="multipart/form-data">
+    <form id="formKu" action="" method="post" class="user" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
                 <div class="breadcrumbs d-flex flex-row align-items-center">
@@ -50,10 +50,10 @@ if (isset($_POST["checkout"])) {
                 <table class="table col-10">
                     <thead>
                         <tr>
-                            <th data-field="name">Item Name</th>
-                            <th data-field="category">Category</th>
-                            <th data-field="price">Price</th>
-                            <th data-field="quantity">Quantity</th>
+                            <th data-field="name">Nama Barang</th>
+                            <th data-field="category">Kategori</th>
+                            <th data-field="price">Harga</th>
+                            <th data-field="quantity">Jumlah Dibeli</th>
                             <th data-field="total">Subtotal</th>
                             <th data-field="aksi">Aksi</th>
                         </tr>
@@ -77,9 +77,9 @@ if (isset($_POST["checkout"])) {
                                 <td hidden><input type="hidden" name="id_barang[]" id="" value="<?= $r['id_brg'] ?>"></td>
                                 <td><input type="hidden"><?= $r['nm_brg']; ?></td>
                                 <td><input type="hidden"><?= $r['kategori']; ?></td>
-                                <td><input type="hidden" name="harga_satuan[]" value="<?= $r['harga']; ?>">Rp. <?= $r['harga']; ?></td>
-                                <td><input type="hidden" name="jml_dibeli_tmp[]" value="<?= $r['dibeli']; ?>"><?= $r['dibeli']; ?></td>
-                                <td><input type="hidden">Rp. <?= $r['subtotal']; ?></td>
+                                <td><input type="number" name="harga_satuan[]" value="<?= $r['harga']; ?>" hidden>Rp. <?= $r['harga']; ?></td>
+                                <td><input type="number" name="jml_dibeli_tmp[]" value="<?= $r['dibeli']; ?>" hidden><?= $r['dibeli']; ?></td>
+                                <td><input type="number" id="subtotals" class="form-control subtotalsa" value="<?= $r['subtotal']; ?>" hidden>Rp. <?= $r['subtotal']; ?></td>
                                 <td><a href="hapus_cart.php?id=<?= $r['id_cart']; ?>"><i class="material-icons red-text">Hapus</i></a></td>
                             </tr>
                         <?php endforeach; ?>
@@ -106,19 +106,21 @@ if (isset($_POST["checkout"])) {
             </div>
             <div class="form-group">
                 <label for="ongkir_kurir"> Ongkos Kirim : </label>
-                <div id="opsi_ongkir"></div>
+                <select id="opsi_ongkir" name="ongkir_kurir" class="form-control">
+
+                </select>
+                <!-- <input type="number" name="harga_ongkier" id="harga_ongkier" hidden> -->
             </div>
             <div class="form-group">
                 <label for="total"> Total Harga : </label>
-                <input type="number" class="form-control" name="harga_total" id="harga_total">
+                <input type="number" class="form-control" name="harga_subtotal" id="harga_subtotal" readonly>
             </div>
             <div class="form-group">
                 <label for="harga_final"> Harga Final : </label>
-                <input type="number" class="form-control" name="harga_final" id="harga_final">
+                <input type="number" class="form-control" name="harga_final" id="harga_final" readonly>
             </div>
             <input type="hidden" name="status_bayar" id="" value="0">
             <input type="hidden" name="status_kirim" id="" value="0">
-            <input type="hidden" name="tgl_transaksi" id="" value="<?= date('Y-m-j', time()); ?>">
             <?php
             $qry = query("SELECT id_pembeli FROM pembeli WHERE id_pembeli='$id'");
             foreach ($qry as $rsllt) :
