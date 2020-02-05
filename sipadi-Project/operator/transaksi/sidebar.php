@@ -27,7 +27,15 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    <div class="sidebar-heading">
+        Data Barang
+    </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="../barang/pengadaan.php">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Data Barang</span>
+        </a>
+    </li>
     <!-- Heading -->
     <div class="sidebar-heading">
         Transaksi
