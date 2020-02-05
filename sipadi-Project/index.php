@@ -59,29 +59,24 @@ require 'includes/slider.php';
 			</div>
 			<div class="product_slider_container">
 				<div class="owl-carousel owl-theme product_slider">
-					<?php
-					$getrow = query('SELECT kategori.nama_kategori, COUNT(barang.id_brg) as total FROM barang RIGHT JOIN kategori on kategori.id_kategori = barang.id_ktg GROUP BY kategori.id_kategori');
-					?>
 					<!-- Slide 1 -->
 					<?php $kategori = query("SELECT * FROM kategori"); ?>
-					<?php foreach ($getrow as $ktgr) : ?>
-						<?php foreach ($kategori as $ktr) : ?>
-							<div class="owl-item product_slider_item">
+					<?php foreach ($kategori as $ktr) : ?>
+						<div class="owl-item product_slider_item">
 
-								<div class="product-item">
-									<div class="product discount">
-										<div class="product_image">
-											<img src="<?= "kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
-										</div>
-										<div class="favorite favorite_left"></div>
-										<div class="product_info">
-											<h6 class="product_name"><a href="index.php#produk" data-filter=".<?= $ktg['nama_kategori'] ?>"><?= $ktr["nama_kategori"]; ?></a></h6>
-											<div class="product_price"><?= $ktgr['total']; ?>pcs</div>
-										</div>
+							<div class="product-item">
+								<div class="product discount">
+									<div class="product_image">
+										<img src="<?= "kategori/gambar/" . $ktr['gmbr']; ?>" alt="gambar">
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_info">
+										<h6 class="product_name"><a href="index.php#produk" data-filter=".<?= $ktg['nama_kategori'] ?>"><?= $ktr["nama_kategori"]; ?></a></h6>
+										<div class="product_price"><?= $ktgr['total']; ?>pcs</div>
 									</div>
 								</div>
 							</div>
-						<?php endforeach; ?>
+						</div>
 					<?php endforeach; ?>
 				</div>
 

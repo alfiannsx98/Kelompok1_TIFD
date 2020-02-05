@@ -45,11 +45,11 @@ function register($data)
 
     $gambar_pembeli = upload_gmbr_pembeli();
     if (!$gambar_pembeli) {
-        $gambar_pembeli = "default.jpg";
+        return false;
     }
     $gambar_nik = upload_gmbr_nik();
     if (!$gambar_nik) {
-        $gambar_nik = "default.jpg";
+        return false;
     }
     $query = "INSERT INTO pembeli VALUES('$id_pembeli','$nama_pembeli','$email_pembeli','$password','$nomor_hp','$nik','$user_created','$is_active','$gambar_pembeli','$gambar_nik')";
 
@@ -74,15 +74,15 @@ function upload_gmbr_pembeli()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Bukan gambar yang telah anda upload');</script>";
     }
-    if ($ukuranFile > 200000) {
-        echo "<script>alert('Ukuran gambar yang anda upload terlalu besar!');</script>";
+    if ($ukuranFile > 20000000) {
+        echo "<script>alert('Ukuran gambar yang anda upload terlalu besar');</script>";
     }
 
     $namaFileBaru = uniqid();
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../views/login-pembeli/gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'gambar-pembeli/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
@@ -94,7 +94,7 @@ function upload_gmbr_nik()
     $tmpName = $_FILES['gambar_nik']['tmp_name'];
 
     if ($error === 4) {
-        echo "<script>alert('Pilih gambar terlebih dahulu');</script>";
+        echo "<script>alert('Pilih gambar terlebih dahulu!');</script>";
         return false;
     }
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
@@ -103,7 +103,7 @@ function upload_gmbr_nik()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Bukan gambar yang telah anda upload');</script>";
     }
-    if ($ukuranFile > 2000000) {
+    if ($ukuranFile > 20000000) {
         echo "<script>alert('Ukuran gambar yang anda upload terlalu besar');</script>";
     }
 
@@ -111,7 +111,7 @@ function upload_gmbr_nik()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, '../views/login-pembeli/gambarnik/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'gambar-nik/' . $namaFileBaru);
 
     return $namaFileBaru;
 }
