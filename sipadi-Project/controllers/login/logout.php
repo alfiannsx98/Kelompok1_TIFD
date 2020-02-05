@@ -7,5 +7,5 @@ $_SESSION = array();
 // setcookie('nik', '', time() - 36000);
 // setcookie('key', '', time() - 36000);
 
-header("Location: ../application/views/login/login.php");
+header("Location: ../../login/login.php");
 exit;
