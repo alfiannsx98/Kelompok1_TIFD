@@ -3,9 +3,8 @@ require_once __DIR__ . '../../templates/vendor/autoload.php';
 
 require '../controllers/transaksi/functions-transaksi.php';
 $id = $_GET['id'];
-$transaksi = query("SELECT `transaksi`.*,`kurir`.`kota_tujuan`,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
+$transaksi = query("SELECT `transaksi`.*,`admin`.`nama_admin`,`pembeli`.`nama_pembeli`,`toko`.`nama_toko`
 FROM `transaksi` 
-JOIN `kurir` ON `kurir`.`id_kurir` = `transaksi`.`id_kurer`
 JOIN `admin` ON `admin`.`id_admin` = `transaksi`.`id_adm`
 JOIN `pembeli` ON `pembeli`.`id_pembeli` = `transaksi`.`id_pembeli`
 JOIN `toko` ON `toko`.`id_toko` = `transaksi`.`id_toko`
@@ -42,7 +41,6 @@ foreach ($transaksi as $row) {
     <p>Nama Pembeli : ' . $row["nama_pembeli"] . '</p>
     <p>Alamat Kirim : ' . $row["alamat_kirim"] . '</p>
     <p>Tanggal Pengiriman : ' . $row["tgl_kirim"] . '</p>
-    <p>Kota Tujuan : ' . $row["kota_tujuan"] . '</p>
     <p>Tanggal Transaksi : ' . $row["tgl_transaksi"] . '</p>
             ';
     $html .=
@@ -68,7 +66,6 @@ foreach ($transaksi as $row) {
 
     $html .=    '
 </table>
-<h4>Ongkos Kirim : Rp.  ' . number_format($row['ongkir_kurir']) . '</h4>
 <h4>Total Final : Rp.  ' . number_format($row['total_final']) . '</h4>
 </body>
     </html>';

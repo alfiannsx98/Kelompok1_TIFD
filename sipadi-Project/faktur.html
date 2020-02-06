@@ -1,54 +1,92 @@
-
 <html>
+
 <head>
-<title>Faktur Pembayaran</title>
-<style>
+    <title>Faktur Pembayaran</title>
+    <style>
+        #tabel {
+            font-size: 20px;
+            border-collapse: collapse;
+        }
 
-#tabel
-{
-font-size:20px;
-border-collapse:collapse;
-}
-#tabel  td
-{
-padding-left:5px;
-border: 1px solid black;
-}
-.garistepi{
-    border: 2px solid black;
-}
-</style>
+        #tabel td {
+            padding-left: 5px;
+            border: 1px solid black;
+        }
+
+        .garistepi {
+            border: 2px solid black;
+        }
+    </style>
 </head>
-<body style='font-family:tahoma; font-size:8pt;' class="garistepi">  
-<center><table style='width:550px; font-size:12pt; font-family:calibri; border-collapse: collapse;' border = '0'>
-<td width='70%' align='left' style='padding-right:80px; vertical-align:top'>
-<span style='font-size:12pt'><b>SUMBERDADI</b></span></br>Jl. Wolter Monginsidi No.89, Langsepam, Rowo Indah, Kec. Ajung, Kabupaten Jember, Jawa Timur</br>Telp : 0594094545
-</td>
-<td style='vertical-align:top' width='30%' align='left'>
-<b><span style='font-size:12pt'>FAKTUR PENJUALAN</span></b></br>
-ID Transaksi : 4</br>
-Tanggal :06 Januari 2020</br>
-</td>
-</table>
-<table style='width:550px; font-size:12pt; font-family:calibri; border-collapse: collapse;' border = '0'>
-<td width='70%' align='left' style='padding-right:80px; vertical-align:top'>
-Nama Admin : Mico</br>
-Alamat : Jember
-</td>
-<td style='vertical-align:top' width='30%' align='left'>
-No Telp : 087654676543
-</td>
-</table>
-<table cellspacing='0' style='width:600px; font-size:12pt; font-family:calibri;  border-collapse: collapse;' border='1'>
 
-<tr align='center'>
-<td width='30%'>Kode Barang</td>
-<td width='35%'>Nama Barang</td>
-<td width='30%'>Harga</td>
-<td width='30%'>Jumlah Dibeli</td>
-<td width='20%'>Ongkir</td>
-<td width='30%'>Total Harga</td>
-<tr><td>IDB211201</td><td>Belawan 365 EC</td><td>Rp200.000,00</td><td>1</td><td>Rp7.000</td><td style='text-align:right'>Rp207.000,00</td><tr<tr><tr><td colspan = '5'><div style='text-align:right'>Total Yang Harus Di Bayar Adalah : </div></td><td style='text-align:right'>Rp207.000,00</td></tr><<tr><td colspan = '6'><tr><td colspan = '5'><div style='text-align:right'>Dibayar : </div></td><td style='text-align:right'>Rp207.000,00</td></tr><tr><td colspan = '5'><div style='text-align:right'><tr<tr><td colspan = '5'><tr><td colspan = '5'><div style='text-align:right'>  Kembalian    : </div></td><td style='text-align:right'>Rp0,00</td></tr></table><table style='width:650; font-size:7pt;' cellspacing='2'><tr><td align='center'>
+<body style='font-family:tahoma; font-size:8pt;' class="garistepi">
+    <center>
+        <table style='width:550px; font-size:12pt; font-family:calibri; border-collapse: collapse;' border='0'>
+            <td width='70%' align='left' style='padding-right:80px; vertical-align:top'>
+                <span style='font-size:12pt'><b>SUMBERDADI</b></span></br>Jl. Wolter Monginsidi No.89, Langsepam, Rowo
+                Indah, Kec. Ajung, Kabupaten Jember, Jawa Timur</br>Telp : 0594094545
+            </td>
+            <td style='vertical-align:top' width='30%' align='left'>
+                <b><span style='font-size:12pt'>FAKTUR PENJUALAN</span></b></br>
+                ID Transaksi : 4</br>
+                Tanggal :06 Januari 2020</br>
+            </td>
+        </table>
+        <table style='width:550px; font-size:12pt; font-family:calibri; border-collapse: collapse;' border='0'>
+            <td width='70%' align='left' style='padding-right:80px; vertical-align:top'>
+                Nama Admin : Mico</br>
+                Alamat : Jember
+            </td>
+            <td style='vertical-align:top' width='30%' align='left'>
+                No Telp : 087654676543
+            </td>
+        </table>
+        <table cellspacing='0' style='width:600px; font-size:12pt; font-family:calibri;  border-collapse: collapse;'
+            border='1'>
 
+            <tr align='center'>
+                <td width='30%'>Kode Barang</td>
+                <td width='35%'>Nama Barang</td>
+                <td width='30%'>Harga</td>
+                <td width='30%'>Jumlah Dibeli</td>
+                <td width='20%'>Ongkir</td>
+                <td width='30%'>Total Harga</td>
+            <tr>
+                <td>IDB211201</td>
+                <td>Belawan 365 EC</td>
+                <td>Rp200.000,00</td>
+                <td>1</td>
+                <td>Rp7.000</td>
+                <td style='text-align:right'>Rp207.000,00</td>
+                <tr<tr>
+            <tr>
+                <td colspan='5'>
+                    <div style='text-align:right'>Total Yang Harus Di Bayar Adalah : </div>
+                </td>
+                <td style='text-align:right'>Rp207.000,00</td>
+            </tr>
+            <tr>
+                <td colspan='6'>
+            <tr>
+                <td colspan='5'>
+                    <div style='text-align:right'>Dibayar : </div>
+                </td>
+                <td style='text-align:right'>Rp207.000,00</td>
+            </tr>
+            <tr>
+                <td colspan='5'>
+                    <div style='text-align:right'>
+                        <tr<tr>
+                <td colspan='5'>
+            <tr>
+                <td colspan='5'>
+                    <div style='text-align:right'> Kembalian : </div>
+                </td>
+                <td style='text-align:right'>Rp0,00</td>
+            </tr>
+        </table>
+        <table style='width:650; font-size:7pt;' cellspacing='2'>
+            <tr>
+                <td align='center'>
 
 </html>

@@ -1,12 +1,10 @@
 <?php
-require_once '../controllers/barang/functions-barang.php';
+require_once '../../controllers/barang/functions-barang.php';
 require_once 'header.php';
-session_start();
-// $email = $_POST["email_admin"];
-// $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 
+session_start();
 if (isset($_POST["submit"])) {
-    if (tambahBrg($_POST) > 0) {
+    if (pengadaan($_POST) > 0) {
         echo "    
         <script>
             alert('data berhasil ditambah!');
@@ -24,20 +22,15 @@ if (!isset($_SESSION["login"])) {
     header("Location: ../login/login.php");
     exit;
 }
-if (($_POST["level"] == 2)) {
-    header("Location: ../operator/");
+if ((!$_POST["level"] == 2)) {
+    header("Location: ../login/login.php");
     exit;
 }
 $email = $_POST['email_admin'];
 $sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE email_admin = '$email'");
 $gmbr = mysqli_fetch_assoc($sql);
-?>
-<?php
 require 'sidebar.php';
 ?>
-<!-- End of Sidebar -->
-
-<!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
@@ -50,7 +43,7 @@ require 'sidebar.php';
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Tambah Barang</h1>
+                <h1 class="h3 mb-0 text-gray-800">Pengadaan Stok Barang</h1>
             </div>
 
             <!-- Content Row -->
@@ -61,40 +54,17 @@ require 'sidebar.php';
             <div class="col-lg-10">
                 <form action="" method="post" class="user" name="tambahkeun" id="tambahkeun" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="username"> Nama Barang : </label>
-                        <input type="text" class="form-control form-control-user" id="nama_barang" name="nama_barang" placeholder="Masukan Barang Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="id_kategori">Kategori : </label>
-                        <select name="id_kategori" class="form-control" required>
-                            <option value="" disabled selected>Silahkan Pilih Item</option>
-                            <?php $rslt = query("SELECT * FROM kategori"); ?>
-                            <?php foreach ($rslt as $nmKTG) : ?>
-                                <option value="<?= $nmKTG['id_kategori']; ?>"><?= $nmKTG['nama_kategori']; ?></option>
+                        <label for="username">Pilih Barang Untuk ditambah stok : </label>
+                        <select name="id_barang" class="form-control">
+                            <?php $rslt = query("SELECT * FROM barang"); ?>
+                            <?php foreach ($rslt as $nmBrg) : ?>
+                                <option value="<?= $nmBrg['id_brg']; ?>" class="form-control"><?= $nmBrg['nama_brg']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="gmbr"> Gambar Barang : </label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="gmbr" name="gmbr" required>
-                            <label for="gmbr" class="custom-file-label">Pilih File</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="harga"> Harga Barang: </label>
-                        <input type="number" name="harga" min="3" class="form-control form-control-user" placeholder="Masukkan harga barang" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="harga"> Berat Barang (Satuan Gram): </label>
-                        <input type="number" name="berat" min="2" class="form-control form-control-user" placeholder="Masukkan berat barang" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="deskripsi"> Deskripsi Barang : </label>
-                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="7" placeholder="Masukkan Deskripsi Barang" class="form-control" required></textarea>
-                    </div>
                     <!--  ditambahkan dinamis add form input -->
                     <div class="form-group">
+                        <label for="fieldQue">Isi Stok barang dan Expired Date : </label>
                         <table class="table table-bordered" id="fieldQue">
                             <tr>
                                 <td><label for="stok">Masukkan Stok Barang</label></td>

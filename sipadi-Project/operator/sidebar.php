@@ -28,6 +28,18 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <div class="sidebar-heading">
+        Barang
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="../barang/">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Data Barang</span>
+        </a>
+    </li>
+
     <!-- Heading -->
     <div class="sidebar-heading">
         Transaksi
